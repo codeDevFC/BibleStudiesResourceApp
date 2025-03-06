@@ -4,7 +4,7 @@
 
 ## About the Developer
 
-Hello! I'm Felix Cobbinah, a passionate front-end developer with expertise in creating responsive, user-friendly web applications. I specialize in HTML5, CSS3, JavaScript, and Vue.js to build modern digital experiences.
+Hello! I'm Felix Cobbinah, a passionate front-end developer with expertise in creating responsive, user-friendly web applications. I specialize in HTML5, CSS3, JavaScript, and React.js to build modern digital experiences.
 
 ## Project Overview
 
