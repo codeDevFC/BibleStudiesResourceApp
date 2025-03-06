@@ -1,0 +1,1436 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.9 Our Heavenly Experience (The Millennium) | History of Salvation</title>
+    
+    
+<style>
+
+
+:root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-accent: #e9ecef;
+            --text-primary: #333333;
+            --border-color: #dee2e6;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Navigation Buttons */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Button Variants */
+        .previous-chapter {
+            background: #2F4F4F;
+            box-shadow: 0 4px 15px rgba(47, 79, 79, 0.3);
+        }
+
+        .next-chapter {
+            background: #DAA520;
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+        }
+
+        .study-button {
+            background: #800020;
+            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+        }
+
+        .toc {
+            background: #8B4513;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .home-button {
+            background: #2F4F4F;
+            box-shadow: 0 4px 15px rgba(47, 79, 79, 0.3);
+        }
+
+        /* Hover Effects */
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navigation {
+                flex-direction: column;
+            }
+
+            .nav-button {
+                width: 100%;
+            }
+
+            .nav-button .hover-text {
+                display: none;
+            }
+        }
+
+/* Add these styles to the existing CSS */
+
+/* Header Styling */
+.chapter-header {
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.chapter-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.chapter-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+    border-radius: 2px;
+}
+
+/* Purpose Box Styling */
+.purpose-box {
+    background: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin: 2.5rem 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+}
+
+.purpose-box::before {
+    content: '✦';
+    position: absolute;
+    top: -15px;
+    left: 2.5rem;
+    background: white;
+    padding: 0 1rem;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.purpose-box h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.purpose-text {
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+/* Content Section Styling */
+.content-section {
+    margin: 3rem 0;
+}
+
+/* Question Section Styling */
+.question-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.question-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.question-number {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Scripture Reference Styling */
+.scripture-reference {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin: 0 0.2rem;
+    display: inline-block;
+}
+
+/* Millennium Timeline Styling */
+.millennium-timeline {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 3rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.timeline-diagram {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Answer Box Styling */
+.answer-box {
+    background: var(--bg-accent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* List Styling */
+.answer-list, 
+.evidence-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.answer-list li,
+.evidence-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.answer-list li::before,
+.evidence-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Scripture Quote Styling */
+.scripture-quote {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    position: relative;
+    font-style: italic;
+    border-left: 4px solid var(--accent-color);
+}
+
+.scripture-quote::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 3rem;
+    color: var(--accent-color);
+    opacity: 0.2;
+}
+
+
+/* Additional Biblical References Styling */
+.biblical-references {
+    margin: 4rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.scripture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.scripture-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.scripture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Theological Reflections Styling */
+.theological-reflections {
+    margin: 4rem 0;
+    padding: 2rem;
+}
+
+.reflection-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.reflection-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.reflection-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.reflection-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+.issues-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.issues-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.issues-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+
+
+/* Concluding Scriptures Styling */
+.concluding-scriptures {
+    margin: 4rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.scripture-collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Study Summary Styling */
+.study-summary {
+    margin: 4rem 0;
+    padding: 2rem;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.summary-card {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+}
+
+.summary-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.summary-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.summary-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.summary-card ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.summary-card ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Next Lesson Preview Styling */
+.next-lesson-preview {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(to right, var(--bg-secondary), transparent);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .scripture-collection,
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card,
+    .next-lesson-preview {
+        padding: 1.5rem;
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .biblical-references,
+    .theological-reflections {
+        padding: 1.5rem;
+    }
+
+    .scripture-grid,
+    .reflection-points {
+        grid-template-columns: 1fr;
+    }
+
+    .reflection-card {
+        padding: 1.5rem;
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .chapter-header h1 {
+        font-size: 2rem;
+    }
+
+    .purpose-box {
+        padding: 1.5rem;
+    }
+
+    .timeline-diagram {
+        grid-template-columns: 1fr;
+    }
+
+    .question-section {
+        padding: 1.5rem;
+    }
+}
+
+
+
+/* Additional styling*/
+.groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.group-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.group-card:hover {
+    transform: translateY(-5px);
+}
+
+.evidence-list {
+    list-style: none;
+    counter-reset: evidence-counter;
+    padding-left: 0;
+}
+
+.evidence-list li {
+    counter-increment: evidence-counter;
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.evidence-list li::before {
+    content: counter(evidence-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.scripture-quote {
+    background: var(--bg-accent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+
+.events-sequence {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.sequence-list {
+    list-style: none;
+    counter-reset: sequence;
+    position: relative;
+}
+
+.sequence-list::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent-color);
+}
+
+.sequence-list li {
+    counter-increment: sequence;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.sequence-list li::before {
+    content: counter(sequence);
+    position: absolute;
+    left: -2.5rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.reason-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.scripture-text {
+    background: var(--bg-accent);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-style: italic;
+    position: relative;
+}
+
+.scripture-text::before {
+    content: '"';
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    font-size: 3rem;
+    color: var(--accent-color);
+    opacity: 0.3;
+}
+
+
+.additional-insights {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.insight-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.prophecy-analysis {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: var(--bg-accent);
+    border-radius: 8px;
+}
+
+.prophecy-quote {
+    margin: 1rem 0;
+    padding: 1.5rem;
+    background: white;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+
+.interpretations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.problems-list ol {
+    counter-reset: problems;
+    list-style: none;
+    padding-left: 0;
+}
+
+.problems-list ol li {
+    counter-increment: problems;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.problems-list ol li::before {
+    content: counter(problems);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+
+/* Enhanced Styling for Moral Problem Section */
+.theological-issue-section {
+    margin: 4rem auto;
+    padding: 3rem;
+    background: linear-gradient(145deg, var(--bg-secondary) 0%, #ffffff 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    max-width: 1000px;
+}
+
+.theological-issue-section h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.theological-issue-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+    border-radius: 2px;
+}
+
+.moral-dilemma-box {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.key-question {
+    background: linear-gradient(120deg, var(--bg-accent) 0%, rgba(255,255,255,0.9) 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    border-left: 4px solid var(--accent-color);
+    position: relative;
+}
+
+.key-question::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 4rem;
+    color: var(--accent-color);
+    opacity: 0.2;
+}
+
+.question-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.problematic-interpretation,
+.correct-understanding,
+.final-clarification {
+    margin: 2.5rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.problematic-interpretation:hover,
+.correct-understanding:hover,
+.final-clarification:hover {
+    transform: translateX(10px);
+}
+
+.interpretation-points {
+    margin-top: 1.5rem;
+}
+
+.interpretation-points ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.interpretation-points ul li {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.interpretation-points ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.sub-points {
+    margin: 1rem 0 1rem 2rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid rgba(52, 152, 219, 0.3);
+}
+
+.sub-points li {
+    margin-bottom: 0.8rem !important;
+}
+
+.sub-points li::before {
+    content: '•' !important;
+}
+
+.biblical-position {
+    background: linear-gradient(to right, var(--bg-accent), transparent);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+.biblical-position ul {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.biblical-position ul li {
+    margin-bottom: 0.8rem;
+    position: relative;
+}
+
+.biblical-position ul li::before {
+    content: '✓';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--accent-color);
+}
+
+.emphasis {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 1.5rem;
+    font-style: italic;
+    padding: 1rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 8px;
+}
+
+.scripture-reference {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin: 0 0.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .theological-issue-section {
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .theological-issue-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .moral-dilemma-box {
+        padding: 1.5rem;
+    }
+
+    .key-question,
+    .problematic-interpretation,
+    .correct-understanding,
+    .final-clarification {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .biblical-position {
+        padding: 1.5rem;
+    }
+}
+
+
+</style>
+
+
+
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="chapter-header">
+            <h1>Our Heavenly Experience (The Millennium)</h1>
+            <div class="purpose-box">
+                <h2>Purpose:</h2>
+                <div class="purpose-text">
+                    <p>To understand what happens after the Lord's return, eliminating false millennial expectations (regarding Christ's millennial kingdom) and understanding how the millennium expresses God's love and respect for His creatures' freedom.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Millennium Visual Timeline -->
+        <div class="millennium-timeline">
+            <div class="timeline-header">
+                <h2>The Millennium Overview</h2>
+            </div>
+            
+            <div class="timeline-diagram">
+                <!-- Beginning Events -->
+                <div class="event-column left">
+                    <div class="event-group">
+                        <h3>Jesus Returns</h3>
+                        <div class="event-item">
+                            <h4>Dead Saints Rise</h4>
+                            <span class="event-tag">1st resurrection</span>
+                        </div>
+                        <div class="event-item">
+                            <h4>All Saints to Heaven</h4>
+                        </div>
+                        <div class="event-item">
+                            <h4>Wicked Die</h4>
+                            <span class="event-tag">1st death</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle Section -->
+                <div class="millennium-period">
+                    <h3>MILLENNIUM</h3>
+                    <div class="period-description">
+                        <p>SAINTS REIGN WITH CHRIST AND JUDGE THE WICKED</p>
+                        <div class="earth-state">
+                            <p>EARTH IS DESOLATE WITH THE DEAD WICKED</p>
+                            <p>SATAN LEFT ALONE, BOUND</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End Events -->
+                <div class="event-column right">
+                    <div class="event-group">
+                        <h3>Final Events</h3>
+                        <div class="event-item">
+                            <h4>New Jerusalem Descends</h4>
+                        </div>
+                        <div class="event-item">
+                            <h4>Wicked Resurrect</h4>
+                            <span class="event-tag">2nd resurrection</span>
+                        </div>
+                        <div class="event-item">
+                            <h4>Satan Unbound</h4>
+                        </div>
+                        <div class="event-item">
+                            <h4>Final Rebellion</h4>
+                        </div>
+                        <div class="event-item">
+                            <h4>Fire from Heaven</h4>
+                            <span class="event-tag">2nd death</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+<!-- Main Content -->
+<div class="content-section">
+  <!-- Introduction -->
+  <div class="introduction-box">
+      <p>So far, we've seen that when Jesus returns, all believers will go to heaven with Him. But what will happen on earth? What will the saved do in heaven? Will they stay there for eternity? We'll find answers to these questions by studying what the Bible says in <span class="scripture-reference">Revelation 20</span> about a special period we call the "millennium".</p>
+  </div>
+
+  <!-- Question Sections -->
+  <div class="questions-container">
+      <!-- Question 1 -->
+      <div class="question-section">
+          <h3><span class="question-number">1)</span> What will the saved do during the millennium?</h3>
+          <div class="answer-box">
+              <ul class="answer-list">
+                  <li>
+                      <h4>Reign with Jesus</h4>
+                      <span class="scripture-reference">Revelation 20:4</span>
+                  </li>
+                  <li>
+                      <h4>Judge the Wicked</h4>
+                      <span class="scripture-reference">Revelation 20:4; 1 Corinthians 6:2-3; Matthew 19:28</span>
+                      <div class="historical-note">
+                          <p>In ancient times, the king held all main powers of the State, including judgment (<span class="scripture-reference">1 Kings 3:7; Jeremiah 22:15-16</span>). Those who sit on thrones to judge are the same who reign with Jesus.</p>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-section">
+          <h3><span class="question-number">2)</span> What is the significance of this judgment?</h3>
+          <div class="answer-box">
+              <p>While the Bible doesn't explicitly explain this, we can understand that:</p>
+              <ul class="significance-points">
+                  <li>God wants to help us understand His reasons for not being able to save the lost</li>
+                  <li>God shares His thoughts with His children (<span class="scripture-reference">John 15:15; Amos 3:7</span>)</li>
+                  <li>By asking us to judge the wicked, it's as if God asks us to judge His own justice</li>
+              </ul>
+              <div class="scripture-quote">
+                  <span class="scripture-reference">Revelation 19:1-2; 16:7</span>
+                  <p>"Hallelujah! Salvation and glory and power belong to our God, for true and just are His judgments."</p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-section">
+          <h3><span class="question-number">3)</span> When does the millennium begin?</h3>
+          <div class="answer-box">
+              <p>At Jesus' second coming. We can understand this from:</p>
+              <ol class="evidence-list">
+                  <li>Context of <span class="scripture-reference">Revelation 19:11</span> onwards</li>
+                  <li>Saints judge when God's Kingdom is established (<span class="scripture-reference">Matthew 19:28</span>)</li>
+                  <li>Saints' resurrection occurs at Jesus' return (<span class="scripture-reference">1 Thessalonians 4:13-18</span>)</li>
+              </ol>
+          </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question-section">
+          <h3><span class="question-number">4)</span> What happens at the beginning of the millennium?</h3>
+          <div class="answer-box">
+              <div class="groups-grid">
+                  <div class="group-card">
+                      <h4>Dead Saints</h4>
+                      <p>Rise gloriously and go to heaven</p>
+                      <span class="scripture-reference">1 Thessalonians 4:16-17</span>
+                  </div>
+                  <div class="group-card">
+                      <h4>Living Saints</h4>
+                      <p>Are glorified and go to heaven</p>
+                      <span class="scripture-reference">1 Thessalonians 4:17; 1 Corinthians 15:52</span>
+                  </div>
+                  <div class="group-card">
+                      <h4>Dead Wicked</h4>
+                      <p>Remain in their graves</p>
+                      <span class="scripture-reference">Revelation 20:5</span>
+                  </div>
+                  <div class="group-card">
+                      <h4>Living Wicked</h4>
+                      <p>Die</p>
+                      <span class="scripture-reference">Revelation 19:17-18,21</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Questions 5-9 -->
+<div class="question-section">
+  <h3><span class="question-number">5)</span> What will the earth be like during the millennium?</h3>
+  <div class="answer-box">
+      <div class="earth-description">
+          <p>With all saints in heaven and all wicked dead, the earth will be devoid of human life. Only Satan will remain, bound by a chain of circumstances. He remains with his angels on an earth that has returned to being an abyss (<span class="scripture-reference">Revelation 20:3</span>), the same word found in the Greek translation of <span class="scripture-reference">Genesis 1:2</span> describing the earth as "without form and void" before God created life.</p>
+          <p class="hope-note">Yet from this desolation, God will again bring forth a world full of life at the millennium's end.</p>
+      </div>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">6)</span> What happens at the end of the millennium?</h3>
+  <div class="answer-box">
+      <div class="events-sequence">
+          <ol class="sequence-list">
+              <li>
+                  <h4>The Wicked Resurrect</h4>
+                  <span class="scripture-reference">Revelation 20:5</span>
+              </li>
+              <li>
+                  <h4>Satan Unbound</h4>
+                  <p>No longer alone, his "chains" are loosed and he can again tempt humans (<span class="scripture-reference">Revelation 20:7-8</span>)</p>
+              </li>
+              <li>
+                  <h4>New Jerusalem Descends</h4>
+                  <p>With all saints inside (<span class="scripture-reference">Revelation 21:2</span>)</p>
+              </li>
+              <li>
+                  <h4>Final Destruction</h4>
+                  <p>The wicked, led by Satan, attempt to capture the holy city but are destroyed (<span class="scripture-reference">Revelation 20:9</span>). This is the second death, which is eternal (<span class="scripture-reference">Revelation 20:6,14</span>)</p>
+              </li>
+          </ol>
+      </div>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">7)</span> Why does God bring the wicked back to life at the millennium's end if they die again?</h3>
+  <div class="answer-box">
+      <p class="note">The Bible doesn't directly answer this question, but we can understand possible reasons:</p>
+      <div class="reasons-grid">
+          <div class="reason-card">
+              <h4>Justice Demonstration</h4>
+              <p>To provide conscious punishment for their sins</p>
+          </div>
+          <div class="reason-card">
+              <h4>Final Vindication</h4>
+              <p>Their final rebellion, when they have no excuse for unbelief, demonstrates that God truly couldn't save them because they had no desire to live by His principles of love and justice</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">8)</span> How should we understand the final universal judgment described in Revelation 20:11-15?</h3>
+  <div class="answer-box">
+      <div class="judgment-explanation">
+          <p>This scene represents the moment when all humanity, good and evil, stands before God's throne, just after the wicked's resurrection and before their final punishment.</p>
+          <div class="scene-details">
+              <ul>
+                  <li>Saints inside New Jerusalem</li>
+                  <li>Wicked surrounding it</li>
+                  <li>All before their Creator</li>
+                  <li>Each receiving eternal destiny confirmation</li>
+              </ul>
+          </div>
+          <div class="scripture-fulfillment">
+              <span class="scripture-reference">Romans 14:10-11</span>
+              <p>"For we will all stand before God's judgment seat... every knee will bow... every tongue will acknowledge God."</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">9)</span> What happens after the millennium?</h3>
+  <div class="answer-box">
+      <div class="new-creation">
+          <span class="scripture-reference">Revelation 21:3-4</span>
+          <blockquote class="scripture-text">
+              <p>"Now the dwelling of God is with men, and he will live with them. They will be his people, and God himself will be with them and be their God. He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain, for the old order of things has passed away."</p>
+          </blockquote>
+      </div>
+  </div>
+</div>
+
+
+<!-- Additional Insights Section -->
+<div class="additional-insights">
+  <h2>Additional Insights</h2>
+
+  <!-- First Insight -->
+  <div class="insight-section">
+      <h3>1. Are There Other Biblical Texts Describing the Millennium?</h3>
+      <div class="insight-content">
+          <p><span class="scripture-reference">Revelation 20</span> is the only text explicitly mentioning the millennium. However, another text implies it:</p>
+          
+          <div class="related-scripture">
+              <h4>Isaiah's Prophecy</h4>
+              <span class="scripture-reference">Isaiah 24:17-23</span>
+              <div class="prophecy-analysis">
+                  <h5>Key Elements:</h5>
+                  <ul>
+                      <li>Earth "shaken" (v.19)</li>
+                      <li>Sun "ashamed" (v.23)</li>
+                      <li>Similar to Jesus' end-time signs (<span class="scripture-reference">Matthew 24:29</span>)</li>
+                  </ul>
+                  
+                  <div class="prophecy-quote">
+                      <p>"In that day the LORD will punish the powers in the heavens above and the kings on the earth below... they will be herded together like prisoners bound in a dungeon; they will be shut up in prison and be punished after many days."</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Second Insight -->
+  <div class="insight-section">
+      <h3>2. Do All Christians Interpret the Millennium the Same Way?</h3>
+      <div class="interpretations-grid">
+          <div class="historical-view">
+              <h4>Historical Views</h4>
+              <ul>
+                  <li>Early Church Period:
+                      <p>Some viewed it as the church age before Jesus' return</p>
+                  </li>
+                  <li>Augustine's View:
+                      <p>Interpreted as first millennium of church history</p>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="modern-view">
+              <h4>Modern Interpretation Issues</h4>
+              <div class="view-problems">
+                  <h5>Common Misinterpretation:</h5>
+                  <p>Some believe the Millennium will be an era of prosperity on earth before Jesus' return, when:</p>
+                  <ul>
+                      <li>Satan is bound</li>
+                      <li>Nations convert</li>
+                      <li>Earth becomes paradise-like</li>
+                  </ul>
+
+                  <div class="problems-list">
+                      <h5>Why This View Is Problematic:</h5>
+                      <ol>
+                          <li>Contradicts <span class="scripture-reference">Revelation 20-21</span>'s timing</li>
+                          <li>Ignores absence of living beings on earth</li>
+                          <li>Overlooks that post-millennium only has death sentences</li>
+                          <li>Creates moral issues regarding Satan's release</li>
+                      </ol>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="theological-issue-section">
+  <h3>The Moral Problem of Satan's Release</h3>
+  
+  <div class="moral-dilemma-box">
+      <div class="key-question">
+          <div class="question-header">
+              <i class="fas fa-question-circle"></i>
+              <h4>Critical Moral Question:</h4>
+          </div>
+          <p>If without Satan the whole world becomes good, why would God release him to cause humans to fall into sin again?</p>
+      </div>
+
+      <div class="problematic-interpretation">
+          <h4>The Theological Problem</h4>
+          <div class="problem-explanation">
+              <p>This would suggest that God uses Satan as a tool to tempt nations, making Satan almost an instrument of God for the perdition of many people - a concept entirely foreign to biblical teaching.</p>
+          </div>
+      </div>
+
+      <div class="correct-understanding">
+          <h4>Our Biblical Understanding</h4>
+          <div class="interpretation-points">
+              <ul>
+                  <li>
+                      <strong>Satan's Release:</strong> Not God's specific will but a result of changing circumstances
+                  </li>
+                  <li>
+                      <strong>Biblical Evidence:</strong>
+                      <p><span class="scripture-reference">Revelation 20</span> deliberately avoids suggesting God wants Satan to tempt humans:</p>
+                      <ul class="sub-points">
+                          <li>God explicitly binds Satan to prevent temptation (v. 4)</li>
+                          <li>When unbound, Satan acts on his own initiative (vv. 4,7)</li>
+                          <li>No divine intention mentioned in Satan's release</li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+
+      <div class="final-clarification">
+          <h4>The Real Issue</h4>
+          <p>The support for alternative interpretations stems not from exegesis of <span class="scripture-reference">Revelation 20</span>, but from the presumption that certain prophecies about Israel's kingdom restoration must be literally fulfilled during the millennium.</p>
+          
+          <div class="biblical-position">
+              <p>We believe the biblical millennium has no connection to literal Israel because Scripture explicitly links it to:</p>
+              <ul>
+                  <li>The Christian experience of salvation</li>
+                  <li>The judgment of the world</li>
+              </ul>
+              <p class="emphasis">And nothing more.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="reflection-card">
+  <h3>Biblical Understanding</h3>
+  <p>The millennium has nothing to do with earthly Israel but relates explicitly to Christian salvation experience and world judgment.</p>
+</div>
+
+<!-- Final Scripture References -->
+<div class="concluding-scriptures">
+  <h2>Additional Key Texts</h2>
+  
+  <div class="scripture-collection">
+      <div class="scripture-card">
+          <span class="scripture-reference">1 Corinthians 15:3</span>
+          <p>"For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures."</p>
+      </div>
+
+      <div class="scripture-card">
+          <span class="scripture-reference">2 Corinthians 5:21</span>
+          <p>"God made him who had no sin to be sin for us, so that in him we might become the righteousness of God."</p>
+      </div>
+
+      <div class="scripture-card">
+          <span class="scripture-reference">Galatians 1:4</span>
+          <p>"Jesus gave himself for our sins to rescue us from the present evil age, according to the will of our God and Father."</p>
+      </div>
+
+      <div class="scripture-card">
+          <span class="scripture-reference">Hebrews 9:15, 28</span>
+          <p>"His death has taken place for the redemption of the transgressions... Christ was sacrificed once to take away the sins of many; and he will appear a second time, not to bear sin, but to bring salvation to those who are waiting for him."</p>
+      </div>
+
+      <div class="scripture-card">
+          <span class="scripture-reference">1 Peter 1:18-19</span>
+          <p>"For you know that it was not with perishable things such as silver or gold that you were redeemed... but with the precious blood of Christ."</p>
+      </div>
+
+      <div class="scripture-card">
+          <span class="scripture-reference">1 John 2:2</span>
+          <p>"He is the atoning sacrifice for our sins, and not only for ours but also for the sins of the whole world."</p>
+      </div>
+  </div>
+</div>
+
+<!-- Study Summary -->
+<div class="study-summary">
+  <h2>Key Points to Remember</h2>
+  
+  <div class="summary-grid">
+      <div class="summary-card">
+          <h3>The Millennium's Purpose</h3>
+          <ul>
+              <li>Time for saints to understand God's judgments</li>
+              <li>Demonstration of God's justice and love</li>
+              <li>Period of earth's desolation</li>
+          </ul>
+      </div>
+
+      <div class="summary-card">
+          <h3>Key Events</h3>
+          <ul>
+              <li>Begins with Christ's second coming</li>
+              <li>Saints reign with Christ in heaven</li>
+              <li>Earth remains desolate</li>
+              <li>Ends with final judgment</li>
+          </ul>
+      </div>
+
+      <div class="summary-card">
+          <h3>Final Outcomes</h3>
+          <ul>
+              <li>God's justice fully vindicated</li>
+              <li>Sin's origin and consequences understood</li>
+              <li>Preparation for eternal kingdom</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<!-- Next Lesson Preview -->
+<div class="next-lesson-preview">
+  <h3>Looking Ahead</h3>
+  <p>In our next study, we will explore the New Earth and God's eternal kingdom.</p>
+</div>
+
+
+<!-- Navigation Section -->
+<div class="navigation">
+  <a href="/HistOfSalvation/2.8.html" class="nav-button previous-chapter">
+      ← Previous Lesson
+      <span class="hover-text">2.8 When Will Jesus Return?</span>
+  </a>
+  <a href="/HistOfSalvation/2.10.html" class="nav-button next-chapter">
+      Next Lesson →
+      <span class="hover-text">2.10 The New Earth</span>
+  </a>
+    <!-- 
+  <a href="/HistOfSalvation/2.9.1.html" class="nav-button study-button">
+      Additional Study
+      <span class="hover-text">Deeper Study on the Millennium</span>
+  </a>
+            -->
+  <a href="/00Intro&Topics.html" class="nav-button toc">
+      Table of Contents
+      <span class="hover-text">View All Lessons</span>
+  </a>
+  <a href="/Index.html" class="nav-button home-button">
+      Main Page
+      <span class="hover-text">Return to Homepage</span>
+  </a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Copy Protection Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('contextmenu', e => e.preventDefault());
+      document.addEventListener('keydown', e => {
+          if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85 || e.keyCode === 73)) {
+              e.preventDefault();
+          }
+      });
+  });
+</script>
+</body>
+</html>
+

@@ -1,0 +1,1623 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.2 Our Hope in Face of Death | Doctrine of Man</title>
+    
+    <style>    
+      /* Root Variables and Base Styles */
+:root {
+   --container-padding-desktop: 2rem;
+   --container-padding-mobile: 1rem;
+   --content-max-width: 1200px;
+   --table-mobile-font-size: 14px;
+}
+
+/* Base Container Fixes */
+.container {
+   width: 100%;
+   max-width: var(--content-max-width);
+   margin: 0 auto;
+   padding: var(--container-padding-desktop);
+   overflow-x: hidden;
+   box-sizing: border-box;
+}
+
+/* Responsive Table Wrapper */
+.table-responsive-wrapper {
+   width: 100%;
+   overflow-x: auto;
+   -webkit-overflow-scrolling: touch;
+   margin: 1rem 0;
+   position: relative;
+}
+
+/* Interactive Scroll Indicator */
+.table-responsive-wrapper::after {
+   content: '→ Scroll horizontally';
+   position: absolute;
+   bottom: -25px;
+   left: 0;
+   font-size: 0.8rem;
+   color: var(--accent-color);
+   opacity: 0;
+   transition: opacity 0.3s ease;
+}
+
+.table-responsive-wrapper.scrollable::after {
+   opacity: 1;
+}
+
+/* Table Fixes */
+table {
+   min-width: 100%;
+   border-collapse: separate;
+   border-spacing: 0;
+   margin: 0;
+}
+
+/* Sticky Header */
+thead th {
+   position: sticky;
+   top: 0;
+   background: var(--man-theme-dark);
+   z-index: 10;
+}
+
+/* Mobile-First Responsive Design */
+@media screen and (max-width: 1024px) {
+   .container {
+       padding: var(--container-padding-mobile);
+   }
+
+   table {
+       font-size: var(--table-mobile-font-size);
+   }
+
+   /* Stack table cells on mobile */
+   .responsive-table-mobile tr {
+       display: block;
+       margin-bottom: 1rem;
+       border: 1px solid var(--man-theme-light);
+       border-radius: 8px;
+   }
+
+   .responsive-table-mobile td {
+       display: block;
+       text-align: left;
+       padding: 0.8rem;
+       border-bottom: 1px solid var(--man-theme-light);
+   }
+
+   .responsive-table-mobile td::before {
+       content: attr(data-label);
+       font-weight: bold;
+       display: block;
+       margin-bottom: 0.5rem;
+   }
+}
+
+/* Interactive Elements */
+.interactive-card {
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   cursor: pointer;
+}
+
+.interactive-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+   .interactive-card {
+       transform: none !important;
+   }
+}
+
+
+
+/* Additional Responsive Utilities */
+.hide-on-mobile {
+   @media screen and (max-width: 768px) {
+       display: none;
+   }
+}
+
+.show-on-mobile {
+   display: none;
+   @media screen and (max-width: 768px) {
+       display: block;
+   }
+}
+
+/* Flex Utilities */
+.flex-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.flex-column {
+   flex-direction: column;
+}
+
+/* Grid Utilities */
+.grid-responsive {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 1rem;
+}
+
+/* Spacing Utilities */
+.margin-responsive {
+   margin: 2rem;
+   @media screen and (max-width: 768px) {
+       margin: 1rem;
+   }
+}
+
+.padding-responsive {
+   padding: 2rem;
+   @media screen and (max-width: 768px) {
+       padding: 1rem;
+   }
+}
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       /* New Color Theme for Doctrine of Man Series */
+       :root {
+           --primary-color: #2C3E50;    /* Deep Blue-Gray */
+           --accent-color: #8E44AD;     /* Royal Purple */
+           --bg-primary: #ffffff;
+           --bg-secondary: #F7F9FC;
+           --text-primary: #2C3E50;
+           --text-secondary: #566573;
+           --highlight-color: #9B59B6;  /* Lighter Purple */
+           --man-theme-light: #E8E3ED;  /* Light Purple Background */
+           --man-theme-dark: #4A235A;   /* Dark Purple */
+       }
+
+       /* Base Styles */
+       body {
+           font-family: 'Inter', sans-serif;
+           line-height: 1.6;
+           color: var(--text-primary);
+           background: var(--bg-primary);
+           margin: 0;
+           padding: 0;
+       }
+
+       .container {
+           max-width: 1200px;
+           margin: 0 auto;
+           padding: 2rem;
+       }
+
+       /* Header Styling */
+       .series-header {
+           background: linear-gradient(135deg, var(--man-theme-dark), var(--accent-color));
+           color: white;
+           padding: 3rem 2rem;
+           text-align: center;
+           border-radius: 0 0 20px 20px;
+           margin-bottom: 3rem;
+       }
+
+       .series-header h1 {
+           font-size: 2.5rem;
+           margin-bottom: 1rem;
+       }
+
+       .series-header .series-title {
+           font-size: 1.2rem;
+           opacity: 0.9;
+       }
+
+       /* Purpose Box Styling */
+       .purpose-box {
+           background: var(--man-theme-light);
+           padding: 2rem;
+           border-radius: 12px;
+           margin: 2rem 0;
+           border-left: 4px solid var(--accent-color);
+       }
+
+       .purpose-box h2 {
+           color: var(--man-theme-dark);
+           margin-bottom: 1rem;
+       }
+
+       /* Navigation Buttons */
+       .navigation {
+           display: flex;
+           justify-content: space-between;
+           gap: 1rem;
+           margin-top: 3rem;
+           flex-wrap: wrap;
+       }
+
+       .nav-button {
+           padding: 1rem 2rem;
+           border: none;
+           border-radius: 8px;
+           cursor: pointer;
+           font-weight: bold;
+           transition: all 0.3s ease;
+           text-decoration: none;
+           text-align: center;
+           color: white;
+           min-width: 180px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           position: relative;
+       }
+
+       .previous-chapter {
+           background: var(--man-theme-dark);
+       }
+
+       .next-chapter {
+           background: var(--accent-color);
+       }
+
+       .toc {
+           background: var(--primary-color);
+       }
+
+       .home-button {
+           background: var(--text-secondary);
+       }
+
+       .nav-button:hover {
+           transform: translateY(-2px);
+           box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+       }
+
+       /* Hover Text */
+       .nav-button .hover-text {
+           position: absolute;
+           bottom: 100%;
+           left: 50%;
+           transform: translateX(-50%);
+           background: rgba(0,0,0,0.8);
+           color: white;
+           padding: 0.5rem 1rem;
+           border-radius: 4px;
+           font-size: 0.9rem;
+           opacity: 0;
+           visibility: hidden;
+           transition: all 0.3s ease;
+           white-space: nowrap;
+           pointer-events: none;
+           margin-bottom: 8px;
+       }
+
+       .nav-button:hover .hover-text {
+           opacity: 1;
+           visibility: visible;
+       }
+
+       /* Introduction Box Styling */
+.introduction-box {
+   background: var(--bg-secondary);
+   padding: 2rem;
+   border-radius: 12px;
+   margin: 2rem 0;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-quote {
+   background: var(--man-theme-light);
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin: 1.5rem 0;
+   font-style: italic;
+   border-left: 4px solid var(--accent-color);
+}
+
+.contrasting-views {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 1.5rem;
+   margin: 1.5rem 0;
+}
+
+.view-card {
+   background: white;
+   padding: 1.5rem;
+   border-radius: 8px;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Hebrew Terms Styling */
+.hebrew-terms {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 1rem;
+   margin: 1.5rem 0;
+}
+
+.term-card {
+   background: var(--man-theme-light);
+   padding: 1rem;
+   border-radius: 8px;
+   text-align: center;
+}
+
+.hebrew {
+   font-family: 'Times New Roman', serif;
+   color: var(--man-theme-dark);
+   font-size: 1.2rem;
+   margin-top: 0.5rem;
+}
+
+.language-note {
+   background: var(--bg-secondary);
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin: 1.5rem 0;
+}
+
+.illustration-box {
+   background: linear-gradient(to right, var(--man-theme-light), transparent);
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin: 1.5rem 0;
+   border-left: 4px solid var(--accent-color);
+}
+
+.consequences-list {
+   list-style: none;
+   padding-left: 0;
+}
+
+.consequences-list li {
+   margin-bottom: 1rem;
+   padding-left: 2rem;
+   position: relative;
+}
+
+.consequences-list li::before {
+   content: "→";
+   position: absolute;
+   left: 0;
+   color: var(--accent-color);
+}
+
+.next-study-preview {
+   margin-top: 1.5rem;
+   padding: 1rem;
+   background: var(--man-theme-light);
+   border-radius: 8px;
+   text-align: center;
+   font-weight: bold;
+   color: var(--man-theme-dark);
+}
+
+.reflection-prompt {
+   background: linear-gradient(to right, var(--man-theme-light), transparent);
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin: 1.5rem 0;
+   border-left: 4px solid var(--accent-color);
+}
+
+.biblical-perspective {
+   margin: 1.5rem 0;
+   padding: 1.5rem;
+   background: var(--bg-secondary);
+   border-radius: 8px;
+}
+
+/* Additional Insights Styling */
+.insight-section {
+   background: white;
+   padding: 2rem;
+   border-radius: 12px;
+   margin: 2rem 0;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.testament-comparison {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 2rem;
+   margin: 1.5rem 0;
+}
+
+.testament-card {
+   background: var(--man-theme-light);
+   padding: 1.5rem;
+   border-radius: 8px;
+   text-align: center;
+}
+
+.comparison-table {
+   overflow-x: auto;
+   margin: 1.5rem 0;
+}
+
+.comparison-table table {
+   width: 100%;
+   border-collapse: separate;
+   border-spacing: 0;
+   border-radius: 8px;
+   overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+   padding: 1rem;
+   border: 1px solid var(--man-theme-light);
+}
+
+.comparison-table th {
+   background: var(--man-theme-dark);
+   color: white;
+}
+
+/* Quotations Styling */
+.quotations-section {
+   margin: 4rem 0;
+   padding: 2rem;
+   background: var(--bg-secondary);
+   border-radius: 12px;
+}
+
+.quote-box {
+   background: white;
+   padding: 2rem;
+   border-radius: 8px;
+   margin-top: 1.5rem;
+}
+
+.quote-collection blockquote {
+   margin: 1.5rem 0;
+   padding: 1.5rem;
+   background: var(--man-theme-light);
+   border-left: 4px solid var(--accent-color);
+   border-radius: 0 8px 8px 0;
+   font-style: italic;
+}
+
+.soul-meaning-analysis {
+   max-width: 1200px;
+   margin: 2rem auto;
+   padding: 2rem;
+   background: var(--bg-secondary);
+   border-radius: 12px;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.introduction-note {
+   background: var(--man-theme-light);
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin-bottom: 2rem;
+   border-left: 4px solid var(--accent-color);
+}
+
+.testament-comparison-table {
+   overflow-x: auto;
+   margin: 2rem 0;
+}
+
+.testament-comparison-table table {
+   width: 100%;
+   border-collapse: separate;
+   border-spacing: 0;
+   border-radius: 12px;
+   overflow: hidden;
+}
+
+.testament-comparison-table th {
+   background: var(--man-theme-dark);
+   color: white;
+   padding: 1rem;
+   text-align: left;
+}
+
+.testament-comparison-table td {
+   padding: 1.5rem;
+   border-bottom: 1px solid var(--man-theme-light);
+   vertical-align: top;
+}
+
+.usage-type {
+   font-weight: bold;
+   color: var(--man-theme-dark);
+   background: var(--man-theme-light);
+}
+
+.scripture-example {
+   margin-bottom: 1rem;
+}
+
+.scripture-reference {
+   display: inline-block;
+   background: var(--accent-color);
+   color: white;
+   padding: 0.2rem 0.5rem;
+   border-radius: 4px;
+   font-size: 0.9rem;
+   margin-bottom: 0.5rem;
+}
+
+.important-notes {
+   background: linear-gradient(to right, var(--man-theme-light), transparent);
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin-top: 2rem;
+}
+
+.key-points-list {
+   list-style: none;
+   padding-left: 0;
+}
+
+.key-points-list li {
+   margin-bottom: 0.8rem;
+   padding-left: 1.5rem;
+   position: relative;
+}
+
+.key-points-list li::before {
+   content: "→";
+   position: absolute;
+   left: 0;
+   color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .soul-meaning-analysis {
+       padding: 1rem;
+   }
+
+   .testament-comparison-table {
+       font-size: 0.9rem;
+   }
+
+   .testament-comparison-table td {
+       padding: 1rem;
+   }
+}
+
+/* Updated Navigation Button Styles */
+.navigation {
+   display: flex;
+   justify-content: center; /* Center the buttons container */
+   align-items: center;
+   gap: 1.5rem;
+   margin: 3rem auto; /* Center margins */
+   flex-wrap: wrap;
+   width: 100%; /* Full width container */
+   max-width: 1200px; /* Match container max-width */
+}
+
+.nav-button {
+   padding: 1.2rem 2.5rem; /* Increased padding */
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   font-weight: bold;
+   transition: all 0.3s ease;
+   text-decoration: none;
+   text-align: center;
+   color: white;
+   min-width: 220px; /* Increased minimum width */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   flex: 1; /* Allow buttons to grow */
+   max-width: 300px; /* Maximum width for each button */
+}
+
+/* In-Depth Studies Button Styling */
+.study-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+.study-button {
+    /* Base Styles */
+    background: linear-gradient(135deg, var(--accent-color), var(--man-theme-dark));
+    color: white;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-align: center;
+    min-width: 200px;
+    
+    /* Modern Shadow */
+    box-shadow: 0 4px 15px rgba(142, 68, 173, 0.2);
+    
+    /* Smooth Transitions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Position for hover effects */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effects */
+.study-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(142, 68, 173, 0.3);
+    background: linear-gradient(135deg, var(--man-theme-dark), var(--accent-color));
+}
+
+/* Active State */
+.study-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(142, 68, 173, 0.2);
+}
+
+/* Focus State for Accessibility */
+.study-button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Ripple Effect */
+.study-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.study-button:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+/* Icon Support */
+.study-button i {
+    margin-right: 0.5rem;
+}
+
+/* Loading State */
+.study-button.loading {
+    cursor: wait;
+    opacity: 0.8;
+}
+
+/* Disabled State */
+.study-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .study-button {
+        width: 100%;
+        min-width: unset;
+        padding: 1.2rem 1rem;
+    }
+    
+    .study-navigation {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+/* Resource Buttons Container */
+.resource-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+    justify-content: center;
+}
+
+/* Active Study Button */
+.study-button.active {
+    background: var(--man-theme-dark);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Text for Study Buttons */
+.study-button .hover-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 8px;
+}
+
+.study-button:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ripple Animation */
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+/* Button Categories */
+.study-button.primary {
+    background: linear-gradient(135deg, #8E44AD, #9B59B6);
+}
+
+.study-button.secondary {
+    background: linear-gradient(135deg, #2C3E50, #34495E);
+}
+
+.study-button.success {
+    background: linear-gradient(135deg, #27AE60, #2ECC71);
+}
+
+/* Group Layout */
+.button-group {
+    display: inline-flex;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.button-group .study-button {
+    border-radius: 0;
+    margin: 0;
+}
+
+.button-group .study-button:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.button-group .study-button:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background: var(--man-theme-dark);
+    transform: translateY(-2px);
+}
+
+
+
+/* Specific button colors with increased contrast */
+.previous-chapter {
+   background: var(--man-theme-dark);
+   box-shadow: 0 4px 15px rgba(74, 35, 90, 0.3);
+}
+
+.next-chapter {
+   background: var(--accent-color);
+   box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
+}
+
+.study-button {
+   background: #6C3483; /* Distinct purple */
+   box-shadow: 0 4px 15px rgba(108, 52, 131, 0.3);
+}
+
+.toc {
+   background: var(--primary-color);
+   box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+}
+
+.home-button {
+   background: var(--text-secondary);
+   box-shadow: 0 4px 15px rgba(86, 101, 115, 0.3);
+}
+
+/* Enhanced hover effects */
+.nav-button:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+   .navigation {
+       padding: 0 1.5rem;
+   }
+}
+
+@media (max-width: 768px) {
+   .navigation {
+       flex-direction: column;
+       align-items: stretch;
+   }
+
+   .nav-button {
+       width: 100%;
+       max-width: none;
+       margin: 0.5rem 0;
+   }
+}
+
+
+/* Fixed Container and Navigation Styles */
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 2rem;
+   overflow: hidden; /* Prevent overflow */
+   box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.navigation {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem; /* Reduced gap */
+   margin: 3rem 0;
+   flex-wrap: wrap;
+   width: 100%;
+   max-width: 100%; /* Ensure it doesn't exceed container */
+   padding: 0; /* Remove padding */
+   box-sizing: border-box;
+}
+
+.nav-button {
+   padding: 1.2rem 1.5rem; /* Reduced horizontal padding */
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   font-weight: bold;
+   transition: all 0.3s ease;
+   text-decoration: none;
+   text-align: center;
+   color: white;
+   min-width: 180px; /* Adjusted minimum width */
+   max-width: 250px; /* Added maximum width */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   flex: 1 1 auto; /* Allow flexible growth but maintain minimum size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+   .container {
+       padding: 1rem; /* Reduced padding on smaller screens */
+   }
+   
+   .navigation {
+       gap: 0.5rem; /* Further reduced gap on smaller screens */
+   }
+}
+
+@media (max-width: 768px) {
+   .navigation {
+       flex-direction: column;
+       width: 100%;
+   }
+
+   .nav-button {
+       width: 100%;
+       max-width: none;
+       margin: 0.25rem 0;
+   }
+}
+
+.theological-analysis {
+   max-width: 1000px;
+   margin: 2rem auto;
+   padding: 2rem;
+   background: var(--bg-secondary);
+   border-radius: 12px;
+   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.scripture-box {
+   background: var(--man-theme-light);
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin: 1.5rem 0;
+   border-left: 4px solid var(--accent-color);
+}
+
+.aspect-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 1.5rem;
+   margin: 2rem 0;
+}
+
+.aspect-card {
+   background: white;
+   padding: 1.5rem;
+   border-radius: 8px;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+   transition: transform 0.3s ease;
+}
+
+.aspect-card:hover {
+   transform: translateY(-5px);
+}
+
+.aspect-card h4 {
+   color: var(--man-theme-dark);
+   margin-bottom: 1rem;
+   padding-bottom: 0.5rem;
+   border-bottom: 2px solid var(--accent-color);
+}
+
+.scripture-references {
+   margin-top: 1rem;
+   padding-top: 1rem;
+   border-top: 1px solid var(--man-theme-light);
+}
+
+.reference {
+   background: var(--accent-color);
+   color: white;
+   padding: 0.2rem 0.5rem;
+   border-radius: 4px;
+   font-size: 0.9rem;
+}
+
+.important-note {
+   background: linear-gradient(to right, var(--man-theme-light), transparent);
+   padding: 1.5rem;
+   border-radius: 8px;
+   margin-top: 2rem;
+   border-left: 4px solid var(--accent-color);
+}
+
+
+
+   </style>
+
+</head>
+<body>
+    <div class="series-header">
+        <span class="series-title">Doctrine of Man</span>
+        <h1>Our Hope in Face of Death</h1>
+    </div>
+
+    <div class="container">
+        <!-- Purpose Section -->
+        <div class="purpose-box">
+            <h2>Purpose:</h2>
+            <p>To discover the biblical hope of resurrection as the reverse process of death and as victory over it.</p>
+        </div>
+
+        <!-- Introduction Section -->
+        <div class="introduction-box">
+            <h2>Introduction</h2>
+            <p>Death is a sad reality. God did not create us for it but for life: this is why we cannot love it: it is an enemy (1Cor 15:26).</p>
+            
+            <div class="contrasting-views">
+                <div class="view-card">
+                    <h4>Common Belief</h4>
+                    <p>Many think that at death only the material body dies while the spiritual soul is immortal and continues to live in a different condition - in paradise, hell, or purgatory.</p>
+                </div>
+                <div class="view-card">
+                    <h4>Alternative View</h4>
+                    <p>Others believe in reincarnation. But God teaches us something different.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Questions Section -->
+<div class="questions-container">
+  <!-- Question 1 -->
+  <div class="question-section">
+      <h3><span class="question-number">1)</span> Is man, or his soul, immortal?</h3>
+      <div class="answer-box">
+          <p>The Bible denies that human beings or their souls are immortal:</p>
+          <div class="scripture-references">
+              <ul class="key-points-list">
+                  <li><span class="scripture-reference">Romans 2:7</span> - Man seeks immortality (therefore does not yet possess it)</li>
+                  <li><span class="scripture-reference">1 Timothy 6:16</span> - God alone possesses immortality</li>
+                  <li><span class="scripture-reference">Matthew 10:28</span> - The soul (psychè) can be "killed" in the fire of Gehenna</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question-section">
+      <h3><span class="question-number">2)</span> What is death without Jesus?</h3>
+      <div class="answer-box">
+          <div class="scripture-quote">
+              <p>References: <span class="scripture-reference">Genesis 2:7; 3:19; Ecclesiastes 12:7</span></p>
+          </div>
+          <div class="important-note">
+              <p>Note that the biblical text doesn't say that only the body returns to dust but "you", meaning our entire person.</p>
+          </div>
+          <div class="scripture-references">
+              <ul class="key-points-list">
+                  <li><span class="scripture-reference">Ecclesiastes 9:5,10</span> - Unconsciousness and inactivity: everything that constitutes human life disappears. Death is the absence of life.</li>
+                  <li><span class="scripture-reference">Psalm 115:17</span> - The dead cannot praise God.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question-section">
+      <h3><span class="question-number">3)</span> What does death become for those who believe in Jesus?</h3>
+      <div class="answer-box">
+          <div class="scripture-quote">
+              <p><span class="scripture-reference">John 11:11-15</span></p>
+          </div>
+          <p>With Jesus, death is no longer the end of life but a sleep, a rest, from which we will wake at the dawn of resurrection.</p>
+          <div class="scripture-references">
+              <ul class="key-points-list">
+                  <li><span class="scripture-reference">1 Thessalonians 4:13-18</span> - The dead in Christ sleep awaiting His return</li>
+                  <li><span class="scripture-reference">Daniel 12:2,3,13</span> - The hope of resurrection in the Old Testament</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="question-section">
+      <h3><span class="question-number">4)</span> What nature will we have at the resurrection?</h3>
+      <div class="answer-box">
+          <div class="scripture-quote">
+              <p><span class="scripture-reference">1 Corinthians 15:42-44</span></p>
+          </div>
+          <p>We will have a spiritual body, one that is in harmony with the laws of the Spirit, not an evanescent body.</p>
+          <div class="biblical-perspective">
+              <ul class="key-points-list">
+                  <li>We will eat and sit on thrones (<span class="scripture-reference">Luke 22:30</span>)</li>
+                  <li>We will recognize each other</li>
+                  <li>We will likely be similar to the risen Christ (<span class="scripture-reference">Philippians 3:20-21; 1 John 3:2; John 20:26,27; Luke 24:41-43</span>)</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="question-section">
+      <h3><span class="question-number">5)</span> How can we imagine the resurrection?</h3>
+      <div class="answer-box">
+          <div class="scripture-quote">
+              <p><span class="scripture-reference">Ezekiel 37:1-11</span></p>
+          </div>
+          <p>The resurrection is an extraordinary miracle: the Creator will recreate our glorious and vital body.</p>
+      </div>
+  
+      <!-- Question 6 -->
+<div class="question-section">
+  <h3><span class="question-number">6)</span> How does the Apostle Paul describe the resurrection of the righteous?</h3>
+  <div class="answer-box">
+      <div class="scripture-quote">
+          <p><span class="scripture-reference">1 Corinthians 15:49-54</span></p>
+          <blockquote>
+              "And as we have borne the image of the earthly, we shall also bear the image of the heavenly... Behold, I tell you a mystery: We shall not all sleep, but we shall all be changed— in a moment, in the twinkling of an eye, at the last trumpet. For the trumpet will sound, and the dead will be raised incorruptible, and we shall be changed. For this corruptible must put on incorruption, and this mortal must put on immortality... then shall be brought to pass the saying that is written: 'Death is swallowed up in victory.'"
+          </blockquote>
+      </div>
+  </div>
+</div>
+
+<!-- Question 7 -->
+<div class="question-section">
+  <h3><span class="question-number">7)</span> When will the righteous be resurrected?</h3>
+  <div class="answer-box">
+      <div class="scripture-quote">
+          <p><span class="scripture-reference">1 Thessalonians 4:16,17</span></p>
+          <blockquote>
+              "For the Lord Himself will descend from heaven with a shout, with the voice of an archangel, and with the trumpet of God. And the dead in Christ will rise first. Then we who are alive and remain shall be caught up together with them in the clouds to meet the Lord in the air. And thus we shall always be with the Lord."
+          </blockquote>
+      </div>
+      <div class="important-note">
+          <p>See also <span class="scripture-reference">1 Corinthians 15:52</span></p>
+      </div>
+  </div>
+</div>
+
+<!-- Question 8 -->
+<div class="question-section">
+  <h3><span class="question-number">8)</span> Let's schematize the entire process of life we have studied:</h3>
+  <div class="answer-box">
+      <div class="process-diagram">
+          <table class="comparison-table">
+              <tr>
+                  <th>Stage</th>
+                  <th>Description</th>
+                  <th>Biblical Reference</th>
+              </tr>
+              <tr>
+                  <td>Creation</td>
+                  <td>Dust + Breath of Life = Living Being</td>
+                  <td><span class="scripture-reference">Genesis 2:7</span></td>
+              </tr>
+              <tr>
+                  <td>Death</td>
+                  <td>Living Being - Breath of Life = Dust</td>
+                  <td><span class="scripture-reference">Ecclesiastes 12:7</span></td>
+              </tr>
+              <tr>
+                  <td>Resurrection</td>
+                  <td>Dust + Breath of Life = New Living Being</td>
+                  <td><span class="scripture-reference">1 Corinthians 15:42-44</span></td>
+              </tr>
+          </table>
+      </div>
+  </div>
+</div>
+
+<!-- Question 9 -->
+<div class="question-section">
+  <h3><span class="question-number">9)</span> Who was the first to deny the reality of death?</h3>
+  <div class="answer-box">
+      <div class="scripture-quote">
+          <p><span class="scripture-reference">Genesis 3:4</span></p>
+      </div>
+      <p>The first lie ever told relates to the nature of man and death. Satan told it, "the father of lies" (<span class="scripture-reference">John 8:44</span>). He tried to convince humanity that death didn't exist, and we must admit he has been very successful.</p>
+      <div class="important-note">
+          <p>The truth we have just learned protects us from many deceptions and sufferings. At the same time, we have the certainty that in Jesus death is conquered and soon our mortal being will receive immortality.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Question 10 -->
+<div class="question-section">
+  <h3><span class="question-number">10)</span> Points for Reflection</h3>
+  <div class="reflection-prompt">
+      <ul class="key-points-list">
+          <li>What consequences can we draw from the biblical teaching?</li>
+          <li>Which other doctrines might change once we accept the biblical teaching about the state of the dead?</li>
+          <li>How important does Jesus' return become in this perspective?</li>
+      </ul>
+  </div>
+</div>
+
+<!-- Additional Studies Section -->
+<div class="additional-studies">
+  <h2>In-Depth Studies</h2>
+  <p>The following sections provide deeper insights into specific questions that often arise regarding death and resurrection.</p>
+  
+  <!-- Study Navigation Buttons -->
+<div class="study-navigation">
+  <a href="#study11" class="study-button primary scroll-link">
+      <i class="fas fa-book"></i>
+      King Saul's Experience
+      <span class="hover-text">Study the account of Saul and the medium</span>
+  </a>
+  
+  <a href="#study12" class="study-button secondary scroll-link">
+      <i class="fas fa-cross"></i>
+      The Good Thief
+      <span class="hover-text">Examine Jesus' promise to the thief</span>
+  </a>
+  
+  <a href="#study13" class="study-button success scroll-link">
+      <i class="fas fa-scroll"></i>
+      Paul's Desire
+      <span class="hover-text">Understand Paul's writings about death</span>
+  </a>
+  
+  <a href="#study14" class="study-button scroll-link">
+      <i class="fas fa-church"></i>
+      Jesus Preaching to the Dead
+      <span class="hover-text">Explore this challenging passage</span>
+  </a>
+</div>
+
+</div>
+
+
+<!-- In-Depth Studies Section -->
+<div class="theological-analysis">
+  <!-- Question 11 -->
+  <div class="insight-section" id="study11">
+      <h3><span class="question-number">11)</span> How can we understand King Saul's experience consulting the spirit of dead Samuel?</h3>
+      <div class="answer-box">
+          <div class="scripture-quote">
+              <p><span class="scripture-reference">1 Samuel 28:6-20</span></p>
+          </div>
+          
+          <div class="biblical-perspective">
+              <p>The Bible often narrates stories as they appear without expressing judgment. The judgment comes from the reader's comparison with God's teaching.</p>
+              
+              <div class="key-points">
+                  <ul class="key-points-list">
+                      <li>Saul's experience went against God's will, which prohibited contact with those claiming to communicate with the dead (<span class="scripture-reference">Deuteronomy 18:11</span>)</li>
+                      <li>Ancient law prescribed death for such practices (<span class="scripture-reference">Leviticus 20:6,27</span>)</li>
+                      <li>Saul himself had previously enforced this order (<span class="scripture-reference">1 Samuel 28:9</span>)</li>
+                  </ul>
+              </div>
+
+              <div class="important-note">
+                  <h4>Important Observations:</h4>
+                  <ul>
+                      <li>Saul never saw anyone; he likely didn't hear anyone directly</li>
+                      <li>The medium acted as an intermediary, describing what she claimed to see and hear</li>
+                      <li>Satan, knowing past events well, could impersonate Samuel</li>
+                      <li>This encounter led Saul to final despair and suicide (<span class="scripture-reference">1 Samuel 28:19; 31:4</span>)</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Question 12 -->
+  <div class="insight-section" id="study12">
+      <h3><span class="question-number">12)</span> What about the "good thief" crucified with Jesus?</h3>
+      <div class="answer-box">
+          <div class="scripture-quote">
+              <p><span class="scripture-reference">Luke 23:43</span></p>
+          </div>
+
+          <div class="biblical-analysis">
+              <h4>Key Evidence:</h4>
+              <ul class="key-points-list">
+                  <li><span class="scripture-reference">John 20:17</span> shows that three days after His death, Jesus had not yet ascended to the Father</li>
+                  <li>Since God is in heaven (<span class="scripture-reference">Matthew 6:9</span>), paradise and heaven are synonymous in New Testament language</li>
+                  <li>Jesus couldn't have promised the thief paradise that Friday</li>
+              </ul>
+
+              <div class="language-note">
+                  <h4>Translation Note:</h4>
+                  <p>Ancient manuscripts had no punctuation. The text literally reads: "Truly to you I say today you will be with me in paradise"</p>
+                  <p>Placing the comma after "today" resolves the apparent contradiction:</p>
+                  <p>"Truly I say to you today, 'You will be with me in paradise.'"</p>
+              </div>
+
+              <div class="important-note">
+                  <p>This interpretation aligns with the thief's request to be remembered when Jesus comes into His kingdom (<span class="scripture-reference">Luke 23:42</span>), referring to Christ's future return in glory (<span class="scripture-reference">Matthew 24:30; Luke 21:27</span>).</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Question 13 -->
+  <div class="insight-section" id="study13">
+      <h3><span class="question-number">13)</span> What did Paul mean by his desire to leave his body and be with God?</h3>
+      <div class="answer-box">
+          <div class="scripture-quote">
+              <p><span class="scripture-reference">2 Corinthians 5:1-8</span></p>
+          </div>
+
+          <div class="interpretation-analysis">
+              <p>Paul uses symbolic language that shouldn't be taken literally. Note how he carefully avoids speaking of a soul leaving the body.</p>
+
+              <div class="metaphor-explanation">
+                  <h4>Understanding the Metaphors:</h4>
+                  <ul class="key-points-list">
+                      <li>Tent = temporary earthly existence</li>
+                      <li>Building = eternal existence God prepares</li>
+                      <li>Clothed = being alive</li>
+                      <li>Naked = being dead</li>
+                  </ul>
+              </div>
+
+              <div class="scripture-context">
+                  <p>This passage follows <span class="scripture-reference">2 Corinthians 4:13-18</span>, where Paul clearly expresses his hope in resurrection, not soul immortality.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Question 14 -->
+  <div class="insight-section" id="study14">
+      <h3><span class="question-number">14)</span> What about Jesus preaching to the dead?</h3>
+      <div class="answer-box">
+          <div class="scripture-quote">
+              <p><span class="scripture-reference">1 Peter 3:18-20</span></p>
+          </div>
+
+          <div class="correct-interpretation">
+              <p>This doesn't mean Jesus preached to the dead while they were dead. Instead:</p>
+              <ul class="key-points-list">
+                  <li>Jesus preached to these people when they were alive, during Noah's time</li>
+                  <li>He did this "in the spirit" through Noah, who was a "preacher of righteousness" (<span class="scripture-reference">2 Peter 2:5</span>)</li>
+                  <li>Alternatively, Christ may have preached to Noah's generation before His incarnation</li>
+              </ul>
+
+              <div class="important-note">
+                  <p>The purpose of this reference is to affirm that salvation through Jesus isn't limited to one particular time: all have had opportunity for salvation, both before and after Christ's death.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- Question 15 -->
+<div class="insight-section" id="study15">
+  <h3><span class="question-number">15)</span> Why does Peter compare his death to leaving his tent?</h3>
+  <div class="answer-box">
+      <div class="scripture-quote">
+          <p><span class="scripture-reference">2 Peter 1:13,14</span></p>
+      </div>
+      
+      <div class="biblical-analysis">
+          <p>"Leaving my tent" simply means leaving this transitory condition of life, dying.</p>
+          
+          <div class="parallel-reference">
+              <h4>Biblical Parallel:</h4>
+              <blockquote class="scripture-quote">
+                  <p><span class="scripture-reference">Isaiah 38:12</span>: "My dwelling is pulled up and removed from me like a shepherd's tent. Like a weaver I have rolled up my life; He cuts me off from the loom."</p>
+              </blockquote>
+          </div>
+
+          <div class="important-note">
+              <p>Neither Peter nor Paul say that destroying this mortal tent means going to heaven. The metaphor simply means that one dies.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Question 16 -->
+<div class="insight-section" id="study16">
+  <h3><span class="question-number">16)</span> How do we understand the souls under the altar in Revelation?</h3>
+  <div class="answer-box">
+      <div class="scripture-quote">
+          <p><span class="scripture-reference">Revelation 6:9-11</span></p>
+      </div>
+
+      <div class="symbolic-interpretation">
+          <h4>Understanding the Symbolism:</h4>
+          <ul class="key-points-list">
+              <li>Revelation uses predominantly symbolic language</li>
+              <li>These martyrs' souls are not conscious entities</li>
+              <li>The reference is to their blood, following Old Testament imagery</li>
+          </ul>
+
+          <div class="key-points">
+              <h4>Important Connections:</h4>
+              <ol>
+                  <li>These souls are at the altar's base, referencing where sacrificial blood was poured in the sanctuary (<span class="scripture-reference">Leviticus 4:7</span>)</li>
+                  <li>In the Old Testament, blood is life, and life is "nephesh" (soul) (<span class="scripture-reference">Genesis 9:4</span>)</li>
+                  <li>This blood "speaks" figuratively, like Abel's blood crying to God (<span class="scripture-reference">Genesis 4:10</span>)</li>
+              </ol>
+          </div>
+
+          <div class="important-note">
+              <p>These "souls" are told to "rest" a little longer - connecting to the sleep of death mentioned by Jesus (<span class="scripture-reference">John 11:11-14</span>) and Paul (<span class="scripture-reference">1 Thessalonians 4:13</span>)</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Question 17 -->
+<div class="insight-section" id="study17">
+  <h3><span class="question-number">17)</span> How do we interpret Paul's desire to depart and be with Christ?</h3>
+  <div class="answer-box">
+      <div class="scripture-quote">
+          <p><span class="scripture-reference">Philippians 1:20-26</span></p>
+      </div>
+
+      <div class="language-analysis">
+          <h4>Understanding Human Expression:</h4>
+          <p>We must be careful with human language, which is often ambiguous and imprecise. Even today, though not believing in soul immortality, we might say someone "has left us" when they die.</p>
+
+          <div class="important-points">
+              <h4>Key Observations:</h4>
+              <ul class="key-points-list">
+                  <li>Paul never mentions a soul leaving the body</li>
+                  <li>He contrasts present life's struggles with future life in Christ</li>
+                  <li>His hope focuses on personal communion with Jesus in eternity</li>
+              </ul>
+          </div>
+
+          <div class="theological-note">
+              <p>Compare with <span class="scripture-reference">1 Thessalonians 5:10-11</span> where Paul refers to the resurrection hope, "whether we are awake or asleep" (alive or dead)</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Question 18 -->
+<div class="insight-section" id="study18">
+  <h3><span class="question-number">18)</span> Our Hope in Face of Death</h3>
+  <div class="answer-box">
+      <div class="conclusion-summary">
+          <h4>Key Biblical Truths:</h4>
+          <ul class="key-points-list">
+              <li>Death is an enemy, not a friend (<span class="scripture-reference">1 Corinthians 15:26</span>)</li>
+              <li>In Christ, death becomes temporary - like sleep</li>
+              <li>Our hope lies in resurrection, not soul immortality</li>
+              <li>This resurrection occurs at Christ's return</li>
+          </ul>
+
+          <div class="practical-implications">
+              <h4>Practical Impact:</h4>
+              <ul class="consequences-list">
+                  <li>Greater appreciation for the gift of life</li>
+                  <li>Deeper understanding of God's salvation plan</li>
+                  <li>Freedom from false teachings about death</li>
+                  <li>Increased anticipation of Christ's return</li>
+              </ul>
+          </div>
+
+          <div class="final-reflection">
+              <p>This biblical understanding provides both comfort and truth, grounding our hope in God's actual promises rather than human traditions.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Study Navigation -->
+ <!--
+<div class="navigation-section">
+  <h3>Further Study Resources</h3>
+  <div class="resource-buttons">
+      <a href="3.3.html" class="study-button">Next Topic: The Origin of Evil</a>
+      <a href="additional-resources.html" class="study-button">Additional Resources</a>
+      <a href="study-questions.html" class="study-button">Study Questions</a>
+  </div>
+</div>
+-->
+
+
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="/HistOfSalvation/3.1.html" class="nav-button previous-chapter">
+                ← Previous Lesson
+                <span class="hover-text">3.1 What is Man?</span>
+            </a>
+            <a href="/HistOfSalvation/3.3.html" class="nav-button next-chapter">
+                Next Lesson →
+                <span class="hover-text">3.3 What is Hell?</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Table of Contents
+                <span class="hover-text">View All Lessons</span>
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Main Page
+                <span class="hover-text">Return to Homepage</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all scroll links
+    const scrollLinks = document.querySelectorAll('.scroll-link');
+    
+    // Add click event listeners
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the target section
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                // Remove active class from all buttons
+                scrollLinks.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Calculate offset for smooth scrolling
+                const offset = 80; // Adjust based on your header height
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+                
+                // Smooth scroll to target
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Highlight active section on scroll
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('.insight-section');
+        
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const id = section.getAttribute('id');
+            const correspondingButton = document.querySelector(`[href="#${id}"]`);
+            
+            if (rect.top <= 100 && rect.bottom >= 100) {
+                scrollLinks.forEach(btn => btn.classList.remove('active'));
+                if (correspondingButton) {
+                    correspondingButton.classList.add('active');
+                }
+            }
+        });
+    });
+});
+
+// Optional: Add scroll to top button
+const scrollToTop = document.createElement('button');
+scrollToTop.classList.add('scroll-to-top');
+scrollToTop.innerHTML = '↑';
+document.body.appendChild(scrollToTop);
+
+scrollToTop.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Show/hide scroll to top button
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollToTop.classList.add('show');
+    } else {
+        scrollToTop.classList.remove('show');
+    }
+});
+
+
+    </script>
+</body>
+</html>

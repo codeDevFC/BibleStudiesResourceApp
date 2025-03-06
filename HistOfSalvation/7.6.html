@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.6 - Mary of the Gospel and the Madonna of the Church | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+    <style>
+      :root {
+          --primary-color: #fcd546;    /* Deep Teal */
+          --accent-color: #00ACC1;     /* Lighter Teal */
+          --secondary-color: #B2EBF2;   /* Very Light Teal */
+          --bg-primary: #ffffff;
+          --bg-secondary: #E0F7FA;
+          --text-primary: #2C3E50;
+          --text-secondary: #546E7A;
+          --highlight-color: #00BCD4;   /* Bright Teal */
+          --holy-theme-light: #E0F7FA; /* Very Light Teal */
+          --holy-theme-dark: #006064;  /* Dark Teal */
+          --success: #4CAF50;
+          --warning: #FFA726;
+          --error: #EF5350;
+      }
+      
+      /* Base Styles */
+      body {
+          font-family: 'Poppins', sans-serif;
+          line-height: 1.6;
+          color: var(--text-primary);
+          background: var(--bg-primary);
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+      }
+      
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 2rem;
+      }
+
+      /* Series Banner */
+  .series-banner {
+      background: var(--holy-theme-dark);
+      color: rgb(255, 255, 255);
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.2rem;
+  }
+  
+  /* Header Styling */
+  .series-header {
+      background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  
+  .series-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+      opacity: 0.1;
+      z-index: 0;
+  }
+  
+  .series-header .content {
+      position: relative;
+      z-index: 1;
+  }
+  
+  /* Question Styling */
+  .question {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid var(--accent-color);
+  }
+  
+  .question:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  
+  .question h3 {
+      color: var(--holy-theme-dark);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+  }
+  
+  .question h3::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      margin-right: 10px;
+      font-size: 14px;
+      font-weight: bold;
+  }
+  
+  .scripture-reference {
+      background: var(--holy-theme-dark);
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+  }
+  
+  /* Collapsible Content */
+  .collapsible-header {
+      background: var(--bg-secondary);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      margin: 1rem 0;
+      font-weight: 600;
+      color: var(--holy-theme-dark);
+  }
+  
+  .collapsible-header:hover {
+      background: var(--secondary-color);
+  }
+  
+  .collapsible-header .toggle-icon {
+      transition: transform 0.3s ease;
+  }
+  
+  .collapsible-header.active .toggle-icon {
+      transform: rotate(180deg);
+  }
+  
+  .collapsible-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: white;
+      border-radius: 0 0 8px 8px;
+      padding: 0 1.5rem;
+      border-left: 3px solid var(--accent-color);
+  }
+  
+  .collapsible-content.show {
+      max-height: 2000px; /* Adjust as needed */
+      padding: 1.5rem;
+  }
+  
+  /* Navigation */
+  .navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  
+  .nav-button {
+      padding: 1.2rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      min-width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .previous-chapter {
+  background: var(--holy-theme-dark);
+  }
+  
+  .previous-chapter {
+      background: var(--holy-theme-dark);
+  }
+  
+  .next-chapter {
+      background: var(--accent-color);
+  }
+  
+  .toc {
+      background: var(--primary-color);
+  }
+  
+  .home-button {
+      background: var(--holy-theme-dark);
+  }
+  
+  .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  
+  .nav-button .hover-text {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      pointer-events: none;
+      margin-bottom: 8px;
+      z-index: 100;
+  }
+  
+  .nav-button:hover .hover-text {
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  /* Think About It Box */
+  .think-about-it {
+      background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--highlight-color);
+  }
+  
+  .think-about-it h3 {
+      display: flex;
+      align-items: center;
+      color: var(--holy-theme-dark);
+  }
+  
+  .think-about-it h3 i {
+      margin-right: 10px;
+      color: var(--highlight-color);
+  }
+  
+  /* In-Depth Study Section */
+  .in-depth-study {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  
+  .in-depth-study h2 {
+      text-align: center;
+      color: var(--holy-theme-dark);
+      margin-bottom: 2rem;
+      position: relative;
+  }
+  
+  .in-depth-study h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--accent-color);
+  }
+  
+  /* Details/Summary Styling */
+  details {
+      margin: 1rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: white;
+  }
+  
+  summary {
+      padding: 1.2rem;
+      cursor: pointer;
+      background: var(--bg-secondary);
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      position: relative;
+      outline: none;
+  }
+  
+  summary:hover {
+      background: var(--secondary-color);
+  }
+  
+  summary::after {
+      content: '⌄';
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+  }
+  
+  details[open] summary::after {
+      transform: rotate(180deg);
+  }
+  
+  details[open] summary {
+      border-bottom: 1px solid var(--secondary-color);
+  }
+  
+  details .content {
+      padding: 1.5rem;
+  }
+  
+  /* Bible Reference Styling */
+  .bible-reference {
+      font-style: italic;
+      color: var(--text-secondary);
+  }
+  
+  /* Footer */
+  .page-footer {
+      background: var(--holy-theme-dark);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 4rem;
+  }
+  
+  .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+  }
+  
+  .copyright-notice {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+  }
+  
+  .copyright-notice a {
+      color: var(--secondary-color);
+      text-decoration: none;
+  }
+  
+  .copyright-notice a:hover {
+      text-decoration: underline;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+      .container {
+          padding: 1rem;
+      }
+  
+      .series-header {
+          padding: 2rem 1rem;
+      }
+  
+      .nav-button {
+          min-width: 120px;
+          padding: 1rem 1.5rem;
+      }
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .question {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+  }
+  
+  .question:nth-child(1) { animation-delay: 0.1s; }
+  .question:nth-child(2) { animation-delay: 0.2s; }
+  .question:nth-child(3) { animation-delay: 0.3s; }
+  .question:nth-child(4) { animation-delay: 0.4s; }
+  .question:nth-child(5) { animation-delay: 0.5s; }
+  .question:nth-child(6) { animation-delay: 0.6s; }
+  .question:nth-child(7) { animation-delay: 0.7s; }
+  .question:nth-child(8) { animation-delay: 0.8s; }
+  .question:nth-child(9) { animation-delay: 0.9s; }
+  .question:nth-child(10) { animation-delay: 1s; }
+  .question:nth-child(11) { animation-delay: 1.1s; }
+  .question:nth-child(12) { animation-delay: 1.2s; }
+  .question:nth-child(13) { animation-delay: 1.3s; }
+  .question:nth-child(14) { animation-delay: 1.4s; }
+  .question:nth-child(15) { animation-delay: 1.5s; }
+  
+  /* Custom Details/Summary styling */
+  .custom-details {
+      margin-bottom: 1.5rem;
+  }
+  
+  .custom-details summary {
+      background-color: var(--bg-secondary);
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--holy-theme-dark);
+      transition: background-color 0.3s ease;
+      outline: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .custom-details summary::-webkit-details-marker {
+      display: none;
+  }
+  
+  .custom-details summary::after {
+      content: '+';
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+  }
+  
+  .custom-details[open] summary::after {
+      content: '−';
+  }
+  
+  .custom-details summary:hover {
+      background-color: var(--secondary-color);
+  }
+  
+  .custom-details .details-content {
+      padding: 1.5rem;
+      background-color: white;
+      border-radius: 0 0 8px 8px;
+      margin-top: -8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-left: 3px solid var(--accent-color);
+  }
+  
+  /* Scripture Box */
+  .scripture-box {
+      background: var(--holy-theme-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      border-left: 4px solid var(--accent-color);
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .scripture-box::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      font-size: 100px;
+      color: rgba(0,0,0,0.05);
+      font-family: Georgia, serif;
+  }
+  
+  /* Highlight for important points */
+  .highlight {
+      background-color: rgba(0, 188, 212, 0.1);
+      padding: 3px 5px;
+      border-radius: 3px;
+  }
+  
+  /* Numbered lists with custom styling */
+  ol.styled-list {
+      counter-reset: item;
+      list-style-type: none;
+      padding-left: 0;
+  }
+  
+  ol.styled-list li {
+      counter-increment: item;
+      margin-bottom: 10px;
+      padding-left: 2rem;
+      position: relative;
+  }
+  
+  ol.styled-list li::before {
+      content: counter(item);
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      position: absolute;
+      left: 0;
+      top: 2px;
+  }
+  
+  /* Bulleted lists with custom styling */
+  ul.styled-list {
+      list-style-type: none;
+      padding-left: 0;
+  }
+  
+  ul.styled-list li {
+      margin-bottom: 10px;
+      padding-left: 1.5rem;
+      position: relative;
+  }
+  
+  ul.styled-list li::before {
+      content: "•";
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -5px;
+  }
+      /* Additional styles for collapsible sections */
+      .collapsible-section {
+          margin-bottom: 1rem;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      
+      .collapsible-header {
+          background-color: var(--bg-secondary);
+          color: var(--holy-theme-dark);
+          padding: 1rem 1.5rem;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: 600;
+          transition: background-color 0.3s ease;
+      }
+      
+      .collapsible-header:hover {
+          background-color: var(--secondary-color);
+      }
+      
+      .collapsible-header.active {
+          background-color: var(--accent-color);
+          color: white;
+      }
+      
+      .toggle-icon {
+          font-size: 1.5rem;
+          transition: transform 0.3s ease;
+      }
+      
+      .collapsible-content {
+          background-color: white;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+          padding: 0 1.5rem;
+          border-left: 4px solid var(--accent-color);
+      }
+      
+      .collapsible-content p:first-child {
+          margin-top: 1.5rem;
+      }
+      
+      .collapsible-content p:last-child {
+          margin-bottom: 1.5rem;
+      }
+      
+      /* Scripture Box */
+      .scripture-box {
+          background: var(--holy-theme-light);
+          padding: 1.5rem;
+          border-radius: 8px;
+          margin: 1rem 0;
+          border-left: 4px solid var(--accent-color);
+          position: relative;
+          overflow: hidden;
+      }
+
+      .scripture-box::before {
+          content: '"';
+          position: absolute;
+          top: -20px;
+          left: 10px;
+          font-size: 100px;
+          color: rgba(0,0,0,0.05);
+          font-family: Georgia, serif;
+      }
+      
+      /* Think About It Box */
+      .think-about-it {
+          background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+          padding: 1.5rem;
+          border-radius: 8px;
+          margin: 1.5rem 0;
+          border-left: 4px solid var(--highlight-color);
+      }
+
+      .think-about-it h3 {
+          display: flex;
+          align-items: center;
+          color: var(--holy-theme-dark);
+      }
+
+      .think-about-it h3 i {
+          margin-right: 10px;
+          color: var(--highlight-color);
+      }
+      
+      /* In-depth study section */
+      .in-depth-study {
+          margin: 2rem 0;
+          padding: 1.5rem;
+          background-color: var(--bg-secondary);
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+      
+      .in-depth-study h2 {
+          color: var(--holy-theme-dark);
+          text-align: center;
+          margin-bottom: 1.5rem;
+          position: relative;
+      }
+      
+      .in-depth-study h2::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 3px;
+          background: var(--accent-color);
+      }
+  </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>7.6 - Mary of the Gospel and the Madonna of the Church</h1>
+            <p>Understanding the biblical portrait of Mary versus later traditions</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                Introduction
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>The Madonna occupies a very important place in Catholic faith. She is called "Mother of God," "Mother of the Church," "Queen of Heaven." Hymns are written in her honor, many feasts are organized to honor her. Three dogmas have her as their object: that of her perpetual virginity, that of her immaculate birth, and that of her bodily assumption into heaven. Recently, people have begun to consider and proclaim her co-redemptrix, affirming with this that we are not saved only thanks to Jesus, but also thanks to her. Pope John Paul II consecrated the world to her. In the rosary, we are invited to recite ten Hail Marys for every Our Father. Her images and altars are found everywhere.</p>
+                
+                <p>All this obliges us to carefully examine the role of the Madonna in the current Christian world, to see to what extent it corresponds to the Gospel teaching about Mary.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                1. How is Mary considered in the Gospel?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"And having come in, the angel said to her, 'Rejoice, highly favored one, the Lord is with you; blessed are you among women!'" (Luke 1:28)</p>
+                </div>
+                
+                <p>"Favored by grace" or "highly favored." The Latin Vulgate translates with "gratia plena," full of grace, which has prompted many to think that Mary has in herself the gift of dispensing every grace. In reality, what the angel says to Mary is not that she has a grace to dispense to others, but that she herself is receiving an extraordinary one, that of being the human instrument that God will use to bring the savior Jesus to birth among men.</p>
+                
+                <p>If this happens as "grace," then it means that Mary, as she too is a limited creature, would not have deserved to become the human mother of Jesus (no human being would) and that only by God's grace, that is, undeservedly, does this become possible.</p>
+                
+                <p>If God chose Mary for this task, it certainly means that she must have had some essential qualities such as honesty and love for God, without which she could not have fulfilled her task. However, the angel mentions only God's grace, and not these qualities: it is by God's grace that we are saved, and not by the virtues of human creatures, otherwise we would have to say the same of every servant of God through whom the knowledge of salvation comes to us.</p>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                    <p>The Greek term used by the angel (kecharitōmenē) means "one who has been shown grace" or "highly favored," not "full of grace" in the sense of possessing grace to distribute to others. How does this distinction change our understanding of Mary's role?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                2. How did Mary consider herself in the face of God's grace that she was receiving?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"Then Mary said, 'Behold the maidservant of the Lord! Let it be to me according to your word.'" (Luke 1:38)</p>
+                </div>
+                
+                <p>"The servant of the Lord." Humble as she was, Mary considered herself a simple servant of God, only desiring to obey Him. She does not see herself as a queen or as the mother of God. She knows that the child who will come in her does not belong to her: he comes from God (vv. 30-35). Mary is a great example precisely in her human humility, not in the divine glory that tends to be attributed to her.</p>
+                
+                <p>Mary's humility and willingness to serve God stands in stark contrast to later traditions that exalt her to semi-divine status. Throughout the Gospel accounts, we see Mary as a woman of faith who submits to God's will, not as someone who seeks or receives divine honors.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                3. Doesn't the Gospel say that Mary is "blessed among women"?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Some versions add in Luke 1:28 the phrase "blessed are you among women," but the most important manuscripts of the gospel do not have it, and modern versions rightly reject this phrase.</p>
+                
+                <p>In any case, the phrase itself would not attribute to Mary any particular reason for glory that does not come from God's grace. Elizabeth (Luke 1:42) calls her "blessed among women," and another woman says of her, "Blessed is the womb that bore You and the breasts which nursed You!" (Luke 11:27). Note how, in this woman's intention, the blessedness she speaks of does not derive from a virtue of Mary, but rather from a virtue of Jesus that gives joy and honor to his mother. The purpose of the statement is not so much to honor Mary but Jesus.</p>
+                
+                <div class="scripture-box">
+                    <p>"But He said, 'More than that, blessed are those who hear the word of God and keep it!'" (Luke 11:28)</p>
+                </div>
+                
+                <p>Jesus responds, however: "More than that, blessed are those who hear the word of God and keep it!" (Luke 11:28). Thus, if we accept Jesus as our savior, we ourselves can enjoy a blessedness not inferior to that which Mary had when she welcomed Jesus as a child.</p>
+                
+                <p>Jesus redirects the focus from Mary's physical relationship to Him toward the spiritual relationship that is available to all who obey God's word. This suggests that while Mary's role was unique and blessed, the spiritual blessing available to all believers is even greater.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                4. What attitude did Jesus have toward Mary? Is His attitude at the wedding of Cana a good example of the obedience that Jesus shows to her even when she intercedes with Him on our behalf?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"On the third day there was a wedding in Cana of Galilee, and the mother of Jesus was there. Now both Jesus and His disciples were invited to the wedding. And when they ran out of wine, the mother of Jesus said to Him, 'They have no wine.' Jesus said to her, 'Woman, what does your concern have to do with Me? My hour has not yet come.' His mother said to the servants, 'Whatever He says to you, do it.'" (John 2:1-5)</p>
+                </div>
+                
+                <p>Literally: "Woman, what to you and to me?" The expression implies that the one to whom it is addressed has gone beyond their natural limits (see Judges 11:12; 2 Sam. 16:10; 1 Kings 17:18; 2 Kings 3:13; 2 Chron. 35:21; Matt. 8:29; Mark 1:24; Luke 8:28; etc.). With these words, Jesus affirms his independence from his earthly mother; and yet, for the love he had for her and for his relatives, Jesus turns water into wine.</p>
+                
+                <p>If, therefore, Mary has a role in this miracle, it does not rest on her authority but on her need. Mary receives the grace of being heard when she humbly presents the family's problem, and when with full trust she invites the servants to trust Jesus, "Do whatever He tells you."</p>
+                
+                <p>Certainly, as a child and as a boy, the same Jesus who had commanded to honor father and mother (Ex. 20:12) would also have honored the earthly parents He had chosen for Himself and would have obeyed them. But He has also always affirmed His independence of judgment and His absolute authority.</p>
+                
+                <ul class="styled-list">
+                    <li>At the age of twelve, He left them, remaining in His heavenly Father's house (Luke 2:49).</li>
+                    <li>At Cana, He honored His mother, but affirmed His independence (John 2:4).</li>
+                    <li>When Mary and Jesus' other brothers went to take Him home, thinking He had gone out of His mind, He said: "'Who is My mother and who are My brothers?' And He stretched out His hand toward His disciples and said, 'Here are My mother and My brothers! For whoever does the will of My Father in heaven is My brother and sister and mother.'" (Matt. 12:48-50; Mark 3:32-35; Luke 8:19-21).</li>
+                </ul>
+                
+                <p>Jesus is telling us here that His true family is not based on His physical birth from Mary, but on the spiritual one deriving from His relationship with God. Mary therefore had no power over Jesus, except that which any believer can have who in faith and submission to God appeals to their spiritual relationship with Jesus and with the heavenly Father (John 14:13,14; 15:16; 16:26).</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                5. "Behold your mother" (John 19:27), does this mean that He intended to make Mary the mother of all Christians?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"When Jesus therefore saw His mother, and the disciple whom He loved standing by, He said to His mother, 'Woman, behold your son!' Then He said to the disciple, 'Behold your mother!' And from that hour that disciple took her to his own home." (John 19:26-27)</p>
+                </div>
+                
+                <p>It is a principle of wisdom not to understand a text outside the intention of the original writer. In the New Testament, the church is mentioned hundreds of times, but it is always mentioned in relation to the Father, to Jesus, to the Spirit, but never in relation to Mary.</p>
+                
+                <p>Furthermore, after the first chapter of Acts (1:14), Mary is never mentioned. Not she but Jesus was important for the faith and life of the church. In saying those words, Jesus' intention was simply to provide a new home for His earthly mother whom He loved. For this reason, He asked His most intimate disciple, John, to take care of her. John, in fact, after those words, did not bow before Mary but, simply, "from that hour... took her to his own home" (v. 27).</p>
+                
+                <p>The context of Jesus' words clearly indicates a personal provision for His mother's care after His death, not a theological declaration about Mary's relationship to all believers. John's response—taking her into his home—confirms this practical interpretation.</p>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                    <p>If Jesus intended to establish Mary as the spiritual mother of all believers, why is this concept absent from the apostolic teaching in Acts and the epistles? How should we interpret Jesus' words in light of the complete New Testament witness?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                6. If after Acts 1:14 Mary no longer appears in the New Testament, what about the woman of Revelation 12?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>That woman does not represent an individual woman like Mary, but a collective reality such as that of God's people within which the Savior comes and which will subsist until the manifestation of God's kingdom. Many Catholic scholars share this opinion. Please see the specific study on Revelation 12 for more details.</p>
+                
+                <p>The woman in Revelation 12 is clothed with the sun, with the moon under her feet, and a crown of twelve stars on her head—symbolic imagery that points to Israel (Genesis 37:9-11). She gives birth to a male child who will rule the nations with a rod of iron (Revelation 12:5), clearly referring to the Messiah.</p>
+                
+                <p>However, this woman is persecuted by the dragon and flees into the wilderness for 1,260 days (Revelation 12:6)—imagery that cannot apply to Mary historically but fits the experience of God's people through the ages. The woman also has "the rest of her offspring, who keep the commandments of God and have the testimony of Jesus Christ" (Revelation 12:17), indicating she represents a community of believers, not an individual.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                7. It is said that the Madonna is always a virgin. Why can't this be true?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"Then Joseph, being aroused from sleep, did as the angel of the Lord commanded him and took to him his wife, and did not know her till she had brought forth her firstborn Son. And he called His name JESUS." (Matthew 1:24-25)</p>
+                </div>
+                
+                <p>Matthew 1:25 says that Mary was certainly a virgin until the birth of Jesus because Joseph "did not know her till she had brought forth her firstborn Son."</p>
+                
+                <p>Catholic scholars say that the fact that Joseph did not "know" Mary until the birth of Jesus does not necessarily mean that he "knew" her afterward. If this were so, why would the evangelist specify that he did not know her until...? Why not say instead that "he never knew her"? Against the obvious sense of the phrase, we could nevertheless consent to the Catholic opinion if there were real reasons why Mary and Joseph could not have, after the birth of Jesus, a normal married life... only if there were strong biblical and spiritual reasons to doubt the obvious meaning of the phrase in question, but there are none except those born from the subsequent reflection of Catholic tradition.</p>
+                
+                <p>Excluding a sexual life in Mary has no biblical or spiritual reason. The only extra-biblical hook derives from the Gnostic heresy that considered sexual relations impure (see 1 Tim. 4:1-3). The Bible, on the other hand, affirms that God created and blessed marriage (Gen. 1:28), that everything God created is good (Gen. 1:31), including sexuality therefore. There is therefore no reason why Mary and Joseph should not have had normal marital relations being legally married.</p>
+                
+                <p>Moreover, the New Testament refers to Jesus' brothers and sisters (Matthew 13:55-56, Mark 6:3), suggesting that Mary had other children after Jesus. While some traditions interpret these as cousins or children from Joseph's previous marriage, the simplest and most natural reading is that they were children born to Mary and Joseph after Jesus' birth.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                8. What then is the origin of the belief in the perpetual virginity of Mary?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Excluding that Mary and Joseph had sexual relations until the birth of Jesus serves to testify to the fact that Jesus is not their son in the normal sense, but God's; it therefore serves to affirm the divinity of Jesus, not a particular reason why Mary should be a virgin in herself. There is therefore no reason why she should remain a virgin once Jesus is born.</p>
+                
+                <p>In any case, the loss of virginity does not have a moral or spiritual value but only a physical one: it consists in the tearing of a part of the female sexual organ. Virginity is normally lost with the first sexual intercourse, but it would be lost anyway through the same process of the birth of a baby. Jesus was physically a normal baby, and His passage through His mother's body would inevitably have produced lacerations equivalent to the loss of virginity. What would be spiritual in a miracle that would protect Mary from such an experience, if not to distance Jesus from the humanity with which He wanted to identify (Hebrews 2:17)? What necessity would there be?</p>
+                
+                <p>The idea of Mary's perpetual virginity finds its first origin in Gnostic heresy and in the apocryphal writings with which they tried to convey their convictions. The Gnostics wanted to convince people that Christ had never become flesh as John 1:14 affirms. For them, he was an uncontaminated spirit. In this perspective, the Protoevangelium of James tells us the story of Jesus' birth as if he were a light that, evidently, had no reason to create any kind of trauma in Mary's body. To support his thesis, this heretical gospel invents the story of a midwife who, not believing in Jesus' virgin birth, inspects Mary's body with her hand, withdrawing it struck by leprosy.</p>
+                
+                <p>The Christian church rejected this writing as heretical but, by virtue of tradition, has preserved its doctrine precisely through the belief we are considering.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                9. What is the origin of the dogma of Mary's physical assumption into heaven?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>The Bible says absolutely nothing about this belief and offers no elements to support it. For centuries, Christians completely ignored it. Only in the 5th century did some writers begin to teach the transitus, the passage, of Mary from earth to heaven. These writings, full of contrasting fantasies, were condemned by Pope Gelasius (492-496), so that the current faith of the Catholic Church is based on something that the church itself has previously condemned.</p>
+                
+                <p>The dogma of the Assumption, officially proclaimed in 1950, teaches that Mary "having completed the course of her earthly life, was assumed body and soul into heavenly glory." This belief developed gradually over centuries without biblical foundation.</p>
+                
+                <p>The early apocryphal accounts of Mary's assumption vary widely in their details, with some suggesting she died naturally before being assumed, others claiming she was taken alive, and still others offering fantastic elements like miraculous appearances of apostles at her deathbed. The lack of consistent historical testimony, combined with the absence of biblical support, makes this doctrine problematic from a scriptural perspective.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                10. What is the origin of the dogma of the Immaculate Conception of Mary?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>This dogma supposes that Mary received the special grace of being exempted from original sin, so that her birth occurred pure from every stain, "immaculate." Some add that she did not sin on her own initiative even in her life.</p>
+                
+                <p>This is a teaching unknown to biblical texts and was opposed by Christians of the first three centuries. It also contradicts the gospel which says: "All have sinned and fall short of the glory of God, and are justified freely by his grace through the redemption that is in Christ Jesus" (Rom. 3:23,24).</p>
+                
+                <p>Only in the 4th century do we begin to read of Mary as having been exempted from the stain of sin. But, it was said, this happened "by grace" (Ambrose). By this it was meant that Mary was holy in a general sense, not that she had been specifically exempted from original sin. St. Augustine says that Mary received a special grace to completely overcome sin but, he teaches, that she was not without original sin because she too descended from the sinner Adam. He declared that Jesus was born without sin "from maternal flesh contaminated by sin" (De peccatorum meritis and remissione, II, 24).</p>
+                
+                <p>Only from the 9th century do we find explicit references to the idea that Mary was sanctified from the maternal womb by a special grace of God. Because of this understanding, it was thought (St. Bernard, Thomas Aquinas, St. Bonaventure) that she was born (but not yet conceived), without original sin. However, even this idea was not accepted without some opposition.</p>
+                
+                <p>Only after the 13th century, the idea that Mary had been sanctified in the maternal sense, was anticipated until the very moment of her conception. Thus was born the "immaculate conception," as we know it.</p>
+                
+                <p>Only in the Council of Basel in 1438, was this teaching declared "pious and in accordance with the worship of the church, the Catholic faith, right reason and Sacred Scripture." Unfortunately, this council was condemned by the pope for its anti-curial positions. In 1476, Pope Sixtus IV made official the feast of the Immaculate Conception. The dogma was instead proclaimed in 1854 by Pope Pius IX, even though a third of the bishops consulted had declared themselves against it.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                11. Why don't we need this dogma?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Simply because the Bible does not speak of it and does not presuppose it. Because it is founded on a non-biblical understanding of original sin (please see the study on sin).</p>
+                
+                <p>Because it contradicts the biblical message on the universality of sin. Because it creates enormous problems without solving any. For example, if God could solve the problem of sin by exempting a person with his personal decision, why shouldn't he do the same for all men? Because while accepting that in Jesus there was no instinctive propensity to sin, there is no need to suppose that his holiness needed not to be physically touched by sin and impurity: He himself let himself be touched by a prostitute and he himself touched the leper without being contaminated by this (Matthew 8:1-3). He himself was really subjected to temptation but did not yield (Hebrews 4:15).</p>
+                
+                <p>Because, if to allow Jesus not to be contaminated by the sin of parents, they had to be exempted from sin, then also the parents of these would have had to be exempted from it, and so on up to Adam. If on the other hand, Jesus had to be protected, God could have done it by acting directly without needing to do it with Mary, just as he did with Mary despite her sinful parents. In short, even philosophically speaking, such a dogma is not a necessity and only creates problems.</p>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                    <p>The doctrine of the Immaculate Conception attempts to solve a theological problem that doesn't exist in Scripture. Jesus' sinlessness is attributed to His divine nature and the work of the Holy Spirit (Luke 1:35), not to Mary's sinlessness. How does this understanding affect our view of Christ's incarnation?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="in-depth-study">
+            <h2>In-Depth Study</h2>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    12. What about the title "Mother of God"?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>We do not know who first used this title, but we find it in the 4th century, not so much to glorify Mary, as to express the conviction that He who was born of a human creature was not a simple man but God Himself, in the person of the Son.</p>
+                    
+                    <p>It is, however, an unfortunate way of speaking because, despite the good intention, it gradually became one of the reasons for exalting Mary as such.</p>
+                    
+                    <p>We can only say that Mary was God's consenting instrument for the birth of Jesus incarnate. Jesus, as the Son of God, however, already existed before Mary, from eternity, and Mary cannot therefore be his mother in the proper sense, especially as regards the divine reality of Christ. In reality, it is Jesus, as God the creator of all things (John 1:3), who can with greater reason be defined as the Father of Mary and not Mary as the mother of God.</p>
+                    
+                    <p>The title "Mother of God" (Theotokos in Greek) was officially adopted at the Council of Ephesus in 431 AD primarily as a statement about Christ's nature, not Mary's status. It was intended to affirm that the one born of Mary was fully divine as well as fully human—against the Nestorian view that separated Christ's divine and human natures.</p>
+                    
+                    <p>While the title has historical theological significance in Christological debates, its popular understanding has often shifted focus from Christ to Mary, elevating her to a position not supported by Scripture. A more precise formulation would be "mother of Jesus who is God" rather than "Mother of God," which can suggest Mary somehow preceded or generated the divine nature.</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    13. Can the title of "Co-Redemptrix" be accepted?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>It seems that the title of "Co-Redemptrix" is on its way to becoming the next Marian dogma. The meaning would be that Mary, in some way, consciously and effectively took part in the process of our redemption. For this reason, we should be grateful to her for our salvation and recognize her as our redeemer together with Jesus.</p>
+                    
+                    <p>To support this belief, it is maintained that she offered Jesus on the cross for our salvation, but the reality is very different. The gospels tell us that Jesus' disciples did not understand and even initially rejected the experience and meaning of Jesus' death on the cross: nothing allows us to think that Mary was an exception. She was there, prey to unspeakable suffering as can be that of a mother who sees her own son dying in an atrocious way, and as can be that of a believer who lives that experience as the collapse of all her hopes. She was not at the foot of the cross as one who offered a sacrifice for our salvation, but as a victim of despair and confusion of the soul.</p>
+                    
+                    <p>The Bible tells us of someone who offered Jesus for our salvation, but it is the heavenly Father (John 3:16). Some say that on the cross, Jesus' blood shed for us was also Mary's blood, since Jesus had inherited physical nature from her. But with these types of reasoning, we should also associate Mary's parents in the work of our salvation because from them she had inherited the blood that then passed to Jesus and so on up to Adam: in short, all of humanity would be co-redeemer of itself.</p>
+                    
+                    <p>The truth is that what saves us is not Jesus' blood as such, but the person of Jesus who, for the great love he had for us, offered his life for us. Mary never did, nor could she ever have done anything of the sort because she too was an imperfect human being. The Gospel declares with decision and clarity that there is only one savior, Jesus (Acts 4:12) and no human reasoning can change this reality.</p>
+                    
+                    <p>An element in support of the idea of Mary as co-redemptrix is drawn from the promise regarding the offspring of the woman who would destroy the Serpent (Gen. 3:15). In reality, this offspring is not Mary but Jesus himself as seen from Rev. 12:11 where it says that if we have overcome the Serpent, this has happened thanks to the "blood of the Lamb," Jesus.</p>
+                    
+                    <p>The expression "under the feet" is never used in relation to Mary. We find it instead, once in relation to all the redeemed under whose feet God will soon crush Satan (Romans 16:20), and many other times directly in relation to Jesus as the one who conquers his enemies (Satan is he not the enemy par excellence?) (Matt. 22:44; 1 Cor. 15:25; Eph. 1:22; Heb. 2:8). It is never said that Mary was the "offspring of the woman." It is said instead that Jesus is the offspring of Abraham, and Abraham is in the line of the history of salvation that begins with Eve and ends with Jesus (Gal. 3:16).</p>
+                    
+                    <div class="scripture-box">
+                        <p>"Nor is there salvation in any other, for there is no other name under heaven given among men by which we must be saved." (Acts 4:12)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    14. How did it happen that Mary, from the humble woman we see in the gospels, became the Madonna?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>"Madonna" means "My Lady." This word became very familiar in Italy around the year 1000, and was used as a sign of respect before a woman. It was a time when woman began to be idealized as an angelic creature, and Mary became the ideal woman par excellence, the Madonna, precisely.</p>
+                    
+                    <p>Unfortunately, the Marian cult has no biblical foundation. Wanting to research its origin, one easily reaches the pagan cult of mother goddesses such as the Egyptian Isis who became very popular in Mediterranean countries a few centuries after Christ. Christianity, having abandoned the teaching on God as a tender and loving father (e.g., Is 49:15), felt the need to flank him with a more maternal figure who could smooth the too rigid and severe contours attributed to the "male" figure of God and Jesus Himself. Little by little, Mary assumed this role, which has become so relevant as to make one suspect that much of current Catholic religiosity is today more "Marian" than "Christian."</p>
+                    
+                    <p>The development of Marian devotion parallels similar patterns in other religions where female deities represented nurturing, merciful aspects of divinity. As Christianity spread throughout the Mediterranean world, it encountered cultures with strong traditions of goddess worship. While officially rejecting paganism, some of these cultural elements were gradually incorporated into Christian practice in modified forms.</p>
+                    
+                    <p>The increasing emphasis on God's justice and judgment during the medieval period created a theological environment where Mary could be positioned as the merciful intercessor who would soften the wrath of Christ the Judge. This led to the gradual elevation of Mary's role far beyond what Scripture indicates.</p>
+                    
+                    <p>The biblical portrait of Mary—a faithful, humble servant of God who points to her Son rather than herself—stands in stark contrast to later traditions that elevated her to quasi-divine status. In Scripture, Mary exemplifies faithful discipleship, not divine or semi-divine qualities requiring veneration.</p>
+                    
+                    <p>The transformation of Mary into the Madonna represents one of the most significant departures from biblical teaching in church history. What began as respect for Jesus' mother gradually evolved into an elaborate system of devotion, doctrine, and practice that diverts attention from Christ's unique mediatorial role.</p>
+                    
+                    <p>As believers seeking to follow Scripture, we can honor Mary as a remarkable example of faith and obedience without attributing to her roles or powers that belong to Christ alone. Her own words in the Magnificat (Luke 1:46-55) provide the best model for how she should be remembered—as one who magnified not herself, but the Lord.</p>
+                    
+                    <div class="think-about-it">
+                        <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                        <p>Mary's greatest distinction was her willingness to say "Let it be to me according to your word" (Luke 1:38). How might we follow her example of humble submission to God's will without elevating her beyond her biblical role?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="7.5.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">7.5 - Saints and Miracles</span>
+            </a>
+            <a href="7.7.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">7.7 - WE WILL SEE soon!!</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- No-copy protection scripts -->
+    <script>
+        // Updated no-copy protection scripts
+        document.addEventListener('keydown', function(e) {
+            // Prevent Ctrl+C (copy)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.keyCode === 67)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+U (view source)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+S (save)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
+                e.preventDefault();
+                alert('Content saving is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+P (print)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P' || e.keyCode === 80)) {
+                e.preventDefault();
+                alert('Content printing is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+Shift+I (inspect element)
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.keyCode === 73)) {
+                e.preventDefault();
+                alert('Inspect element is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+        });
+
+        // Prevent right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Additional protection to disable copy
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable cut
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            alert('Content cutting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable paste
+        document.addEventListener('paste', function(e) {
+            e.preventDefault();
+            alert('Content pasting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+        
+        // Toggle collapsible sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.querySelector('.toggle-icon').textContent = '+';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        this.querySelector('.toggle-icon').textContent = '−';
+                    }
+                });
+            });
+            
+            // Auto-open the first section
+            if (collapsibleHeaders.length > 0) {
+                collapsibleHeaders[0].click();
+            }
+        });
+    </script>
+
+</body>
+</html>

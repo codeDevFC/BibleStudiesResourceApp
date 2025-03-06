@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>2.6 Who is Jesus? | History of Salvation</title>
+    <link rel="stylesheet" href="/HistOfSalvation/styles2.css">
+    
+    
+    <style>
+/* Alternative Purpose Box Styling */
+.purpose-box {
+    background: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin: 2.5rem 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+}
+
+.purpose-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--divine-color), var(--wisdom-color));
+    border-radius: 15px 15px 0 0;
+}
+
+.purpose-box h2 {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.purpose-box h2::before {
+    content: '✦';
+    color: var(--divine-color);
+    font-size: 1.5rem;
+}
+
+.purpose-text {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.purpose-text p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.purpose-highlight {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.2) 0%, rgba(218, 165, 32, 0) 100%);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.purpose-highlight:hover {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.3) 0%, rgba(218, 165, 32, 0.1) 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .purpose-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .purpose-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .purpose-text {
+        padding-left: 1rem;
+    }
+
+    .purpose-text p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+
+
+      /* Page-specific styles */
+      .page-background {
+          background-image: url('../images/creation-bg.jpg');
+      }
+
+      .scripture-reference {
+          display: inline-block;
+          background: var(--divine-color);
+          color: var(--text-primary);
+          padding: 0.2rem 0.5rem;
+          border-radius: 4px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+      }
+
+      .question-section {
+          margin-bottom: 2rem;
+          background: white;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .comparison-table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin: 1.5rem 0;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+          padding: 1rem;
+          border: 1px solid var(--accent-color);
+      }
+
+      .comparison-table th {
+          background: var(--primary-color);
+          color: white;
+      }
+
+      .comparison-table tr:nth-child(even) {
+          background: var(--bg-accent);
+      }
+
+      /* Add hover effects */
+      .scripture-reference:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .question-section:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+      }
+
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+          .comparison-table {
+              font-size: 0.9rem;
+          }
+          
+          .comparison-table th,
+          .comparison-table td {
+              padding: 0.5rem;
+          }
+          
+          .question-section {
+              padding: 1rem;
+          }
+      }
+  </style>
+    
+    
+    <style>
+        /* Additional page-specific styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--spacing-md);
+            border: 1px solid var(--primary-color);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: var(--bg-primary);
+        }
+
+        .scripture-reference {
+            color: var(--prophecy-color);
+            font-weight: 600;
+        }
+
+        .question-number {
+            color: var(--wisdom-color);
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .reflection-box {
+            background: linear-gradient(to right, var(--bg-accent), transparent);
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--wisdom-color);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+/* Navigation Button Styles */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Next Chapter Button - Royal Gold */
+.next-chapter {
+    background: #DAA520;
+    color: white;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
+.next-chapter:hover {
+    background: #B8860B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+}
+
+/* Additional Insight Button - Deep Burgundy */
+.study-button {
+    background: #800020;
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+}
+
+.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+/* Table of Contents Button - Rich Brown */
+.nav-button.toc {
+    background: #8B4513;
+    color: white;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.nav-button.toc:hover {
+    background: #723A0F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Home Button - Deep Forest Green */
+.home-button {
+    background: #2F4F4F;
+    color: white;
+    box-shadow: 0 4px 15px rgba(47, 79, 79, 0.3);
+}
+
+.home-button:hover {
+    background: #1F3333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(47, 79, 79, 0.4);
+}
+
+/* Hover Text for Buttons */
+.nav-button .hover-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 8px;
+}
+
+.nav-button:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Add arrow to hover text */
+.nav-button .hover-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+
+/* Additional Study Button Styling */
+.nav-button.study-button {
+    background: #800020; /* Deep burgundy */
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+.nav-button.study-button::before {
+    content: '📚'; /* Book emoji or can use Font Awesome icon */
+    margin-right: 8px;
+}
+
+
+
+
+
+.insights-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.example-box {
+    background: white;
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.detailed-analysis,
+.interpretation {
+    margin-top: 1rem;
+    padding-left: 1rem;
+}
+
+.detailed-analysis ul,
+.interpretation ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.detailed-analysis li,
+.interpretation li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.detailed-analysis li::before,
+.interpretation li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.scripture-reference {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .navigation {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-button.study-button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-button .hover-text {
+        display: none; /* Hide hover text on mobile */
+    }
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Header Section -->
+    <div class="chapter-header">
+        <h1>Who is Jesus?</h1>
+        <div class="purpose-box">
+            <h2>Purpose:</h2>
+            <div class="purpose-text">
+                <p>To understand Jesus' human-divine nature in order to better comprehend the value and scope of His love, and to increase our trust in Him.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+    <div class="introduction-box">
+        <h2>Introduction</h2>
+        <p>We are Christians because Christ is at the center of our faith and hope. Therefore, we should know Him very well. But who is Jesus? There is something extraordinary about His nature. His own disciples, one day, seeing the manifestation of His power, exclaimed: "Who then is this, that even the wind and the sea obey Him?" (<span class="scripture-reference">Mark 4:41</span>). Another time, when Jesus asked what His disciples thought He was, Peter answered: "You are the Christ, the Son of the living God" (<span class="scripture-reference">Matthew 16:16</span>). From Jesus' reply ("Flesh and blood has not revealed this to you, but My Father who is in heaven"), we can understand how comprehending Jesus' true nature lies beyond human rationality. However, God Himself, in the Bible, has revealed something to help us understand that in Jesus there is much more than simply a holy man. Let us consider some texts.</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-section">
+        <!-- Question 1 -->
+        <div class="question-section">
+            <h3><span class="question-number">1)</span> Jesus is not a creature of God</h3>
+            <ul class="evidence-list">
+                <li>He is the Creator (<span class="scripture-reference">Colossians 1:13-16</span>)</li>
+                <li>He existed before creation (<span class="scripture-reference">Colossians 1:17</span>)</li>
+                <li>When God created, at the beginning of all things, He already existed (<span class="scripture-reference">John 1:2,3</span>)</li>
+            </ul>
+        </div>
+
+
+<!-- Question 2 -->
+<div class="question-section">
+  <h3><span class="question-number">2)</span> Jesus is God</h3>
+  <ul class="evidence-list">
+      <li>Isaiah calls the future Messiah God (<span class="scripture-reference">Isaiah 9:6</span>)</li>
+      <li>Jesus is God together with the Father (<span class="scripture-reference">John 1:1</span>)</li>
+      <li>Jesus is in the Father's bosom, intimately united with Him, comes from Him, not from outside Him like creatures (<span class="scripture-reference">John 1:18</span>)</li>
+      <li>Jesus is God who deserves to be praised for eternity (<span class="scripture-reference">Romans 9:5; Hebrews 1:1-3</span>)</li>
+      <li>Jesus defines Himself as Yahweh, the only existing God (<span class="scripture-reference">John 8:58</span> with <span class="scripture-reference">Exodus 3:14</span>)</li>
+  </ul>
+</div>
+
+<!-- Question 3 -->
+<div class="question-section">
+  <h3><span class="question-number">3)</span> What name was to be given to Jesus?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">Matthew 1:22</span>
+      <p>Jesus is Emmanuel – God with us.</p>
+  </div>
+</div>
+
+<!-- Question 4 -->
+<div class="question-section">
+  <h3><span class="question-number">4)</span> Jesus is the Angel of Yahweh - God</h3>
+  <div class="explanation-box">
+      <p>The Old Testament presents a mysterious being called "the angel of Yahweh." This is not just an angel but THE Angel of Yahweh, as if something unique. His relationship with Yahweh (God's name in the O.T.) is so close that He is sometimes identified as Yahweh Himself.</p>
+      
+      <div class="scripture-evidence">
+          <h4>Biblical Evidence:</h4>
+          <ul>
+              <li><span class="scripture-reference">Genesis 18:1,2,16-33; 19:1</span> - Three persons appear to Abraham. Two go to seek Lot in Sodom while the third remains with Abraham and is identified as Yahweh.</li>
+              <li><span class="scripture-reference">Genesis 32:24-30</span> - God appears to Jacob in a mysterious way.</li>
+              <li><span class="scripture-reference">Exodus 3:1,2,4-14</span> - The Angel of Yahweh reveals Himself as Yahweh and asks Moses to remove his sandals in worship.</li>
+              <li><span class="scripture-reference">Joshua 5:13-15</span> - Jesus appears to Joshua as the commander of God's army.</li>
+              <li><span class="scripture-reference">Judges 6:11-14,16,12-23</span> - The angel of Yahweh appears to Gideon.</li>
+              <li><span class="scripture-reference">Judges 13:3,15-23</span> - The Angel of Yahweh appears to Samson's parents.</li>
+              <li><span class="scripture-reference">Malachi 3:1</span> - Prophecy concerning John the Baptist and the Lord's coming.</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<!-- Questions 5-8 -->
+<div class="question-section">
+  <h3><span class="question-number">5)</span> Being God, what did Jesus accept to become?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">John 1:14; Philippians 2:5-9; Hebrews 2:14</span>
+      <p>Jesus, the eternal Son of God, accepted becoming a poor human being. He humbled Himself by becoming what we are, to manifest His love and save us.</p>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">6)</span> Does Jesus' incarnation eliminate His divinity?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">Colossians 2:9</span>
+      <p>Not at all. In Jesus continues to dwell bodily all the fullness of the Deity.</p>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">7)</span> How did Thomas call Jesus after the resurrection?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">John 20:28</span>
+      <p>By calling Jesus "My Lord and my God," Thomas wasn't expressing surprise at Jesus' resurrection, as some erroneously think. A Jew would never use God's name in such a way. Instead, he recognized Jesus' divinity and lordship, expressing what would become the faith of the entire Christian church.</p>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">8)</span> Knowing who Jesus was and what He became for us, how can we react to His sacrifice?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">1 Corinthians 2:1,2; Galatians 2:20</span>
+      <p>Can we make the Apostle Paul's conviction our own? To know nothing except Jesus Christ and Him crucified, and to live by faith in the Son of God who loved us and gave Himself for us.</p>
+  </div>
+</div>
+
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation">
+        <a href="/HistOfSalvation/2.5.html" class="nav-button previous-chapter">
+            ← Previous Lesson
+            <span class="hover-text">2.5 Isaiah 53: The Gospel in the Old Testament</span>
+        </a>
+        <a href="/HistOfSalvation/2.7.html" class="nav-button next-chapter">
+            Next Lesson →
+            <span class="hover-text">2.7 The Return Of Jesus</span>
+        </a>
+        <a href="/HistOfSalvation/2.6.1.html" class="nav-button study-button">
+            Additional Study
+            <span class="hover-text">Deeper Understanding of Jesus' Nature</span>
+        </a>
+        <a href="/00Intro&Topics.html" class="nav-button toc">
+            Table of Contents
+            <span class="hover-text">View All Lessons</span>
+        </a>
+        <a href="/Index.html" class="nav-button home-button">
+            Main Page
+            <span class="hover-text">Return to Homepage</span>
+        </a>
+    </div>
+</div>
+
+<!-- Copy Protection Script -->
+
+<!--Copy protection script-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Disable right-click
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+          if (
+              // Disable Ctrl+C, Ctrl+X, Ctrl+U
+              (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85)) ||
+              // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+              (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+              // Disable F12
+              e.keyCode === 123
+          ) {
+              e.preventDefault();
+              return false;
+          }
+      });
+
+      // Disable drag and drop
+      document.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable text selection via double click
+      document.addEventListener('mousedown', function(e) {
+          if (e.detail > 1) {
+              e.preventDefault();
+          }
+      });
+  });
+</script>
+</body>
+</html>

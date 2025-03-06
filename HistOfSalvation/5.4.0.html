@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ten Commandments | Doctrine of Sanctification and Obedience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles2.css">
+
+    <style>
+      :root {
+          --primary-color: #006064;    /* Deep Teal */
+          --accent-color: #00ACC1;     /* Lighter Teal */
+          --secondary-color: #B2EBF2;   /* Very Light Teal */
+          --bg-primary: #ffffff;
+          --bg-secondary: #E0F7FA;
+          --text-primary: #2C3E50;
+          --text-secondary: #546E7A;
+          --highlight-color: #00BCD4;   /* Bright Teal */
+          --holy-theme-light: #E0F7FA; /* Very Light Teal */
+          --holy-theme-dark: #006064;  /* Dark Teal */
+          --success: #4CAF50;
+          --warning: #FFA726;
+          --error: #EF5350;
+      }
+
+      /* Base Styles */
+      body {
+          font-family: 'Poppins', sans-serif;
+          line-height: 1.6;
+          color: var(--text-primary);
+          background: var(--bg-primary);
+          margin: 0;
+          padding: 0;
+      }
+
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 2rem;
+      }
+
+      /* Series Banner */
+      .series-banner {
+          background: var(--holy-theme-dark);
+          color: white;
+          padding: 1rem 2rem;
+          text-align: center;
+          font-size: 1.2rem;
+      }
+
+      /* Header Styling */
+      .series-header {
+          background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+          color: white;
+          padding: 3rem 2rem;
+          text-align: center;
+          border-radius: 0 0 20px 20px;
+          margin-bottom: 3rem;
+          position: relative;
+          overflow: hidden;
+      }
+
+      .series-header::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('path-to-holy-living-image.jpg') center/cover;
+          opacity: 0.1;
+          z-index: 0;
+      }
+
+      .series-header .content {
+          position: relative;
+          z-index: 1;
+      }
+
+      /* Purpose Box */
+      .purpose-box {
+          background: var(--holy-theme-light);
+          padding: 2rem;
+          border-radius: 12px;
+          margin: 2rem 0;
+          border-left: 4px solid var(--accent-color);
+      }
+
+      /* Navigation */
+      .navigation {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          margin: 3rem 0;
+          flex-wrap: wrap;
+          padding: 1rem;
+          background: var(--bg-secondary);
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      }
+
+      .nav-button {
+          padding: 1.2rem 2rem;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          text-align: center;
+          color: white;
+          min-width: 180px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+
+      .previous-chapter {
+          background: var(--holy-theme-dark);
+      }
+
+      .next-chapter {
+          background: var(--accent-color);
+      }
+
+      .toc {
+          background: var(--primary-color);
+      }
+
+      .home-button {
+          background: var(--holy-theme-dark);
+      }
+
+      .nav-button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      }
+
+      .nav-button .hover-text {
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0,0,0,0.8);
+          color: white;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          white-space: nowrap;
+          pointer-events: none;
+          margin-bottom: 8px;
+          z-index: 100;
+      }
+
+      .nav-button:hover .hover-text {
+          opacity: 1;
+          visibility: visible;
+      }
+
+      /* Additional Styles */
+.content-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-box {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border-left: 4px solid var(--accent-color);
+}
+
+.scripture-reference {
+  background: var(--holy-theme-dark);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.scripture-insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.insight-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reflection-prompt {
+  background: linear-gradient(to right, var(--holy-theme-light), transparent);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reflection-prompt i {
+  font-size: 1.5rem;
+  color: var(--holy-theme-dark);
+}
+
+.scripture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.principle-box {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.reference-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.reference-list li {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.reference-list li::before {
+  content: "•";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+}
+
+/* Additional Styles for Content Sections */
+.content-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-box {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border-left: 4px solid var(--accent-color);
+}
+
+.scripture-box.highlight {
+  background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+}
+
+.reference-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reflection-prompt {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reflection-prompt i {
+  color: var(--holy-theme-dark);
+  font-size: 1.5rem;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.principle-card {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.general-principle {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  grid-column: 1 / -1;
+  text-align: center;
+  font-weight: 500;
+}
+
+.reference-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.reference-list li {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.reference-list li::before {
+  content: "•";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .principles-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .content-section {
+      padding: 1.5rem;
+  }
+}
+
+/* Interactive Studies Styles */
+.interactive-studies {
+  margin: 3rem 0;
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.studies-intro {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.study-topic {
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.topic-toggle {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.topic-toggle:hover {
+  background: var(--holy-theme-light);
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--holy-theme-dark);
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.topic-toggle.active .toggle-icon {
+  transform: rotate(45deg);
+}
+
+.topic-content {
+  display: none;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.concept-grid,
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.concept-card,
+.application-card {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.check-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.principles-explanation {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.principle-section {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.application-points {
+  list-style: none;
+  padding-left: 0;
+}
+
+.application-points li {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.application-points li::before {
+  content: "→";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .concept-grid,
+  .application-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .topic-toggle {
+      padding: 1rem;
+  }
+}
+.study-aids {
+        margin: 3rem 0;
+        padding: 2rem;
+        background: var(--bg-secondary);
+        border-radius: 12px;
+    }
+
+    .summary-box {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .key-points-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .point-card {
+        background: var(--holy-theme-light);
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent-color);
+    }
+
+    .application-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .scripture-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .scripture-card {
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .topic-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .study-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .study-link a {
+        text-decoration: none;
+        color: var(--primary-color);
+    }
+
+    .study-link:hover {
+        transform: translateY(-2px);
+        transition: transform 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .study-aids {
+            padding: 1rem;
+        }
+
+        .application-grid,
+        .key-points-grid,
+        .scripture-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    <style>
+    .practical-application {
+        margin: 3rem 0;
+        padding: 2rem;
+        background: var(--bg-secondary);
+        border-radius: 12px;
+    }
+
+    .assessment-grid,
+    .reflection-grid,
+    .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .assessment-card,
+    .reflection-card,
+    .step-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .progress-check {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .check-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+    }
+
+    textarea {
+        width: 100%;
+        min-height: 100px;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        border: 1px solid var(--accent-color);
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    .step-card ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .step-card li {
+        margin: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .step-card li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+        .practical-application {
+            padding: 1rem;
+        }
+
+        .assessment-grid,
+        .reflection-grid,
+        .steps-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+  </style>
+</head>
+<body>
+    <div class="series-banner">
+        Doctrine of Sanctification and Obedience
+    </div>
+
+    <div class="series-header">
+        <div class="content">
+            <h1>5.4 The Ten Commandments</h1>
+            <p>Understanding God's moral law and its application in Christian life</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                Introduction
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>God's law is a complex reality. When the Bible uses this term, it can refer to different parts of revelation. There are moral laws as well as ceremonial, agricultural, hygienic, and political laws. Sometimes "Law" refers to a particular norm, a group of norms, the five books of Moses, or the entire Old Testament revelation. Each of these laws has its value, but not all have the same spiritual significance and scope. Each must be understood in its specificity.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                The Unique Nature of the Ten Commandments
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-insights">
+                    <div class="insight-card">
+                        <h3>Divine Origin</h3>
+                        <span class="scripture-reference">Exodus 31:18</span>
+                        <p>Written directly by God, while others were written by Moses (Exodus 34:27)</p>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <h3>Sacred Storage</h3>
+                        <span class="scripture-reference">Exodus 25:16; Hebrews 9:4</span>
+                        <p>Kept inside the Ark of the Covenant, while other laws were placed beside it (Deuteronomy 31:26)</p>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <h3>Eternal Value</h3>
+                        <span class="scripture-reference">1 Corinthians 7:19</span>
+                        <p>They have eternal value, while others (like ceremonial laws) may have temporary significance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                Understanding the Ten Commandments
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box highlight">
+                    <h3>Preface to the Commandments</h3>
+                    <p>God is a God of freedom. His is a law of liberty (James 1:25; 2:12). We don't observe it because we're forced by external pressure, but because Jesus has loved us so much, establishing with us a new covenant of grace and faithfulness (Compare Luke 22:20 with Jeremiah 31:31-33). Through this covenant of love, God's law is now written in our hearts, and we observe it out of love (2 Corinthians 5:14).</p>
+                </div>
+                
+                <div class="commandments-grid">
+                    <!-- First Commandment -->
+                    <div class="commandment-card">
+                        <h3>I. No Other Gods</h3>
+                        <div class="commandment-content">
+                            <p>Having only one God means worshiping and following only the true God. Anything, even good things, can become false gods when we give them more importance than God:</p>
+                            <ul class="examples-list">
+                                <li><span class="scripture-reference">Matthew 6:24</span> - Money</li>
+                                <li><span class="scripture-reference">Matthew 10:35,37</span> - Parents and children</li>
+                                <li><span class="scripture-reference">Philippians 3:19</span> - Food</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <!-- Second Commandment -->
+                    <div class="commandment-card">
+                        <h3>II. No Graven Images</h3>
+                        <div class="commandment-content">
+                            <p>The commandment isn't against images themselves, but their use in God's service, to prevent:</p>
+                            <ul class="principles-list">
+                                <li>Material representation of God</li>
+                                <li>Substitution of God with objects</li>
+                            </ul>
+                            <div class="scripture-box">
+                                <span class="scripture-reference">John 4:24</span>
+                                <p>Jesus teaches to worship God in spirit and truth</p>
+                            </div>
+                            <p class="example-note">Example: The bronze serpent (Numbers 21:9; 2 Kings 18:4) - Even divinely commanded objects can become idols when misused.</p>
+                        </div>
+                    </div>
+                
+                    <!-- Third Commandment -->
+                    <div class="commandment-card">
+                        <h3>III. God's Name in Vain</h3>
+                        <div class="commandment-content">
+                            <p>We must respect God. He is our Father and we love Him, but if we treat Him as one of us, what extraordinary thing can He do for us?</p>
+                            <div class="scripture-box">
+                                <span class="scripture-reference">Matthew 6:9</span>
+                                <p>As Jesus teaches in the Lord's Prayer, God is our father and loves us, but He remains in heaven and above us.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Fourth Commandment -->
+                    <div class="commandment-card">
+                        <h3>IV. Remember the Sabbath</h3>
+                        <div class="commandment-content">
+                            <p>The Sabbath rest is intended as a blessing for us, to reclaim our freedom and dignity as God's children and brothers of others in a world that is God's gift to love and respect.</p>
+                            <p class="note">This topic will be studied in detail in subsequent lessons.</p>
+                        </div>
+                    </div>
+                
+                    <!-- Fifth Commandment -->
+                    <div class="commandment-card">
+                        <h3>V. Honor Parents</h3>
+                        <div class="commandment-content">
+                            <div class="principles-grid">
+                                <div class="principle">
+                                    <span class="scripture-reference">Matthew 15:4-6</span>
+                                    <p>Honor includes practical support when needed</p>
+                                </div>
+                                <div class="principle">
+                                    <span class="scripture-reference">2 Timothy 3:2</span>
+                                    <p>Disobedience to parents indicates moral corruption</p>
+                                </div>
+                                <div class="principle">
+                                    <span class="scripture-reference">Ephesians 6:1-4</span>
+                                    <p>Parents should avoid dictatorial and oppressive attitudes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Sixth Commandment -->
+                    <div class="commandment-card">
+                        <h3>VI. Do Not Kill</h3>
+                        <div class="commandment-content">
+                            <div class="scripture-box">
+                                <span class="scripture-reference">Matthew 5:21,22, 38-48</span>
+                                <p>We are called to love and forgive. Christian non-violence prevents us from accepting capital punishment and using weapons against our enemy.</p>
+                            </div>
+                            <p class="note">The Seventh-day Adventist Church is a non-combatant church.</p>
+                        </div>
+                    </div>
+                
+                    <!-- Seventh Commandment -->
+                    <div class="commandment-card">
+                        <h3>VII. Do Not Commit Adultery</h3>
+                        <div class="commandment-content">
+                            <p>Adultery breaks an eternal covenant of love and solidarity. One who loves cannot be adulterous.</p>
+                            <div class="scripture-references">
+                                <span class="reference">Genesis 1:26; 2:21-25</span>
+                                <span class="reference">Matthew 5:27,28</span>
+                                <span class="reference">Malachi 2:14; 3:5</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Eighth Commandment -->
+                    <div class="commandment-card">
+                        <h3>VIII. Do Not Steal</h3>
+                        <div class="commandment-content">
+                            <p>We must respect others' property, but there are many ways to steal.</p>
+                            <div class="scripture-box">
+                                <span class="scripture-reference">James 5:1-4</span>
+                                <p>Examples of indirect stealing through unjust practices</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Ninth Commandment -->
+                    <div class="commandment-card">
+                        <h3>IX. Do Not Bear False Witness</h3>
+                        <div class="commandment-content">
+                            <div class="scripture-box">
+                                <span class="scripture-reference">John 14:6</span>
+                                <p>We are called to live in harmony with Jesus, who is the truth</p>
+                                <span class="scripture-reference">John 8:44</span>
+                                <p>Liars align with Satan, the father of lies</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Tenth Commandment -->
+                    <div class="commandment-card">
+                        <h3>X. Do Not Covet</h3>
+                        <div class="commandment-content">
+                            <div class="scripture-box">
+                                <span class="scripture-reference">1 Timothy 6:6-10</span>
+                                <p>Having what is sufficient for life, we should be content</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                In-Depth Study: Commandments Comparison
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>THE TEN COMMANDMENTS AS GIVEN BY GOD<br>(Exodus 20:2-18)</th>
+                                <th>THE ALTERED DECALOGUE<br>(Catechism of Pius X, 1935)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="introduction">
+                                    <strong>Introduction</strong><br>
+                                    I am the LORD, your God, who brought you out of Egypt, out of the house of slavery.
+                                </td>
+                                <td class="introduction">
+                                    I am the Lord your God. You shall have no other gods before me.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>I</strong><br>
+                                    You shall have no other gods before me.
+                                </td>
+                                <td class="empty-cell"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>II</strong><br>
+                                    You shall not make for yourself an image in the form of anything in heaven above or on the earth beneath or in the waters below. You shall not bow down to them or worship them; for I, the LORD your God, am a jealous God, punishing the children for the sin of the parents to the third and fourth generation of those who hate me, but showing love to a thousand generations of those who love me and keep my commandments.
+                                </td>
+                                <td class="empty-cell"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>III</strong><br>
+                                    You shall not misuse the name of the LORD your God, for the LORD will not hold anyone guiltless who misuses his name.
+                                </td>
+                                <td>
+                                    <strong>II</strong><br>
+                                    You shall not take the name of the Lord your God in vain.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>IV</strong><br>
+                                    Remember the Sabbath day by keeping it holy. Six days you shall labor and do all your work, but the seventh day is a sabbath to the LORD your God. On it you shall not do any work, neither you, nor your son or daughter, nor your male or female servant, nor your animals, nor any foreigner residing in your towns. For in six days the LORD made the heavens and the earth, the sea, and all that is in them, but he rested on the seventh day. Therefore the LORD blessed the Sabbath day and made it holy.
+                                </td>
+                                <td>
+                                    <strong>III</strong><br>
+                                    Remember to keep holy the feasts.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>V</strong><br>
+                                    Honor your father and your mother, so that you may live long in the land the LORD your God is giving you.
+                                </td>
+                                <td>
+                                    <strong>IV</strong><br>
+                                    Honor your father and your mother.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>VI</strong><br>
+                                    You shall not murder.
+                                </td>
+                                <td>
+                                    <strong>V</strong><br>
+                                    You shall not kill.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>VII</strong><br>
+                                    You shall not commit adultery.
+                                </td>
+                                <td>
+                                    <strong>VI</strong><br>
+                                    You shall not commit adultery.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>VIII</strong><br>
+                                    You shall not steal.
+                                </td>
+                                <td>
+                                    <strong>VII</strong><br>
+                                    You shall not steal.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>IX</strong><br>
+                                    You shall not give false testimony against your neighbor.
+                                </td>
+                                <td>
+                                    <strong>VIII</strong><br>
+                                    You shall not bear false witness against your neighbor.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>X</strong><br>
+                                    You shall not covet your neighbor's house. You shall not covet your neighbor's wife, or his male or female servant, his ox or donkey, or anything that belongs to your neighbor.
+                                </td>
+                                <td>
+                                    <strong>IX</strong><br>
+                                    You shall not covet your neighbor's wife.<br>
+                                    <strong>X</strong><br>
+                                    You shall not covet your neighbor's goods.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                Practical Understanding and Application
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="study-tools">
+                    <div class="memory-section">
+                        <h3>Memory Aid Overview</h3>
+                        <div class="memory-grid">
+                            <div class="memory-card">
+                                <h4>Duties to God (1-4)</h4>
+                                <ul>
+                                    <li>One God only</li>
+                                    <li>No images in worship</li>
+                                    <li>Respect God's name</li>
+                                    <li>Keep the Sabbath holy</li>
+                                </ul>
+                            </div>
+                            <div class="memory-card">
+                                <h4>Duties to Others (5-10)</h4>
+                                <ul>
+                                    <li>Honor parents</li>
+                                    <li>Respect life</li>
+                                    <li>Maintain marriage purity</li>
+                                    <li>Respect property</li>
+                                    <li>Speak truth</li>
+                                    <li>Be content</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="application-section">
+                        <h3>Modern Life Application</h3>
+                        <div class="application-grid">
+                            <div class="application-card">
+                                <h4>Digital Age Considerations</h4>
+                                <ul class="modern-examples">
+                                    <li>Social media and the second commandment</li>
+                                    <li>Online integrity and the ninth commandment</li>
+                                    <li>Digital sabbath practices</li>
+                                    <li>Cyber theft and the eighth commandment</li>
+                                </ul>
+                            </div>
+                            <div class="application-card">
+                                <h4>Workplace Application</h4>
+                                <ul class="modern-examples">
+                                    <li>Professional integrity</li>
+                                    <li>Time management and Sabbath</li>
+                                    <li>Respect for authority</li>
+                                    <li>Truthful business practices</li>
+                                </ul>
+                            </div>
+                            <div class="application-card">
+                                <h4>Family Life</h4>
+                                <ul class="modern-examples">
+                                    <li>Parental respect in modern context</li>
+                                    <li>Family worship practices</li>
+                                    <li>Marriage fidelity</li>
+                                    <li>Content living in consumer society</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="think-about-it">
+                        <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                        <p>The Ten Commandments aren't just rules to follow, but principles that reveal God's character and His desire for human flourishing. How might viewing them as expressions of God's love change your approach to obedience?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="5.3.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">5.3 Law and Grace</span>
+            </a>
+            <a href="5.5.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">5.5- The Sabbath In The Old Testament</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script for collapsible sections -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.querySelector('.toggle-icon').textContent = '+';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        this.querySelector('.toggle-icon').textContent = '−';
+                    }
+                });
+            });
+            
+            // Auto-open the first section
+            if (collapsibleHeaders.length > 0) {
+                collapsibleHeaders[0].click();
+            }
+        });
+    </script>
+</body>
+</html>

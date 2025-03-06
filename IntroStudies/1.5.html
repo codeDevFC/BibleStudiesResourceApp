@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>1.5 The Holy Spirit | Church Bible Studies</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --bg-color: #ecf0f1;
+            --accent-color: #3498db;
+            --highlight-color: #f1c40f;
+            --quote-bg: #e8f4ff;
+            --container-width: 90%;
+            --max-width: 800px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        .container {
+            width: var(--container-width);
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 1.5rem;
+        }
+
+        .lesson-header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('images/holy-spirit.jpg');
+            background-size: cover;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        blockquote {
+            background: var(--quote-bg);
+            border-left: 4px solid var(--accent-color);
+            margin: 1rem 0;
+            padding: 1rem;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        .highlight {
+            background: var(--highlight-color);
+            padding: 0.3rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0.5rem;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+            pointer-events: auto;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-secondary {
+            background: #7f8c8d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5d6d7e;
+        }
+
+        .next-topic {
+            position: relative;
+        }
+
+        .next-topic:hover::after {
+            content: "Next: God Speaks To Us...";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 1rem;
+            }
+
+            .lesson-header {
+                padding: 1.5rem;
+            }
+
+            .content-section {
+                padding: 1rem;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+
+    <!--Copy protection script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Disable right-click
+          document.addEventListener('contextmenu', function(e) {
+              e.preventDefault();
+          });
+    
+          // Disable keyboard shortcuts
+          document.addEventListener('keydown', function(e) {
+              if (
+                  // Disable Ctrl+C, Ctrl+X, Ctrl+U
+                  (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85)) ||
+                  // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+                  (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+                  // Disable F12
+                  e.keyCode === 123
+              ) {
+                  e.preventDefault();
+                  return false;
+              }
+          });
+    
+          // Disable drag and drop
+          document.addEventListener('dragstart', function(e) {
+              e.preventDefault();
+          });
+    
+          // Disable text selection via double click
+          document.addEventListener('mousedown', function(e) {
+              if (e.detail > 1) {
+                  e.preventDefault();
+              }
+          });
+      });
+    </script>
+        
+</head>
+<body>
+    <div class="container">
+        <div class="lesson-header">
+            <h1>The Holy Spirit: God Present in Our Lives</h1>
+            <h2>Understanding God's Continuing Presence</h2>
+        </div>
+
+        <div class="content-section">
+            <h2>Purpose:</h2>
+            <p>To understand that God's love, guidance, and support did not end with the historical experience of Jesus but continue throughout history and in our lives through the work of the Holy Spirit.</p>
+        </div>
+
+        <!-- Main Content Sections -->
+
+<div class="content-section">
+  <h2>Purpose:</h2>
+<p>To understand that God's love, guidance, and support did not end with the historical experience of Jesus but continue throughout history and in our lives through the work of the Holy Spirit.</p>
+
+<h2>Introduction</h2>
+<p>A loving father always desires to be with his children, to love and support them. This is why Jesus, the Son of God, became a man: to be Emmanuel, <strong>“God with us”</strong> (Matthew 1:23).</p>
+<p><span class="highlight">However, Jesus could not remain with us physically forever because, after His resurrection, He had to return to the Father. Yet, before leaving, Jesus promised that He would not leave His friends alone:</span></p>
+
+<blockquote>📖 <strong>Matthew 28:20</strong> - "I am with you always, to the very end of the age."</blockquote>
+
+<p>Through this promise, Jesus assured us of His love and care. Even though He is no longer physically present, His heart remains with us. He continues to work for us:</p>
+<blockquote>📖 <strong>Hebrews 7:25</strong> - "Therefore He is able to save completely those who come to God through Him, because He always lives to intercede for them."</blockquote>
+<p>But there is another way Jesus is present in our lives: through the presence and work of the Holy Spirit.</p>
+</div>
+
+<div class="content-section">
+  <h2>1) What Promise Did Jesus Make to His Disciples?</h2>
+  <blockquote>
+      <p>📖 <strong>John 16:7</strong> - "It is for your good that I am going away. Unless I go away, the Advocate will not come to you; but if I go, I will send Him to you."</p>
+  </blockquote>
+</div>
+
+<div class="content-section">
+  <h2>2) Who Is the Advocate?</h2>
+  <blockquote>
+      <p>📖 <strong>John 16:13</strong> - The Holy Spirit.</p>
+  </blockquote>
+</div>
+
+<div class="content-section">
+  <h2>3) What Does the Holy Spirit Do for Us?</h2>
+  <ul class="spirit-list">
+      <li class="spirit-item">
+          <span class="spirit-icon">🛡️</span>
+          <span><strong>Convicts us of sin, righteousness, and judgment</strong> (John 16:8-11), leading us to repentance and salvation.</span>
+      </li>
+      <li class="spirit-item">
+          <span class="spirit-icon">🕊️</span>
+          <span><strong>Helps us understand what is right and wrong in God's eyes</strong> (John 16:12-13).</span>
+      </li>
+      <li class="spirit-item">
+          <span class="spirit-icon">✨</span>
+          <span><strong>Glorifies Jesus by revealing His will and guiding us to follow it</strong> (John 16:14).</span>
+      </li>
+      <li class="spirit-item">
+          <span class="spirit-icon">🔥</span>
+          <span><strong>Transforms us into new creations as children of God</strong> (John 3:3-8).</span>
+      </li>
+      <li class="spirit-item">
+          <span class="spirit-icon">🤝</span>
+          <span><strong>Empowers us to serve God and others</strong> (1 Corinthians 12:4-11).</span>
+      </li>
+      <li class="spirit-item">
+          <span class="spirit-icon">💖</span>
+          <span><strong>Assures us that God is a loving Father</strong> (Galatians 4:6; Romans 8:15).</span>
+      </li>
+  </ul>
+</div>
+
+<div class="content-section">
+  <h2>4) How Can We Experience the Holy Spirit?</h2>
+  <blockquote>
+      <p>📖 <strong>Luke 11:13</strong> - "If you then, though you are evil, know how to give good gifts to your children, how much more will your Father in heaven give the Holy Spirit to those who ask Him!"</p>
+  </blockquote>
+
+  <p>Asking for His presence in prayer</p>
+</div>
+
+<div class="content-section">
+  <h2>5) Is the Holy Spirit Just the Power of God or a Divine Person?</h2>
+  <p>Some believe that the Holy Spirit is merely the power of God and not a divine person. However, the Bible reveals more:</p>
+  
+  <ul>
+      <li>The Hebrew word for "Spirit" (<em>ruach</em>) and the Greek word (<em>pneuma</em>) can mean breath, wind, mind, or life. However, many passages refer to the Spirit as more than just an impersonal force.</li>
+      <li>Even though <em>pneuma</em> is neuter in Greek, it is often referred to using the masculine pronoun <span class="highlight">"He"</span> rather than "it" (John 16:3, 7, 8, 13).</li>
+      <li>The Holy Spirit performs actions that only a person with intelligence, will, and individuality can do, such as convicting, teaching, guiding, and glorifying Jesus (John 16:7-14).</li>
+      <li>Paul states that the Spirit distributes gifts <span class="highlight">"as He wills"</span> (1 Corinthians 12:11), showing He has a personal will.</li>
+  </ul>
+
+  <blockquote>
+      <p>📖 <strong>Matthew 28:19</strong> - "Baptizing them in the name of the Father, the Son, and the Holy Spirit."</p>
+    </blockquote>
+     
+<p>Would it not be illogical for Jesus to say, <strong>"in the name of the Father, the Son, and the power of the Father"?</strong> Jesus clearly distinguished the Holy Spirit as a divine person, not merely an impersonal force.</p>
+
+<blockquote>📖 <strong>Matthew 12:31-32</strong> - "Every sin and blasphemy will be forgiven, but the blasphemy against the Spirit will not be forgiven. Anyone who speaks a word against the Son of Man will be forgiven, but anyone who speaks against the Holy Spirit will not be forgiven, either in this age or in the age to come."</blockquote>
+
+<p>If the Holy Spirit were merely an impersonal energy, why would Jesus issue such a severe warning? The truth is that the Holy Spirit is a divine person, actively working in our conversion and spiritual growth.</p>
+<p>Minimizing His importance risks endangering our very Christian identity and salvation.</p>
+
+</div>
+
+<div class="content-section">
+  <h2>Key Biblical Texts</h2>
+  <ul class="scripture-list">
+      <li>📖 <strong>John 16:7-14</strong> - The Holy Spirit's role and work</li>
+      <li>📖 <strong>Romans 8:15</strong> - The Spirit of adoption</li>
+      <li>📖 <strong>1 Corinthians 12:4-11</strong> - Spiritual gifts</li>
+      <li>📖 <strong>Galatians 4:6</strong> - The Spirit in our hearts</li>
+      <li>📖 <strong>Matthew 28:19</strong> - Trinitarian baptismal formula</li>
+  </ul>
+</div>
+
+<div class="content-section">
+  <h2>Conclusion</h2>
+  <p>The Holy Spirit is not just a force but a divine person actively working in our lives. Through Him, we experience God's presence, guidance, and transforming power in our daily walk of faith.</p>
+</div>
+
+
+        <div class="navigation">
+            <a href="/IntroStudies/1.4.html" class="btn btn-secondary">← Previous Lesson</a>
+            <a href="/IntroStudies/1.6.html" class="btn btn-primary next-topic">Next Lesson →</a>
+            <a href="/Index.html" class="btn btn-secondary">Home</a>
+        </div>
+    </div>
+</body>
+</html>

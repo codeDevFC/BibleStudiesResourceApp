@@ -1,0 +1,1062 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.8 Hygienic Laws: General Principles | Doctrine of Sanctification and Obedience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Styling */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Collapsible Section Styling */
+        details.collapsible {
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: white;
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        details.collapsible:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        details.collapsible summary {
+            background: var(--bg-secondary);
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            position: relative;
+            list-style: none;
+        }
+
+        details.collapsible summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.collapsible summary::after {
+            content: '\f078'; /* Font Awesome chevron down */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+
+        details.collapsible[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details.collapsible summary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        details.collapsible .content {
+            padding: 1.5rem;
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Reflection Box */
+        .reflection-box {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .reflection-box i {
+            font-size: 1.5rem;
+            color: var(--highlight-color);
+            margin-top: 0.25rem;
+        }
+
+        .reflection-box h3 {
+            margin-top: 0;
+            color: var(--holy-theme-dark);
+        }
+
+        /* Principles Grid */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .principle-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .principle-card h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .principle-card .note {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Question Box */
+        .question-box {
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .question-box h3 {
+            margin: 0;
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: linear-gradient(135deg, var(--holy-theme-light), var(--bg-secondary));
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            background: var(--holy-theme-dark);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 999;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-menu-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            transition: background 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .toc-toggle {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin: 1rem 0;
+            cursor: pointer;
+            font-weight: 600;
+            display: none;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .toc-mobile {
+            display: none;
+            margin-top: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .toc-mobile ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-mobile li {
+            margin-bottom: 0.8rem;
+        }
+
+        .toc-mobile a {
+            color: var(--holy-theme-dark);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .toc-mobile a:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Reading time indicator */
+        .reading-time {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 1024px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .series-header {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .principles-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+                border-radius: 0 0 15px 15px;
+                margin-bottom: 2rem;
+            }
+            
+            .series-header h1 {
+                font-size: 1.5rem;
+            }
+
+            details.collapsible summary {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+
+            details.collapsible .content {
+                padding: 1rem;
+            }
+
+            .nav-button {
+                min-width: 100%;
+                padding: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .toc-toggle {
+                display: block;
+            }
+            
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .reflection-box {
+                flex-direction: column;
+            }
+            
+            .reflection-box i {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .series-header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .series-header p {
+                font-size: 0.9rem;
+            }
+            
+            details.collapsible summary {
+                font-size: 0.9rem;
+            }
+            
+            .scripture-box {
+                padding: 1rem;
+            }
+            
+            .reflection-box {
+                padding: 1rem;
+            }
+            
+            .principle-card {
+                padding: 1rem;
+            }
+            
+            .copyright-notice {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <button id="mobileMenuClose" class="mobile-menu-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="/Index.html">Home</a>
+            <a href="/00Intro&Topics.html">Table of Contents</a>
+            <a href="5.7.html">Previous: Sunday in the Bible</a>
+            <a href="5.9.html">Next: Hygienic Laws: Food</a>
+        </div>
+        <button id="tocToggle" class="toc-toggle">Show Chapter Navigation</button>
+        <div id="tocMobile" class="toc-mobile">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#principle1">1. General Principle</a></li>
+                <li><a href="#principle2">2. God's Interest in Health</a></li>
+                <li><a href="#principle3">3. Jesus' Concern for Health</a></li>
+                <li><a href="#principle4">4. Our Responsibility</a></li>
+                <li><a href="#principle5">5. Benefits of God's Laws</a></li>
+                <li><a href="#principle6">6. Ancient Health Principles</a></li>
+                <li><a href="#principle7">7. Evaluating These Laws</a></li>
+                <li><a href="#principle8">8. Biblical Teaching on Rest</a></li>
+                <li><a href="#principle9">9. Joy and Health</a></li>
+                <li><a href="#principle10">10. Finding Rest in Jesus</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="series-banner">
+        Doctrine of Sanctification and Obedience
+    </div>
+
+    <div class="series-header">
+        <div class="content">
+            <h1>5.8 Hygienic Laws: General Principles</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="reading-time">
+            <i class="fas fa-book-reader"></i> 10 min read
+        </div>
+
+        <details class="collapsible" open id="intro">
+            <summary>Introduction</summary>
+            <div class="content">
+                <p>Everyone knows the saying that "when there is health, there is everything." However, many suffer from illnesses and various health problems. Often this happens because of the unsuitable environment in which we live or because we have inherited a body already corrupted by sin. Sometimes, however, the fault lies in wrong habits. In any case, by acquiring healthier habits, we can protect our health and enjoy a better life. Would you like that? In the next three studies, we will discover what God has taught us about our health. Already now, it may be useful to know that Adventists enjoy on average a life that is 4-7 years longer and are less affected by certain diseases. If you want, this privilege can be yours too.</p>
+                <p>Let's discover what principles God has taught us to achieve this result.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle1">
+            <summary>1. The General Principle for Our Life</summary>
+            <div class="content">
+                <div class="scripture-box">
+                    <span class="scripture-reference">1 Corinthians 10:31</span>
+                    <p>"So whether you eat or drink or whatever you do, do it all for the glory of God."</p>
+                </div>
+                <p>Since our entire life is a gift from God, this principle should guide all our choices, including those related to health.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle2">
+            <summary>2. God's Interest in Our Physical Well-being</summary>
+            <div class="content">
+                <div class="scripture-box">
+                    <span class="scripture-reference">3 John 2</span>
+                    <p>"Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well."</p>
+                </div>
+                <div class="reflection-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h3>Think About It</h3>
+                        <p>Why do you think God is interested in our physical health?</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle3">
+            <summary>3. Jesus' Concern for Physical Health</summary>
+            <div class="content">
+                <div class="scripture-box">
+                    <span class="scripture-reference">Matthew 4:24</span>
+                    <p>"News about him spread all over Syria, and people brought to him all who were ill with various diseases, those suffering severe pain, the demon-possessed, those having seizures, and the paralyzed; and he healed them."</p>
+                </div>
+                <p>Jesus cared not only for spiritual well-being but also for physical healing, demonstrating God's concern for the whole person.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle4">
+            <summary>4. Our Responsibility Toward Our Bodies</summary>
+            <div class="content">
+                <div class="scripture-box">
+                    <span class="scripture-reference">1 Corinthians 6:19-20</span>
+                    <p>"Do you not know that your bodies are temples of the Holy Spirit, who is in you, whom you have received from God? You are not your own; you were bought at a price. Therefore honor God with your bodies."</p>
+                </div>
+                <div class="scripture-box">
+                    <span class="scripture-reference">1 Corinthians 3:16-17</span>
+                    <p>"Don't you know that you yourselves are God's temple and that God's Spirit dwells in your midst? If anyone destroys God's temple, God will destroy that person; for God's temple is sacred, and you together are that temple."</p>
+                </div>
+                
+                <div class="reflection-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h3>Think About It</h3>
+                        <p>What do you think about smoking? Can we consider it compatible with Christian life?</p>
+                    </div>
+                </div>
+                
+                <div class="reflection-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h3>Think About It</h3>
+                        <p>What about coffee or tea? Do you know they are actual drugs?</p>
+                    </div>
+                </div>
+                
+                <div class="reflection-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h3>Think About It</h3>
+                        <p>What should we think about excesses in eating? (Philippians 3:19)</p>
+                    </div>
+                </div>
+                
+                <div class="reflection-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h3>Think About It</h3>
+                        <p>What should we think about excessive use of unnecessary medicines?</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle5">
+            <summary>5. Benefits of Following God's Laws</summary>
+            <div class="content">
+                <div class="scripture-box">
+                    <span class="scripture-reference">Exodus 15:26</span>
+                    <p>"He said, 'If you listen carefully to the LORD your God and do what is right in his eyes, if you pay attention to his commands and keep all his decrees, I will not bring on you any of the diseases I brought on the Egyptians, for I am the LORD, who heals you.'"</p>
+                </div>
+                <p>God promises health benefits to those who follow His instructions.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle6">
+            <summary>6. Ancient Health Principles</summary>
+            <div class="content">
+                <div class="principles-grid">
+                    <div class="principle-card">
+                        <h3>Quarantine</h3>
+                        <span class="scripture-reference">Leviticus 13:1-6</span>
+                        <p>Prescribing quarantine for infectious diseases. It's remarkable to find such a law written in the Bible about 3,500 years ago, when people lacked knowledge about the value of quarantine.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <h3>Contamination Prevention</h3>
+                        <span class="scripture-reference">Leviticus 13:47-52</span>
+                        <p>Prohibiting the use of potentially contaminated items.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <h3>Healthy Homes</h3>
+                        <span class="scripture-reference">Leviticus 14:34-45</span>
+                        <p>Teaching about maintaining healthy homes. Shouldn't we also have clean homes where germs cannot spread? Water, light, and air are among the best natural tools to achieve this goal.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <h3>Handwashing</h3>
+                        <span class="scripture-reference">Leviticus 15:1-12</span>
+                        <p>Requiring washing after touching potential sources of infection.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <h3>Food Safety</h3>
+                        <span class="scripture-reference">Deuteronomy 14:21</span>
+                        <p>Teaching not to eat animals found dead.</p>
+                        <p class="note">Note: God doesn't force foreigners, who don't know His laws, to either eat or not eat these animals. But to His people, He offers something better.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <h3>Waste Management</h3>
+                        <span class="scripture-reference">Deuteronomy 23:12,14</span>
+                        <p>Teaching care for organic waste. To appreciate such a simple law, consider that in civilized Europe a few centuries ago, people were still accustomed to throwing this waste on the street, even in cities like Florence.</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle7">
+            <summary>7. Evaluating These Laws</summary>
+            <div class="content">
+                <p>When these laws were written (about 3,500 years ago), people knew nothing about viruses and microbes. They didn't know how epidemics spread. God couldn't use scientific language with them. That's why we find religious language. But we have the means to understand the hygienic value of these norms behind the religious motivations.</p>
+                <p>Sometimes, the language used to describe these diseases is so different from ours that we have some difficulty understanding its meaning. The general principles, however, are very clear: God cares for us and teaches us to take care of our hygiene to avoid any dangerous contact that could transmit diseases, or to wash ourselves if necessary.</p>
+                <div class="question-box">
+                    <h3>How can we apply these principles to our lives?</h3>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle8">
+            <summary>8. Biblical Teaching on Rest</summary>
+            <div class="content">
+                <div class="scripture-box">
+                    <span class="scripture-reference">Mark 6:31</span>
+                    <p>"Then, because so many people were coming and going that they did not even have a chance to eat, he said to them, 'Come with me by yourselves to a quiet place and get some rest.'"</p>
+                </div>
+                <p>Jesus took care of His disciples and often invited them to rest in a quiet place. Too often we live a stressful life. We need rest not only for our body but also for our mind and heart.</p>
+                <div class="reflection-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h3>Think About It</h3>
+                        <p>How can we relax in a Christian way?</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle9">
+            <summary>9. Joy and Health</summary>
+            <div class="content">
+                <div class="scripture-box">
+                    <span class="scripture-reference">Proverbs 17:22</span>
+                    <p>"A cheerful heart is good medicine, but a crushed spirit dries up the bones."</p>
+                </div>
+                <p>Modern psychosomatic medicine amply demonstrates the truth of this biblical saying. We now know how serenity and joy stimulate our body's natural defenses, helping us have better health.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="principle10">
+            <summary>10. Finding Rest in Jesus</summary>
+            <div class="content">
+                <div class="scripture-box highlight">
+                    <span class="scripture-reference">Matthew 11:28</span>
+                    <p>"Come to me, all you who are weary and burdened, and I will give you rest."</p>
+                </div>
+                <p>Being happy isn't so easy. Many times we have so many problems that we can't be truly serene. Jesus wants to help us find true rest and peace.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="summary">
+            <summary>Summary of Key Principles</summary>
+            <div class="content">
+                <p>God cares deeply about our physical health as well as our spiritual well-being. The Bible provides numerous health principles that were far ahead of their time:</p>
+                
+                <ul class="styled-list">
+                    <li>Our bodies are temples of the Holy Spirit and should be treated with respect</li>
+                    <li>What we eat and drink should glorify God</li>
+                    <li>Biblical hygiene practices include quarantine, contamination prevention, and cleanliness</li>
+                    <li>Proper rest is essential for good health</li>
+                    <li>Mental health matters - joy and peace contribute to physical well-being</li>
+                    <li>Jesus offers ultimate rest for our souls</li>
+                </ul>
+                
+                <p>By following these principles, we can experience better health and honor God with our bodies. As we continue in the next lesson, we'll explore more specific guidelines about food and nutrition.</p>
+            </div>
+        </details>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="5.7.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">5.7 Sunday in the Bible</span>
+            </a>
+            <a href="5.9.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">5.9- Hygienic Laws: Food</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const tocToggle = document.getElementById('tocToggle');
+            const tocMobile = document.getElementById('tocMobile');
+            const backToTop = document.getElementById('backToTop');
+            
+            // Mobile menu toggle
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Table of contents toggle
+            tocToggle.addEventListener('click', function() {
+                if (tocMobile.style.display === 'block') {
+                    tocMobile.style.display = 'none';
+                    tocToggle.textContent = 'Show Chapter Navigation';
+                } else {
+                    tocMobile.style.display = 'block';
+                    tocToggle.textContent = 'Hide Chapter Navigation';
+                }
+            });
+            
+            // Back to top button
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animate collapsible sections on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('details.collapsible').forEach((item, index) => {
+                observer.observe(item);
+                // Add animation styles with staggered delay
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.transitionDelay = `${0.1 * index}s`;
+            });
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            // Close mobile menu if open
+                            mobileMenu.classList.remove('active');
+                            document.body.style.overflow = '';
+                            
+                            // Scroll to the target
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Add swipe functionality for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            document.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                const swipeThreshold = 100;
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left - go to next chapter
+                    window.location.href = '5.9.html';
+                }
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right - go to previous chapter
+                    window.location.href = '5.7.html';
+                }
+            }
+            
+            // Save reading position
+            window.addEventListener('beforeunload', function() {
+                localStorage.setItem('health-principles-scroll-position', window.scrollY);
+            });
+            
+            // Restore reading position
+            const savedPosition = localStorage.getItem('health-principles-scroll-position');
+            if (savedPosition) {
+                window.scrollTo(0, parseInt(savedPosition));
+            }
+            
+            // Create styled lists for principles
+            const createStyledLists = () => {
+                // Create styled unordered lists
+                document.querySelectorAll('ul:not(.styled-list)').forEach(ul => {
+                    ul.classList.add('styled-list');
+                });
+            };
+            
+            createStyledLists();
+        });
+    </script>
+</body>
+</html>

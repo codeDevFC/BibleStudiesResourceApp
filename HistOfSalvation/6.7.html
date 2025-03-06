@@ -1,0 +1,827 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revelation 12: The Remnant Church | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Question Styling */
+        .question {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .question h3::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Collapsible Content - Using native details/summary */
+        details.collapsible {
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        details.collapsible summary {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            position: relative;
+            list-style: none;
+        }
+
+        details.collapsible summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.collapsible summary::after {
+            content: '\f078'; /* Font Awesome chevron down */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+
+        details.collapsible[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details.collapsible summary:hover {
+            background: var(--secondary-color);
+        }
+
+        details.collapsible .details-content {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* In-Depth Study Section */
+        .in-depth-study {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .in-depth-study h2 {
+            text-align: center;
+            color: var(--holy-theme-dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Highlight for important points */
+        .highlight {
+            background-color: rgba(0, 188, 212, 0.1);
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        /* Numbered lists with custom styling */
+        ol.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Bulleted lists with custom styling */
+        ul.styled-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background-color: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--bg-secondary);
+            vertical-align: top;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+            }
+
+            .nav-button {
+                min-width: 120px;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+        .question:nth-child(6) { animation-delay: 0.6s; }
+        .question:nth-child(7) { animation-delay: 0.7s; }
+        .question:nth-child(8) { animation-delay: 0.8s; }
+        .question:nth-child(9) { animation-delay: 0.9s; }
+        .question:nth-child(10) { animation-delay: 1s; }
+        .question:nth-child(11) { animation-delay: 1.1s; }
+        .question:nth-child(12) { animation-delay: 1.2s; }
+        .question:nth-child(13) { animation-delay: 1.3s; }
+        .question:nth-child(14) { animation-delay: 1.4s; }
+        .question:nth-child(15) { animation-delay: 1.5s; }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>6.7 Revelation 12: The Remnant Church</h1>
+            <p>Understanding God's faithful remnant people at the end of time</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <details class="collapsible" open>
+            <summary>1. What does the term "Remnant" refer to?</summary>
+            <div class="details-content">
+                <span class="scripture-reference">Romans 9:27</span>
+                
+                <p>We already know what the Christian church should be: a community of people who receive God's grace in Jesus and, with the help of the Spirit, live by faith, trusting in Him and obeying His commandments. Unfortunately, reality has not always been like this. It has happened many times that God's people have rebelled against their Lord and abandoned Him. However, the Bible says, a "remnant" has remained faithful, and this remnant will be saved.</p>
+                
+                <ul class="styled-list">
+                    <li>At the time of the flood, 8 people were saved in the ark (2 Peter 2:5)</li>
+                    <li>In the time of Elijah, in a time of general apostasy, there was a remnant of 7,000 faithful who did not bow their knees to Baal (1 Kings 19:18)</li>
+                    <li>Of all Israel, only a part accepted Jesus</li>
+                </ul>
+                
+                <p>Reading all the texts where the "remnant" is mentioned, we discover that these are people who love God and who, even if they are not perfect, desire to remain loyal and faithful (Isaiah 10:20). These are not people who can live by themselves, thanks to their strength, but they live by God's grace who protects and saves them (Romans 11:5; Isaiah 25:8).</p>
+                
+                <p>Unfortunately, what happened with ancient Israel also happened within the Christian church. Apostasy dragged many disciples away from the Lord (Acts 20:29-30). For this reason, even within the Christian church, there have been "remnants" (Revelation 2:24-25), and there will also be one at the end of time. To better understand what this means, we will study Revelation 12 and some other texts.</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>2. In Revelation 12, how is God's people represented?</summary>
+            <div class="details-content">
+                <span class="scripture-reference">Revelation 12:1-2</span>
+                
+                <p>As a pregnant woman giving birth to her child: "Now a great sign appeared in heaven: a woman clothed with the sun, with the moon under her feet, and on her head a garland of twelve stars. Then being with child, she cried out in labor and in pain to give birth."</p>
+                
+                <p>Who is this woman? We have already talked about it in the study on original sin. In the Bible, God's people is often represented as God's fiancée or bride (Jeremiah 2:2; Ezekiel 16:1-8; Hosea 2:19-20; 2 Corinthians 11:2; Ephesians 5:22-32). In our text, this people is represented in the act of waiting for the birth of a child who, we will discover, will give them salvation. This reminds us of God's promise that announced the coming from Eve's offspring of a savior who would destroy the serpent (Genesis 3:15). The verses that follow will tell us that this is precisely the task of the child: to destroy the ancient dragon, called Satan.</p>
+                
+                <p>So, this woman is God's people, descended from Eve, from which and for which the promised Savior comes. The crown of 12 stars on the woman's head is also a reminder of the community nature of this woman (12 is the characteristic number of God's people: for the Old Testament, the 12 tribes descended from the twelve patriarchs, sons of Jacob; for the church, the 12 apostles (See Revelation 21:12,14). The moon under her feet (at the beginning of the history of God's people) and the sun that clothes her with greater glory can represent the glory of the old covenant with its rites announcing salvation, and that of the new with salvation fully manifested in Christ.</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>3. How is Satan represented?</summary>
+            <div class="details-content">
+                <span class="scripture-reference">Revelation 12:3-4,9</span>
+                
+                <p>As a dragon (a great serpent) seeking to kill the child. Our life is a battle between good and evil; we are called to take sides either for God or for Satan, to stand on the side of God's people or on the side of those who consciously or unconsciously follow Satan's ways. After the first verses have presented the positive character of God's people under the image of the woman dressed in white, we now see the negative aspect: the Evil One, represented by the ancient serpent who tempted Eve, has introduced sin, corruption, and death into our world. This serpent, not satisfied with the evil already done, having led Eve's descendants to sin. Satan's initial success even extended to heaven because he managed to drag a third of the stars (the angels of heaven) into his rebellion. If he now succeeds in killing the promised Savior as well, his victory could become eternal.</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>4. Why is Satan represented as a dragon with seven heads and ten horns?</summary>
+            <div class="details-content">
+                <p>The ten horns remind us of the fourth beast described in Daniel 7:7,24, a beast that represents Rome. When Jesus was born, King Herod tried to kill him (Matthew 2:16-18), but Rome was the superpower that dominated Palestine. Herod was the king of Israel only thanks to Rome's favor and having to respect Roman authority.</p>
+                
+                <p>So it is entirely correct to describe Rome as the manifestation of Satan's power seeking to kill the newborn child. Subsequently, the Serpent would succeed in his intent by putting Jesus to death through the Roman armies. But the tomb could not hold Jesus because He rose and ascended to heaven. As God had told Eve, the Serpent would manage to bruise the Messiah's heel, but his head would be crushed (Genesis 3:15).</p>
+                
+                <p>The 7 crowned heads most likely represent the fact that Rome was not the only power acting on behalf of Satan to oppress God's people. Already in the past, Satan had used Egypt, Assyria, Babylon, Medo-Persia, and Greece. Now he is using Rome and would subsequently use another power (see Revelation 17:9). In this perspective, the great dragon represents Satan working through human kingdoms to fight against God's people.</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>5. How is Christ's victory represented?</summary>
+            <div class="details-content">
+                <span class="scripture-reference">Revelation 12:5</span>
+                
+                <p>Despite His sufferings, Jesus becomes a victorious king: "She bore a male Child who was to rule all nations with a rod of iron. And her Child was caught up to God and His throne."</p>
+                
+                <p>As God had foretold, the serpent would bite the Messiah's heel, but at the same time, his head would be crushed (Genesis 3:15). Jesus died and was buried, but the tomb could not hold Him. He, in fact, rose and ascended to heaven. Jesus' death, caused by Satan through the hands of Roman soldiers, should have represented his victory, but it was not so. Instead, it represented Jesus' victory, because He freely accepted to go through death (John 10:18), and through His sacrifice, Jesus demonstrated the truth of God's love, the groundlessness of Satan's accusations, and created the conditions for our salvation from Satan's power, sin, and death (Hebrews 2:14-15).</p>
+                
+                <p>Jesus was to be defeated by the power of the nations, and instead, thanks to His death, He acquired the right to become their king (Philippians 2:8-11), and He will rule them not with the usual shepherd's rod, protecting and guiding them (Psalm 23:4), but with a "rod of iron," that is, with the power of judgment and condemnation (Revelation 19:15).</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>6. After Jesus' victory, what happens to the church?</summary>
+            <div class="details-content">
+                <span class="scripture-reference">Revelation 12:6</span>
+                
+                <div class="scripture-box">
+                    <p>"Then the woman fled into the wilderness, where she has a place prepared by God, that they should feed her there one thousand two hundred and sixty days."</p>
+                </div>
+                
+                <p>Jesus' victory laid the foundation for the salvation of His people, but they would have to continue living in this world and would have to face problems and persecutions. We already know of a time of persecutions foretold in Daniel 7:26 and Revelation 12:14; 13:5: this period of 1260 literal years would begin in 538 with the rise of the power of the little horn (Daniel 7:8) and would end in 1798 with the beginning of the decline of the political power of the papacy.</p>
+                
+                <p>Where was God's people during this time? The woman (that is, the true church) did not enjoy the glory and power of this world, was not welcomed at the court of kings, could not openly preach the gospel but had to hide in the "wilderness." What does this mean? In Revelation 17:15, waters represent peoples, people. The wilderness is where there is no water, that is, in places far from people. The church, to survive, had to hide in solitary places, not show itself openly. It is tragic that this happened in a world that called itself Christian, as it did during the Middle Ages and even after.</p>
+                
+                <p>What kind of Christianity was that? If the world had not forced true believers to hide, how different history would have been!</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>7. If Jesus' victory did not immediately eliminate the problems of history, what result did it have anyway?</summary>
+            <div class="details-content">
+                <span class="scripture-reference">Revelation 12:7-11</span>
+                
+                <div class="scripture-box">
+                    <p>"And war broke out in heaven: Michael and his angels fought with the dragon; and the dragon and his angels fought, but they did not prevail, nor was a place found for them in heaven any longer. So the great dragon was cast out, that serpent of old, called the Devil and Satan, who deceives the whole world; he was cast to the earth, and his angels were cast out with him. Then I heard a loud voice saying in heaven, 'Now salvation, and strength, and the kingdom of our God, and the power of His Christ have come, for the accuser of our brethren, who accused them before our God day and night, has been cast down. And they overcame him by the blood of the Lamb and by the word of their testimony, and they did not love their lives to the death.'"</p>
+                </div>
+                
+                <p><strong>a. War in heaven.</strong> This is not a military war but a spiritual one. Michael and his angels on one side, and Satan with his angels on the other. The war had already begun in heaven when Satan accused God of injustice and desired to appropriate Jesus' power and glory (Ellen White, The Great Controversy, pp. 494-5 English ed. Isaiah 14:12-14). In this spiritual war, Satan had the adherence of a third of the angels and, thanks to Adam and Eve's sin, also became the "prince of this world" (John 12:31).</p>
+                
+                <p>Before the cross, Satan was still allowed to frequent heaven and took advantage of this to accuse God's children (Job 2:1-5; Zechariah 3:1-2). "Satan" means precisely this, "accuser." It was the title given to the prosecutor, the prosecuting attorney. Now, after the experience of the cross, Satan is defeated and cast out of heaven: no one can bear him anymore, his nature has finally been revealed, and no one can give him credence anymore. God Himself can reject him without fear of being misunderstood by His creatures. He can no longer accuse anyone: neither God, nor the angels, nor men. The fact that he put Jesus to death, despite His evident innocence, shows that his intent was not justice but power. Only on earth are there still people willing to listen to him, and that is why he is put in a position to stay only on our planet.</p>
+                
+                <p><strong>b. Michael.</strong> Who is Michael, the chief of angels? We think it is Jesus Himself, for the following reasons:</p>
+                
+                <ul class="styled-list">
+                    <li>Michael means "Who is like God?" and we can answer: "Jesus is like God." Satan wanted to be like God against Jesus, but Jesus is the victor.</li>
+                    <li>Michael is "one of the chief princes" (Daniel 10:13) or simply "the great prince" (Daniel 12:1). Jude calls him "the archangel" (v. 9), that is, the "chief of angels." The angel Gabriel considers him the head of Israel (Daniel 10:21). The apostle Paul describes Jesus returning as one who speaks with the "voice of an archangel" (1 Thessalonians 4:16). In the O.T., as the divine Angel of Yahweh, he is the one who takes care of Israel (Joshua 5:13-15; Psalm 34:7; Isaiah 37:36, etc.). It is therefore easy to understand that Michael is Jesus Himself, the one who guides His people in heaven and on earth against the Adversary.</li>
+                    <li>The context requires that Michael, the one who defeats Satan, be Jesus Himself because it says that Satan has been defeated thanks to the blood of the Lamb, that is, of Jesus.</li>
+                </ul>
+                
+                <p><strong>c. The victory of the saints.</strong> If Jesus and His angels defeat Satan, we can do the same thanks to Jesus' blood, that is, by accepting His death for us. Through Jesus' blood, we receive forgiveness of our sins, and Satan no longer has any hold to accuse us (Romans 8:33-34; 1 Peter 1:18; 1 John 1:8-9). But we must understand that welcoming Jesus' gift is not just something intimate, personal, secret. We are victors in Jesus only if, conquered by His love, we also become His witnesses, manifesting faith in Him and confessing His name before others, with our words and our actions. This implies a victory over fear, even that of losing one's life for the love of Jesus. Revelation is not a book for lukewarm people (Revelation 3:16). In a war, one cannot side with both parties involved: one must choose and be consistent. Sometimes, one must also accept to die, as Jesus accepted to die for us.</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>8. If on one hand Jesus' death (and His resurrection) gave victory to His people, on the other hand, this made Satan even more furious. How is the church protected from his attacks?</summary>
+            <div class="details-content">
+                <span class="scripture-reference">Revelation 12:12-16</span>
+                
+                <div class="scripture-box">
+                    <p>"Therefore rejoice, O heavens, and you who dwell in them! Woe to the inhabitants of the earth and the sea! For the devil has come down to you, having great wrath, because he knows
+                      <p>that he has a short time." Now when the dragon saw that he had been cast to the earth, he persecuted the woman who gave birth to the male Child. But the woman was given two wings of a great eagle, that she might fly into the wilderness to her place, where she is nourished for a time and times and half a time, from the presence of the serpent. So the serpent spewed water out of his mouth like a flood after the woman, that he might cause her to be carried away by the flood. But the earth helped the woman, and the earth opened its mouth and swallowed up the flood which the dragon had spewed out of his mouth."</p>
+                    </div>
+                    
+                    <p>The period of persecution described here ("a time and times and half a time") is the same as that of the one thousand two hundred and sixty days-years described in v. 6. Cast out of heaven, Satan directs all his anger against God's children who live on earth. The church is persecuted, but God takes care of her and gives her "the two wings of a great eagle" so that she can go into the wilderness, into solitary places, where she will be protected and sustained by God. This scene probably repeats what happened to Israel which, coming out of the oppression of Egypt, was carried by the Lord into the wilderness of Sinai. The Lord carried them on eagles' wings (Exodus 19:4; Deuteronomy 32:11-12).</p>
+                    
+                    <p>Besides the wilderness, however, another aspect of God's protection is described:</p>
+                    
+                    <ol class="styled-list">
+                        <li>The water spewed from the serpent's mouth represents the people Satan uses to persecute true believers.</li>
+                        <li>The earth (the idea here is different from that expressed with the image of the wilderness) that helps the woman must represent sparsely populated places (in contrast to the waters that represent multitudes of peoples). It is very likely that this image represents, in a special way, America where, shortly after its discovery (1492), many believers found salvation from the persecutions that raged in Europe and the freedom to worship God according to their conscience.</li>
+                    </ol>
+                    
+                    <div class="think-about-it">
+                        <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                        <p>It can also happen to us that we have to face dangers because of our faith. Do you think God will take care of us?</p>
+                    </div>
+                </div>
+            </details>
+    
+            <details class="collapsible">
+                <summary>9. At the end of history, a remnant appears. What is it about?</summary>
+                <div class="details-content">
+                    <span class="scripture-reference">Revelation 12:17</span>
+                    
+                    <div class="scripture-box">
+                        <p>"And the dragon was enraged with the woman, and he went to make war with the rest of her offspring (literally: the remnant of her seed), who keep the commandments of God and have the testimony of Jesus Christ."</p>
+                    </div>
+                    
+                    <p>We have followed the history of the true church from the time of Jesus until the end of the 1260 years that end in 1798. During all this time, the church had to face persecutions but also enjoyed God's grace and support.</p>
+                    
+                    <p>Satan, however, does not stop there. We might think that with the end of the 1260 years, the era of persecutions definitely ends. Unfortunately, this is not the case. There is a pause but not their end. If Satan failed to destroy the woman during the long time of the 1260 days-years, he will resume doing so against what remains of her offspring.</p>
+                    
+                    <p>The word "remnant" brings us to what remains of the church and allows us to consider the faith and experience of God's people, who want to remain faithful to their Lord in these last days. We are living in the time of judgment that precedes Jesus' return, and we must carefully consider this text.</p>
+                </div>
+            </details>
+    
+            <details class="collapsible">
+                <summary>10. On what basis can we identify this "remnant"?</summary>
+                <div class="details-content">
+                    <span class="scripture-reference">Revelation 12:17</span>
+                    
+                    <p>Revelation 12:17 offers us two distinctive signs of these people:</p>
+                    
+                    <ol class="styled-list">
+                        <li>They "keep the commandments of God." In a time of general apostasy and immorality like that of the last days (Matthew 24:37; 2 Timothy 3:1-5), there is still someone who observes God's commandments, all the commandments, as God Himself gave them and not as they have been changed by men.</li>
+                        <li>They "have the testimony of Jesus." This means they have received a particular testimony from Jesus. The last times will be particularly difficult, not only because of immorality but also because of the great theological confusion that reigns within the Christian world. In such circumstances, we need special guidance from Jesus. The expression "testimony of Jesus" refers precisely to this guidance. How does it happen? In Revelation 19:10, an angel says to the apostle John: "I am your fellow servant, and of your brethren who have the testimony of Jesus. Worship God! For the testimony of Jesus is the spirit of prophecy." This means that Jesus gives His testimony to the church through the spirit of prophecy that inspires the prophets. In short: Jesus guides His church through the prophets, and the Remnant of the last days has this privilege: it enjoys the spirit of prophecy.</li>
+                    </ol>
+                    
+                    <p>So, if we want to know where to find this Remnant, we must look for a group of people who observe God's commandments and enjoy prophetic guidance. Do you know such a group? We certainly know that God invites each of us to be part of it, to be faithful to Him and enjoy His special guidance in these last days.</p>
+                </div>
+            </details>
+    
+            <details class="collapsible">
+                <summary>11. What additional characteristic marks the remnant?</summary>
+                <div class="details-content">
+                    <span class="scripture-reference">Revelation 14:12</span>
+                    
+                    <p>They are people who persevere in their Christian journey and who "keep the commandments of God and the faith in Jesus" (Revelation 14:12). This text also refers to the faithful believers of the last days (it is indeed placed between the announcement of judgment in v. 7 and the description of Jesus' return in v. 14). We thus see that keeping God's commandments and having faith in Jesus are two aspects of the same Christian experience. This emphasis on "faith in Jesus" can be considered as a third sign of the Remnant. They obey God's commandments, but not with legalistic intents. They obey because they have faith in Jesus, because they are conquered by His love and because they have learned to love Him. Don't you think Jesus is calling you too to be part of this people?</p>
+                </div>
+            </details>
+    
+            <div class="in-depth-study">
+                <h2>In-Depth Study</h2>
+                
+                <details class="collapsible">
+                    <summary>12. Having the "testimony of Jesus" and the presence of prophets</summary>
+                    <div class="details-content">
+                        <p>a) "Testimony of Jesus" is an expression found only in Revelation (1:2,9; 12:17; 19:10, and 20:4). In itself, the expression "testimony of Jesus" can mean that this people receives a testimony from Jesus or that it gives a testimony concerning Jesus. The examination of other texts of Revelation helps us understand what its correct meaning is:</p>
+                        
+                        <p>"He [John] bore witness to the word of God, and to the testimony of Jesus Christ, to all things that he saw" (1:2).</p>
+                        
+                        <p>"I, John, both your brother and companion in the tribulation and kingdom and patience of Jesus Christ, was on the island that is called Patmos for the word of God and for the testimony of Jesus Christ" (1:9).</p>
+                        
+                        <p>"And I fell at his feet to worship him [the angel]. But he said to me, 'See that you do not do that! I am your fellow servant, and of your brethren who have the testimony of Jesus. Worship God! For the testimony of Jesus is the spirit of prophecy'" (19:10).</p>
+                        
+                        <p>"Then I saw the souls of those who had been beheaded for their witness to Jesus and for the word of God" (20:4).</p>
+                        
+                        <p>It is significant that in three of these texts, the "testimony of Jesus" is accompanied by a reference to the "word of God" with an equal syntactic construction and a similarity of content: the two expressions lead to think that as the "word of God" is such because it comes from God, so the "testimony of Jesus" is such because it comes from Jesus. Even in 1:9 and 20:4, where it is said that the word of God and the testimony of Jesus have been the cause of persecution, and one might therefore think that it means that this happened because John and the other believers testified to the Word of God and Jesus, the thing does not appear certain to us because it could simply say that they are persecuted because they loved and preached the Word of God and the testimony that Jesus gave them. We could find ourselves in the same perspective as John when he was invited to eat the little book sweet as honey that then became bitter as gall (Revelation 10:9-10).</p>
+                        
+                        <p>The set of the four texts therefore leads to think that "testimony of Jesus" refers to a message that Jesus gave to the church in addition to what the church had received through the "Word of God," that is, the Holy Scripture. The same can be said of Revelation 12:17 regarding the church of the last days, in which the "testimony of Jesus" is put in parallel with the "commandments of God." Unfortunately, we must draw attention to the translation "keep" of the New Revised Version, both in 12:17 and in 19:10. The Greek text has echô whose basic meaning is "to have," "to possess." "Keep" is a derived and secondary meaning that is not at all necessary here, and which is introduced by the translator probably only for theological and not philological considerations. "Keep" indeed gives the idea that the "testimony of Jesus" is something that they have received from the past, thus making one suspect that it may be the same "word of God" (the canonical Scripture), cited together with it. But this is not the case. That our understanding is correct is understood from the fact that Revelation itself clearly explains, in 19:10, that the testimony of Jesus is the "spirit of prophecy" which, in turn, in ch. 22:8-9, is replaced by the equivalent expression "prophets":</p>
+                        
+                        <div class="comparison-table">
+                            <table>
+                                <tr>
+                                    <th>Revelation 19:10</th>
+                                    <th>Revelation 22:8-9</th>
+                                </tr>
+                                <tr>
+                                    <td>I fell at his feet to worship him</td>
+                                    <td>I fell down to worship before the feet of the angel</td>
+                                </tr>
+                                <tr>
+                                    <td>But he said to me</td>
+                                    <td>Then he said to me</td>
+                                </tr>
+                                <tr>
+                                    <td>See that you do not do that!</td>
+                                    <td>See that you do not do that!</td>
+                                </tr>
+                                <tr>
+                                    <td>I am your fellow servant, and of your brethren who have the testimony of Jesus</td>
+                                    <td>For I am your fellow servant, and of your brethren the prophets</td>
+                                </tr>
+                                <tr>
+                                    <td>Worship God!</td>
+                                    <td>Worship God!</td>
+                                </tr>
+                                <tr>
+                                    <td>For the testimony of Jesus is the spirit of prophecy</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <p>The parallelism is total. The only formal difference is that, in the second text, "prophets" stands in place of the pair "testimony of Jesus-spirit of prophecy" giving us its true meaning.</p>
+                        
+                        <p>The expression "spirit of prophecy" was a normal Hebrew way of speaking to qualify a person. Having a "spirit of jealousy" means being jealous (Numbers 5:14), receiving "a spirit of falsehood" (1 Kings 22:22) means telling lies. Having the "spirit of prophecy" means being prophets. We also find this expression in extra-biblical sources. Of John Hyrcanus it is said that he was "a righteous man whom God considered worthy of three great honors: the government of the nation, the title of pontiff, and the spirit of prophecy since God used to speak with him." Manaem, an Essene, "received from God the spirit of prophecy," and thanks to this, he had been able to predict to Herod that he would become king.</p>
+                        
+                        <p>A modern scholar concludes his analysis of Revelation 19:10 and 22:9 as follows: "If they have the martoria Iesou [the testimony of Jesus] they have the spirit of prophecy, that is, they are prophets." And he specifies that "the martyria Iesou is the testimony they have, not as Christians but as Christian prophets."</p>
+                        
+                        <p>As far as our discourse is concerned, this means that Revelation characterizes God's people in the last days as beneficiaries of a special revelation from God through the gift of prophecy.</p>
+                    </div>
+                </details>
+                
+                <details class="collapsible">
+                    <summary>13. Can the presence of the "Spirit of prophecy" in the church of the last days mean that this church honors the Bible as given by the Spirit of God through the prophets?</summary>
+                    <div class="details-content">
+                        <p>The Bible is certainly the result of the work of the Spirit of prophecy but, in Revelation 19:20 and 22:8-9, the Spirit of prophecy is not identified with the message but with the prophets. The Spirit of prophecy is not in the book but in the prophets who write it, it is not the Bible, but the Spirit of God who inspires the prophets and apostles. Thus, the church of the last days does not just have a message that comes from God (through the Bible or some other source), but a messenger or messengers who speak in God's name through the inspiration of God's Spirit.</p>
+                    </div>
+                </details>
+                
+                <details class="collapsible">
+                    <summary>14. Revelation 12:9 says that Satan was cast to the earth. When did this happen?</summary>
+                    <div class="details-content">
+                        <p>We have already answered this question during our study. Here we only report that some think that this happened at the time of Satan's first rebellion and think that for this reason, he was able to tempt Eve. Those who believe this tend to accuse God of having created the conditions for the temptation and the fall into sin of humanity. But the Bible does not say this: even if the war between Satan and Jesus began long before Jesus' death, Satan's access to heaven ended only with the victory won by Jesus with His death and resurrection.</p>
+                        
+                        <p>It is therefore not true that Satan was able to tempt our first parents because God put him on earth, relegating him there (we already know that he had brought with him 1/3 of the angels). Thanks to the ministry of Ellen White, Adventists believe that the entire universe was subject to temptation but that only humanity yielded to it, not by God's will but by our choice.</p>
+                    </div>
+                </details>
+                
+                <details class="collapsible">
+                    <summary>15. Many Catholics believe that the woman of Revelation 12 is the Madonna. Why don't Adventists accept this interpretation? Wasn't Jesus born from Mary?</summary>
+                    <div class="details-content">
+                        <p>It is true that Jesus was born from Mary, but it is not true that the woman of Revelation 12 is her, for the following reasons:</p>
+                        
+                        <ol class="styled-list">
+                            <li>Revelation 12, like the whole book, expresses itself through symbols and does not refer to any specific human being. It speaks of Jesus, the church, humanity, powers.</li>
+                            <li>Revelation 12 says that the woman was persecuted, but Mary never suffered any persecution. The pain for Jesus' death arises from her love for her son, not from a persecution directed against her.</li>
+                            <li>Revelation 12 says that the woman fled into the wilderness to be protected, but this never happened to Mary (the fact that she had to go to Egypt when Jesus was born cannot be equated in any way with going to solitary places, and the flight was not caused by a persecution against her but against Jesus).</li>
+                            <li>Revelation 12 says that the woman remained in the wilderness for 1260 years, which naturally has no correspondence with Mary's life. One cannot even think that it is a literal period of 3 and a half years that could correspond to the stay in Egypt, because in the language of Daniel and Revelation, this period applies to periods of persecution suffered by God's people, and not just to a woman. Moreover, the stay in Egypt, although caused by a painful reason, must not have been what we would consider a period of persecutions. In Egypt, many Jews lived who went there because they were comfortable there.</li>
+                            <li>Revelation 12 says that the woman also had offspring different from Jesus, which cannot be, especially from the Catholic point of view that denies the presence of Jesus' brothers on Mary's part.</li>
+                            <li>Revelation 12 describes the woman as covered with the splendor of the moon, the sun, and with a crown of 12 stars. Only with a lot of imagination, and greatly overestimating what the Bible tells us about Mary, can all this be applied to the woman whom the gospels describe as a simple woman who only accepts to be the servant of the Lord.</li>
+                            <li>Revelation 12 is to be seen in parallel with Revelation 17 where another woman, a prostitute, is introduced to represent the people unfaithful to God. The two women, the pure one of ch. 12 and the unfaithful one of ch. 17 both represent collective realities and not single persons. Both are symbolic figures.</li>
+                            <li>Even many Catholic scholars refuse to identify the woman with Mary.</li>
+                        </ol>
+                        
+                        <p>The figure of a woman to indicate the people is very frequent both in the Old Testament in relation to the people of Israel (Isaiah 54:5-6; Jeremiah 6:2), and in the New Testament in relation to the Church (Ephesians 5:22-27).</p>
+                        
+                        <p>In negative terms, the same image is used to describe the unfaithful people (Isaiah 1:21; 57:1ff; Jeremiah 2:20ff; 3:1ff; Ezekiel 16:1ff; Hosea 2:1ff).</p>
+                    </div>
+                </details>
+            </div>
+    
+            <!-- Navigation -->
+            <div class="navigation">
+                <a href="6.6.html" class="nav-button previous-chapter">
+                    ← Previous
+                    <span class="hover-text">6.6 Daniel 9: The Messiah and the Time of Judgment</span>
+                </a>
+                <a href="6.8.html" class="nav-button next-chapter">
+                    Next →
+                    <span class="hover-text">6.8 - A Prophet for the Remnant</span>
+                </a>
+                <a href="/00Intro&Topics.html" class="nav-button toc">
+                    Contents
+                </a>
+                <a href="/Index.html" class="nav-button home-button">
+                    Home
+                </a>
+            </div>
+    
+            <!-- Copyright Footer -->
+            <footer class="page-footer">
+                <div class="footer-content">
+                    <div class="copyright-notice">
+                        <p>© 2025 All Rights Reserved</p>
+                        <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    
+        <!-- JavaScript for toggle functionality -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Animation for questions on scroll
+                const questions = document.querySelectorAll('.question');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                questions.forEach(question => {
+                    observer.observe(question);
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

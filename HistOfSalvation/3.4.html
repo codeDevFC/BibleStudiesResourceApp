@@ -1,0 +1,1144 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.4 Purgatory | Doctrine of Man</title>
+    <style>
+        :root {
+            --primary-color: #2C3E50;
+            --accent-color: #8E44AD;
+            --bg-primary: #ffffff;
+            --bg-secondary: #F7F9FC;
+            --text-primary: #2C3E50;
+            --man-theme-dark: #4A235A;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .series-header {
+            background: linear-gradient(135deg, var(--man-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 3rem auto;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .nav-button {
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--text-primary);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin-bottom: 8px;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .navigation {
+                flex-direction: column;
+            }
+
+            .nav-button {
+                width: 100%;
+            }
+        }
+    </style>
+
+<style>
+  .study-content {
+      max-width: 900px;
+      margin: 0 auto;
+  }
+  
+  .question-section {
+      margin-bottom: 3rem;
+  }
+  
+  .contradiction-points,
+  .consequences-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+  }
+  
+  .point-card,
+  .consequence-card {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-left: 4px solid var(--accent-color);
+  }
+  
+  .scripture-quote {
+      background: var(--man-theme-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-style: italic;
+  }
+  
+  .reference-list {
+      list-style: none;
+      padding-left: 0;
+  }
+  
+  .reference-list li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+  }
+  
+  .reference-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+  }
+  
+  .scripture-reference {
+      color: var(--accent-color);
+      font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+      .contradiction-points,
+      .consequences-grid {
+          grid-template-columns: 1fr;
+      }
+  }
+  </style>
+
+<style>    
+  /* Root Variables and Base Styles */
+:root {
+--container-padding-desktop: 2rem;
+--container-padding-mobile: 1rem;
+--content-max-width: 1200px;
+--table-mobile-font-size: 14px;
+}
+
+/* Base Container Fixes */
+.container {
+width: 100%;
+max-width: var(--content-max-width);
+margin: 0 auto;
+padding: var(--container-padding-desktop);
+overflow-x: hidden;
+box-sizing: border-box;
+}
+
+/* Responsive Table Wrapper */
+.table-responsive-wrapper {
+width: 100%;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
+margin: 1rem 0;
+position: relative;
+}
+
+/* Interactive Scroll Indicator */
+.table-responsive-wrapper::after {
+content: '→ Scroll horizontally';
+position: absolute;
+bottom: -25px;
+left: 0;
+font-size: 0.8rem;
+color: var(--accent-color);
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.table-responsive-wrapper.scrollable::after {
+opacity: 1;
+}
+
+/* Table Fixes */
+table {
+min-width: 100%;
+border-collapse: separate;
+border-spacing: 0;
+margin: 0;
+}
+
+/* Sticky Header */
+thead th {
+position: sticky;
+top: 0;
+background: var(--man-theme-dark);
+z-index: 10;
+}
+
+/* Mobile-First Responsive Design */
+@media screen and (max-width: 1024px) {
+.container {
+   padding: var(--container-padding-mobile);
+}
+
+table {
+   font-size: var(--table-mobile-font-size);
+}
+
+/* Stack table cells on mobile */
+.responsive-table-mobile tr {
+   display: block;
+   margin-bottom: 1rem;
+   border: 1px solid var(--man-theme-light);
+   border-radius: 8px;
+}
+
+.responsive-table-mobile td {
+   display: block;
+   text-align: left;
+   padding: 0.8rem;
+   border-bottom: 1px solid var(--man-theme-light);
+}
+
+.responsive-table-mobile td::before {
+   content: attr(data-label);
+   font-weight: bold;
+   display: block;
+   margin-bottom: 0.5rem;
+}
+}
+
+/* Interactive Elements */
+.interactive-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+}
+
+.interactive-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+.interactive-card {
+   transform: none !important;
+}
+}
+
+
+
+/* Additional Responsive Utilities */
+.hide-on-mobile {
+@media screen and (max-width: 768px) {
+   display: none;
+}
+}
+
+.show-on-mobile {
+display: none;
+@media screen and (max-width: 768px) {
+   display: block;
+}
+}
+
+/* Flex Utilities */
+.flex-center {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.flex-column {
+flex-direction: column;
+}
+
+/* Grid Utilities */
+.grid-responsive {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1rem;
+}
+
+/* Spacing Utilities */
+.margin-responsive {
+margin: 2rem;
+@media screen and (max-width: 768px) {
+   margin: 1rem;
+}
+}
+
+.padding-responsive {
+padding: 2rem;
+@media screen and (max-width: 768px) {
+   padding: 1rem;
+}
+}
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   /* New Color Theme for Doctrine of Man Series */
+   :root {
+       --primary-color: #2C3E50;    /* Deep Blue-Gray */
+       --accent-color: #8E44AD;     /* Royal Purple */
+       --bg-primary: #ffffff;
+       --bg-secondary: #F7F9FC;
+       --text-primary: #2C3E50;
+       --text-secondary: #566573;
+       --highlight-color: #9B59B6;  /* Lighter Purple */
+       --man-theme-light: #E8E3ED;  /* Light Purple Background */
+       --man-theme-dark: #4A235A;   /* Dark Purple */
+   }
+
+   /* Base Styles */
+   body {
+       font-family: 'Inter', sans-serif;
+       line-height: 1.6;
+       color: var(--text-primary);
+       background: var(--bg-primary);
+       margin: 0;
+       padding: 0;
+   }
+
+   .container {
+       max-width: 1200px;
+       margin: 0 auto;
+       padding: 2rem;
+   }
+
+   /* Header Styling */
+   .series-header {
+       background: linear-gradient(135deg, var(--man-theme-dark), var(--accent-color));
+       color: white;
+       padding: 3rem 2rem;
+       text-align: center;
+       border-radius: 0 0 20px 20px;
+       margin-bottom: 3rem;
+   }
+
+   .series-header h1 {
+       font-size: 2.5rem;
+       margin-bottom: 1rem;
+   }
+
+   .series-header .series-title {
+       font-size: 1.2rem;
+       opacity: 0.9;
+   }
+
+   /* Purpose Box Styling */
+   .purpose-box {
+       background: var(--man-theme-light);
+       padding: 2rem;
+       border-radius: 12px;
+       margin: 2rem 0;
+       border-left: 4px solid var(--accent-color);
+   }
+
+   .purpose-box h2 {
+       color: var(--man-theme-dark);
+       margin-bottom: 1rem;
+   }
+
+   /* Navigation Buttons */
+   .navigation {
+       display: flex;
+       justify-content: space-between;
+       gap: 1rem;
+       margin-top: 3rem;
+       flex-wrap: wrap;
+   }
+
+   .nav-button {
+       padding: 1rem 2rem;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       font-weight: bold;
+       transition: all 0.3s ease;
+       text-decoration: none;
+       text-align: center;
+       color: white;
+       min-width: 180px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       position: relative;
+   }
+
+   .previous-chapter {
+       background: var(--man-theme-dark);
+   }
+
+   .next-chapter {
+       background: var(--accent-color);
+   }
+
+   .toc {
+       background: var(--primary-color);
+   }
+
+   .home-button {
+       background: var(--text-secondary);
+   }
+
+   .nav-button:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+   }
+
+   /* Hover Text */
+   .nav-button .hover-text {
+       position: absolute;
+       bottom: 100%;
+       left: 50%;
+       transform: translateX(-50%);
+       background: rgba(0,0,0,0.8);
+       color: white;
+       padding: 0.5rem 1rem;
+       border-radius: 4px;
+       font-size: 0.9rem;
+       opacity: 0;
+       visibility: hidden;
+       transition: all 0.3s ease;
+       white-space: nowrap;
+       pointer-events: none;
+       margin-bottom: 8px;
+   }
+
+   .nav-button:hover .hover-text {
+       opacity: 1;
+       visibility: visible;
+   }
+
+   /* Introduction Box Styling */
+.introduction-box {
+background: var(--bg-secondary);
+padding: 2rem;
+border-radius: 12px;
+margin: 2rem 0;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-quote {
+background: var(--man-theme-light);
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1.5rem 0;
+font-style: italic;
+border-left: 4px solid var(--accent-color);
+}
+
+.contrasting-views {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+margin: 1.5rem 0;
+}
+
+.view-card {
+background: white;
+padding: 1.5rem;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Hebrew Terms Styling */
+.hebrew-terms {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem;
+margin: 1.5rem 0;
+}
+
+.term-card {
+background: var(--man-theme-light);
+padding: 1rem;
+border-radius: 8px;
+text-align: center;
+}
+
+.hebrew {
+font-family: 'Times New Roman', serif;
+color: var(--man-theme-dark);
+font-size: 1.2rem;
+margin-top: 0.5rem;
+}
+
+.language-note {
+background: var(--bg-secondary);
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1.5rem 0;
+}
+
+.illustration-box {
+background: linear-gradient(to right, var(--man-theme-light), transparent);
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1.5rem 0;
+border-left: 4px solid var(--accent-color);
+}
+
+.consequences-list {
+list-style: none;
+padding-left: 0;
+}
+
+.consequences-list li {
+margin-bottom: 1rem;
+padding-left: 2rem;
+position: relative;
+}
+
+.consequences-list li::before {
+content: "→";
+position: absolute;
+left: 0;
+color: var(--accent-color);
+}
+
+.next-study-preview {
+margin-top: 1.5rem;
+padding: 1rem;
+background: var(--man-theme-light);
+border-radius: 8px;
+text-align: center;
+font-weight: bold;
+color: var(--man-theme-dark);
+}
+
+.reflection-prompt {
+background: linear-gradient(to right, var(--man-theme-light), transparent);
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1.5rem 0;
+border-left: 4px solid var(--accent-color);
+}
+
+.biblical-perspective {
+margin: 1.5rem 0;
+padding: 1.5rem;
+background: var(--bg-secondary);
+border-radius: 8px;
+}
+
+/* Additional Insights Styling */
+.insight-section {
+background: white;
+padding: 2rem;
+border-radius: 12px;
+margin: 2rem 0;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.testament-comparison {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 2rem;
+margin: 1.5rem 0;
+}
+
+.testament-card {
+background: var(--man-theme-light);
+padding: 1.5rem;
+border-radius: 8px;
+text-align: center;
+}
+
+.comparison-table {
+overflow-x: auto;
+margin: 1.5rem 0;
+}
+
+.comparison-table table {
+width: 100%;
+border-collapse: separate;
+border-spacing: 0;
+border-radius: 8px;
+overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+padding: 1rem;
+border: 1px solid var(--man-theme-light);
+}
+
+.comparison-table th {
+background: var(--man-theme-dark);
+color: white;
+}
+
+/* Quotations Styling */
+.quotations-section {
+margin: 4rem 0;
+padding: 2rem;
+background: var(--bg-secondary);
+border-radius: 12px;
+}
+
+.quote-box {
+background: white;
+padding: 2rem;
+border-radius: 8px;
+margin-top: 1.5rem;
+}
+
+.quote-collection blockquote {
+margin: 1.5rem 0;
+padding: 1.5rem;
+background: var(--man-theme-light);
+border-left: 4px solid var(--accent-color);
+border-radius: 0 8px 8px 0;
+font-style: italic;
+}
+
+.soul-meaning-analysis {
+max-width: 1200px;
+margin: 2rem auto;
+padding: 2rem;
+background: var(--bg-secondary);
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.introduction-note {
+background: var(--man-theme-light);
+padding: 1.5rem;
+border-radius: 8px;
+margin-bottom: 2rem;
+border-left: 4px solid var(--accent-color);
+}
+
+.testament-comparison-table {
+overflow-x: auto;
+margin: 2rem 0;
+}
+
+.testament-comparison-table table {
+width: 100%;
+border-collapse: separate;
+border-spacing: 0;
+border-radius: 12px;
+overflow: hidden;
+}
+
+.testament-comparison-table th {
+background: var(--man-theme-dark);
+color: white;
+padding: 1rem;
+text-align: left;
+}
+
+.testament-comparison-table td {
+padding: 1.5rem;
+border-bottom: 1px solid var(--man-theme-light);
+vertical-align: top;
+}
+
+.usage-type {
+font-weight: bold;
+color: var(--man-theme-dark);
+background: var(--man-theme-light);
+}
+
+.scripture-example {
+margin-bottom: 1rem;
+}
+
+.scripture-reference {
+display: inline-block;
+background: var(--accent-color);
+color: white;
+padding: 0.2rem 0.5rem;
+border-radius: 4px;
+font-size: 0.9rem;
+margin-bottom: 0.5rem;
+}
+
+.important-notes {
+background: linear-gradient(to right, var(--man-theme-light), transparent);
+padding: 1.5rem;
+border-radius: 8px;
+margin-top: 2rem;
+}
+
+.key-points-list {
+list-style: none;
+padding-left: 0;
+}
+
+.key-points-list li {
+margin-bottom: 0.8rem;
+padding-left: 1.5rem;
+position: relative;
+}
+
+.key-points-list li::before {
+content: "→";
+position: absolute;
+left: 0;
+color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.soul-meaning-analysis {
+   padding: 1rem;
+}
+
+.testament-comparison-table {
+   font-size: 0.9rem;
+}
+
+.testament-comparison-table td {
+   padding: 1rem;
+}
+}
+
+/* Updated Navigation Button Styles */
+.navigation {
+display: flex;
+justify-content: center; /* Center the buttons container */
+align-items: center;
+gap: 1.5rem;
+margin: 3rem auto; /* Center margins */
+flex-wrap: wrap;
+width: 100%; /* Full width container */
+max-width: 1200px; /* Match container max-width */
+}
+
+.nav-button {
+padding: 1.2rem 2.5rem; /* Increased padding */
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-weight: bold;
+transition: all 0.3s ease;
+text-decoration: none;
+text-align: center;
+color: white;
+min-width: 220px; /* Increased minimum width */
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+flex: 1; /* Allow buttons to grow */
+max-width: 300px; /* Maximum width for each button */
+}
+
+/* Specific button colors with increased contrast */
+.previous-chapter {
+background: var(--man-theme-dark);
+box-shadow: 0 4px 15px rgba(74, 35, 90, 0.3);
+}
+
+.next-chapter {
+background: var(--accent-color);
+box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
+}
+
+.study-button {
+background: #6C3483; /* Distinct purple */
+box-shadow: 0 4px 15px rgba(108, 52, 131, 0.3);
+}
+
+.toc {
+background: var(--primary-color);
+box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+}
+
+.home-button {
+background: var(--text-secondary);
+box-shadow: 0 4px 15px rgba(86, 101, 115, 0.3);
+}
+
+/* Enhanced hover effects */
+.nav-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+.navigation {
+   padding: 0 1.5rem;
+}
+}
+
+@media (max-width: 768px) {
+.navigation {
+   flex-direction: column;
+   align-items: stretch;
+}
+
+.nav-button {
+   width: 100%;
+   max-width: none;
+   margin: 0.5rem 0;
+}
+}
+
+
+/* Fixed Container and Navigation Styles */
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 2rem;
+overflow: hidden; /* Prevent overflow */
+box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.navigation {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem; /* Reduced gap */
+margin: 3rem 0;
+flex-wrap: wrap;
+width: 100%;
+max-width: 100%; /* Ensure it doesn't exceed container */
+padding: 0; /* Remove padding */
+box-sizing: border-box;
+}
+
+.nav-button {
+padding: 1.2rem 1.5rem; /* Reduced horizontal padding */
+border: none;
+border-radius: 8px;
+cursor: pointer;
+font-weight: bold;
+transition: all 0.3s ease;
+text-decoration: none;
+text-align: center;
+color: white;
+min-width: 180px; /* Adjusted minimum width */
+max-width: 250px; /* Added maximum width */
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+flex: 1 1 auto; /* Allow flexible growth but maintain minimum size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+.container {
+   padding: 1rem; /* Reduced padding on smaller screens */
+}
+
+.navigation {
+   gap: 0.5rem; /* Further reduced gap on smaller screens */
+}
+}
+
+@media (max-width: 768px) {
+.navigation {
+   flex-direction: column;
+   width: 100%;
+}
+
+.nav-button {
+   width: 100%;
+   max-width: none;
+   margin: 0.25rem 0;
+}
+}
+
+.theological-analysis {
+max-width: 1000px;
+margin: 2rem auto;
+padding: 2rem;
+background: var(--bg-secondary);
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.scripture-box {
+background: var(--man-theme-light);
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1.5rem 0;
+border-left: 4px solid var(--accent-color);
+}
+
+.aspect-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 1.5rem;
+margin: 2rem 0;
+}
+
+.aspect-card {
+background: white;
+padding: 1.5rem;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+transition: transform 0.3s ease;
+}
+
+.aspect-card:hover {
+transform: translateY(-5px);
+}
+
+.aspect-card h4 {
+color: var(--man-theme-dark);
+margin-bottom: 1rem;
+padding-bottom: 0.5rem;
+border-bottom: 2px solid var(--accent-color);
+}
+
+.scripture-references {
+margin-top: 1rem;
+padding-top: 1rem;
+border-top: 1px solid var(--man-theme-light);
+}
+
+.reference {
+background: var(--accent-color);
+color: white;
+padding: 0.2rem 0.5rem;
+border-radius: 4px;
+font-size: 0.9rem;
+}
+
+.important-note {
+background: linear-gradient(to right, var(--man-theme-light), transparent);
+padding: 1.5rem;
+border-radius: 8px;
+margin-top: 2rem;
+border-left: 4px solid var(--accent-color);
+}
+
+
+
+</style>
+
+</head>
+<body>
+    <div class="series-header">
+        <span class="series-title">Doctrine of Man</span>
+        <h1>Purgatory</h1>
+    </div>
+
+    <div class="container">
+        
+      <!-- Main content from here -->
+
+      <div class="container">
+        <!-- Purpose Section -->
+        <div class="purpose-box">
+            <h2>Purpose:</h2>
+            <p>To demonstrate how the idea of purgatory is not only unbiblical but anti-biblical. It conflicts with biblical teaching about the nature of death and grace as the only way of salvation. To help instead trust in God's grace through Jesus Christ.</p>
+        </div>
+    
+        <!-- Introduction Section -->
+        <div class="introduction-box">
+            <p>The Bible completely ignores any place equivalent to what is known as purgatory, where the dead expiate their sins' punishment or are purified from their carnal tendencies before being admitted to God's holy presence. In fact, it implicitly but clearly excludes it. While the Bible teaches that we are contaminated by sin and need purification, the way this happens is totally different from what purgatory commonly means.</p>
+        </div>
+    
+        <!-- Main Study Points -->
+        <div class="study-content">
+            <!-- Question 1 -->
+            <div class="question-section">
+                <h3>1) Does the Bible use the word "purgatory"?</h3>
+                <div class="answer-box">
+                    <p>The Bible uses many terms related to the need or reality of purification, but never in relation to a place where one goes after death.</p>
+                </div>
+            </div>
+    
+            <!-- Question 2 -->
+            <div class="question-section">
+                <h3>2) If purgatory doesn't exist, how can we be purified from our sins?</h3>
+                <div class="answer-box">
+                    <div class="scripture-quote">
+                        <p>"But if we walk in the light as He is in the light, we have fellowship with one another, and the blood of Jesus Christ His Son cleanses us from all sin." (<span class="scripture-reference">1 John 1:7</span>)</p>
+                    </div>
+                    <p>Purgatory is not a place but a Person: Jesus, God's Son who gave His life to free us from our sins.</p>
+                    
+                    <div class="scripture-references">
+                        <h4>Additional References:</h4>
+                        <ul class="reference-list">
+                            <li><span class="scripture-reference">Psalm 51:1-7</span> - God purifies us by His grace</li>
+                            <li><span class="scripture-reference">Isaiah 53:11-12</span> - The Messiah bears our sins and clothes us with righteousness</li>
+                            <li><span class="scripture-reference">Acts 15:8,9</span> - God purifies our hearts through faith</li>
+                            <li><span class="scripture-reference">Hebrews 10:19-22</span> - Jesus' blood purifies us</li>
+                            <li><span class="scripture-reference">1 John 1:9</span> - If we confess our sins, Jesus forgives and purifies us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Question 3 -->
+            <div class="question-section">
+                <h3>3) Why does the doctrine of purgatory contradict the Gospel?</h3>
+                <div class="answer-box">
+                    <div class="contradiction-points">
+                        <div class="point-card">
+                            <h4>Nature of Death</h4>
+                            <p>It assumes conscious existence of the disembodied soul after death, denying biblical teaching about human nature and the state of the dead (<span class="scripture-reference">Ecclesiastes 9:10</span>)</p>
+                        </div>
+                        <div class="point-card">
+                            <h4>Salvation by Grace</h4>
+                            <p>It assumes purification through personal suffering, denying biblical teaching about salvation by grace through faith in Jesus (<span class="scripture-reference">Romans 3:23,24; 5:1,2</span>)</p>
+                        </div>
+                        <div class="point-card">
+                            <h4>Immediate Purification</h4>
+                            <p>It assumes a long purification process, denying biblical doctrine about Jesus' grace purifying us here and now (<span class="scripture-reference">1 John 1:7</span>)</p>
+                        </div>
+                        <div class="point-card">
+                            <h4>Personal Responsibility</h4>
+                            <p>It assumes others can shorten one's time in purgatory, denying biblical teaching about personal responsibility for salvation (<span class="scripture-reference">Ezekiel 18:20</span>)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Question 4 -->
+            <div class="question-section">
+                <h3>4) What have been the consequences of purgatory doctrine in Christian church history?</h3>
+                <div class="answer-box">
+                    <div class="consequences-grid">
+                        <div class="consequence-card">
+                            <h4>Commercialization of Faith</h4>
+                            <p>It turned Christian faith into commerce, encouraging people to pay the church for release from purgatory (<span class="scripture-reference">1 Peter 1:18-19; Matthew 10:8; Acts 8:20</span>)</p>
+                        </div>
+                        <div class="consequence-card">
+                            <h4>Conscience Control</h4>
+                            <p>The church used claimed power over purgatory to dominate people's consciences</p>
+                        </div>
+                        <div class="consequence-card">
+                            <h4>Christian Division</h4>
+                            <p>It was a major cause of Christianity's division during the Protestant Reformation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Table of Contents
+                <span class="hover-text">View All Lessons</span>
+            </a>
+            <a href="/HistOfSalvation/4.1.html" class="nav-button next-chapter">
+                Next Chapter →
+                <span class="hover-text">IV. Doctrine of the Church</span>
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Main Page
+                <span class="hover-text">Return to Homepage</span>
+            </a>
+        </div>
+    </div>
+
+<!--Copy protection script-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Disable right-click
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+          if (
+              // Disable Ctrl+C, Ctrl+X, Ctrl+U
+              (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85)) ||
+              // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+              (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+              // Disable F12
+              e.keyCode === 123
+          ) {
+              e.preventDefault();
+              return false;
+          }
+      });
+
+      // Disable drag and drop
+      document.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable text selection via double click
+      document.addEventListener('mousedown', function(e) {
+          if (e.detail > 1) {
+              e.preventDefault();
+          }
+      });
+  });
+</script>
+</body>
+</html>

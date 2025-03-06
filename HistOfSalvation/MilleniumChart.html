@@ -1,0 +1,226 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MILLENIUM || Chart</title>
+
+<style>
+  
+  :root {
+    /* Colors */
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f8f8;
+    /* ... other variables */
+}
+
+
+.millennium-map {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.timeline-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    position: relative;
+}
+
+.events-column {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.event-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #4a90e2;
+    position: relative;
+}
+
+.event-tag {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background: #e74c3c;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.millennium-center {
+    background: #2c3e50;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.millennium-header h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #ffd700;
+}
+
+.millennium-description {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+.earth-state {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .events-column {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+
+</style>
+
+
+</head>
+<body>
+  <div class="millennium-map">
+    <div class="timeline-container">
+        <!-- Beginning Events -->
+        <div class="events-column left">
+            <div class="event-box">
+                <h3>First Events</h3>
+                <div class="event-item">
+                    <h4>Jesus Returns</h4>
+                    <!-- <p>(Gesù ritorna)</p>-->
+                </div>
+                <div class="event-item">
+                    <h4>Dead Saints Rise</h4>
+                    <!-- <p>(I santi morti risorgono)</p>-->
+                    <span class="event-tag">1ª Risurrection</span>
+                </div>
+                <div class="event-item">
+                    <h4>All Saints to Heaven</h4>
+                    <!-- <p>(Tutti i santi vanno in cielo)</p>-->
+                </div>
+                <div class="event-item">
+                    <h4>Wicked Die</h4>
+                    <!-- <p>(Gli empi vivi muoiono)</p>-->
+                    <span class="event-tag">1ª Death</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Section - Millennium -->
+        <div class="millennium-center">
+            <div class="millennium-header">
+                <h2>MILLENNIUM</h2>
+                <div class="millennium-description">
+                    <p>SAINTS REIGN WITH CHRIST AND JUDGE THE WICKED</p>
+                     <!--<p>(I SANTI REGNANO CON GESÙ E GIUDICANO GLI EMPI)</p>-->
+                </div>
+                <div class="earth-state">
+                    <p>THE EARTH IS DESOLATE WITH THE DEAD WICKED</p>
+                    <p>AND SATAN LEFT ALONE, BOUND</p>
+                   <!--  <p>(LA TERRA È DESOLATA CON GLI EMPI MORTI E SATANA LASCIATO SOLO, LEGATO)</p>-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Ending Events -->
+        <div class="events-column right">
+            <div class="event-box">
+                <h3>Final Events</h3>
+                <div class="event-item">
+                    <h4>New Jerusalem Descends</h4>
+                   <!--  <p>(La Nuova Gerusalemme discende)</p>-->
+                </div>
+                <div class="event-item">
+                    <h4>Wicked Resurrect</h4>
+                   <!--  <p>(Gli empi risorgono)</p>-->
+                    <span class="event-tag">2ª Resurrection</span>
+                </div>
+                <div class="event-item">
+                    <h4>Satan Unbound</h4>
+                    <!-- <p>(Satana sciolto)</p>-->
+                </div>
+                <div class="event-item">
+                    <h4>Final Rebellion</h4>
+                    <!-- <p>(Ultima ribellione)</p>-->
+                </div>
+                <div class="event-item">
+                    <h4>Fire from Heaven</h4>
+                   <!--  <p>(Fuoco dal cielo)</p>-->
+                    <span class="event-tag">2ª Death</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,719 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>2.5 Isaiah 53: The Gospel in the Old Testament | History of Salvation</title>
+    <link rel="stylesheet" href="/HistOfSalvation/styles2.css">
+    
+    
+    <style>
+
+.additional-texts-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.scripture-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.scripture-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.scripture-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.scripture-reference {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    background: var(--bg-accent);
+    border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+    .scripture-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .scripture-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+
+
+
+/* Alternative Purpose Box Styling */
+.purpose-box {
+    background: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin: 2.5rem 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+}
+
+.purpose-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--divine-color), var(--wisdom-color));
+    border-radius: 15px 15px 0 0;
+}
+
+.purpose-box h2 {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.purpose-box h2::before {
+    content: '✦';
+    color: var(--divine-color);
+    font-size: 1.5rem;
+}
+
+.purpose-text {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.purpose-text p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.purpose-highlight {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.2) 0%, rgba(218, 165, 32, 0) 100%);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.purpose-highlight:hover {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.3) 0%, rgba(218, 165, 32, 0.1) 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .purpose-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .purpose-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .purpose-text {
+        padding-left: 1rem;
+    }
+
+    .purpose-text p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+
+
+      /* Page-specific styles */
+      .page-background {
+          background-image: url('../images/creation-bg.jpg');
+      }
+
+      .scripture-reference {
+          display: inline-block;
+          background: var(--divine-color);
+          color: var(--text-primary);
+          padding: 0.2rem 0.5rem;
+          border-radius: 4px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+      }
+
+      .question-section {
+          margin-bottom: 2rem;
+          background: white;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .comparison-table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin: 1.5rem 0;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+          padding: 1rem;
+          border: 1px solid var(--accent-color);
+      }
+
+      .comparison-table th {
+          background: var(--primary-color);
+          color: white;
+      }
+
+      .comparison-table tr:nth-child(even) {
+          background: var(--bg-accent);
+      }
+
+      /* Add hover effects */
+      .scripture-reference:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .question-section:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+      }
+
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+          .comparison-table {
+              font-size: 0.9rem;
+          }
+          
+          .comparison-table th,
+          .comparison-table td {
+              padding: 0.5rem;
+          }
+          
+          .question-section {
+              padding: 1rem;
+          }
+      }
+  </style>
+    
+    
+    <style>
+        /* Additional page-specific styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--spacing-md);
+            border: 1px solid var(--primary-color);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: var(--bg-primary);
+        }
+
+        .scripture-reference {
+            color: var(--prophecy-color);
+            font-weight: 600;
+        }
+
+        .question-number {
+            color: var(--wisdom-color);
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .reflection-box {
+            background: linear-gradient(to right, var(--bg-accent), transparent);
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--wisdom-color);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+/* Navigation Button Styles */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Next Chapter Button - Royal Gold */
+.next-chapter {
+    background: #DAA520;
+    color: white;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
+.next-chapter:hover {
+    background: #B8860B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+}
+
+/* Additional Insight Button - Deep Burgundy */
+.study-button {
+    background: #800020;
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+}
+
+.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+/* Table of Contents Button - Rich Brown */
+.nav-button.toc {
+    background: #8B4513;
+    color: white;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.nav-button.toc:hover {
+    background: #723A0F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Home Button - Deep Forest Green */
+.home-button {
+    background: #2F4F4F;
+    color: white;
+    box-shadow: 0 4px 15px rgba(47, 79, 79, 0.3);
+}
+
+.home-button:hover {
+    background: #1F3333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(47, 79, 79, 0.4);
+}
+
+/* Hover Text for Buttons */
+.nav-button .hover-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 8px;
+}
+
+.nav-button:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Add arrow to hover text */
+.nav-button .hover-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+
+/* Additional Study Button Styling */
+.nav-button.study-button {
+    background: #800020; /* Deep burgundy */
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+.nav-button.study-button::before {
+    content: '📚'; /* Book emoji or can use Font Awesome icon */
+    margin-right: 8px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .navigation {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-button.study-button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-button .hover-text {
+        display: none; /* Hide hover text on mobile */
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header Section -->
+    <div class="chapter-header">
+        <h1>Isaiah 53: The Gospel in the Old Testament</h1>
+        <div class="purpose-box">
+            <h2>Purpose:</h2>
+            <div class="purpose-text">
+                <p>To understand one of the greatest and most beautiful prophecies of the Old Testament, to increase our trust in God and better comprehend the eternal meaning of His love and the significance of Jesus' death.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+    <div class="introduction-box">
+        <h2>Introduction</h2>
+        <p>We already know many important things about Jesus as our Savior, but we can discover much more. As we have studied, God promised a Savior from the first moment it became necessary: immediately after humanity's first sin (<span class="scripture-reference">Genesis 3:14,15</span>). Subsequently, this promise was better specified and reinforced.</p>
+        
+        <p>One of the highest points of Messianic expectation comes through the prophet Isaiah. His description of God's salvation offered through Jesus is so profound and clear that an attentive reader might wonder if, instead of being a prophet, he was directly one of the Lord's disciples, an eyewitness to the events. It is indeed as if Isaiah had seen with his own eyes what happened to Jesus, and we know this was true, though the eyes were not physical but spiritual ones illuminated by the Holy Spirit. Isaiah received a special prophetic revelation from God who knows all things before they happen (<span class="scripture-reference">Isaiah 42:9; 46:10</span>).</p>
+
+        <div class="study-note">
+            <p>In this study, we will consider chapter 53 of this prophet's book. We should approach this text with respect, in an attitude of meditation, to learn new things about God's love and place our hope in Him. We will follow the text of the New Revised Version, but any version is suitable. It's just useful to consider that, being a poetic text, some translations might render certain expressions differently.</p>
+        </div>
+    </div>
+
+    <!--Main Section-->
+
+    <!-- Main Content Section -->
+<div class="content-section">
+  <!-- Question 1 -->
+  <div class="question-section">
+      <h3><span class="question-number">1)</span> How is the Savior introduced?</h3>
+      <div class="scripture-quote">
+          <span class="scripture-reference">Isaiah 53:1-3</span>
+          <blockquote>
+              <p>"Who has believed our message? And to whom has the arm of the LORD been revealed? He grew up before him like a tender shoot, like a root out of dry ground. He had no beauty or majesty to attract us to him, nothing in his appearance that we should desire him. He was despised and rejected by mankind, a man of suffering, and familiar with pain. Like one from whom people hide their faces he was despised, and we held him in low esteem."</p>
+          </blockquote>
+      </div>
+
+      <div class="notes-section">
+          <h4>Notes:</h4>
+          <div class="verse-note">
+              <h5>Verse 1:</h5>
+              <p>Through two rhetorical questions, the prophet clarifies that what he has already said (see verses 13-15 of the previous chapter, where this Messianic passage begins) and what he is about to say about how God chose to save His people, is totally different from what humanity could have imagined or hoped for. God's plan is so surprising as to become incredible. We must therefore renounce all our rationality and conceptions to embrace God's offer wholeheartedly.</p>
+          </div>
+
+          <div class="verse-note">
+              <h5>Verse 2a:</h5>
+              <p>The Savior's life is not easy from His first appearance. Nothing in this world favors His rise and success. The world is like a hostile desert to Him, yet He accepts coming among us. We can think of Herod's attempt to suppress Him at birth (<span class="scripture-reference">Matthew 1:16-18</span>) and also the overall hostility of His own people and the world (<span class="scripture-reference">John 1:5,10-11</span>).</p>
+          </div>
+
+          <div class="verse-note">
+              <h5>Verse 2b:</h5>
+              <p>The Savior does not seek to conquer the world with His appearance, with human glory too often tainted by superficiality and violence. The Gospel is substance that appeals to the heart and love's power capable of transforming it.</p>
+          </div>
+
+          <div class="verse-note">
+              <h5>Verse 3:</h5>
+              <p>The world is not capable of accepting such a Savior, rejects Him, and this makes Him suffer. The text may also refer to Jesus' appearance during crucifixion, when all glory, human and divine, was totally absent and people looked at Him with dismay (His disciples) or with contempt (<span class="scripture-reference">Luke 23:35-37</span>). How would we have reacted before Jesus' cross? How do we react now?</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="question-section">
+      <h3><span class="question-number">2)</span> In what incredible way will the Savior offer us His salvation?</h3>
+      <div class="scripture-quote">
+          <span class="scripture-reference">Isaiah 53:4-6</span>
+          <blockquote>
+              <p>"Surely he took up our pain and bore our suffering, yet we considered him punished by God, stricken by him, and afflicted. But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed. We all, like sheep, have gone astray, each of us has turned to our own way; and the LORD has laid on him the iniquity of us all."</p>
+          </blockquote>
+      </div>
+
+      <!-- Notes for Question 2 -->
+<div class="notes-section">
+  <h4>Notes:</h4>
+  <ul class="note-points">
+      <li>a) Consider how Jesus was tortured and killed. Can we see the cross in these verses?</li>
+      <li>b) In the past, and often even now, it was thought that a wealthy and happy person, someone healthy and successful, was so because they were righteous and thus blessed by God. Conversely, someone who suffered was considered cursed because they were a sinner (<span class="scripture-reference">John 9:2; Job 8</span>). Thus, the Messiah, because of His sufferings, was considered rejected and punished by God. Instead, says the prophet, if He suffers, it is because of our sins, not His own.</li>
+      <li>c) The gospel is this: we deserve death because of our sin, but the Messiah offers His life in place of ours. <span class="scripture-reference">1 Peter 3:18</span>: "For Christ also suffered once for sins, the righteous for the unrighteous, to bring you to God."</li>
+  </ul>
+</div>
+
+<!-- Question 3 -->
+<div class="question-section">
+  <h3><span class="question-number">3)</span> What attitude did the Savior have in His suffering?</h3>
+  <div class="scripture-quote">
+      <span class="scripture-reference">Isaiah 53:7</span>
+      <blockquote>
+          <p>"He was oppressed and afflicted, yet he did not open his mouth; he was led like a lamb to the slaughter, and as a sheep before its shearers is silent, so he did not open his mouth."</p>
+      </blockquote>
+  </div>
+  <div class="notes-section">
+      <p>Jesus was not forced by anyone. His was a sacrifice freely and lovingly lived. This is why He did not protest (Compare with <span class="scripture-reference">John 10:18; Matthew 11:29; 26:52-54; 27:12-14</span>).</p>
+  </div>
+</div>
+
+<!-- Question 4 -->
+<div class="question-section">
+  <h3><span class="question-number">4)</span> What fate should the Messiah have suffered after His death? What happened instead?</h3>
+  <div class="scripture-quote">
+      <span class="scripture-reference">Isaiah 53:8-9</span>
+      <blockquote>
+          <p>"By oppression and judgment he was taken away. Yet who of his generation protested? For he was cut off from the land of the living; for the transgression of my people he was punished. He was assigned a grave with the wicked, and with the rich in his death, though he had done no violence, nor was any deceit in his mouth."</p>
+      </blockquote>
+  </div>
+  <div class="historical-note">
+      <p>These verses foretell the Messiah's unjust death. Crucifixion was a punishment that Romans reserved for slaves and foreign rebels. It was considered the most shameful punishment. A Roman citizen could not be crucified (thanks to this, the Apostle Paul, a Roman citizen (<span class="scripture-reference">Acts 22:25-29</span>), was beheaded, a quick and honorable death). On the cross, one could suffer for days before dying. Death came not so much from bleeding but from infections and suffocation. Killed as a godless person, He was destined to be dishonored even after His death, perhaps buried away from others, carelessly, just to get Him out of sight.</p>
+  </div>
+</div>
+
+<!-- Question 5 -->
+  <!--Detailed Notes-->
+<div class="question-section">
+  <h3><span class="question-number">5)</span> What hope allowed Jesus to accept all this? What is implicit in the examined text?</h3>
+  <div class="scripture-quote">
+      <span class="scripture-reference">Isaiah 53:10-12</span>
+      <blockquote>
+          <p>"Yet it was the LORD's will to crush him and cause him to suffer, and though the LORD makes his life an offering for sin, he will see his offspring and prolong his days, and the will of the LORD will prosper in his hand. After he has suffered, he will see the light of life and be satisfied; by his knowledge my righteous servant will justify many, and he will bear their iniquities. Therefore I will give him a portion among the great, and he will divide the spoils with the strong, because he poured out his life unto death, and was numbered with the transgressors. For he bore the sin of many, and made intercession for the transgressors."</p>
+      </blockquote>
+  </div>
+
+  <div class="verse-notes">
+      <div class="verse-note">
+          <h4>Verse 10a:</h4>
+          <p>The language used should not be understood literally according to today's meaning. It does not mean that God rejoiced in Jesus' sufferings. Rather, God "accepted" that the Messiah would suffer if this could bring salvation to His people. Just as Jesus, the Son of God, will be "satisfied" with the positive fruits of His sacrifice (v. 11), so the Father "rejoices" in the salvation that would come to us through His plan of salvation. The Father and the Son are united in their love for us.</p>
+      </div>
+
+      <div class="verse-note">
+          <h4>Verses 10b, 11a:</h4>
+          <p>If the Messiah died, all this can only happen by presupposing Jesus' resurrection. From His death comes our life, from His suffering our joy, from His apparent defeat the greatest success. Isaiah saw even the moment of victory beyond the pain of death.</p>
+      </div>
+
+      <div class="verse-note">
+          <h4>Verses 11b, 12b:</h4>
+          <p>The righteous Messiah takes on the sins of the people, but through this experience, His righteousness becomes the sinner's righteousness. It happens as an exchange totally favorable to us. The knowledge spoken of here is that of God's love which He shares and transmits to the sinner.</p>
+          <div class="key-concept">
+              <p>"To know God" means to be one with Him, to share His character, His will, His hope.</p>
+          </div>
+      </div>
+
+      <div class="verse-note">
+          <h4>Verse 12:</h4>
+          <p>Humiliation is replaced by glorification, defeat by victory, service by lordship. Paul probably thinks of Isaiah 53 when he describes the Lord's humiliation followed by His glorification (<span class="scripture-reference">Philippians 2:5-11</span>).</p>
+      </div>
+  </div>
+
+  <div class="reflection-box">
+      <h4>For Reflection:</h4>
+      <ul>
+          <li>Why did God choose to save us through Jesus' suffering and death?</li>
+          <li>What consequences does this have in our way of seeing God and living our lives?</li>
+      </ul>
+  </div>
+</div>
+
+ 
+
+</div>
+
+<!-- Additional Biblical Texts Section -->
+<div class="additional-texts-section">
+  <h2>Additional Biblical Texts on the Meaning and Purpose of Jesus' Death</h2>
+
+  <div class="scripture-grid">
+      <div class="scripture-item">
+          <span class="scripture-reference">Acts 4:12</span>
+          <p>"Salvation is found in no one else, for there is no other name under heaven given to mankind by which we must be saved."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">Romans 3:23-25</span>
+          <p>"For all have sinned and fall short of the glory of God, and all are justified freely by his grace through the redemption that came by Christ Jesus. God presented Christ as a sacrifice of atonement, through the shedding of his blood—to be received by faith. He did this to demonstrate his righteousness, because in his forbearance he had left the sins committed beforehand unpunished."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">Romans 5:8</span>
+          <p>"But God demonstrates his own love for us in this: While we were still sinners, Christ died for us."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">1 Corinthians 15:3</span>
+          <p>"For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">2 Corinthians 5:21</span>
+          <p>"God made him who had no sin to be sin for us, so that in him we might become the righteousness of God."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">Galatians 1:4</span>
+          <p>"Jesus gave himself for our sins to rescue us from the present evil age, according to the will of our God and Father."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">Hebrews 9:15</span>
+          <p>"His death has taken place for the redemption of the transgressions that were committed under the first covenant."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">Hebrews 9:28</span>
+          <p>"So Christ was sacrificed once to take away the sins of many; and he will appear a second time, not to bear sin, but to bring salvation to those who are waiting for him."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">1 Peter 1:18,19</span>
+          <p>"For you know that it was not with perishable things such as silver or gold that you were redeemed from the empty way of life handed down to you from your ancestors, but with the precious blood of Christ, a lamb without blemish or defect."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">1 Peter 2:24</span>
+          <p>"He himself bore our sins in his body on the cross, so that we might die to sins and live for righteousness; by his wounds you have been healed."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">1 John 2:2</span>
+          <p>"He is the atoning sacrifice for our sins, and not only for ours but also for the sins of the whole world."</p>
+      </div>
+
+      <div class="scripture-item">
+          <span class="scripture-reference">1 John 4:10</span>
+          <p>"This is love: not that we loved God, but that he loved us and sent his Son as an atoning sacrifice for our sins."</p>
+      </div>
+  </div>
+</div>
+
+
+
+
+    <!-- Navigation Buttons -->
+    <div class="navigation">
+        <a href="/HistOfSalvation/2.4.html" class="nav-button previous-chapter">
+            ← Previous Lesson
+            <span class="hover-text">2.4 Jesus Our Savior</span>
+        </a>
+        <a href="/HistOfSalvation/2.6.html" class="nav-button next-chapter">
+            Next Lesson →
+            <span class="hover-text">2.6 Who is Jesus?</span>
+        </a>
+        <a href="/00Intro&Topics.html" class="nav-button toc">
+            Table of Contents
+            <span class="hover-text">View All Lessons</span>
+        </a>
+        <a href="/Index.html" class="nav-button home-button">
+            Main Page
+            <span class="hover-text">Return to Homepage</span>
+        </a>
+    </div>
+</div>
+
+<!-- Copy Protection Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Disable keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (
+                (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85)) ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+                e.keyCode === 123
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Disable text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+    });
+</script>
+</body>
+</html>

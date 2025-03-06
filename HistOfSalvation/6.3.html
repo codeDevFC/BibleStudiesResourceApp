@@ -1,0 +1,891 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel 2: Unlocking the Future | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Question Styling */
+        .question {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .question h3::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Collapsible Content */
+        .collapsible-header {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+        }
+
+        .collapsible-header:hover {
+            background: var(--secondary-color);
+        }
+
+        .collapsible-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            padding: 0 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .collapsible-content.show {
+            max-height: 2000px; /* Adjust as needed */
+            padding: 1.5rem;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+    background: var(--holy-theme-dark);
+}
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* In-Depth Study Section */
+        .in-depth-study {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .in-depth-study h2 {
+            text-align: center;
+            color: var(--holy-theme-dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Details/Summary Styling */
+        details {
+            margin: 1rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: white;
+        }
+
+        summary {
+            padding: 1.2rem;
+            cursor: pointer;
+            background: var(--bg-secondary);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            position: relative;
+            outline: none;
+        }
+
+        summary:hover {
+            background: var(--secondary-color);
+        }
+
+        summary::after {
+            content: '⌄';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        details .content {
+            padding: 1.5rem;
+        }
+
+        /* Bible Reference Styling */
+        .bible-reference {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+            }
+
+            .nav-button {
+                min-width: 120px;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+        .question:nth-child(6) { animation-delay: 0.6s; }
+        .question:nth-child(7) { animation-delay: 0.7s; }
+        .question:nth-child(8) { animation-delay: 0.8s; }
+        .question:nth-child(9) { animation-delay: 0.9s; }
+        .question:nth-child(10) { animation-delay: 1s; }
+        .question:nth-child(11) { animation-delay: 1.1s; }
+        .question:nth-child(12) { animation-delay: 1.2s; }
+        .question:nth-child(13) { animation-delay: 1.3s; }
+        .question:nth-child(14) { animation-delay: 1.4s; }
+        .question:nth-child(15) { animation-delay: 1.5s; }
+
+        /* Custom Details/Summary styling */
+        .custom-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-details summary {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            transition: background-color 0.3s ease;
+            outline: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .custom-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .custom-details summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-details[open] summary::after {
+            content: '−';
+        }
+
+        .custom-details summary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .custom-details .details-content {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Highlight for important points */
+        .highlight {
+            background-color: rgba(0, 188, 212, 0.1);
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        /* Numbered lists with custom styling */
+        ol.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Bulleted lists with custom styling */
+        ul.styled-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Prophecy Diagram */
+        .prophecy-diagram {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .prophecy-diagram img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Prophecy table */
+        .prophecy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .prophecy-table th {
+            background-color: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .prophecy-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+
+        .prophecy-table tr:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+
+        .prophecy-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .prophecy-table tr:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Interactive elements */
+        .interactive-image {
+            position: relative;
+            width: 100%;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .interactive-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>6.3 Daniel 2: Unlocking the Future</h1>
+            <p>Discovering the reality and meaning of biblical prophecies as evidence of a personal God who knows and controls history</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="question">
+            <h3>Purpose</h3>
+            <p>To begin discovering the reality and meaning of biblical prophecies as evidence of a personal God who knows and controls history, guiding it to a good end despite the existence of evil. The study of this specific prophecy will lay the foundation for understanding the rest of the book of Daniel and the plan of salvation.</p>
+        </div>
+
+        <div class="question">
+            <h3>Introduction</h3>
+            <p>We finished the last study by asking whether it is possible to know the time of the final judgment symbolized by the Day of Atonement. The answer is yes, but we must follow a somewhat long path through the message of the book of Daniel. It won't be easy because it requires historical knowledge and careful attention. This is not a study for everyone, but God promises His blessing to those who listen to the prophetic word of this book and the subsequent book of Revelation (Daniel 12:4; Revelation 1:3).</p>
+        </div>
+
+        <div class="question">
+            <h3>1. Who was Daniel?</h3>
+            
+            <p>He was a young Hebrew taken to Babylon in 606-5 BC as a political prisoner. Because of his noble origin, he was welcomed into the court of Nebuchadnezzar, the king of Babylon, who wanted to make him a faithful servant, perhaps a qualified link with his people of origin. There, with God's help, the young man became part of the circle of Babylonian wise men, and God called him to transmit messages to the king himself, to subsequent kings, and to write words of encouragement for his people and for us.</p>
+        </div>
+
+        <div class="question">
+            <h3>2. How did it happen that the future was revealed to King Nebuchadnezzar?</h3>
+            <span class="scripture-reference">Daniel 2:1-28</span>
+            
+            <p>Read or summarize Daniel 2:1-28. Note how:</p>
+            
+            <ol class="styled-list">
+                <li>The Babylonian magicians could not know the future (v. 10).</li>
+                <li>Daniel did not seek to gain advantages over the magicians who had disappointed the king but sought to justify them (v. 27).</li>
+                <li>Daniel was a humble person who only wanted to give glory to God (v. 28, 30).</li>
+            </ol>
+        </div>
+
+        <div class="question">
+            <h3>3. What was the purpose of the dream given to the king?</h3>
+            <span class="scripture-reference">Daniel 2:29-30</span>
+            
+            <p>To help the king understand the final objective of the history of this world: the kingdom of God. Probably so that he would not overestimate the religious significance of his victories over the people of Israel, thinking it was also a victory over their God, and also to invite him to a humble view of his power and his personal function.</p>
+        </div>
+
+        <div class="question">
+            <h3>4. In what form is the history of the world revealed to the king and to Daniel?</h3>
+            <span class="scripture-reference">Daniel 2:31-46</span>
+            
+            <p>Note the following facts:</p>
+            
+            <ol class="styled-list">
+                <li>Starting with Babylon, compared to the glory of gold, we have only 4 empires that directly succeed one another. History teaches us that these are the kingdoms of Babylon, Medo-Persia, Greece, and Rome.</li>
+                <li>While the difference from one to another is described in terms of preciousness (from gold to iron), the last is certainly described in relation to its strength, its power: Rome perfectly matches this description; its empire was the most vast and strong among the described empires.</li>
+                <li>The fourth empire is not followed by another that takes its place. Instead, it is divided into several kingdoms that will remain until the advent of a different and eternal kingdom, raised by God at the end of time. This is exactly what happened to the Roman Empire, reduced to fragments by barbarians who had gradually infiltrated its territories, being assimilated there and sometimes becoming the backbone of the armed forces.</li>
+                <li>Several people have tried to reunify the Roman Empire but, until now, after about 1500 years since its dissolution, no one has succeeded. Some European countries are now trying to achieve political unity, but it is still only a portion of the ancient Roman Empire. One might also, perhaps, advance the hypothesis that, of these kingdoms, rather than emphasizing the territorial aspect of the former Roman Empire, one should emphasize the human aspect. The peoples who composed them are now scattered throughout the world, and the prophecy could simply mean that the world we know, and in which God's people live, will never be united as it was for the empires that anciently controlled ancient Israel and then the early Christian church.</li>
+                <li>The only part of the prophecy not yet fulfilled is that relating to the stone that breaks off from the mountain without human hands (thus comes from God). It represents the kingdom of God that will be manifested at the return of Jesus. All other parts of the prophecy have been perfectly fulfilled, and after 2600 years we can say that no one has been able to disprove it. We only have to wait confidently for the fulfillment of the last part.</li>
+            </ol>
+            
+            <div class="prophecy-diagram">
+                <img src="/HistOfSalvation/images/Daniel2.png" alt="Daniel 2 Prophecy - The Image and the Stone">
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>5. What can we learn through this simple prophecy?</h3>
+            
+            <ol class="styled-list">
+                <li>The Bible is truly the inspired word of God (v. 28) because no one could have revealed the future in such a clear and unequivocal way.</li>
+                <li>If God knows everything before it happens, then we can also be at peace about our future because He knows our life and will be able to bring it to a good end, if we entrust it to Him.</li>
+                <li>The world will not continue forever as it is now, and we need not fear that it will end with a natural catastrophe or a man-made upheaval. God will bring about a radical change and transform our reality into an immensely superior one. The kingdom of God is coming, and we can look to the future with confidence.</li>
+            </ol>
+        </div>
+
+        <div class="in-depth-study">
+            <h2>In-Depth Study</h2>
+            
+            <div class="custom-details">
+                <summary>6. Why doesn't this biblical prophecy mention other important historical realities like ancient China or India?</summary>
+                <div class="details-content">
+                    <p>The purpose of prophecy is not to predict the history of the world as such. For that, God would have had to give us an encyclopedia, not just a few lines. The purpose is instead to give the Babylonian king an idea of the future of his kingdom, thus outlining the empires that would subsequently follow it, until the kingdom of God is established. This history begins with Babylon because at that time it was the power that controlled Israel, God's people, and God is interested in His people. Nations like China or India had nothing to do with what we are seeing.</p>
+                </div>
+            </div>
+            
+            <div class="custom-details">
+                <summary>7. Some scholars describe the 4 kingdoms differently: Babylon, Media, Persia, Greece, the division of Greece, and the coming of the Messiah. Why do Adventists reject this interpretation?</summary>
+                <div class="details-content">
+                    <p>Some reasons are as follows:</p>
+                    <ol class="styled-list">
+                        <li>When Media and Persia entered the prophetic scene, they were already unified and cannot be separated.</li>
+                        <li>The prophet Daniel himself, in another parallel prophecy, describes Media and Persia as a single power represented by a single animal (8:20).</li>
+                        <li>The above interpretation does not correspond to the ultimate purpose of the prophecy, which is to close history with the destruction of human kingdoms which are miraculously replaced by the kingdom of God. The falling stone cannot refer to the first coming of Jesus, which was peaceful, almost unnoticed, and the kingdoms of this world have continued to exist for 2000 years. Daniel describes the coming of God's kingdom in the same terms in which the Bible describes the return of Jesus: a rapid and worldwide event that everyone sees. When Jesus came the first time, He did not come to judge and destroy the nations but to announce salvation. The nations will disappear at the time of His return (Revelation 19:15-21).</li>
+                        <li>There would be no mention of the Roman Empire, which already existed at the time of Jesus' coming.</li>
+                        <li>This interpretation does not arise from historical data but from the fact that many modern scholars, influenced by modern humanistic rationalism, refuse to believe in the divine inspiration of the Bible and reduce it to merely the word of man. For them, Daniel was not a true prophet who lived in the court of Babylon before the announced events were realized, but a Jew who lived in the 2nd century BC who wrote, inventing the prophecy to encourage his people in a difficult time. In this way of understanding, the message of Daniel 2 must close at his time when the oppressive kingdom of the Seleucids, heir to the Greek-Macedonian empire, dominated. The coming of a savior then becomes only a pure human hope based on fantasy, something that as believers we cannot accept.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>Interactive Exploration</h3>
+            
+            <div class="prophecy-table">
+                <tr>
+                    <th>Symbol</th>
+                    <th>Kingdom</th>
+                    <th>Historical Period</th>
+                    <th>Characteristics</th>
+                </tr>
+                <tr>
+                    <td>Head of Gold</td>
+                    <td>Babylon</td>
+                    <td>605-539 BC</td>
+                    <td>Glorious, wealthy empire under Nebuchadnezzar</td>
+                </tr>
+                <tr>
+                    <td>Chest and Arms of Silver</td>
+                    <td>Medo-Persia</td>
+                    <td>539-331 BC</td>
+                    <td>Less glorious but larger; dual nature (Medes and Persians)</td>
+                </tr>
+                <tr>
+                    <td>Belly and Thighs of Bronze</td>
+                    <td>Greece</td>
+                    <td>331-168 BC</td>
+                    <td>Even less precious metal but still strong; Alexander's swift conquests</td>
+                </tr>
+                <tr>
+                    <td>Legs of Iron</td>
+                    <td>Rome</td>
+                    <td>168 BC-476 AD</td>
+                    <td>Strongest of all; crushed and broke all opposition</td>
+                </tr>
+                <tr>
+                    <td>Feet of Iron and Clay</td>
+                    <td>Divided Rome</td>
+                    <td>476 AD-Present</td>
+                    <td>Mixture of strength and weakness; cannot remain united</td>
+                </tr>
+                <tr>
+                    <td>Stone Cut Without Hands</td>
+                    <td>Kingdom of God</td>
+                    <td>Future</td>
+                    <td>Divine origin; destroys all earthly kingdoms; fills the whole earth</td>
+                </tr>
+            </table>
+            
+            <div class="think-about-it">
+                <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                <p>How does this prophecy from over 2,600 years ago strengthen your faith in the Bible as God's inspired word? What comfort does it give you to know that God has a plan for human history that culminates in His eternal kingdom?</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="6.2.html" class="nav-button previous-chapter">
+              ← Previous
+              <span class="hover-text">6.2 God's Sanctuary: The Most Holy Place & The Day of Judgment</span>
+          </href=>
+          <a href="6.4.html" class="nav-button next-chapter">
+              Next →
+              <span class="hover-text">6.4: The Rise of a Special Power and Judgement</span>
+          </a>
+          <a href="/00Intro&Topics.html" class="nav-button toc">
+              Contents
+          </a>
+          <a href="/Index.html" class="nav-button home-button">
+              Home
+          </a>
+      </div>
+
+      <!-- Copyright Footer -->
+      <footer class="page-footer">
+          <div class="footer-content">
+              <div class="copyright-notice">
+                  <p>© 2025 All Rights Reserved</p>
+                  <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+              </div>
+          </div>
+      </footer>
+  </div>
+
+  <!-- No-copy protection scripts -->
+  <script>
+      document.addEventListener('keydown', function(e) {
+          if (e.ctrlKey && 
+              (e.key === 'c' || 
+               e.key === 'C' || 
+               e.key === 'u' || 
+               e.key === 'U' || 
+               e.key === 'p' || 
+               e.key === 'P')) {
+              e.preventDefault();
+              alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+          }
+      });
+
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+      });
+      
+      // Toggle details content when clicking on summary
+      document.addEventListener('DOMContentLoaded', function() {
+          const details = document.querySelectorAll('.custom-details');
+          
+          details.forEach(detail => {
+              const summary = detail.querySelector('summary');
+              
+              summary.addEventListener('click', function(e) {
+                  e.preventDefault(); // Prevent default browser behavior
+                  
+                  // Toggle the open attribute
+                  if (detail.hasAttribute('open')) {
+                      detail.removeAttribute('open');
+                  } else {
+                      detail.setAttribute('open', 'true');
+                  }
+              });
+          });
+          
+          // Animate questions on scroll
+          const questions = document.querySelectorAll('.question');
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.style.opacity = '1';
+                      entry.target.style.transform = 'translateY(0)';
+                  }
+              });
+          }, { threshold: 0.1 });
+          
+          questions.forEach(question => {
+              observer.observe(question);
+          });
+      });
+      
+      // Tab functionality
+      function openTab(evt, tabName) {
+          // Declare all variables
+          var i, tabContent, tabLabels;
+
+          // Get all elements with class="tab-content" and hide them
+          tabContent = document.getElementsByClassName("tab-content");
+          for (i = 0; i < tabContent.length; i++) {
+              tabContent[i].style.display = "none";
+              tabContent[i].className = tabContent[i].className.replace(" active", "");
+          }
+
+          // Get all elements with class="tab-label" and remove the class "active"
+          tabLabels = document.getElementsByClassName("tab-label");
+          for (i = 0; i < tabLabels.length; i++) {
+              tabLabels[i].className = tabLabels[i].className.replace(" active", "");
+          }
+
+          // Show the current tab, and add an "active" class to the button that opened the tab
+          document.getElementById(tabName).style.display = "block";
+          document.getElementById(tabName).className += " active";
+          evt.currentTarget.className += " active";
+      }
+      
+      // Smooth scroll to anchors
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          });
+      });
+
+      // Create an interactive image for the statue
+      document.addEventListener('DOMContentLoaded', function() {
+          // This would be implemented with additional JavaScript for an interactive image
+          // For example, hovering over different parts of the statue could show explanations
+          // Since this requires more complex implementation, we're just noting it here
+      });
+  </script>
+</body>
+</html>

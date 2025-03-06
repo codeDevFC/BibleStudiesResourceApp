@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel 9: The Messiah and the Time of Judgment | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Header */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Collapsible Sections */
+        details.collapsible {
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: white;
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        details.collapsible:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        details.collapsible summary {
+            background: var(--bg-secondary);
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            position: relative;
+            list-style: none;
+            transition: background-color 0.3s ease;
+        }
+
+        details.collapsible summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.collapsible summary::after {
+            content: '\f078'; /* Font Awesome chevron down */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+
+        details.collapsible[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details.collapsible summary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        details.collapsible .content {
+            padding: 1.5rem;
+        }
+
+        /* Scripture Reference */
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* Tables */
+        .decree-table, .poetic-structure-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .decree-table th, .poetic-structure-table th {
+            background-color: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .decree-table td, .poetic-structure-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+
+        .decree-table tr:nth-child(even), .poetic-structure-table tr:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+
+        .decree-table tr:last-child td, .poetic-structure-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .decree-table tr:hover, .poetic-structure-table tr:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Lists */
+        ol.styled-list, ul.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 20px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--bg-secondary);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--bg-secondary);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--bg-secondary);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--bg-secondary) transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--bg-secondary);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .timeline-content h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+        }
+
+        /* In-Depth Study Section */
+        .in-depth-study {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .in-depth-study h2 {
+            text-align: center;
+            color: var(--holy-theme-dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Footnotes */
+        .footnote {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .footnote-reference {
+            cursor: pointer;
+            color: var(--accent-color);
+            font-weight: bold;
+            vertical-align: super;
+            font-size: smaller;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            background: var(--holy-theme-dark);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-menu-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .toc-toggle {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin: 1rem 0;
+            cursor: pointer;
+            font-weight: 600;
+            display: none;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .toc-mobile {
+            display: none;
+            margin-top: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .toc-mobile ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-mobile li {
+            margin-bottom: 0.8rem;
+        }
+
+        .toc-mobile a {
+            color: var(--holy-theme-dark);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .toc-mobile a:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 1024px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .series-header {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .timeline::after {
+                left: 40px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 25px;
+            }
+            
+            .left::before, .right::before {
+                left: 70px;
+                border: medium solid var(--bg-secondary);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--bg-secondary) transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 31px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+                border-radius: 0 0 15px 15px;
+                margin-bottom: 2rem;
+            }
+            
+            .series-header h1 {
+                font-size: 1.5rem;
+            }
+
+            details.collapsible summary {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+
+            details.collapsible .content {
+                padding: 1rem;
+            }
+
+            .nav-button {
+                min-width: 100%;
+                padding: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .toc-toggle {
+                display: block;
+            }
+            
+            .decree-table, .poetic-structure-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .decree-table th, .decree-table td,
+            .poetic-structure-table th, .poetic-structure-table td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .timeline {
+                margin: 2rem auto;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                padding-left: 70px;
+                padding-right: 15px;
+            }
+            
+            .timeline-content {
+                padding: 15px;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-content p {
+                font-size: 0.9rem;
+            }
+            
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .series-header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .series-header p {
+                font-size: 0.9rem;
+            }
+            
+            details.collapsible summary {
+                font-size: 0.9rem;
+            }
+            
+            .scripture-box {
+                padding: 1rem;
+            }
+            
+            .think-about-it {
+                padding: 1rem;
+            }
+            
+            .think-about-it h3 {
+                font-size: 1rem;
+            }
+            
+            .in-depth-study {
+                padding: 1rem;
+            }
+            
+            .in-depth-study h2 {
+                font-size: 1.2rem;
+            }
+            
+            .timeline-container::after {
+                width: 15px;
+                height: 15px;
+                right: -8px;
+                top: 15px;
+            }
+            
+            .timeline-container {
+                padding-left: 60px;
+            }
+            
+            .left::after, .right::after {
+                left: 22px;
+            }
+            
+            .timeline::after {
+                left: 30px;
+            }
+            
+            .left::before, .right::before {
+                left: 60px;
+            }
+            
+            .copyright-notice {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <button id="mobileMenuClose" class="mobile-menu-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="/Index.html">Home</a>
+            <a href="/00Intro&Topics.html">Table of Contents</a>
+            <a href="6.5.html">Previous: Daniel 8</a>
+            <a href="6.7.html">Next: The Remnant Church</a>
+        </div>
+        <button id="tocToggle" class="toc-toggle">Show Chapter Navigation</button>
+        <div id="tocMobile" class="toc-mobile">
+            <ul>
+                <li><a href="#summary">Summary of Previous Studies</a></li>
+                <li><a href="#q1">1. Time Reserved for Israel</a></li>
+                <li><a href="#q2">2. The Command to Restore Jerusalem</a></li>
+                <li><a href="#q3">3. Which Decree?</a></li>
+                <li><a href="#q4">4. The 70 Weeks Division</a></li>
+                <li><a href="#q5">5. Why 7+62 Weeks?</a></li>
+                <li><a href="#q6">6. The Messiah's Fate</a></li>
+                <li><a href="#q7">7. Jerusalem's Destruction</a></li>
+                <li><a href="#timeline">Prophetic Timeline</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="series-header">
+        <div class="content">
+            <h1>6.6 Daniel 9: The Messiah and the Time of Judgment</h1>
+            <p>Understanding the prophetic timeline that reveals the coming of the Messiah and the beginning of the heavenly judgment</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <details class="collapsible" open id="summary">
+            <summary>Summary of Previous Studies</summary>
+            <div class="content">
+                <p>The study of Leviticus and Hebrews has shown how the sanctuary of the Old Testament should be considered as a symbol, a parable of the Christian economy of salvation.</p>
+                
+                <p>In the Old Testament, toward the end of the religious year, there was a special day called the Day of Atonement (Leviticus 16 and 23:26-32). After obtaining personal forgiveness for confessed sins through the daily service in the sanctuary, the Day of Atonement provided the final cancellation of all personal and collective sins committed and confessed in the previous year. The Day of Atonement was a day of judgment, and only those who had confessed their sins received its benefits, being definitively freed from them and being confirmed as part of God's people. The others, those who had arrogantly refused to confess them or who, after confessing them, had changed their attitude, were "cut off," removed from the people.</p>
+                
+                <p>Similarly, in the Christian system, we can ask for forgiveness every day in the name of Jesus, but in the end, there will be a global and collective judgment that will confirm all sincere believers in God's grace but will erase from the book of life those who have denied the faith.</p>
+                
+                <p>The certainty of judgment is one of the main Christian doctrines. To know when the judgment begins, we must listen to the prophetic message of the book of Daniel. Here (8:14) we are told that at the end of a period of 2,300 days, that is, a period of 2,300 years according to the biblical principle of a day equals a year, "the sanctuary will be cleansed." This brings us back to the cleansing of the sanctuary that took place on the "Day of Atonement," which was also a day of judgment. The prophecy about the cleansing of the sanctuary thus leads us to the time of judgment.</p>
+                
+                <p>There is, however, a problem. Daniel 8 speaks of many historical facts whose meaning is explained by the angel Gabriel, except for the 2,300 days. Gabriel only says that it is something true but that concerns a distant future (8:26).</p>
+                
+                <p>The words of the angel Gabriel probably worried Daniel because he could not understand them (the same angel tells him that this part of the prophecy had to be sealed, that is, it could not be understood until the time of the end). In chapter 9, we find Daniel considering the already concluded prophetic period announced by the prophet Jeremiah, according to which Jerusalem was to be reestablished after a period of desolation of 70 years. Daniel therefore prays that God may keep his promise and turn his gaze to his city and the sanctuary, which were in ruins. The prophecy of the 2,300 evenings and mornings also had to do with the sanctuary, and for the prophet, it was easy to connect the two prophecies as if they referred to a single event.<sup class="footnote-reference" onclick="toggleFootnote('footnote1')">1</sup></p>
+                
+                <div id="footnote1" class="footnote" style="display: none;">
+                    <p>This is, of course, a supposition that Daniel misunderstood, although it is based on the fact that Daniel often does not understand. It could also be that he understood that the time announced by the prophecy of the 2,300 evenings and mornings really referred to a distant time. In this case, Daniel's anguish would come precisely from the fact that he understood correctly, causing the hope of a prompt solution to his people's problem to die in him. In this case, what Daniel would no longer understand is how to reconcile this latest prophecy with that of Jeremiah. Taken by his faith and his love for his people, Daniel would pray to God to fulfill the prophecy of Jeremiah's restoration, which had already reached its end, and to let go of the other. In any case, Daniel needed to understand, and the angel announces to him that Jerusalem would indeed be rebuilt soon and that the other prophecy referred to a different reality.</p>
+                </div>
+                
+                <p>The misunderstanding had to be avoided, and God sends the angel Gabriel again to explain to him "the vision" (9:23). Since there is no vision in Daniel 9, this had to refer to the vision described in chapter 8, a vision that Gabriel himself had explained in detail except for the period of 2,300 evenings and mornings. This was therefore the vision that Daniel had to understand. To avoid any misunderstanding, Gabriel comforts the prophet by telling him that the sanctuary and Jerusalem would soon be rebuilt, but that the fulfillment of the 2,300 evenings and mornings really concerned a distant time. He tells him this, however, not directly, but by explaining to him what had to happen before this event.</p>
+                
+                <p>In a first phase of the 2,300 years, in a time of 490 years, God would do everything possible for the people of Israel, the city and the temple would be rebuilt, and the Messiah would come to give salvation to his people. But the Messiah would be rejected, and enemies would again destroy the sanctuary. This would require the sanctuary to be cleansed again at the end of the 2,300 years. Let us therefore try to discover also what is announced in this most important text of the Scriptures.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q1">
+            <summary>1. Taking up the discourse from the beginning, how much time is reserved for Israel?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 9:24</span>
+                
+                <p>70 weeks, that is, 490 symbolic days which equate to 490 real years.</p>
+                
+                <div class="scripture-box">
+                    <p>"Seventy weeks are determined for your people and for your holy city, to finish the transgression, to make an end of sins, to make reconciliation for iniquity, to bring in everlasting righteousness, to seal up vision and prophecy, and to anoint the Most Holy." (Daniel 9:24, NKJV)</p>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q2">
+            <summary>2. Gabriel announces that the prophetic time begins when "the command to restore and build Jerusalem" goes forth (Daniel 9:25). What does this mean?</summary>
+            <div class="content">
+                <p>We must look for a command, a decree, a law (literally, a "word") that allows the rebuilding of Jerusalem. This word cannot be the same prophecy of Daniel 8:14, which does not present itself as an order but only as an announcement, and must refer to a royal decree. Which one?</p>
+                
+                <p>Israel now lives under the Persian Empire, and it is from its authority that the decree can come. The Bible presents us with four concerning Jerusalem and Israel:</p>
+                
+                <div class="decree-table">
+                    <table>
+                        <tr>
+                            <th>Date</th>
+                            <th>Decree</th>
+                            <th>Content</th>
+                            <th>Biblical Reference</th>
+                        </tr>
+                        <tr>
+                            <td>538 BC</td>
+                            <td>Cyrus</td>
+                            <td>Decree to rebuild the temple in Jerusalem</td>
+                            <td>Ezra 1:1-4; 5:13-17</td>
+                        </tr>
+                        <tr>
+                            <td>520 BC</td>
+                            <td>Darius I</td>
+                            <td>Confirmation of Cyrus's decree</td>
+                            <td>Ezra 6:1-12</td>
+                        </tr>
+                        <tr>
+                            <td>457 BC</td>
+                            <td>Artaxerxes I</td>
+                            <td>Decree giving Ezra authority to enforce the law in Jerusalem</td>
+                            <td>Ezra 7:11-26</td>
+                        </tr>
+                        <tr>
+                            <td>445/444 BC</td>
+                            <td>Artaxerxes I</td>
+                            <td>Permission for Nehemiah to rebuild the walls of Jerusalem</td>
+                            <td>Nehemiah 2:1-8</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q3">
+            <summary>3. Among these four decrees, which one allowed the reconstruction of Jerusalem?</summary>
+            <div class="content">
+                <p>The one from 457 BC. The first two decrees must be excluded because they concern only the temple and not the city. Since the fourth is the only one in which the reconstruction of the city is explicitly mentioned, we might be tempted to think that it is the right one. But it would not correspond to the subsequent prophetic data that we find in Daniel 9:25-27.</p>
+                
+                <p>In reality, what happened is that the third decree, which allowed Ezra to administer the law in Jerusalem, to have a sort of police force (to enforce the law), implied a political decision-making autonomy that also gave the possibility of restoring the normal life of the people, and therefore also of rebuilding the capital.</p>
+                
+                <p>This reconstruction had to take place in "troublesome times" (Daniel 9:25), and, in fact, it happened with the opposition of the surrounding peoples, jealous of its autonomy and its rebirth. We can read about the difficulties encountered in Ezra 4:7-23, which speaks of the reconstruction of Jerusalem and not just the temple.</p>
+                
+                <p>Ezra himself says that the Persian kings had given permission to rebuild the temple and to erect a "wall," that is, a defense wall in Judah and in Jerusalem (Ezra 9:9), even if the decrees in our possession do not directly mention this latter fact: it must therefore have been considered implicit as we said for the decree of 457. The same king who had issued the decree of 457 had granted Ezra "all that he requested" (Ezra 7:6), in other words, he had full powers, and this allowed him to begin the works of reconstruction of the city.</p>
+                
+                <p>When Nehemiah enters the scene, news comes to him from Jerusalem that the walls of the city are "broken down, and its gates are burned with fire" (Nehemiah 1:3). It is unlikely that the messenger is referring to the gates of Jerusalem burned by the Babylonians in 586 BC, 144 years before: after so much time, no trace of those gates would have remained. Moreover, the text shows us a Nehemiah who is shocked by this news, as if the thing surprised him, as if for him the walls and gates should have already been erected in their place. In this perspective, it seems clear that the previous decree of King Artaxerxes I must have allowed them to begin the reconstruction and bring it to a good state, but that the opposition of enemies had blocked them and made them retreat. Nehemiah therefore asks permission to go to resume the work and bring it to completion. This is what is provided for by the decree of 445/444 BC.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q4">
+            <summary>4. Into how many other parts is the overall period of 70 weeks divided?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 9:25-27</span>
+                
+                <p>Three periods are mentioned: seven weeks, sixty-two weeks, one week divided in turn into two halves. Unfortunately, the New International Version translates the text according to the ancient Masoretic punctuation (which is also probably misunderstood and which, in any case, does not belong to the original text) which makes understanding impossible: "... until the Anointed One, the ruler, comes, there will be seven 'sevens,' and sixty-two 'sevens.' It will be rebuilt with streets and a trench, but in times of trouble."</p>
+                
+                <p>According to this translation, the Messiah (Anointed One, in Hebrew) would have appeared after seven weeks, that is, after 49 years from the decree of 457, that is, in 408 BC, which is absurd... not only in relation to the life of the Messiah understood as Jesus Christ, but also for the internal logic of the prophecy which, according to this reading of the text, would die after the subsequent 62 weeks, that is, after 434 years, a figure that not even the most imaginative inventor could have imagined.</p>
+                
+                <p>In reality, the Hebrew text does not have that "in" that precedes "sixty-two," and the text should be translated, as the New King James Version does well, in another way: "until Messiah the Prince, there shall be seven weeks and sixty-two weeks," that is, 69 weeks in all, which equate to 483 years. Subtracting from these 483 years, the 457 that are before Christ, 27 remain, corresponding to the year AD in which Jesus was baptized, beginning his messianic ministry, just as Daniel had prophesied.</p>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Note</h3>
+                    <p>In reality, doing the above subtraction would bring us to the year 26, but, as we have already seen for the calculation of 1844, to the complete year 26 we must add the time corresponding to that which passed from the beginning of the year to the moment when the decree on the reconstruction of Jerusalem was actually issued, and this brings us into the year 27. It should also be noted that when Jesus was baptized, he was not 27 years old, but about 30 (Luke 3:23). This difference is due to the error made by Dionysius when he established our calendar starting from the birth of Christ and no longer from the foundation of Rome as had happened until then. By synchronizing the data of Christ's life with those of the history of Rome, he made an error of about 3-4 years, which leads to the difference we have seen above. In short, in the year 26 after Christ, Jesus was about 30 years old.</p>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q5">
+            <summary>5. Why is the time divided into 7+62 weeks instead of simply saying 69 weeks?</summary>
+            <div class="content">
+                <p>This chronological prophecy is written in a poetic language that in Hebrew poetry is based on the parallel juxtaposition (in this case alternating) of verses. Let's consider the following scheme using the New King James Version that we will follow up to verse 27:</p>
+                
+                <div class="poetic-structure-table">
+                    <table>
+                        <tr>
+                            <th>City Column</th>
+                            <th>Messiah Column</th>
+                        </tr>
+                        <tr>
+                            <td>"Know therefore and understand, that from the going forth of the command to restore and build Jerusalem"</td>
+                            <td>"Until Messiah the Prince, there shall be seven weeks and sixty-two weeks;"</td>
+                        </tr>
+                        <tr>
+                            <td>"The street shall be built again, and the wall, even in troublesome times."</td>
+                            <td>"And after the sixty-two weeks Messiah shall be cut off, but not for Himself;"</td>
+                        </tr>
+                        <tr>
+                            <td>"And the people of the prince who is to come shall destroy the city and the sanctuary. The end of it shall be with a flood, and till the end of the war desolations are determined."</td>
+                            <td>"Then he shall confirm a covenant with many for one week; but in the middle of the week he shall bring an end to sacrifice and offering."</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <p>It can be seen how the period of 7 weeks corresponds to the time necessary for the reconstruction of the city, of which a new destruction is then announced. The period of 62 weeks leads instead to the Messiah, of whom his death and the covenant he will make with the people are also announced.</p>
+                
+                <p>The seven weeks are inserted in parallel with the whole discourse on the city (first column), the 62 weeks are put in parallel with the whole discourse concerning the Messiah (second column).</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q6">
+            <summary>6. What would happen to the Messiah "after" the 62 weeks?</summary>
+            <div class="content">
+                <ol class="styled-list">
+                    <li>The Messiah (Anointed One) would be killed. The text does not say that the Messiah would be killed at the end of the 62 weeks, but "after." To know the precise moment, we must go to v. 27.</li>
+                    <li>In v. 27, we find the last week mentioned to close the cycle of 70. This last week is divided into two parts of 3½ years because it says that "in the middle" of the week, the Messiah would cause "sacrifice and offering" to cease, that is, he would put an end to the sacrificial system of the Old Testament. We already know that this happened thanks to his sacrifice on the cross. Even if the Jewish temple and its rites continued for some time, until the Romans destroyed everything in 70 AD, for God they no longer had any value as a new and better way had been opened to God's throne in the heavenly sanctuary through the flesh of Christ (Hebrews 10:20. Compare Matthew 27:50-51). Daniel thus informs us, centuries before the facts, that the Messiah would die in conditions of abandonment by others, after 3½ years from the beginning of his ministry. This time corresponds wonderfully with the data we have for the death of Christ in 31 AD.</li>
+                </ol>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Note</h3>
+                    <p>How do we know that Jesus died in 31 AD? No biblical text tells us in what year Jesus died, but the Gospel of John mentions three Passovers celebrated by Jesus after his baptism (John 2:13; 6:4; 11:55). This fact tells us that Jesus' ministry must have lasted three years and some other time.</p>
+                </div>
+                
+                <ol class="styled-list" start="3">
+                    <li>The Messiah makes a covenant with his people during the entire last week. In this way, God responds positively to the promise through the angel Gabriel (see vv. 9, 16, 17-18, 24). This aspect of the prophecy becomes clear by taking note of the fact that Jesus proposed himself first of all as the Messiah of Israel, to call his people to salvation (Matthew 10:6; 15:24) and to then be able to extend the message to the whole world (Matthew 28:19). The only problem is understanding how the Messiah could establish his covenant during (the entire) week, seeing that he would die in the middle of the week. The explanation lies in the fact that, after his ascension, the gospel continued to be preached exclusively to the Jews, and almost exclusively in Jerusalem. The people from various parts of the world present at the first great preaching of Pentecost were also Jews. Only after the stoning of Stephen, the first Christian martyr, did the Christians leave Jerusalem and begin to preach the gospel elsewhere and to other peoples, in Samaria and elsewhere (Acts 8:1-4). We have no specific historical indications to establish how much time has passed since the death of Jesus but, considering everything that the Acts of the Apostles tell us, it is not rash to think of a period of about three years as the prophecy of Daniel tells us. Not casually, Acts tells us that the stoning of Stephen was led by Saul of Tarsus, the one who would soon become the apostle to the Gentiles (Acts 7:58; 9:15). With the stoning of Stephen, therefore, the period of time "cut off," reserved for Daniel's people, was concluded.</li>
+                </ol>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Problem</h3>
+                    <p>Why does the New International Version say that the covenant was established by the invader, instead of by the Messiah?</p>
+                    <p>As far as the writer knows, the NIV is the only version among those we have been able to consult that says this. The Hebrew text of v. 27 does not specify who is being talked about, and the subject must be deduced from the context. The previous verse had spoken both of the Messiah and of the prince of a leader who would come, and since this is the last subject to be mentioned, the translators must have thought that this was enough to make it the subject of the next verse. But this does not take into account the poetic parallelism we talked about earlier. See the poetic structure of the text examined earlier, and you will clearly see that the subject of verse 27 is in parallel with the texts concerning the Messiah, and this is in harmony with the fact that this last week must also be seen as a time in favor of Israel, not against it.</p>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q7">
+            <summary>7. After this time reserved for Israel, what would happen to the city of Jerusalem and the temple?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 9:26-27</span>
+                
+                <p>They would be destroyed again by the people of a foreign leader (prince), until, in the end, this same people would be destroyed. Titus, son of the Roman emperor Vespasian, destroyed Jerusalem and the temple in 70 AD, but we already know that Rome itself will be destroyed in turn at the end of time, at the conclusion of the heavenly judgment (Daniel 7). Jesus cites Daniel's prophecy about the desolation of Jerusalem.</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>8. Why is the destruction of Jerusalem and the temple by Rome mentioned?</summary>
+            <div class="content">
+                <p>Certainly because this helped Daniel understand that the cleansing of the sanctuary that had to happen at the end of the 2,300 years did not concern the temple of Jerusalem for which he was praying but another temple, the heavenly one.</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>9. Why is the end of the destroyer of Jerusalem and the temple mentioned?</summary>
+            <div class="content">
+                <p>Indeed, this mention does not seem indispensable, if not to assure Daniel that the last word would never be had by the persecutors of his people but by God. Another reason, perhaps even better, is that in this way, chapter 9 of Daniel covers the same time covered by chapter 8, taking us from the time of the decree of King Artaxerxes I in 457 BC until the time of God's judgment on the power of Rome in its imperial and papal phases.</p>
+                
+                <p>In other words, Daniel 9 would represent a fourth prophetic series parallel to that of Daniel 2, 7, 8, only that here the perspective becomes more Christological. The 490 years are truly the first part of the longer period of the 2,300, and 1844 is truly the time when the final judgment begins.</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>10. For what purpose are the 490 years reserved for Israel? What can we learn for ourselves from this fact?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 9:24</span>
+                
+                <p>Chapter 9 had begun with Daniel's confession regarding the spiritual state of his people. They had deserved what they had received, the loss of their homeland, their beloved city, the temple. But merciful God will give them another opportunity: despite their rebellion, another time of grace is reserved for the nation of Israel:</p>
+                
+                <ol class="styled-list">
+                    <li>to finish the transgression</li>
+                    <li>to make an end of sins</li>
+                    <li>to make reconciliation for iniquity</li>
+                    <li>to bring in everlasting righteousness</li>
+                </ol>
+                
+                <p>Who must realize all this? The people, the Messiah who comes, or both for the part that competes with them? What do you think? Can we solve the problem of sin alone? Is the time limited for Israel or for us too?</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>11. What is the "Most Holy" (the Hebrew text has only "holy of holies" without the word "place") that must be anointed in v. 24?</summary>
+            <div class="content">
+                <p>In Daniel 9:25, immediately after this verse in which we read of the Most Holy that must be anointed, there is talk of the Anointed One referring to the Messiah who must come (Messiah in Hebrew means Anointed One, the same word that in Greek is said Christos, from which comes our Christ). For this reason, some interpreters think that this "holy of holies" must refer to Jesus anointed by the Holy Spirit at his baptism (Matthew 3:16; Luke 4:18; Acts 10:38).</p>
+                
+                <p>Others consider instead the fact that this expression of the Old Testament is used in relation to the second room of the sanctuary (Exodus 26:33), to the altar of burnt offerings (Exodus 40:10), to the first room of the sanctuary or to the sanctuary in general (Numbers 18:9,10. Compare with Leviticus 16:2; Hebrews 9:6). Only in 1 Chronicles 23:13 can it refer to the high priest, but not all agree with this understanding (Shea, in 70 Weeks, Leviticus, Nature of prophecy, p. 83).</p>
+                
+                <p>For this reason, we think that this anointing of the "holy of holies" refers to the inauguration of Jesus' priestly ministry in the heavenly sanctuary where he positioned himself as our priest after his resurrection (Hebrews 9:21-24).</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>12. What does it mean that what is announced in Daniel 9 would serve to "seal up vision and prophecy"?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 9:24</span>
+                
+                <p>It certainly does not mean that after Daniel there would be no more prophecy: after him, there were indeed many others. In the same book of Daniel, after chapter 9, we find other prophecies.</p>
+                
+                <p>It must therefore mean that what is said will be like a seal (a sort of authenticating signature, in the ancient world) that will prove true what was said with the vision of the 2,300 evenings and mornings (it would be completely useless for the fulfillment of what is said in chapter 9 to prove that what has been said is true).</p>
+                
+                <p>The beginning of judgment in 1844, being a heavenly reality as is learned from chapter 7 of Daniel, cannot be confirmed by human observation. For us, the only way to be sure about what happened in 1844 depends on the truthfulness of the prophecy in Daniel 9. What Daniel says about Jesus and Israel is historically proven to be true, and this confirms what is said in chapter 9 about the times of the final judgment. Our faith is not based on a fanciful interpretation of unknown reality, but on the experience of Jesus whom we know very well.</p>
+            </div>
+        </details>
+
+        <details class="collapsible">
+            <summary>13. What importance does the understanding of this prophecy have for the Adventist Church?</summary>
+            <div class="content">
+                <p>The Adventist Church was born in 1844, following a revival movement centered on the imminent return of Jesus. The discovery of the true meaning of Daniel 8:14, previously put by William Miller in relation to the return of Jesus, gave the few believers who continued to believe in the foundation of 1844 as the point to which the prophecy tended, a new confidence in the word of God, a new sense of their hope.</p>
+                
+                <p>It would then lead them to a strong identity and to a mission that today makes the Adventist Church a worldwide community, aimed at serving others and announcing the near advent of the kingdom of God.</p>
+            </div>
+        </details>
+
+        <div class="in-depth-study">
+            <h2>In-Depth Study</h2>
+            
+            <details class="collapsible">
+                <summary>14. Why in Ezra 4:7-13 is there talk of the reconstruction of Jerusalem at the time of Ezra while the context speaks of the previous construction of the temple?</summary>
+                <div class="content">
+                    <p>The temple was finished during the reign of Darius, in the 6th year of his reign (Ezra 6:15). Chapter 4:7-13, on the other hand, speaks of the subsequent reconstruction of Jerusalem that took place during the reign of Artaxerxes I. Probably what happened was that Ezra, writing the history of the difficulties encountered in the construction of the temple, also wanted to mention the difficulties encountered in the construction of the city, anticipating some later events. This is not the only case in which, in the Bible, this way of narrating is used.</p>
+                </div>
+            </details>
+            
+            <details class="collapsible">
+                <summary>15. Why in Daniel 9:26 is the Messiah called "an anointed one" and not "the anointed one"?</summary>
+                <div class="content">
+                    <p>It could be due to a purely aesthetic, formal fact. Perhaps it is implied that in the history of Israel there are many "anointed ones," many "messiahs": the priests and particularly the high priest (Exodus 40:15; Leviticus 4:3,5), the kings (1 Samuel 24:6; 2 Samuel 19:21; 2 Chronicles 6:42), and also, sometimes, the prophets (1 Kings 19:17).</p>
+                    
+                    <p>The anointing conferred on the person the authority to exercise his ministry in the name and with the blessing of God. Over time, God revealed that a special character would come who would operate with the power of God for the final salvation of his people. The angel Gabriel, for the first time, calls him Anointed One, and we identify him with Jesus, whom, for this reason, we call Christ. He is therefore not the only anointed one, but this does not mean that he is an anointed one like the others. Jesus is the Anointed One par excellence, an anointed one who embodies all the characteristics of the previous anointed ones. He is priest, king, and also revelation of God, a prophet.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="timeline" id="timeline">
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>457 BC</h3>
+                    <p>Decree of Artaxerxes I</p>
+                    <p>Beginning of the 70 weeks (490 years) and 2,300 days prophecies</p>
+                </div>
+            </div>
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h3>408 BC</h3>
+                    <p>End of the first 7 weeks (49 years)</p>
+                    <p>Jerusalem fully rebuilt</p>
+                </div>
+            </div>
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>27 AD</h3>
+                    <p>End of the 62 weeks (434 years) after the first 7 weeks</p>
+                    <p>Baptism of Jesus - Beginning of His ministry</p>
+                </div>
+            </div>
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h3>31 AD</h3>
+                    <p>Middle of the 70th week</p>
+                    <p>Crucifixion of Jesus</p>
+                    <p>End of the sacrificial system</p>
+                </div>
+            </div>
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>34 AD</h3>
+                    <p>End of the 70 weeks (490 years)</p>
+                    <p>Stoning of Stephen</p>
+                    <p>Gospel goes to the Gentiles</p>
+                </div>
+            </div>
+            <div class="timeline-container right">
+                <div class="timeline-content">
+                    <h3>70 AD</h3>
+                    <p>Destruction of Jerusalem and the temple by Romans</p>
+                </div>
+            </div>
+            <div class="timeline-container left">
+                <div class="timeline-content">
+                    <h3>1844 AD</h3>
+                    <p>End of the 2,300 days prophecy</p>
+                    <p>Beginning of the cleansing of the heavenly sanctuary</p>
+                    <p>Start of the pre-advent judgment</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="6.5.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">6.5 Daniel 8: The Time of Judgment</span>
+            </a>
+            <a href="6.7.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">6.7 - The Remnant Church</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        // Toggle footnotes
+        function toggleFootnote(id) {
+            var footnote = document.getElementById(id);
+            if (footnote.style.display === "none") {
+                footnote.style.display = "block";
+            } else {
+                footnote.style.display = "none";
+            }
+        }
+        
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const tocToggle = document.getElementById('tocToggle');
+            const tocMobile = document.getElementById('tocMobile');
+            const backToTop = document.getElementById('backToTop');
+            
+            // Mobile menu toggle
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Table of contents toggle
+            tocToggle.addEventListener('click', function() {
+                if (tocMobile.style.display === 'block') {
+                    tocMobile.style.display = 'none';
+                    tocToggle.textContent = 'Show Chapter Navigation';
+                } else {
+                    tocMobile.style.display = 'block';
+                    tocToggle.textContent = 'Hide Chapter Navigation';
+                }
+            });
+            
+            // Back to top button
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+              });
+            
+            // Animate collapsible sections on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('details.collapsible').forEach((item, index) => {
+                observer.observe(item);
+                // Add animation styles with staggered delay
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.transitionDelay = `${0.1 * index}s`;
+            });
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            // Close mobile menu if open
+                            mobileMenu.classList.remove('active');
+                            document.body.style.overflow = '';
+                            
+                            // Scroll to the target
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Make tables responsive on small screens
+            const tables = document.querySelectorAll('table');
+            tables.forEach(table => {
+                const wrapper = document.createElement('div');
+                wrapper.style.overflowX = 'auto';
+                wrapper.style.width = '100%';
+                table.parentNode.insertBefore(wrapper, table);
+                wrapper.appendChild(table);
+            });
+            
+            // Add touch support for mobile devices
+            if ('ontouchstart' in window) {
+                document.body.classList.add('touch-device');
+                
+                // Make collapsible summaries easier to tap
+                document.querySelectorAll('details.collapsible summary').forEach(summary => {
+                    summary.style.padding = '1.2rem';
+                });
+                
+                // Add active state for buttons
+                document.querySelectorAll('.nav-button, .mobile-menu-toggle, .back-to-top').forEach(button => {
+                    button.addEventListener('touchstart', function() {
+                        this.style.transform = 'scale(0.98)';
+                    });
+                    
+                    button.addEventListener('touchend', function() {
+                        this.style.transform = '';
+                    });
+                });
+            }
+            
+            // Add swipe functionality for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            document.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                const swipeThreshold = 100;
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left - go to next chapter
+                    window.location.href = '6.7.html';
+                }
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right - go to previous chapter
+                    window.location.href = '6.5.html';
+                }
+            }
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                // Left arrow key - previous chapter
+                if (e.key === 'ArrowLeft') {
+                    window.location.href = '6.5.html';
+                }
+                
+                // Right arrow key - next chapter
+                if (e.key === 'ArrowRight') {
+                    window.location.href = '6.7.html';
+                }
+                
+                // Home key - go to home
+                if (e.key === 'Home' && e.ctrlKey) {
+                    window.location.href = '/Index.html';
+                }
+            });
+            
+            // Preload next and previous pages for faster navigation
+            function preloadPage(url) {
+                const link = document.createElement('link');
+                link.rel = 'prefetch';
+                link.href = url;
+                document.head.appendChild(link);
+            }
+            
+            preloadPage('6.5.html');
+            preloadPage('6.7.html');
+            
+            // Detect dark mode preference and adjust
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (prefersDarkMode) {
+                document.documentElement.style.setProperty('--bg-primary', '#121212');
+                document.documentElement.style.setProperty('--bg-secondary', '#1F1F1F');
+                document.documentElement.style.setProperty('--text-primary', '#E0E0E0');
+                document.documentElement.style.setProperty('--text-secondary', '#ABABAB');
+                
+                // Adjust other colors for better contrast in dark mode
+                document.documentElement.style.setProperty('--secondary-color', '#00838F');
+                document.documentElement.style.setProperty('--holy-theme-light', '#004D40');
+            }
+            
+            // Save reading position
+            window.addEventListener('beforeunload', function() {
+                localStorage.setItem('daniel9-scroll-position', window.scrollY);
+            });
+            
+            // Restore reading position
+            const savedPosition = localStorage.getItem('daniel9-scroll-position');
+            if (savedPosition) {
+                window.scrollTo(0, parseInt(savedPosition));
+            }
+            
+            // Add reading time estimate
+            function addReadingTimeEstimate() {
+                const content = document.querySelector('.container').textContent;
+                const wordCount = content.split(/\s+/).length;
+                const readingTimeMinutes = Math.ceil(wordCount / 200); // Average reading speed
+                
+                const readingTimeElement = document.createElement('div');
+                readingTimeElement.className = 'reading-time';
+                readingTimeElement.innerHTML = `<i class="fas fa-book-reader"></i> ${readingTimeMinutes} min read`;
+                readingTimeElement.style.textAlign = 'center';
+                readingTimeElement.style.marginBottom = '2rem';
+                readingTimeElement.style.color = 'var(--text-secondary)';
+                readingTimeElement.style.fontSize = '0.9rem';
+                
+                const headerElement = document.querySelector('.series-header');
+                headerElement.after(readingTimeElement);
+            }
+            
+            addReadingTimeEstimate();
+        });
+    </script>
+</body>
+</html>

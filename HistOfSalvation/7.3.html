@@ -1,0 +1,1072 @@
+
+
+<style>
+  :root {
+      --primary-color: #006064;    /* Deep Teal */
+      --accent-color: #00ACC1;     /* Lighter Teal */
+      --secondary-color: #B2EBF2;   /* Very Light Teal */
+      --bg-primary: #ffffff;
+      --bg-secondary: #E0F7FA;
+      --text-primary: #2C3E50;
+      --text-secondary: #546E7A;
+      --highlight-color: #00BCD4;   /* Bright Teal */
+      --holy-theme-light: #E0F7FA; /* Very Light Teal */
+      --holy-theme-dark: #006064;  /* Dark Teal */
+      --success: #4CAF50;
+      --warning: #FFA726;
+      --error: #EF5350;
+  }
+  
+  /* Base Styles */
+  body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+  }
+  
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+  }
+  
+  /* Series Banner */
+  .series-banner {
+      background: var(--holy-theme-dark);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.2rem;
+  }
+  
+  /* Header Styling */
+  .series-header {
+      background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  
+  .series-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+      opacity: 0.1;
+      z-index: 0;
+  }
+  
+  .series-header .content {
+      position: relative;
+      z-index: 1;
+  }
+  
+  /* Question Styling */
+  .question {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid var(--accent-color);
+  }
+  
+  .question:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  
+  .question h3 {
+      color: var(--holy-theme-dark);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+  }
+  
+  .question h3::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      margin-right: 10px;
+      font-size: 14px;
+      font-weight: bold;
+  }
+  
+  .scripture-reference {
+      background: var(--holy-theme-dark);
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+  }
+  
+  /* Collapsible Content */
+  .collapsible-header {
+      background: var(--bg-secondary);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      margin: 1rem 0;
+      font-weight: 600;
+      color: var(--holy-theme-dark);
+  }
+  
+  .collapsible-header:hover {
+      background: var(--secondary-color);
+  }
+  
+  .collapsible-header .toggle-icon {
+      transition: transform 0.3s ease;
+  }
+  
+  .collapsible-header.active .toggle-icon {
+      transform: rotate(180deg);
+  }
+  
+  .collapsible-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: white;
+      border-radius: 0 0 8px 8px;
+      padding: 0 1.5rem;
+      border-left: 3px solid var(--accent-color);
+  }
+  
+  .collapsible-content.show {
+      max-height: 2000px; /* Adjust as needed */
+      padding: 1.5rem;
+  }
+  
+  /* Navigation */
+  .navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  
+  .nav-button {
+      padding: 1.2rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      min-width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .previous-chapter {
+  background: var(--holy-theme-dark);
+  }
+  
+  .previous-chapter {
+      background: var(--holy-theme-dark);
+  }
+  
+  .next-chapter {
+      background: var(--accent-color);
+  }
+  
+  .toc {
+      background: var(--primary-color);
+  }
+  
+  .home-button {
+      background: var(--holy-theme-dark);
+  }
+  
+  .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  
+  .nav-button .hover-text {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      pointer-events: none;
+      margin-bottom: 8px;
+      z-index: 100;
+  }
+  
+  .nav-button:hover .hover-text {
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  /* Think About It Box */
+  .think-about-it {
+      background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--highlight-color);
+  }
+  
+  .think-about-it h3 {
+      display: flex;
+      align-items: center;
+      color: var(--holy-theme-dark);
+  }
+  
+  .think-about-it h3 i {
+      margin-right: 10px;
+      color: var(--highlight-color);
+  }
+  
+  /* In-Depth Study Section */
+  .in-depth-study {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  
+  .in-depth-study h2 {
+      text-align: center;
+      color: var(--holy-theme-dark);
+      margin-bottom: 2rem;
+      position: relative;
+  }
+  
+  .in-depth-study h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--accent-color);
+  }
+  
+  /* Details/Summary Styling */
+  details {
+      margin: 1rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: white;
+  }
+  
+  summary {
+      padding: 1.2rem;
+      cursor: pointer;
+      background: var(--bg-secondary);
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      position: relative;
+      outline: none;
+  }
+  
+  summary:hover {
+      background: var(--secondary-color);
+  }
+  
+  summary::after {
+      content: '⌄';
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+  }
+  
+  details[open] summary::after {
+      transform: rotate(180deg);
+  }
+  
+  details[open] summary {
+      border-bottom: 1px solid var(--secondary-color);
+  }
+  
+  details .content {
+      padding: 1.5rem;
+  }
+  
+  /* Bible Reference Styling */
+  .bible-reference {
+      font-style: italic;
+      color: var(--text-secondary);
+  }
+  
+  /* Footer */
+  .page-footer {
+      background: var(--holy-theme-dark);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 4rem;
+  }
+  
+  .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+  }
+  
+  .copyright-notice {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+  }
+  
+  .copyright-notice a {
+      color: var(--secondary-color);
+      text-decoration: none;
+  }
+  
+  .copyright-notice a:hover {
+      text-decoration: underline;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+      .container {
+          padding: 1rem;
+      }
+  
+      .series-header {
+          padding: 2rem 1rem;
+      }
+  
+      .nav-button {
+          min-width: 120px;
+          padding: 1rem 1.5rem;
+      }
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .question {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+  }
+  
+  .question:nth-child(1) { animation-delay: 0.1s; }
+  .question:nth-child(2) { animation-delay: 0.2s; }
+  .question:nth-child(3) { animation-delay: 0.3s; }
+  .question:nth-child(4) { animation-delay: 0.4s; }
+  .question:nth-child(5) { animation-delay: 0.5s; }
+  .question:nth-child(6) { animation-delay: 0.6s; }
+  .question:nth-child(7) { animation-delay: 0.7s; }
+  .question:nth-child(8) { animation-delay: 0.8s; }
+  .question:nth-child(9) { animation-delay: 0.9s; }
+  .question:nth-child(10) { animation-delay: 1s; }
+  .question:nth-child(11) { animation-delay: 1.1s; }
+  .question:nth-child(12) { animation-delay: 1.2s; }
+  .question:nth-child(13) { animation-delay: 1.3s; }
+  .question:nth-child(14) { animation-delay: 1.4s; }
+  .question:nth-child(15) { animation-delay: 1.5s; }
+  
+  /* Custom Details/Summary styling */
+  .custom-details {
+      margin-bottom: 1.5rem;
+  }
+  
+  .custom-details summary {
+      background-color: var(--bg-secondary);
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--holy-theme-dark);
+      transition: background-color 0.3s ease;
+      outline: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .custom-details summary::-webkit-details-marker {
+      display: none;
+  }
+  
+  .custom-details summary::after {
+      content: '+';
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+  }
+  
+  .custom-details[open] summary::after {
+      content: '−';
+  }
+  
+  .custom-details summary:hover {
+      background-color: var(--secondary-color);
+  }
+  
+  .custom-details .details-content {
+      padding: 1.5rem;
+      background-color: white;
+      border-radius: 0 0 8px 8px;
+      margin-top: -8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-left: 3px solid var(--accent-color);
+  }
+  
+  /* Scripture Box */
+  .scripture-box {
+      background: var(--holy-theme-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      border-left: 4px solid var(--accent-color);
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .scripture-box::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      font-size: 100px;
+      color: rgba(0,0,0,0.05);
+      font-family: Georgia, serif;
+  }
+  
+  /* Highlight for important points */
+  .highlight {
+      background-color: rgba(0, 188, 212, 0.1);
+      padding: 3px 5px;
+      border-radius: 3px;
+  }
+  
+  /* Numbered lists with custom styling */
+  ol.styled-list {
+      counter-reset: item;
+      list-style-type: none;
+      padding-left: 0;
+  }
+  
+  ol.styled-list li {
+      counter-increment: item;
+      margin-bottom: 10px;
+      padding-left: 2rem;
+      position: relative;
+  }
+  
+  ol.styled-list li::before {
+      content: counter(item);
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      position: absolute;
+      left: 0;
+      top: 2px;
+  }
+  
+  /* Bulleted lists with custom styling */
+  ul.styled-list {
+      list-style-type: none;
+      padding-left: 0;
+  }
+  
+  ul.styled-list li {
+      margin-bottom: 10px;
+      padding-left: 1.5rem;
+      position: relative;
+  }
+  
+  ul.styled-list li::before {
+      content: "•";
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -5px;
+  }
+  
+  /* Prophecy Diagram */
+  .prophecy-diagram {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+  }
+  
+  .prophecy-diagram img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* Prophecy table */
+  .prophecy-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      overflow: hidden;
+  }
+  
+  .prophecy-table th {
+      background-color: var(--holy-theme-dark);
+      color: white;
+      padding: 1rem;
+      text-align: left;
+  }
+  
+  .prophecy-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--bg-secondary);
+  }
+  
+  .prophecy-table tr:nth-child(even) {
+      background-color: var(--bg-secondary);
+  }
+  
+  .prophecy-table tr:last-child td {
+      border-bottom: none;
+  }
+  
+  .prophecy-table tr:hover {
+      background-color: var(--secondary-color);
+  }
+  
+        /* Additional styles for collapsible sections */
+        .collapsible-section {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .collapsible-header {
+            background-color: var(--bg-secondary);
+            color: var(--holy-theme-dark);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .collapsible-header:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .collapsible-header.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible-content {
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .collapsible-content p:first-child {
+            margin-top: 1.5rem;
+        }
+        
+        .collapsible-content p:last-child {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+        
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+        
+        /* In-depth study section */
+        .in-depth-study {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .in-depth-study h2 {
+            color: var(--holy-theme-dark);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+  </style>
+  
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.3 - Premarital Relationships | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>7.3 - Premarital Relationships</h1>
+            <p>Understanding God's goodness in protecting sexuality until its full enjoyment within marriage</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                Introduction
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Sexuality is now considered almost like any consumer good to be enjoyed as early as possible. Our entire culture tends to encourage sexual activity as a normal fact even outside and before marriage, with the only condition that it not be the result of violence and that one possibly protect oneself from negative consequences such as diseases and unwanted pregnancies (this is the aim of much of the so-called sexual education - or miseducation). Today, young people feel free and grown-up just because they start having sexual relations at a very young age (already around thirteen years old). However, we must see if this is a sign of maturity or, on the contrary, of immaturity; if it truly contributes to the joy it wants to give or if it doesn't destroy the very premises? As Christians, we seek to understand the meaning of reality, based on reason but also and especially on the word of God.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                1. Is sexuality something to be ashamed of?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"So God created man in His own image; in the image of God He created him; male and female He created them. Then God blessed them, and God said to them, 'Be fruitful and multiply; fill the earth and subdue it; have dominion over the fish of the sea, over the birds of the air, and over every living thing that moves on the earth.'" (Genesis 1:27-28)</p>
+                </div>
+                
+                <p>Sexuality is born from God's will and is good as a legitimate part of creation (Genesis 1:31). Far from being something shameful, sexuality was designed by God as part of His good creation. The distinction between male and female is part of God's creative purpose, and the command to "be fruitful and multiply" affirms the goodness of sexual expression within its proper context.</p>
+                
+                <p>The problem is not sexuality itself but its misuse outside of God's design. Just as food is good but gluttony is harmful, sexuality is good but sexual expression outside of marriage distorts God's intent for this gift.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                2. What is sexual relationship a sign of in the Bible?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"Therefore a man shall leave his father and mother and be joined to his wife, and they shall become one flesh." (Genesis 2:24)</p>
+                </div>
+                
+                <p>Becoming one flesh is a sign of being a single united reality destined to survive forever: "'For this reason a man shall leave his father and mother and be joined to his wife, and the two shall become one flesh'? So then, they are no longer two but one flesh. Therefore what God has joined together, let not man separate." (Matthew 19:5-6)</p>
+                
+                <p>It is therefore clear that sexual relationship is a sign and privilege of a decision of total and definitive unity: this is called marriage.</p>
+                
+                <p>What constitutes a marriage? Can it be understood as the personal decision to love each other? Can therefore the presence of love justify sexual relations without having contracted a legal marriage? In all cultures, marriage is considered as the constitutive element of a new social cell and for this reason it is of fundamental importance for society itself and is regulated by precise customs and laws. The following elements are always found:</p>
+                
+                <ol class="styled-list">
+                    <li>Decision/acceptance of marriage by the two betrothed (leaving aside forced marriages).</li>
+                    <li>Social legitimation. Society is called to witness the decision of the spouses and to guarantee the respect of the shared rules.</li>
+                    <li>Enjoyment of sexuality.</li>
+                    <li>The Bible also considers the spiritual aspect of marriage as a gift from God that requires His blessing: "Then God blessed them, and God said to them, 'Be fruitful and multiply; fill the earth and subdue it; have dominion over the fish of the sea, over the birds of the air, and over every living thing that moves on the earth.'" (Genesis 1:28)</li>
+                </ol>
+                
+                <p>It is therefore clear that without one of these four elements there is no marriage, and a declaration by moonlight cannot substitute for it.</p>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                    <p>Sexual intimacy is designed to be the physical expression of a comprehensive commitment that has already been made. When we separate the physical act from this commitment, we diminish its meaning and power. How might viewing sexuality as a sign of covenant change how we approach relationships?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                3. Are there specific laws regarding premarital relations?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>No, they were simply considered inconceivable. However, there are laws that negatively presuppose them. For example, according to a culture that is no longer our own, the signs of virginity with which a girl had arrived at marriage were preserved, as something of great value. Non-virginity discovered at the time of marriage invalidates it and requires punishment (Deuteronomy 22:13-21). Also remember Joseph's scruple for Mary who became pregnant before going to live with him (Matthew 1:18-19). Evidently, the text assumes that Joseph and Mary had not had any kind of sexual relationship.</p>
+                
+                <p>In the case of a betrothed virgin violated (Deuteronomy 22:23-27) by a man other than the fiancé, both will be stoned if the act takes place in the city because they are co-responsible, only him if in the countryside (presumption of innocence). In the case of violence to a virgin not promised (Deuteronomy 22:28-29), he will have to marry her and can never send her away.</p>
+                
+                <p>However, the father of a seduced girl is free not to give her to him in marriage, the seducer will still pay the dowry (Exodus 22:16-17).</p>
+                
+                <p>These laws reflect ancient cultural contexts that differ from our own, but they consistently show that sexual activity was meant to be confined to marriage. The Bible does not provide a detailed "sexual ethics manual," but it consistently presents a pattern where sexual intimacy belongs within the covenant of marriage.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                4. Sometimes, the commitment to preserve virginity before marriage becomes an obsession and cause for segregation among young people. This, however, is not the perspective of biblical culture.
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Young women in biblical times could enjoy a certain freedom of movement:</p>
+                
+                <ul class="styled-list">
+                    <li>Deuteronomy 22:23 and following verses anticipate that a young woman might go alone to the fields.</li>
+                    <li>Exodus 2:16 tells us about Jethro's daughters who shepherd the flocks and compete with male shepherds.</li>
+                    <li>Ruth 2:5-6 tells us about Ruth who goes to glean behind the reapers and eats with them.</li>
+                    <li>Other texts speak of young women who go to the fields.</li>
+                </ul>
+                
+                <p>The biblical emphasis on sexual purity was not meant to create an unhealthy segregation or obsession with virginity. Rather, it was about preserving the integrity of marriage and protecting individuals from the consequences of premature sexual activity. The focus should be on positive values—honoring God with our bodies, respecting others, and preparing for a healthy marriage—rather than mere prohibition.</p>
+                
+                <p>The goal is not isolation between genders but appropriate boundaries that foster healthy relationships while preserving sexual intimacy for marriage.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                5. Do we find indications on this topic in the New Testament?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"Now concerning the things of which you wrote to me: It is good for a man not to touch a woman. Nevertheless, because of sexual immorality, let each man have his own wife, and let each woman have her own husband." (1 Corinthians 7:1-2)</p>
+                </div>
+                
+                <p>Fornication is any anomalous sexual relationship, therefore also prostitution and premarital relations.</p>
+                
+                <p><strong>Model for the church:</strong></p>
+                
+                <div class="scripture-box">
+                    <p>"For I am jealous for you with godly jealousy. For I have betrothed you to one husband, that I may present you as a chaste virgin to Christ." (2 Corinthians 11:2)</p>
+                </div>
+                
+                <p>The New Testament continues the Old Testament's understanding that sexual intimacy belongs within marriage. Paul's writings in 1 Corinthians address sexual ethics extensively, consistently placing sexual expression within marriage and warning against porneia (sexual immorality), a broad term that includes all sexual activity outside of marriage.</p>
+                
+                <p>In 2 Corinthians 11:2, Paul uses the metaphor of a "chaste virgin" to describe the church's relationship with Christ, indicating the high value placed on sexual purity as a spiritual principle.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                6. Besides what the Bible tells us, for what reasons should one abstain from premarital relations?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <ul class="styled-list">
+                    <li>Education to responsibility towards oneself and the other.</li>
+                    <li>Better protection from deception and premature emotional decisions (Amnon and Tamar in 2 Samuel 13).</li>
+                    <li>Valuing sexuality as a sign of responsible love.</li>
+                    <li>Avoiding the trivialization of such an important gesture to receive all the joy it can offer.</li>
+                    <li>Avoiding feelings of guilt that can lead to future problems.</li>
+                    <li>Avoiding embarrassment in front of the future partner.</li>
+                    <li>Avoiding giving the impression of being an easy and unreliable person even afterward.</li>
+                    <li>Avoiding unwanted births at times when one is not able to accept them responsibly and positively.</li>
+                    <li>Living such a gesture as a sign of an exclusive and total love.</li>
+                    <li>Gift of love towards the person who will love us and whom we will love for life.</li>
+                </ul>
+                
+                <p>A house built too quickly will be small.<br>
+                An unripe apple eaten is sour.</p>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                    <p>Waiting for marriage isn't just about following rules—it's about protecting something valuable. Sexual intimacy creates powerful bonds and vulnerabilities. By reserving this intimacy for marriage, we protect ourselves emotionally, physically, and spiritually, while honoring God's design for human relationships.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                7. How to feel if it happens? God's Grace.
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>For those who have engaged in premarital sexual activity, the message of the gospel is one of grace, forgiveness, and restoration. God's grace is sufficient to cover all sin, and His mercy is new every morning.</p>
+                
+                <div class="scripture-box">
+                    <p>"If we confess our sins, He is faithful and just to forgive us our sins and to cleanse us from all unrighteousness." (1 John 1:9)</p>
+                </div>
+                
+                <p>The story of the woman caught in adultery (John 8:1-11) demonstrates Jesus' compassionate response to sexual sin. He offered forgiveness while also calling for a change: "Go and sin no more." This balanced approach of grace and truth should guide our response to those who have engaged in premarital sexual activity.</p>
+                
+                <p>God's grace doesn't simply excuse sin but transforms us, enabling us to live according to His design going forward. Those who have experienced sexual sin can find complete forgiveness in Christ and embrace a commitment to sexual purity from that point forward.</p>
+                
+                <p>The church should be a place of healing and restoration, not condemnation, while still upholding God's standards for sexual purity. We are called to "speak the truth in love" (Ephesians 4:15), providing both clear teaching and compassionate support.</p>
+            </div>
+        </div>
+
+        <div class="in-depth-study">
+            <h2>In-Depth Study</h2>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    The Theological Foundation of Sexual Ethics
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>Biblical sexual ethics are grounded in several key theological principles:</p>
+                    
+                    <ol class="styled-list">
+                        <li><strong>Creation:</strong> God designed human sexuality with purpose and intention (Genesis 1:27-28, 2:24-25). This design establishes the framework for sexual expression.</li>
+                        <li><strong>Covenant:</strong> Sexual intimacy is meant to express and strengthen the covenant bond of marriage, reflecting God's faithful covenant with His people (Malachi 2:14; Ephesians 5:31-32).</li>
+                        <li><strong>Holiness:</strong> As God's people, we are called to honor Him with our bodies and live differently from the surrounding culture (1 Thessalonians 4:3-8; 1 Peter 1:14-16).</li>
+                        <li><strong>Incarnation:</strong> The Christian understanding of the body as good and sacred, not merely physical but integrated with our spiritual nature, informs our sexual ethics (1 Corinthians 6:19-20).</li>
+                    </ol>
+                    
+                    <p>These theological foundations help us understand that biblical sexual ethics aren't arbitrary rules but reflect God's design for human flourishing. They protect the profound significance of sexual union as the physical expression of the marriage covenant.</p>
+                    
+                    <p>When we separate sexual intimacy from its covenantal context, we diminish its meaning and power. Sexual intimacy outside of marriage lacks the security, commitment, and permanence that give it its deepest significance.</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    Responding to Contemporary Challenges
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>Christians today face significant challenges in upholding biblical sexual ethics in a culture that often dismisses them as outdated or restrictive. Some helpful perspectives include:</p>
+                    
+                    <ol class="styled-list">
+                        <li><strong>Focus on the positive:</strong> Rather than emphasizing what's forbidden, highlight the beauty and wisdom of God's design for sexuality within marriage.</li>
+                        <li><strong>Address deeper needs:</strong> Recognize that sexual temptation often stems from legitimate needs for intimacy, affirmation, and love. Help people find healthy ways to meet these needs.</li>
+                        <li><strong>Provide community support:</strong> Waiting for marriage is countercultural and difficult. Provide supportive Christian community where people can find encouragement and accountability.</li>
+                        <li><strong>Offer grace-filled restoration:</strong> Create pathways for those who have fallen short to experience God's forgiveness and begin anew in sexual purity.</li>
+                        <li><strong>Engage cultural narratives:</strong> Thoughtfully challenge cultural messages about sexuality that contradict God's design, offering a compelling alternative vision.</li>
+                    </ol>
+                    
+                    <p>The early church faced similar challenges in the sexually permissive Greco-Roman culture, yet maintained its distinctive sexual ethic not through isolation but through offering a compelling alternative vision of human sexuality that honored God and respected the dignity of all persons.</p>
+                    
+                    <p>Today's church is called to the same witness—not merely condemning cultural practices but demonstrating through our lives and relationships the beauty and wisdom of God's design for sexuality expressed within the covenant of marriage.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="7.2.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">7.2 - Marriage</span>
+            </a>
+            <a href="7.4.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">7.4 - Angels</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- No-copy protection scripts -->
+    <script>
+        // Updated no-copy protection scripts
+        document.addEventListener('keydown', function(e) {
+            // Prevent Ctrl+C (copy)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.keyCode === 67)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+U (view source)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+S (save)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
+                e.preventDefault();
+                alert('Content saving is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+P (print)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P' || e.keyCode === 80)) {
+                e.preventDefault();
+                alert('Content printing is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+Shift+I (inspect element)
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.keyCode === 73)) {
+                e.preventDefault();
+                alert('Inspect element is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+        });
+
+        // Prevent right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Additional protection to disable copy
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable cut
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            alert('Content cutting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable paste
+        document.addEventListener('paste', function(e) {
+            e.preventDefault();
+            alert('Content pasting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+        
+        // Toggle collapsible sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.querySelector('.toggle-icon').textContent = '+';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        this.querySelector('.toggle-icon').textContent = '−';
+                    }
+                });
+            });
+            
+            // Auto-open the first section
+            if (collapsibleHeaders.length > 0) {
+                collapsibleHeaders[0].click();
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,752 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      Meta Information:
+      • The character set and viewport settings ensure proper rendering on all devices.
+      • The description meta tag outlines the purpose of the platform.
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A modern, user-friendly platform for Bible studies, daily devotions, and community Q&A."
+    />
+    <title>Bible Study || Conversational Study with Felix</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="Styles.css" />
+
+    <!-- Updated Header and Hero Section -->
+<style>
+  /* Reset and Base Styles */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  /* Header and Navigation Styles */
+  header {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      transition: background 0.3s ease;
+  }
+  
+  header.scrolled {
+      background: rgba(44, 62, 80, 0.95);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+  }
+  
+  .logo a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+  }
+  
+  .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+  
+  .nav-links a:hover {
+      color: var(--accent-color);
+  }
+  
+  /* Hero Section Styles */
+  .hero {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                  url('/HistOfSalvation/images/group_2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+  }
+  
+  .hero-content {
+      text-align: center;
+      max-width: 800px;
+      color: var(--text-light);
+      z-index: 2;
+  }
+  
+  .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+  
+  .btn-primary {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--accent-color);
+      color: var(--text-light);
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  
+  .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      background: var(--man-theme-dark);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      nav {
+          padding: 1rem;
+      }
+  
+      .hero-content h1 {
+          font-size: 2.5rem;
+      }
+  
+      .hero-content p {
+          font-size: 1rem;
+      }
+  
+      .nav-links {
+          display: none;
+      }
+  }
+  
+  /* Add this script for header background change on scroll */
+  </style>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('header');
+      
+      window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+              header.classList.add('scrolled');
+          } else {
+              header.classList.remove('scrolled');
+          }
+      });
+  });
+  </script>
+  
+
+    <style>
+      /* Add your existing CSS plus these new styles */
+      :root {
+          --primary-color: #2C3E50;
+          --accent-color: #8E44AD;
+          --text-light: #ffffff;
+          --text-dark: #2C3E50;
+      }
+
+      .hero-section {
+          background-image: url('/HistOfSalvation/images/group_2.jpg');
+          background-size: cover;
+          background-position: center;
+          min-height: 100vh;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--text-light);
+          text-align: center;
+          padding: 2rem;
+      }
+
+      .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0,0,0,0.5);
+          z-index: 1;
+      }
+
+      .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 800px;
+      }
+
+      .main-buttons {
+          display: flex;
+          gap: 2rem;
+          justify-content: center;
+          margin-top: 2rem;
+      }
+
+      .btn-start {
+          padding: 1rem 2rem;
+          font-size: 1.2rem;
+          border-radius: 8px;
+          text-decoration: none;
+          transition: all 0.3s ease;
+      }
+
+      .quotes-section {
+          background: var(--bg-secondary);
+          padding: 4rem 2rem;
+      }
+
+      .quote-card {
+          background: white;
+          padding: 2rem;
+          border-radius: 12px;
+          margin: 1rem;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+
+      .navigation-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          padding: 2rem;
+      }
+
+      @media (max-width: 768px) {
+          .navigation-grid {
+              grid-template-columns: 1fr;
+          }
+      }
+  </style>
+
+
+
+<style>
+.navigation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--bg-secondary);
+}
+
+.section-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+}
+
+.section-card h2 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.study-list {
+    list-style: none;
+    padding: 0;
+}
+
+.study-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.study-list li:hover {
+    padding-left: 1rem;
+    background: var(--man-theme-light);
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navigation-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .section-card {
+        padding: 1.5rem;
+    }
+}
+</style>
+
+
+<style>
+.study-controls {
+    padding: 2rem;
+    background: var(--bg-secondary);
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.search-btn {
+    padding: 0.8rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--accent-color);
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+.progress-section {
+    padding: 2rem;
+    background: white;
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress {
+    height: 100%;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.study-list li.completed {
+    background: #e8f5e9;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.study-list li.completed::before {
+    content: '✓';
+    position: absolute;
+    left: 0.5rem;
+    color: #4caf50;
+}
+
+/* Hover Effects */
+.search-btn:hover {
+    background: var(--man-theme-dark);
+}
+
+.filter-btn:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+</style>
+
+  </head>
+  <body>
+    <!--====================================================================
+         HEADER - Navigation Bar
+         ====================================================================-->
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="#">YOUR BIBLE STUDIES</a>
+        </div>
+        <ul class="nav-links">
+          <!-- Navigation links for smooth scroll to page sections -->
+          <li><a href="#bible-studies">Bible Studies</a></li>
+         <!-- <li><a href="#chat">Chat &amp; Q&A</a></li>-->
+        <!-- <li><a href="#devotions">Daily Devotions</a></li> -->
+          <!-- The Login link has been removed as there is no need for login -->
+        </ul>
+      </nav>
+    </header>
+
+    <!--====================================================================
+         HERO SECTION - Introduction and Call-to-Action
+         ====================================================================-->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Let's Study  - THE WORD</h1>
+        <p>
+          Explore the Bible, grow in faith, and study in conversational manner.
+        </p>
+        <p></p>
+        <a href="/00Intro&Topics.html" class="btn-primary">Start Studying</a>
+      </div>
+    </section>
+
+    <!--====================================================================
+         BIBLE STUDIES SECTION - Presentation of Study Topics
+         ====================================================================-->
+    <section id="bible-studies" class="section">
+      <!-- Quotes Section -->
+    <section class="quotes-section">
+      <div class="quote-card">
+          <blockquote>
+              "Sanctify them in the truth; your word is truth."
+              <footer>- John 17:17</footer>
+          </blockquote>
+      </div>
+      <div class="quote-card">
+          <blockquote>
+              "If you abide in my word, you are truly my disciples; you will know the truth, and the truth will set you free."
+              <footer>- John 8:31-32</footer>
+          </blockquote>
+      </div>
+  </section>
+
+ <!-- Study Sections Grid -->
+<section class="navigation-grid">
+<!-- Section I -->
+<div class="section-card">
+    <h2>I. Introductory Studies</h2>
+    <ul class="study-list">
+        <li>1. In Search of Freedom: Summary of the Bible and Religious Meaning</li>
+        <li>2. Does God Exist?</li>
+        <li>3. God Loves Us and We Can Be at Peace with Him</li>
+        <li>4. Jesus is the Son of God and Our Savior</li>
+        <li>5. The Holy Spirit: God Present in Our Lives</li>
+        <li>6. God Speaks to Us Through the Bible</li>
+    </ul>
+</div>
+
+<!-- Section II -->
+<div class="section-card">
+    <h2>II. History of Salvation</h2>
+    <ul class="study-list">
+        <li>7. God is the Powerful and Loving Creator</li>
+        <li>8. God is Not Responsible for Our Suffering (Sin)</li>
+        <li>9. God Promises a Savior</li>
+        <li>10. Jesus, Our Savior</li>
+        <li>11. Isaiah 53: The Gospel in the Old Testament</li>
+        <li>12. Who is Jesus?</li>
+        <li>13. The Return of Jesus</li>
+        <li>14. When Will Jesus Return?</li>
+        <li>15. Our Heavenly Experience (The Millennium)</li>
+        <li>16. Our Eternal Home in the New Earth</li>
+    </ul>
+</div>
+
+<!-- Section III -->
+<div class="section-card">
+    <h2>III. Doctrine of Man</h2>
+    <ul class="study-list">
+        <li>17. What is Man?</li>
+        <li>18. Our Hope in the Face of Death</li>
+        <li>19. What is Hell?</li>
+        <li>20. Purgatory</li>
+    </ul>
+</div>
+
+<!-- Section IV -->
+<div class="section-card">
+    <h2>IV. Doctrine of the Church</h2>
+    <ul class="study-list">
+        <li>21. The Christian Church</li>
+        <li>22. Becoming Members of the Christian Church: Baptism</li>
+        <li>23. The Lord's Supper</li>
+        <li>24. Confession</li>
+        <li>25. Peter and the Foundation of the Christian Church</li>
+    </ul>
+</div>
+
+<!-- Section V -->
+<div class="section-card">
+    <h2>V. Doctrine of Sanctification and Obedience</h2>
+    <ul class="study-list">
+        <li>26. Prayer</li>
+        <li>27. A Holy Life</li>
+        <li>28. Law and Grace</li>
+        <li>29. The Ten Commandments</li>
+        <li>30. The Sabbath in the Old Testament</li>
+        <li>31. The Sabbath in the New Testament</li>
+        <li>32. Sunday in the Bible</li>
+        <li>33. Hygienic Laws: General Principles</li>
+        <li>34. Hygienic Laws: Food</li>
+        <li>35. Hygienic Laws: Alcoholic Beverages</li>
+        <li>36. Our Christian Life and Money (Tithing)</li>
+    </ul>
+</div>
+
+<!-- Section VI -->
+<div class="section-card">
+    <h2>VI. Prophetic Teachings</h2>
+    <ul class="study-list">
+        <li>37. God's Sanctuary: The Holy Place and Its Continuous Service</li>
+        <li>38. God's Sanctuary: The Most Holy Place and the Day of Judgment</li>
+        <li>39. Daniel 2: Unlocking the Future</li>
+        <li>40. Daniel 7: The Rise of a Special Power and Judgment</li>
+        <li>41. Daniel 8: The Time of Judgment</li>
+        <li>42. Daniel 9: The Messiah and the Time of Judgment</li>
+        <li>43. Revelation 12: The Remnant Church</li>
+        <li>44. A Prophet for the Remnant</li>
+        <li>45. Revelation 10: The Adventist Church and the Secret Message</li>
+    </ul>
+</div>
+
+<!-- Section VII -->
+<div class="section-card">
+    <h2>VII. Various Topics</h2>
+    <ul class="study-list">
+        <li>46. Following Jesus on Three Mountains</li>
+        <li>47. Marriage</li>
+        <li>48. Premarital Relationships</li>
+        <li>49. Angels</li>
+        <li>50. Saints and Miracles</li>
+        <li>51. Mary of the Gospel and the Madonna of the Church</li>
+    </ul>
+</div>
+</section>
+
+<!-- Add Interactive Features and Search -->
+<!--
+<div class="study-controls">
+<div class="search-box">
+    <input type="text" id="studySearch" placeholder="Search topics...">
+    <button class="search-btn"><i class="fas fa-search"></i></button>
+</div>
+<div class="filter-controls">
+    <button class="filter-btn active" data-filter="all">All Topics</button>
+    <button class="filter-btn" data-filter="introductory">Introductory</button>
+    <button class="filter-btn" data-filter="salvation">Salvation</button>
+    <button class="filter-btn" data-filter="doctrine">Doctrine</button>
+</div>
+</div>-->
+
+<!-- Progress Tracking Section -->
+<div class="progress-section">
+<div class="progress-overview">
+    <h3>Your Study Progress</h3>
+    <div class="progress-bar">
+        <div class="progress" style="width: 0%"></div>
+    </div>
+    <p><span id="completedStudies">0</span> of 51 studies completed</p>
+</div>
+</div>
+
+
+ <!--====================================================================
+         CHAT & Q&A SECTION - Community Interaction
+         ====================================================================-->
+         <section id="chat" class="section">
+          <h2>Chat Section: Q&A</h2>
+          <div class="chat-container">
+            <form id="chat-form" action="send_email.php" method="POST">
+              <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="question">Your Question:</label>
+                <textarea
+                  id="question"
+                  name="question"
+                  placeholder="Type your question here..."
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Submit Question</button>
+            </form>
+          </div>
+        </section>
+    
+
+<!-- Add this JavaScript for interactivity -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Search functionality
+const searchInput = document.getElementById('studySearch');
+const studyItems = document.querySelectorAll('.study-list li');
+
+searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    
+    studyItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(searchTerm) ? '' : 'none';
+    });
+});
+
+// Filter functionality
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filter sections
+        document.querySelectorAll('.section-card').forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Progress tracking
+let completedCount = 0;
+const progressBar = document.querySelector('.progress');
+const completedCounter = document.getElementById('completedStudies');
+
+studyItems.forEach(item => {
+    item.addEventListener('click', function() {
+        if (!this.classList.contains('completed')) {
+            this.classList.add('completed');
+            completedCount++;
+            updateProgress();
+        }
+    });
+});
+
+function updateProgress() {
+    const percentage = (completedCount / studyItems.length) * 100;
+    progressBar.style.width = `${percentage}%`;
+    completedCounter.textContent = completedCount;
+}
+});
+</script>
+
+  <!-- Footer -->
+  <footer>
+      <p>&copy; 2025 Bible Studies Journey with Felix C. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+   
+    <!--====================================================================
+         DAILY DEVOTIONS SECTION - Daily Inspirational Content
+         ====================================================================-->
+   <!-- <section id="devotions" class="section">
+      <h2>Daily Devotions</h2>
+      <div class="devotions-grid">
+         Devotion Card Example -->
+       <!--<div class="devotion-card">
+          <h3>Devotional Section</h3>
+          <p>
+            Access today's devotional content with options in PDF, audio, or video
+            format.
+          </p>
+          <div class="devotion-options">
+            <a href="#" class="btn-secondary">Read PDF</a>
+            <a href="#" class="btn-secondary">Listen to Audio</a>
+            <a href="#" class="btn-secondary">Watch Video</a>
+          </div>--> 
+        </div>
+        <!-- Additional devotion cards can be added here -->
+      </div>
+    </section>
+
+    <!--====================================================================
+         FOOTER - Page Footer with Additional Links
+         ====================================================================-->
+  <!--  <footer>
+      <p>&copy; 2025 Bible Studies with FC. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>-->

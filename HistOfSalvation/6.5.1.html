@@ -1,0 +1,642 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Depth Study: Daniel 8 | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Question Styling */
+        .question {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .question h3::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* In-Depth Study Section */
+        .in-depth-study {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .in-depth-study h2 {
+            text-align: center;
+            color: var(--holy-theme-dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Highlight for important points */
+        .highlight {
+            background-color: rgba(0, 188, 212, 0.1);
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        /* Numbered lists with custom styling */
+        ol.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Bulleted lists with custom styling */
+        ul.styled-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+            }
+
+            .nav-button {
+                min-width: 120px;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Table styling */
+        .text-structure-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .text-structure-table th, .text-structure-table td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--bg-secondary);
+        }
+
+        .text-structure-table th {
+            background-color: var(--holy-theme-dark);
+            color: white;
+        }
+
+        .text-structure-table tr:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>6.5.1 In-Depth Study: Daniel 8</h1>
+            <p>Exploring advanced questions and deeper insights into the prophetic timeline</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="question">
+            <h3>13. Some modern scholars think that the 2,300 "evenings and mornings" should be understood as corresponding to 1,150 evenings and 1,150 mornings, that is, 1,150 days. Why do we find this understanding unacceptable?</h3>
+            
+            <p>In biblical language, the succession of evenings and mornings represents whole days, as happened in the creation week (Genesis 1:5, 8, 13). For this reason, many translations render the text directly as "2,300 days." The idea of dividing the 2,300 evenings and mornings by 2 stems from the need of many modern scholars, influenced by the liberal view that denies the prophetic value of Daniel, who want to make this period correspond to the time when the Seleucid king Antiochus IV Epiphanes persecuted the people of Israel and profaned the temple, as if the great horn represented him specifically.</p>
+            
+            <p>However, we know his history in minute detail, thanks to the apocryphal books of the Maccabees and the historian Josephus, and there is no way to harmonize the period of 1,150 days with what historically happened.</p>
+        </div>
+
+        <div class="question">
+            <h3>14. How can we be certain that the "cleansing" mentioned in Daniel 8:14 truly corresponds to the cleansing of the sanctuary on the Day of Atonement in Leviticus 23:27?</h3>
+            
+            <p>Scholars who do not accept our understanding emphasize the fact that the word used in the Hebrew text of Leviticus 23:27 is different from that used in Daniel 8:14. Leviticus uses the verb corresponding to the root kappar, which means "to cover," "to atone"; while Daniel 8:14 uses the verb nizdaq, which means "to declare righteous," "to restore to one's rights." We respond:</p>
+            
+            <ol class="styled-list">
+                <li>The meaning of the two words is not incompatible because the idea of "atonement" includes that of "being justified," that is, "being restored to a state of righteousness."</li>
+                <li>The ancient Greek translation of the LXX translates Daniel 8:14 with katharisthesetai, which means "to purify" just like the text of Leviticus 23:27. The Latin Vulgate version has mundabitur, which also means "to purify." It appears, then, that the ancient translators either had a Hebrew text different from the Masoretic, or understood the two verbs as having the same meaning. There are, however, other non-linguistic considerations that must be made:</li>
+                <li>The Day of Atonement, as a symbol of judgment, falls within the scope of the cleansing of the sanctuary in Daniel 8:14 through the parallelism with the scene of judgment and salvation of God's people that we found in Daniel 7. Like the first prophetic lines of Daniel 2 and 7, the third one of Daniel 8 must also conclude with a judicial action by God that puts an end to the history of human rebellion and sin. If the cleansing of the sanctuary were excluded from Daniel 8, we would be faced with an absurd anomaly. If we are right, then, we are forced to say that this judgment must correspond to the last temporal (and logical) element of Daniel 8, that is, with the vision concerning the sanctuary, as evidenced by the explicit reference to it and the very animals chosen as symbols of the kingdoms, and in a completely logical way, with the Day of Atonement.</li>
+            </ol>
+        </div>
+
+        <div class="question">
+            <h3>15. Modern liberal scholars see in the horn of Daniel 8 King Antiochus IV Epiphanes. Why don't we accept this interpretation?</h3>
+            
+            <p>When Alexander's empire was divided, most of its territories came under the control of the Seleucids. Antiochus IV was one of them, and not the most important. He began to feel Rome's breath on his neck and lost many battles against the peoples subjected to him, heading towards a considerable decline. His very profanation of the sanctuary of Jerusalem happened indeed as a sign of desperation, needing money, after having had to withdraw from Egypt at the request of the Roman legate who was there.</p>
+            
+            <p>The weakness of his kingdom could not justify the description made by Daniel as "exceedingly great" (8:9), as the Greek text implies, that is, even greater than the four kingdoms from one of which he comes, kingdoms that were simply defined as "great" (v. 8). Nor do other elements match. Among these is the fact that the horn in question comes out towards the end of the other four horns representing the Hellenistic kingdoms (Daniel 8:23). Antiochus IV is part of these kingdoms and cannot appear as a further horn that comes when they have disappeared or are about to disappear. This, however, applies well to Rome.</p>
+        </div>
+
+        <div class="question">
+            <h3>16. According to Daniel 8:8-9, where does the horn come from?</h3>
+            
+            <p>Some think that the great horn arises from one of the four horns representing the four subdivisions of the Greek-Macedonian empire, others think instead that it comes from one of the four winds of heaven. As more consistent with the available data, we report the following explanation:</p>
+            
+            <p>Daniel 8:8-9 literally says: "in its place four notable ones came up toward the four winds of heaven. And out of one of them came a little horn which grew exceedingly great toward the south, toward the east, and toward the Glorious Land." So, does "our" horn come out of the previous horns (kingdoms) or from the winds (that is, from one of the four cardinal points)? Let's consider the following schematization of the text that takes into account the poetic structure of the Hebrew text based on the parallelism between the various verses:</p>
+            
+            <div class="text-structure-table">
+                <table>
+                    <tr>
+                        <th>Hebrew Text Structure</th>
+                        <th>Meaning</th>
+                    </tr>
+                    <tr>
+                        <td>Four notable horns</td>
+                        <td>Four kingdoms</td>
+                    </tr>
+                    <tr>
+                        <td>toward the four winds of heaven</td>
+                        <td>In four directions</td>
+                    </tr>
+                    <tr>
+                        <td>out of one of them</td>
+                        <td>From one direction (wind)</td>
+                    </tr>
+                    <tr>
+                        <td>came a little horn</td>
+                        <td>Rome emerged</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p>"One" (in the feminine) could refer to either horns or winds (both feminine), but "them" (in the masculine) can only refer to heavens. Consequently, we must think that the horn comes from one of the four winds of the heavens, and not from one of the four previous horns.</p>
+        </div>
+
+        <div class="question">
+            <h3>17. With their emphasis on the "investigative" judgment, don't Adventists run the risk of living a spiritual life marked by fear instead of the joy of salvation in Christ?</h3>
+            
+            <p>Yes, it's true, but this is true for all believers who take seriously the existence of sin and judgment, who consider their fragility and God's holiness. Having awareness of God's judgment can be a blessing because it frees from superficiality and carelessness, it is synonymous with spiritual seriousness and respect for God and His will.</p>
+            
+            <p>However, it can also become a destabilizing factor in Christian life if all this is not associated with the awareness of God's love and grace that surpasses all our weaknesses and all our limitations. Living judgment in the perspective of Christ's grace means having the certainty that evil will not be eternal and that God will know how to bring everything back to good. It thus becomes the foundation of hope and joy.</p>
+            
+            <p>God's judgment is a guarantee of good and therefore a cause of joy for every believer who, after having honestly observed himself, lays down every burden before Christ's cross, entrusting himself with full confidence to His grace.</p>
+            
+            <div class="think-about-it">
+                <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                <p>How does understanding the pre-advent judgment through the lens of God's grace change your perspective on this doctrine? Rather than seeing it as something to fear, how might it become a source of hope and confidence in your spiritual journey?</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="6.5.html" class="nav-button previous-chapter">
+                ← Back to Main
+                <span class="hover-text">6.5 Daniel 8: The Time of Judgment</span>
+            </a>
+            <a href="6.6.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">6.6- The Messiah and the Time of Judgement</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- No-copy protection scripts -->
+    <script>
+        // Updated no-copy protection scripts
+        document.addEventListener('keydown', function(e) {
+            // Prevent Ctrl+C (copy)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.keyCode === 67)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+U (view source)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+S (save)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
+                e.preventDefault();
+                alert('Content saving is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+P (print)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P' || e.keyCode === 80)) {
+                e.preventDefault();
+                alert('Content printing is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+Shift+I (inspect element)
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.keyCode === 73)) {
+                e.preventDefault();
+                alert('Inspect element is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+        });
+
+        // Prevent right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Additional protection to disable copy
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable cut
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            alert('Content cutting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable paste
+        document.addEventListener('paste', function(e) {
+            e.preventDefault();
+            alert('Content pasting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+        
+        // Animate questions on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.question');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            questions.forEach(question => {
+                observer.observe(question);
+            });
+        });
+        
+        // Smooth scroll to anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

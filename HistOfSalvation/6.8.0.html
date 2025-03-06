@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.8 - A Prophet for the Remnant | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Inherit styles from the previous page */
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Tabs Styling */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab-button {
+            padding: 1rem 2rem;
+            background: var(--bg-secondary);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .tab-button:hover {
+            background: var(--secondary-color);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Collapsible Toggles */
+        .collapsible-header {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+        }
+
+        .collapsible-header:hover {
+            background: var(--secondary-color);
+        }
+
+        .collapsible-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            padding: 0 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .collapsible-content.show {
+            max-height: 2000px; /* Adjust as needed */
+            padding: 1.5rem;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>6.8 - A Prophet for the Remnant</h1>
+            <p>Understanding the role of prophets in the remnant church</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Tabs for Sections -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="tab1">Introduction</button>
+            <button class="tab-button" data-tab="tab2">Key Questions</button>
+            <button class="tab-button" data-tab="tab3">In-Depth Study</button>
+        </div>
+
+        <!-- Tab 1: Introduction -->
+        <div id="tab1" class="tab-content active">
+            <h2>Introduction</h2>
+            <p>In the previous study, we saw that the remnant church must be characterized by three elements:</p>
+            <ol class="styled-list">
+                <li>They keep the commandments of God.</li>
+                <li>They have faith in Jesus.</li>
+                <li>They have the testimony of Jesus, which is the spirit of prophecy. In other words, they must have one or more prophets.</li>
+            </ol>
+            
+            <p>Beyond our human shortcomings, we can honestly say that the Seventh-day Adventist Christian Church meets the first two requirements, as we are the primary Christian body that observes all ten commandments and the health principles taught through biblical law. We can also say that we possess the third requirement thanks to the prophetic ministry of Ellen G. White. Let us seek to understand who she was and why we consider her a prophet.</p>
+        </div>
+
+        <!-- Tab 2: Key Questions -->
+        <div id="tab2" class="tab-content">
+            <h2>Key Questions</h2>
+
+            <!-- Question 1 -->
+            <div class="collapsible-header">
+                <span>1. Who was Ellen G. White?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>Ellen was a simple, spiritually sensitive girl born in New England (USA) on November 26, 1827. Her parents, devout Christians, were Eunice and Robert Harmon. She took the surname "White" when she married James White, a young Adventist preacher, in 1846. At that time, she was 18, and he was 24.</p>
+                <p>Nothing suggested that she would become a leader, a prophet, and a globally respected writer. At the age of 9, she was severely injured by a stone thrown by a schoolmate. Her nose was broken, and she remained unconscious for three weeks. Everyone thought she would die. After regaining consciousness, she suffered the consequences of that experience for a long time and could only attend school occasionally. Her education developed through her reading, personal experiences, and, we can rightly say, through the light God gave her.</p>
+                <p>In 1842, at the age of 14, she accepted Christ and was baptized into the Methodist Church. By then, Ellen and her parents had already accepted the message of William Miller and were joyfully awaiting the return of Jesus, believed to be imminent—first in 1843 and then in 1844.</p>
+                <p>When their hope was not fulfilled, disappointment also touched Ellen's heart, but it did not destroy her faith. Along with other Millerites, she prayed to understand the meaning of what had happened and to move forward.</p>
+                <p>"One December morning in 1844, at a time when many Millerites were wavering in their faith and others were rejecting their recent experience, Ellen Harmon joined four other women for family worship at the home of a close friend, Mrs. Haines, in the southern part of Portland. While the group was praying, she received her first vision, in which she saw a representation of the Adventists' journey toward the City of God (EW 13–17; 1T 58–61; LS 64–67)." She was only 17 at the time. "When she recounted that vision to the group of Adventists in Portland, they accepted it as light from God. Responding to a subsequent vision, though reluctantly, Ellen began traveling with friends and relatives when the opportunity arose, to share with scattered groups of Adventists what she had seen in the first vision and those that followed." (SDAD, White, Ellen Gould Harmon.)</p>
+                <p>From then on, Ellen spent her life traveling, writing, preaching, warning, and contributing to the building of what would become the Seventh-day Adventist Church. If, by God's grace, we have become what we are today, in the good we possess and do, this is largely due to the ministry of this woman.</p>
+                <p>She died at the age of 87 on July 16, 1915. The frail child whom everyone expected to die soon had carried out her ministry on three continents (America, Europe, and Australia), written over 100,000 pages of articles and books, and contributed to the establishment of hospitals, schools, and publishing houses. She was a health reformer, a spiritual leader, an organizer, a philanthropist, a loving wife, and a devoted mother (she had four children).</p>
+                <p>She also lived with deep humility: "I do not claim to be infallible or to have reached the perfection of Christian character. My life is not free from errors and mistakes. Had I followed my Lord more closely, I would not have had to weep so much over the distance that exists between me and His image." (DG 272.6)</p>
+                <p>"I do not consider even the smallest part of what I possess as my own. I have $20,000 that I have borrowed to invest in the Lord's work. In recent years, comparatively few of my books have been sold in the United States. I need money for current expenses and must pay those who work for me. The money I would otherwise pay for rent, I now pay as interest on the money I borrowed to secure this house. I am ready to give up my property as soon as the Lord shows me that this is His will and that my task here is finished." (PM 28.2)</p>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="collapsible-header">
+                <span>2. How did she define her mission?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>Adventists regard Ellen White as a servant of God who honored her Lord and His people by faithfully using the gifts and opportunities she received. In a very special way, the Adventist Church believes that she received the gift of prophecy (1 Cor 12:10; Eph 4:11). She never used the title of prophet for herself, not because she did not recognize herself as such or out of false humility, but because she did not want to be confused with others in her time who claimed to be prophets but often dishonored God and His Word.</p>
+                <p>She wrote: "Some have misunderstood the fact that I have not claimed to be a prophet, and have asked why. I have no claims to make, except that I have been taught that I am the Lord's messenger; that He called me in my youth to receive His word and to give a clear and decided message in the name of the Lord Jesus. In my early youth, I was asked several times: Are you a prophet? I have always answered: I am the Lord's messenger. I know that many have called me a prophet, but I have not claimed this title. My Savior declared me to be His messenger. 'Your work,' I was instructed, 'is to bear My word. Strange things will arise, and in your youth I set you apart to bear the message to the erring, to present the word before the unbelieving, and with pen and voice to reprove, on the foundation of the Word, what is not right.'" (1 Selected Messages, pp. 31,32).</p>
+                <p>"Why have I not claimed to be a prophet? Because in these last days many who boldly claim to be prophets are a disgrace to the cause of Christ, and because my work includes much more than what the word 'prophet' signifies." (1SM 32.4).</p>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="collapsible-header">
+                <span>3. How did she view the Bible?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>Although she considered herself a messenger of God, she never thought she could ignore the Bible or take its place. On the contrary, she honored the Bible as the Word of God with all her strength and continually urged everyone to do the same: "The Bible, as it stands, must be our guide. Nothing is better suited to open the mind and strengthen the intellect than the study of the Bible. No other book will elevate the soul and invigorate our faculties like the study of the living oracles." (1MCP 93.2) Her last public message at a General Conference session was, referring to the Scriptures, "Brethren, I commend to you this book."</p>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="collapsible-header">
+                <span>4. Why do Seventh-day Adventists consider her a prophet?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>Not all Adventists initially accepted her gift, but gradually, evidence from her ministry and the Bible                <p>convinced them. The following may be the main reasons:</p>
+                <ol class="styled-list">
+                    <li>Manifestation of supernatural power. Many times, while in vision, especially at the beginning of her experience, she stopped breathing yet continued to speak and breathe.</li>
+                    <li>Supernatural knowledge of facts related to personal experiences and the church that would otherwise be unknowable.</li>
+                </ol>
+                <p>Such facts drew attention to her ministry, but they alone cannot be signs of the divine origin of her message, for Satan can also perform miracles (2 Thess 2:9; 2 Cor 11:14). Therefore, it was necessary to compare her ministry with the characteristics the Bible attributes to a true prophet:</p>
+                <ol class="styled-list">
+                    <li>Fulfillment of any prophecies (Jer 28:9; Deut 18:22).</li>
+                    <li>Harmony with previous prophets and the law of God (Isa 8:20; 1 Cor 14:32).</li>
+                    <li>Harmony with the teaching of Jesus found in the Bible (1 John 4:2).</li>
+                    <li>Positive fruits of her ministry (Matt 7:16,20).</li>
+                </ol>
+                <p>When the church saw how her personal life and teaching aligned with all these characteristics, her ministry was accepted as a gift from God to His people in these last days.</p>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="collapsible-header">
+                <span>5. What position did she hold in the church?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>She held no official institutional position in the church. She was not the church president or a pastor. She was a voice heard for her moral and spiritual authority, not because of institutional power. When General Conference meetings were held, she participated as a regular delegate. After the difficult early years, she supported herself and her family with the royalties from her book sales, often reinvesting the earnings into the church. After her husband's death in 1881, she received a salary equivalent to that of a General Conference officer.</p>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="collapsible-header">
+                <span>6. What other elements are worth mentioning?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <ol class="styled-list">
+                    <li>Contrary to the attitude of false prophets in her time and ours, she never sought to dominate the church but always remained at its service.</li>
+                    <li>She never used her influence to enrich herself or her children.</li>
+                    <li>Contrary to the attitude of false prophets, she never monopolized the spiritual life of individuals or the church but encouraged everyone to use their own minds and have a personal relationship with God and the Bible.</li>
+                </ol>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="collapsible-header">
+                <span>7. How should we respond to her ministry?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p><strong>Trust in God.</strong> Many wonder why God spoke only in biblical times but not today. Ellen White's prophetic ministry proves that God is still a living God who has something to say to His children. God is still interested in us and in humanity. He has not changed and cares for us. Just as God once delivered Israel and guided them through a prophet (Hosea 12:13), so He has done and will do for His people in the last days.</p>
+                <p><strong>Trust in our church.</strong> There are thousands of Christian churches. Some were created for unworthy reasons. Many were born out of an honest desire to honor God and His Word. However, most of them originate from human initiative. The presence of the prophetic ministry gives the Adventist Church the conviction that it exists not merely as a result of historical, social, or religious events but because of divine intervention; that it exists not to increase the fragmentation of the Christian world but because God had a special message to deliver to the world, and we are called to proclaim it. In other words, Ellen White contributes to the formation of our identity and mission. Without the help God has given us through her, we would have been a miscarriage of history and would never have become—despite our human weaknesses—what we are today.</p>
+                <p><strong>Trust in the Lord's messenger.</strong> We are invited to receive her ministry as a blessing: "Believe in the LORD your God, and you will be secure; believe in His prophets, and you will succeed!" (2 Chron 20:20).</p>
+                <p><strong>Trust in our lives.</strong> Ellen White's prophetic ministry provides guidance for our lives in difficult times and becomes an encouragement to believe that God is not far from us.</p>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="collapsible-header">
+                <span>8. Is Ellen White the only prophetess called by God?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>No. The Bible speaks of Miriam, the sister of Moses and Aaron (Exod 15:20); Deborah, the judge and leader of Israel (Judg 4:4); Huldah, during the time of King Josiah (2 Kings 22:14); Anna, the elderly woman who gave her testimony about the child Jesus when He was brought to the temple (Luke 2:36); and the four daughters of Philip, the deacon (Acts 21:8,9). The Bible tells us that "God shows no partiality" (Acts 10:34) and that in Christ, there is neither "male nor female" (Gal 3:28).</p>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="collapsible-header">
+                <span>9. Was Ellen White the only prophet of the Adventist Movement?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>No. At least two other individuals were called by God to the prophetic ministry but did not fully fulfill their mission. This occurred before October 22, 1844, within the Millerite Movement.</p>
+                <p><strong>William Foy</strong>, a Millerite of mixed race, had two visions in 1842 about the imminent return of Christ but initially hesitated to share them publicly, fearing he would not be taken seriously due to racial prejudice. However, he joined the Millerite Movement and testified before a large audience. Later difficulties discouraged him from sharing a third vision. Ellen White met him as a young girl and spoke of him with respect.</p>
+                <p><strong>Hazen Foss</strong> received a vision very similar to Ellen's but refused to share it because it did not align with their expectations and because he feared criticism from other believers. A further warning was given to him: if he refused again, the message would be given to "the weakest of the weak." After his continued resistance, a voice told him, "You have grieved the Spirit of the Lord." Frightened, he tried to recount the vision to some brethren, but when he began to speak, he could remember nothing. Later, while listening from behind a door, he heard Ellen's message and remembered his vision. The next day, he confessed his story to Ellen and encouraged her to remain faithful to the Lord.</p>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="collapsible-header">
+                <span>10. Why is there no contradiction between Ellen White's ministry and the principle of "Sola Scriptura"?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>Along with all Protestants, the Adventist Church firmly upholds the principle of "Sola Scriptura," the principle that only the Bible constitutes the foundation of the Christian faith. The fact that they accept Ellen White's prophetic ministry does not mean they abandon this principle. Indeed:</p>
+                <ul class="styled-list">
+                    <li>Scripture itself says that prophecy is one of the gifts of the Spirit (1 Cor 12:10; Eph 4:11). The apostle Paul, whose writings are part of Scripture, encourages us to pray for the gift of prophecy (1 Cor 14:1). It is evident, then, that since Scripture encourages us to receive this gift, it would be inconsistent to reject it in the name of Scripture. The problem arises if a supposed prophet contradicts Scripture, but this, as we have seen, is not the case with Ellen White.</li>
+                    <li>The Bible tells us that in the last days, God will ensure that the remnant of His church receives the gift of prophecy (Rev 12:17; 19:10. See also Joel 2:28. Note: An initial fulfillment of this prophecy occurred in the early church—Acts 2:17-21—but the signs of the times it mentions compel us to think of a fulfillment at the end of time. This conclusion is also supported by the message of the prophet Joel about the "rain" of the former and latter seasons—Joel 2:23.).</li>
+                    <li>Ellen White always showed respect for the Bible and exalted it as our rule of faith. Her ministry is accepted because it aligns with the biblical criteria for recognizing a true prophet and because it honors biblical teaching. We accept her because of the Bible, not the Bible because of her.</li>
+                </ul>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="collapsible-header">
+                <span>11. After the closing of the Bible, should we consider the era of the prophetic gift closed?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>The Bible never says this. In addition to what we have already seen about the gift of prophecy in the last-day church, we add here some general considerations. The gift of prophecy is one among many. Just as no one would claim that the gift of healing or wisdom no longer has a place in the Christian church in the centuries following the closing of the Bible, so no one should say this about the gift of prophecy. The Bible is not a muzzle for God. God remains a living God who has something to offer and say to His people. God is always free to speak to His people whenever He decides to do so.</p>
+                <p>Some cite Revelation 22:18-19 to argue that nothing should be added to or taken away from the Bible. But the phrase does not refer to God's revelation in general, as if no prophet could exist anymore. It explicitly refers to the book of Revelation, defined as "this book." Deuteronomy 4:2; 12:32 use similar expressions, and no one interprets them as meaning that after the closing of the Pentateuch, no further revelation could exist.</p>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="collapsible-header">
+                <span>12. Does the fact that Ellen White spoke on behalf of God mean that all her writings must be entirely original?</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>No. Otherwise, much of the Bible would have no reason to exist. For example, much of the historical books of the Bible report materials predating the Bible (e.g., Josh 10:13; 2 Sam 1:18; 1 Kings 11:41). The three synoptic Gospels (Matthew, Mark, and Luke) have similar materials, and many believe they drew from earlier collections of Jesus' words. Luke himself declares that he conducted research before writing his Gospel (Luke 1:1-3). For this reason, some have accused her of plagiarism (the undeclared use of others' materials). The facts are as follows:</p>
+                <ol class="styled-list">
+                    <li>White herself declared that she used others' materials without explicitly citing them. By today's standards, this would be illegal, but it was not so in her time: many writers used others' materials, and recent studies have shown that the writers Ellen White used had themselves borrowed from others before them.</li>
+                    <li>As she declared, she was aware that she was not a scholar. Therefore, when she found that someone had expressed what she thought in a better way, she used it to communicate God's message (Ellen G. White, vol. 3, p. 378).</li>
+                    <li>It is evident that she did not intend to deceive anyone, as she explicitly declared her borrowing of others' materials, such as in the 1888 introduction to <em>The Great Controversy</em>. At times, she even encouraged her readers to read the same books from which she borrowed. An example is <em>The Life and Epistles of St. Paul</em>, written by Conybeare and Howson, which she used in writing <em>Sketches from the Life of Paul</em>. This book was offered as a gift to readers of our <em>Review and Herald</em> and <em>Signs of the Times</em> magazines. In the latter, Ellen White herself wrote praising this book (Feb. 1883). There was, therefore, no intention to deceive the authors or the publisher of the other book, who instead received good publicity and economic benefits. Nor was there any intention to deceive her readers, as they could compare the two works by receiving the other book as a gift.</li>
+                    <li>It should also be added that, even when using others' materials, she made choices to avoid incorporating errors present in the original sources. Moreover, the context in which such materials were used often gave them a completely new perspective. They expressed a vision and spiritual power that did not exist in the works she may have drawn from. The substance of Ellen White's writings is, therefore, certainly original and inspired.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Tab 3: In-Depth Study -->
+        <div id="tab3" class="tab-content">
+            <h2>In-Depth Study</h2>
+
+            <!-- Section 13 -->
+            <div class="collapsible-header">
+                <span>13. The Case of Anna Phillips</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>While in Australia, Mrs. White received reports that in America, a sister in faith, Miss Anna Phillips (or Rice), claimed to have received special messages from God, which, in reality, came from her own emotions. Some of the elders in Battle Creek not only encouraged her but also the church to accept Anna's messages as coming from the same source as Ellen's. Ellen G. White wrote several letters to discourage this situation. Particularly interesting is the letter written to Elder Jones. Consider that, at that time, a letter took at least a month to reach America.</p>
+                <p>W. M. Adams, a student in Battle Creek in 1894, recounted this experience. He heard Elder Jones preach at the Battle Creek Tabernacle. Jones interspersed some messages from Anna Phillips with others he read from Ellen White's testimonies and asked the congregation if they were not hearing the same voice in both. The people were confused.</p>
+                <p>The next morning, Adams was at the post office in the <em>Review and Herald</em> building, writing a postcard to send home. Jones arrived and asked for his mail. He was handed a long envelope with Ellen White's name and address as the sender. He sat on the bench, opened the envelope, and began to read. Adams reports that as Jones read, tears began to fall from his eyes onto the pages of the letter. Soon, A. O. Tait approached, and Jones said to him:</p>
+                <p>"Oscar, come here. Sit down. Did you hear me preach that sermon yesterday?"<br>
+                "Yes," replied Elder Tait.<br>
+                "Well, read this," said Jones, handing him the testimony he had just received from Ellen White.</p>
+                <p>After Tait finished reading, Elder Jones asked, "Who told Sister White that I was going to preach that sermon about Anna Phillips as a prophetess?"<br>
+                "Oh, you know, Alonzo," Tait replied in his calm and firm manner.<br>
+                "Yes, I know. God knew I was going to do it and prompted Sister White a month ago, before I preached the sermon, to send me her testimony about my error. Look at the date."</p>
+                <p>That was a week of deep reflection for the impulsive A. T. Jones. Adams recounted that the following Sabbath, Jones preached again in the tabernacle and read parts of the testimony he had received on Sunday morning. He said, "I know I was in error, and I confess it. Now I am in the right." (RH, July 7, 1949).</p>
+            </div>
+
+            <!-- Section 14 -->
+            <div class="collapsible-header">
+                <span>14. The First Vision (as narrated in <em>Life Sketches of Ellen G. White</em>)</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="collapsible-content">
+                <p>It was not long after the end of the time [of our expectation] in 1844 that I was given my first vision. I was visiting Mrs. Haines in Portland, a dear sister in Christ, whose heart was closely knit with mine; five of us, all women, were quietly kneeling at the family altar [i.e., for a family worship moment]. As we prayed, the power of God came upon me as I had never felt before.</p>
+                <p>It seemed to me that I was immersed in light and rising higher and higher, far above the earth. I turned to look for the Adventists in the world but could not see them. Then a voice said to me, "Look again, and look a little higher." At these words, I raised my eyes and saw a straight and narrow path, situated high above the world. On this path, the Adventists were traveling toward the city at the far end. Behind them, at the beginning of the path, was a bright light that the angel told me was the "midnight cry." This light illuminated the entire path and gave light to their feet so that they would not stumble.</p>
+                <p>If they fixed their eyes on Jesus, who was right before them, leading them toward the city, they were safe. But soon some began to grow weary and said that the city was too far away and that they had expected to enter it sooner. Then Jesus encouraged them by raising His mighty right arm, and from His arm came a light that waved over the group of Adventists, and they exclaimed, "Hallelujah!" Others rashly denied the light behind them and said that it was not God who had led them thus far. The light behind them disappeared, leaving their feet in total darkness, and they stumbled and lost sight of Jesus' sign, falling off the path into the dark and wicked world below.</p>
+                <p>We immediately heard the voice of God like the sound of many waters, announcing the day and hour of His coming. The living saints, numbering 144,000, recognized and understood the voice, while the wicked thought it was thunder and an earthquake. When God announced the time, He poured out the Holy Spirit upon us, and our faces began to shine with the glory of God, as happened to Moses when he descended from Mount Sinai.</p>
+                <p>The 144,000 all received the seal and were perfectly united. On their foreheads was written, "God, New Jerusalem," and a glorious star containing Jesus' new name.</p>
+                <p>At the sight of our state of joy and holiness, the wicked were enraged and would have rushed violently to lay hands on us and throw us into prison. But we clasped hands in the name of the Lord, and they fell helplessly to the ground. It was then that the synagogue of Satan knew that God loved us, loved us who could wash one another's feet and greet each other with a holy kiss, and they fell and worshiped at our feet [Note from the compiler of this collection of Bible studies: Most likely, what Ellen meant, in the simple language of her youth, was that what happened to Paul and Silas would happen—when, imprisoned for their faithfulness to God, they experienced God's miraculous deliverance, and as a result, the jailer, seeing God's protection and their honesty, fell at their feet (Acts 16:29). It does not mean that they accepted worship.].</p>
+                <p>Immediately, our gaze was drawn to the east, for a small dark cloud had appeared, about half the size of a hand, and we knew it was the sign of the Son of Man. In solemn silence, we all watched as the cloud approached, growing brighter and more glorious until it became a great white cloud. Its base appeared like a lake of fire, while around it were ten thousand angels singing a sweet song. At its top sat the Son of Man. His hair was white and wavy, falling on His shoulders. On His head were many crowns. His feet were like fire. In His right hand was a sharp sickle. In His left hand, a silver trumpet. His eyes were like a flame of fire, deeply searching His children. Then every face lost its color, and those whom God had rejected became dark. </p> 
+                
+                
+                 <!-- Section 14 -->
+            <div class="collapsible-header">
+              <span>15. The First Vision:cont'd(as narrated in <em>Life Sketches of Ellen G. White</em>)</span>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="collapsible-content">
+                <p>we all cried out, "Who can stand? Is my garment spotless?" Then the angels stopped singing, and there was a moment of terrible silence: Jesus spoke, "Those who have pure hands and pure hearts will stand; My grace is sufficient for you." At these words, our faces shone, and joy filled our hearts. The angels sang a higher note and sang again as the cloud drew nearer.</p>
+                <p>Then Jesus' silver trumpet sounded as He descended from the cloud, enveloped in flames of fire. Then He looked at the graves of the sleeping saints, raised His eyes and hands to heaven, and cried, "Awake! Awake! Awake, you who sleep in the dust, and arise!"</p>
+                <p>There was then a mighty earthquake. The graves opened, and the dead came out clothed in immortality. The 144,000 shouted, "Hallelujah!" as they recognized their friends who had been taken from them by death, and at the same time, we were transformed and lifted up to meet the Lord in the air.</p>
+                <p>We all entered the cloud together and took seven days to ascend to the sea of glass, where Jesus brought crowns and placed them on our heads with His own right hand. He gave us harps and palms of victory. Here, on the sea of glass, the 144,000 stood in a perfect square. Some had very bright crowns, others less so. Some crowns were rich with stars, while others had few. All were perfectly satisfied with the crowns they received. All were also clothed in a glorious robe that reached from their shoulders to their feet. Angels surrounded us as we marched on the sea of glass toward the city gate. Jesus raised His mighty and glorious hand, grasped the pearly gate, swung it back on its gleaming hinges, and said to us, "You have washed your robes in My blood, you have stood firmly for My truth, enter." We all moved forward and felt perfectly at home [we had a perfect right] in the city.</p>
+                <p>Inside, we saw the tree of life and the throne of God. From the throne flowed a river of pure water, and on both sides of the river was the tree of life. On one bank of the river was a trunk of the tree, and a trunk stood on the other bank of the river, both of pure, transparent gold. At first, it seemed to me that I saw two trees. I looked again and saw that they were united at the top of the tree. Thus was the tree of life on both sides of the river of life. Its branches arched toward where we stood, and the fruit was glorious; it looked like gold mixed with silver.</p>
+                <p>We all went under the tree and sat down to admire the glory of the place when Brothers Fitch and Stockman, who had preached the gospel of the kingdom and whom God had laid in the grave to save them, approached us and asked what had happened after they had fallen asleep. We tried to recall our heaviest trials, but they seemed so small compared to the extraordinary and eternal weight of glory surrounding us that we could not even speak of them: and we all exclaimed with a loud voice, "Hallelujah! Heaven is cheap enough!" We touched our glorious harps and made the heavenly bows resound. When I came out of my vision, everything seemed different: a sadness covered all I saw. Oh, how dark this world seemed! I wept when I found myself here and felt homesick. I had been in a better world, and in comparison, this one had lost all its attraction.</p>
+                <p>I recounted this vision to the believers in Portland, who accepted it with full confidence that it came from God. All agreed that God had chosen this way, after the great disappointment of October, to comfort and strengthen His people. The Spirit of the Lord was present as I gave my testimony, and the solemnity of eternity rested upon us. An indescribable awe filled me at the thought that I, so young and weak, had been chosen as the instrument through which God would give light to His people. While under the power of the Lord, I was filled with joy; it seemed to me that I was surrounded by holy angels in the glorious courts of heaven, where all is peace and happiness; and it was a sad and bitter change to awaken and regain consciousness of the realities of mortal life.</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="6.7.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">6.7 Revelation 12: The Remnant Church</span>
+            </a>
+            <a href="6.9.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">6.9 - The Three Angels' Messages</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Tabs functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to the clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Collapsible functionality
+        const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+
+        collapsibleHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                header.classList.toggle('active');
+                content.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>

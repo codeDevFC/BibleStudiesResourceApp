@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bible Studies Resource</title>
+    <!-- Google Font for better typography -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons (using CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnH/PRJlfuVozVg5PZ+bNPiL0WZLL+pILn6/e6FhZ/z+c+MjgGZh7kz6YRJ9/HPOOHO8TE+QA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* -----------------------------------------------
+         Global Reset and Basic Styles
+      ----------------------------------------------- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        color: #444;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      /* -----------------------------------------------
+         Header Styling
+      ----------------------------------------------- */
+      header {
+        background-color: #2c3e50;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      /* -----------------------------------------------
+         Main Container
+      ----------------------------------------------- */
+      .container {
+        background-color: #fff;
+        max-width: 960px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      /* -----------------------------------------------
+         Introduction Section
+      ----------------------------------------------- */
+      .introduction {
+        margin-bottom: 40px;
+      }
+      .introduction h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+      }
+      .introduction p {
+        margin-bottom: 15px;
+      }
+      .introduction a {
+        color: #2c3e50;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .introduction a:hover {
+        text-decoration: underline;
+      }
+
+      /* -----------------------------------------------
+         Vertical Tabs Section
+      ----------------------------------------------- */
+      .tab-container {
+        display: flex;
+        gap: 20px;
+      }
+      /* Vertical Tabs Sidebar */
+      .tab-sidebar {
+        width: 250px;
+        min-width: 200px;
+        border-right: 2px solid #ddd;
+      }
+      .tab-sidebar .tab-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 5px;
+        background-color: #eee;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+      }
+      .tab-sidebar .tab-btn.active,
+      .tab-sidebar .tab-btn:hover {
+        background-color: #2c3e50;
+        color: #fff;
+      }
+      /* Tab Content Area */
+      .tab-main {
+        flex: 1;
+      }
+      .tab-content {
+        display: none;
+        animation: fadeIn 0.4s;
+      }
+      .tab-content.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* -----------------------------------------------
+         Table of Contents (TOC) Styling
+      ----------------------------------------------- */
+      .toc {
+        list-style: none;
+        padding-left: 20px;
+      }
+      .toc li {
+        margin-bottom: 10px;
+      }
+      .toc a.toc-link {
+        font-weight: bold;
+        color: #2c3e50;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .toc a.toc-link:hover {
+        color: #f1c40f;
+      }
+
+      /* -----------------------------------------------
+         Return to Home Button Styling
+      ----------------------------------------------- */
+      .back-home {
+        text-align: center;
+        margin: 30px 0;
+      }
+      .back-home button {
+        background-color: #2c3e50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .back-home button:hover {
+        background-color: #f1c40f;
+        color: #2c3e50;
+      }
+      .back-home i {
+        margin-right: 8px;
+      }
+
+      /* -----------------------------------------------
+         Footer Styling
+      ----------------------------------------------- */
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      /* -----------------------------------------------
+         Mobile Responsiveness
+      ----------------------------------------------- */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+        .tab-container {
+          flex-direction: column;
+        }
+        .tab-sidebar {
+          width: 100%;
+          border-right: none;
+          border-bottom: 2px solid #ddd;
+        }
+        .tab-sidebar .tab-btn {
+          text-align: center;
+          padding: 10px;
+          font-size: 0.9rem;
+        }
+        .container {
+          padding: 15px;
+          margin: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <h1>Bible Studies Resource</h1>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+      <!-- Introduction Section -->
+      <section class="introduction">
+        <h2>Introduction</h2>
+        <p>
+          Please note that these studies are neither complete nor organized in a
+          strictly systematic manner—they are designed as resources to help you
+          reflect on your faith and to facilitate discussions with friends.
+          The responses are presented in a conversational style, making them
+          suitable for both individual reading and group conversation.
+        </p>
+        <p>
+          While the sequence of topics is flexible and can be tailored to
+          individual or group needs, it is important that each study builds on a
+          set of foundational topics, ensuring a deeper understanding of God's
+          love and the generous nature of His teachings.
+        </p>
+        <p>
+          For those studying in groups, printing and sharing the relevant sections
+          of this collection may enhance the discussion. In future editions, I aim
+          to provide simplified study sheets for each subject area.
+        </p>
+        <p>
+          Feedback, including error corrections and suggestions, is always welcome.
+          You can reach me at
+          <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a>.
+        </p>
+      </section>
+
+      <!-- Vertical Tabs Section -->
+      <div class="tab-container">
+        <!-- Tab Sidebar -->
+        <div class="tab-sidebar">
+          <button class="tab-btn active" data-tab="tab1">I. Introductory Studies</button>
+          <button class="tab-btn" data-tab="tab2">II. History of Salvation</button>
+          <button class="tab-btn" data-tab="tab3">III. Doctrine of Man</button>
+          <button class="tab-btn" data-tab="tab4">IV. Doctrine of the Church</button>
+          <button class="tab-btn" data-tab="tab5">V. Doctrine of Sanctification & Obedience</button>
+          <button class="tab-btn" data-tab="tab6">VI. Prophetic Teachings</button>
+          <button class="tab-btn" data-tab="tab7">VII. Various Topics</button>
+        </div>
+        <!-- Tab Content -->
+        <div class="tab-main">
+          <div id="tab1" class="tab-content active">
+            <ul class="toc">
+              <li>
+                <a href="/IntroStudies/1.1.html" class="toc-link">
+                  In Search of Freedom: Summary of the Bible and Religious Meaning
+                </a>
+              </li>
+              <li>
+                <a href="/IntroStudies/1.2.html" class="toc-link">Does God Exist?</a>
+              </li>
+              <li>
+                <a href="/IntroStudies/1.3.html" class="toc-link">
+                  God Loves Us and We Can Be at Peace with Him
+                </a>
+              </li>
+              <li>
+                <a href="/IntroStudies/1.4.html" class="toc-link">
+                  Jesus is the Son of God and Our Savior
+                </a>
+              </li>
+              <li>
+                <a href="/IntroStudies/1.5.html" class="toc-link">
+                  The Holy Spirit: God Present in Our Lives
+                </a>
+              </li>
+              <li>
+                <a href="/IntroStudies/1.6.html" class="toc-link">
+                  God Speaks to Us Through the Bible
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="tab2" class="tab-content">
+            <ul class="toc">
+              <li>
+                <a href="HistOfSalvation/2.1.html" class="toc-link">
+                  God is the Powerful and Loving Creator
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/2.2.html" class="toc-link">
+                  God is Not Responsible for Our Suffering (Sin)
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/2.3.html" class="toc-link">God Promises a Savior</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/2.4.html" class="toc-link">Jesus, Our Savior</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/2.5.html" class="toc-link">
+                  Isaiah 53: The Gospel in the Old Testament
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/2.6.html" class="toc-link">Who is Jesus?</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/2.7.html" class="toc-link">The Return of Jesus</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/2.8.html" class="toc-link">When Will Jesus Return?</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/2.9.html" class="toc-link">
+                  Our Heavenly Experience (The Millennium)
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/2.10.html" class="toc-link">
+                  Our Eternal Home in the New Earth
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!--REMEMBER TO CHANGE P to a (anchor tags after sharing)-->
+          <div id="tab3" class="tab-content">
+            <ul class="toc">
+              <li>
+                <a href="HistOfSalvation/3.1.html" class="toc-link">What is Man?</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/3.2.html" class="toc-link">Our Hope in the Face of Death</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/3.3.html" class="toc-link">What is Hell?</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/3.4.html" class="toc-link">Purgatory</a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="tab4" class="tab-content">
+            <ul class="toc">
+              <li>
+                <a href="HistOfSalvation/4.1.html" class="toc-link">The Christian Church</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/4.2.html" class="toc-link">
+                  Becoming Members of the Christian Church: Baptism
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/4.3.html" class="toc-link">The Lord's Supper</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/4.4.html" class="toc-link">Confession</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/4.5.html" class="toc-link">
+                  Peter and the Foundation of the Christian Church
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="tab5" class="tab-content">
+            <ul class="toc">
+              <li>
+                <a href="HistOfSalvation/5.1.html" class="toc-link">Prayer</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.2.html" class="toc-link">A Holy Life</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.3.html" class="toc-link">Law and Grace</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.4.html" class="toc-link">
+                  The Ten Commandments
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.5" class="toc-link">
+                  The Sabbath in the Old Testament
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.6.html" class="toc-link">
+                  The Sabbath in the New Testament
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.7.html" class="toc-link">Sunday in the Bible</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.8.html" class="toc-link">
+                  Hygienic Laws: General Principles
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.9.html" class="toc-link">
+                  Hygienic Laws: Food
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.10.html" class="toc-link">
+                  Hygienic Laws: Alcoholic Beverages
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/5.11.html" class="toc-link">
+                  Our Christian Life and Money (Tithing)
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="tab6" class="tab-content">
+            <ul class="toc">
+              <li>
+                <a href="HistOfSalvation/6.1.html" class="toc-link">
+                  God's Sanctuary: The Holy Place and Its Continuous Service
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/6.2.html" class="toc-link">
+                  God's Sanctuary: The Most Holy Place and the Day of Judgment
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/6.3.html" class="toc-link">Daniel 2: Unlocking the Future</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/6.4.html" class="toc-link">
+                  Daniel 7: The Rise of a Special Power and Judgment
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/6.5.html" class="toc-link">Daniel 8: The Time of Judgment</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/6.6.html" class="toc-link">
+                  Daniel 9: The Messiah and the Time of Judgment
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/6.7.html" class="toc-link">Revelation 12: The Remnant Church</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/6.8.html" class="toc-link">A Prophet for the Remnant</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/6.9.html" class="toc-link">
+                  Revelation 10: The Adventist Church and the Secret Message
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="tab7" class="tab-content">
+            <ul class="toc">
+              <li>
+                <a href="HistOfSalvation/7.1.html" class="toc-link">
+                  Following Jesus on Three Mountains
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/7.2" class="toc-link">Marriage</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/7.3.html" class="toc-link">
+                  Premarital Relationships
+                </a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/7.4.html" class="toc-link">Angels</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/7.5.html" class="toc-link">Saints and Miracles</a>
+              </li>
+              <li>
+                <a href="HistOfSalvation/7.6.html" class="toc-link">
+                  Mary of the Gospel and the Madonna of the Church
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Return to Home Button (before Footer) -->
+      <div class="back-home">
+        <button onclick="goHome()" title="Return to Home">
+          <i class="fas fa-home"></i> Return to Home Page
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2025 Bible Studies with FC. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Tab switching functionality for vertical tabs
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetTab = btn.getAttribute("data-tab");
+
+          // Remove active classes from all buttons and corresponding contents
+          tabButtons.forEach((b) => b.classList.remove("active"));
+          tabContents.forEach((content) => content.classList.remove("active"));
+
+          // Activate the clicked button and its corresponding tab content
+          btn.classList.add("active");
+          document.getElementById(targetTab).classList.add("active");
+        });
+      });
+
+      // Return to Home function - redirect to index.html
+      function goHome() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>

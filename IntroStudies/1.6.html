@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>1.6 God Speaks Through the Bible | Church Bible Studies</title>
+    <style>
+  
+/* Base Styles */
+                :root {
+                    --primary-color: #2c3e50;
+                    --accent-color: #3498db;
+                    --highlight-color: #e74c3c;
+                    --success-color: #2ecc71;
+                    --warning-color: #f1c40f;
+                    --quote-bg: #e8f4ff;
+                    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+                    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+                }
+
+
+                body {
+                    font-family: 'Arial', sans-serif;
+                    color: var(--primary-color);
+                    line-height: 1.8;
+                    margin: 0;
+                    padding: 0;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    -webkit-touch-callout: none;
+                    background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+                                url('./Images/group_1.jpg') no-repeat center center fixed;
+                    background-size: cover;
+                }
+
+                .container {
+                    width: var(--container-width);
+                    max-width: var(--max-width);
+                    margin: auto;
+                    padding: 1.5rem;
+                }
+
+                .lesson-header {
+                    text-align: center;
+                    padding: 2.5rem;
+                    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                                url('images/bible-header.jpg');
+                    background-size: cover;
+                    color: white;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                    margin-bottom: 2rem;
+                    backdrop-filter: blur(5px);
+                }
+
+                .content-section {
+                    background: rgba(255, 255, 255, 0.95);
+                    padding: 1.5rem;
+                    margin-bottom: 1rem;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(10px);
+                }
+
+                h2 {
+                    color: var(--accent-color);
+                    border-bottom: 2px solid var(--accent-color);
+                    padding-bottom: 0.5rem;
+                    margin-top: 1.5rem;
+                }
+
+                /* Evidence List Styles */
+        .evidence-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .evidence-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .evidence-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .evidence-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .evidence-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Scripture Block Styles */
+        .scripture-block {
+            background: var(--quote-bg);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .scripture-reference {
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.1);
+            color: var(--accent-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .scripture-reference:hover {
+            background: rgba(52, 152, 219, 0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Highlight Box Styles */
+        .highlight-box {
+            background: linear-gradient(to right, rgba(241, 196, 15, 0.1), transparent);
+            border-left: 4px solid var(--warning-color);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-note {
+            font-style: italic;
+            color: var(--primary-color);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        blockquote {
+            background: var(--quote-bg);
+            border-left: 4px solid var(--accent-color);
+            margin: 1rem 0;
+            padding: 1rem;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        .scripture-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .scripture-item {
+            background: var(--quote-bg);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #7f8c8d;
+            color: white;
+        }
+
+        .btn-study {
+            background: #27ae60;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .btn-study:hover {
+            background: #219a52;
+        }
+
+        .next-topic:hover::after {
+            content: "Next: The Power of Prayer";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+
+
+        .next-chapter-btn {
+                    background: #e74c3c;  /* Different color to indicate chapter change */
+                    color: white;
+                    position: relative;
+                    overflow: hidden;
+                }
+        
+                .next-chapter-btn:hover {
+                    background: #c0392b;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                }
+        
+                .next-chapter-btn:hover::after {
+                    content: "Chapter 2.1: God Is Powerful & Loving Creator";
+                    position: absolute;
+                    bottom: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: #333;
+                    color: white;
+                    padding: 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    z-index: 1000;
+                }
+        
+                .reflection-box {
+                    background: linear-gradient(to right, rgba(241, 196, 15, 0.1), transparent);
+                    border-left: 4px solid var(--highlight-color);
+                    padding: 1.5rem;
+                    margin-top: 2rem;
+                    border-radius: 0 5px 5px 0;
+                }
+        
+                .scripture-reference {
+                    display: inline-block;
+                    background: var(--quote-bg);
+                    color: #2980b9;
+                    padding: 0.2rem 0.5rem;
+                    border-radius: 3px;
+                    font-style: italic;
+                    margin: 0 0.2rem;
+                    transition: all 0.3s ease;
+                }
+        
+                .scripture-reference:hover {
+                    background: #d5e9f7;
+                    transform: translateY(-2px);
+                }
+        
+                /* Add chapter navigation */
+                .chapter-navigation {
+                    margin-top: 3rem;
+                    padding-top: 2rem;
+                    border-top: 2px solid var(--accent-color);
+                    text-align: center;
+                }
+        
+                .chapter-title {
+                    font-size: 1.2rem;
+                    color: var(--primary-color);
+                    margin-bottom: 1rem;
+                }
+                
+            
+                .content-section {
+                    max-width: 800px;
+                    margin: 0 auto;
+                    padding: 2rem;
+                }
+
+                .introduction-box {
+                    background: linear-gradient(to right, rgba(52, 152, 219, 0.1), transparent);
+                    padding: 2rem;
+                    border-radius: 10px;
+                    margin-bottom: 2rem;
+                }
+
+                .main-title {
+                    color: var(--primary-color);
+                    font-size: 2rem;
+                    margin-bottom: 1.5rem;
+                    border-bottom: 2px solid var(--accent-color);
+                    padding-bottom: 0.5rem;
+                }
+
+                .purpose-statement {
+                    background: var(--quote-bg);
+                    padding: 1rem;
+                    border-radius: 5px;
+                    margin: 1rem 0;
+                }
+
+                .purpose-label {
+                    color: var(--accent-color);
+                    font-weight: bold;
+                    margin-right: 0.5rem;
+                }
+
+                .highlight-term {
+                    color: #e74c3c;
+                    font-weight: 600;
+                    position: relative;
+                    padding: 0 2px;
+                }
+
+                .question-title {
+                    color: var(--accent-color);
+                    font-size: 1.3rem;
+                    margin: 2rem 0 1rem;
+                    padding-left: 1rem;
+                    border-left: 4px solid var(--accent-color);
+                }
+
+                .answer-box {
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+
+                .testament-box {
+                    display: flex;
+                    gap: 2rem;
+                    margin-top: 1rem;
+                }
+
+                .testament {
+                    flex: 1;
+                    padding: 1rem;
+                    border-radius: 5px;
+                }
+
+                .testament.old {
+                    background: rgba(52, 152, 219, 0.1);
+                    border-left: 4px solid #3498db;
+                }
+
+                .testament.new {
+                    background: rgba(46, 204, 113, 0.1);
+                    border-left: 4px solid #2ecc71;
+                }
+
+                .quote {
+                    background: var(--quote-bg);
+                    color: #2980b9;
+                    padding: 2px 6px;
+                    border-radius: 3px;
+                    font-style: italic;
+                    font-weight: 500;
+                    transition: background-color 0.3s ease;
+                }
+
+                .quote:hover {
+                    background: #d5e9f7;
+                    transform: translateY(-2px);
+                }
+
+                .numbered {
+                    counter-reset: item;
+                    list-style-type: none;
+                    padding-left: 0;
+                }
+
+                .numbered li {
+                    counter-increment: item;
+                    margin-bottom: 1.2rem;
+                    padding-left: 2.5rem;
+                    position: relative;
+                }
+
+                .numbered li::before {
+                    content: counter(item);
+                    background: var(--accent-color);
+                    color: white;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    left: 0;
+                    top: 0.2rem;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                }
+
+                  /* Purpose Grid Styles */
+                  .purpose-grid {
+                      display: grid;
+                      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                      gap: 1.5rem;
+                      margin-top: 1rem;
+                  }
+
+                  .purpose-item {
+                      background: white;
+                      padding: 1.5rem;
+                      border-radius: 8px;
+                      box-shadow: var(--shadow-sm);
+                      text-align: center;
+                      transition: transform 0.3s ease;
+                  }
+
+                  .purpose-item:hover {
+                      transform: translateY(-2px);
+                  }
+
+                  .purpose-icon {
+                      font-size: 2rem;
+                      margin-bottom: 0.5rem;
+                      display: block;
+                  }
+
+                  /* Truth Standards Styles */
+                  .truth-standards {
+                      display: grid;
+                      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                      gap: 1.5rem;
+                  }
+
+                  .standard-item {
+                      background: var(--quote-bg);
+                      padding: 1.5rem;
+                      border-radius: 8px;
+                      border-left: 4px solid var(--accent-color);
+                  }
+
+                  .highlight-text {
+                      font-size: 1.2rem;
+                      color: var(--highlight-color);
+                      margin: 1rem 0;
+                      font-weight: 600;
+                  }
+
+                  /* Misconception Box Styles */
+                  .misconception-box {
+                      background: rgba(231, 76, 60, 0.1);
+                      padding: 1.5rem;
+                      border-radius: 8px;
+                      margin-bottom: 1.5rem;
+                  }
+
+                  /* Blessing Box Styles */
+                  .blessing-box {
+                      background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+                      padding: 2rem;
+                      border-radius: 8px;
+                      text-align: center;
+                  }
+
+                  .blessing-categories {
+                      display: flex;
+                      justify-content: space-around;
+                      margin-top: 2rem;
+                      flex-wrap: wrap;
+                      gap: 1rem;
+                  }
+
+                  .category {
+                      text-align: center;
+                      padding: 1rem;
+                  }
+
+                  .category-icon {
+                      font-size: 2rem;
+                      margin-bottom: 0.5rem;
+                      display: block;
+                  }
+
+
+
+
+
+
+
+
+                @media (max-width: 768px) {
+                    .testament-box {
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+
+                    .content-section {
+                        padding: 1rem;
+                    }
+                }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 1rem;
+            }
+
+            .lesson-header {
+                padding: 1.5rem;
+            }
+
+            .content-section {
+                padding: 1rem;
+            }
+
+            .navigation {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+                min-width: unset;
+            }
+        }
+
+                  /* Responsive Design */
+          @media (max-width: 768px) {
+              .evidence-list {
+                  grid-template-columns: 1fr;
+              }
+
+              .evidence-item {
+                  padding: 1rem;
+              }
+          }
+
+                      /* Responsive Design */
+            @media (max-width: 768px) {
+                .purpose-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .truth-standards {
+                    grid-template-columns: 1fr;
+                }
+
+                .blessing-categories {
+                    flex-direction: column;
+                }
+
+                .category {
+                    padding: 0.5rem;
+                }
+            }
+    </style>
+
+
+</head>
+<body>
+
+        <div class="container">
+          <div class="lesson-header">
+              <h1>1.6 - God Speaks to Us </h1>
+              <h2>Through the Bible</h2>
+          </div>
+        </div>
+
+            <!-- Introduction Section -->
+            <div class="introduction-box">
+        <div class="purpose-statement">
+            <span class="purpose-label">Purpose:</span>
+            <span class="purpose-text">To understand the Bible as the foundation of the Christian faith.</span>
+        </div>
+        
+        <div class="intro-text">
+            <p class="emphasis-text">The Christian faith is not a philosophy; it does not originate from human intellectual inquiry. It does not come from man but from <span class="highlight-term">God</span>.</p>
+            <p>If it came from man, what advantage would we have? By following it, we would only be following our own imaginations, yet we would remain alone in the universe. How can we know that what we believe truly comes from God? Only if <span class="highlight-term">God Himself</span> tells us! Does such a "Word of God" exist? Yes, we believe that it is the <span class="highlight-term">Bible</span>.</p>
+        </div>
+    </div>
+
+    <!-- Question 1 Section -->
+    <div class="question-section">
+        <h3 class="question-title">1) What is the Bible physically?</h3>
+        <div class="answer-box">
+            <p>The word "<span class="key-term">Bible</span>" comes from the Greek <em>Biblia</em>, which means "books." It is divided into two parts:</p>
+            <div class="testament-box">
+                <div class="testament old">
+                    <h4>Old Testament (O.T.)</h4>
+                    <p>39 books written before Christ's incarnation</p>
+                </div>
+                <div class="testament new">
+                    <h4>New Testament (N.T.)</h4>
+                    <p>27 books and letters written after Jesus' death</p>
+                </div>
+            </div>
+            <p class="total-count">Total: <span class="highlight-term">66</span> writings</p>
+        </div>
+    </div>
+
+    <!-- Question 2 Section -->
+    <div class="question-section">
+        <h3 class="question-title">2) Who wrote the Bible? What kind of people were they?</h3>
+        <div class="answer-box">
+            <div class="scripture-block">
+                <span class="scripture-reference">2 Peter 3:2</span>
+                <p class="scripture-text">The Old Testament was written by the prophets or their disciples, and the New Testament by the apostles and their disciples.</p>
+            </div>
+            
+            <div class="scripture-block">
+                <span class="scripture-reference">Ephesians 2:20</span>
+                <p class="scripture-text">Apostles and prophets form the foundation of the Christian Church.</p>
+            </div>
+
+            <div class="writers-list">
+                <h4>The Divine Authors:</h4>
+                <ul class="role-list">
+                    <li class="role-item">
+                        <span class="role-icon">👑</span>
+                        <span class="role-text">Leaders like <span class="name">Moses</span></span>
+                    </li>
+                    <li class="role-item">
+                        <span class="role-icon">👨‍⚕️</span>
+                        <span class="role-text">Doctor like <span class="name">Luke</span> 
+                            <span class="scripture-reference small">Colossians 4:14</span>
+                        </span>
+                    </li>
+                    <li class="role-item">
+                        <span class="role-icon">🌾</span>
+                        <span class="role-text">Farmers like <span class="name">Amos</span>
+                            <span class="scripture-reference small">Amos 7:14</span>
+                        </span>
+                    </li>
+                    <li class="role-item">
+                        <span class="role-icon">🎣</span>
+                        <span class="role-text">Fishermen like <span class="name">Peter</span> and <span class="name">John</span>
+                            <span class="scripture-reference small">Matthew 4:18, 21</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 3 Section -->
+    <div class="question-section">
+        <h3 class="question-title">3) Why are the apostles and prophets so important?</h3>
+        <div class="answer-box">
+            <div class="key-point">
+                <p>Because of sin, humanity lost direct communion with God and can no longer hear His voice directly. The apostles and prophets were chosen by God as His spokespeople to communicate His will to us.</p>
+            </div>
+
+            <div class="definitions-box">
+                <div class="definition">
+                    <h4>Prophet</h4>
+                    <p>"One who speaks on behalf of..."</p>
+                </div>
+                <div class="definition">
+                    <h4>Apostle</h4>
+                    <p>"One who is sent"</p>
+                </div>
+            </div>
+
+            <div class="scripture-block special">
+                <p>The difference between these two is that prophets received their messages through visions and dreams (<span class="scripture-reference">Numbers 12:6</span>), while apostles primarily received theirs through Jesus' direct teachings (<span class="scripture-reference">1 John 1:1-4</span>).</p>
+                <p class="note">Moses was an exception, as God spoke to him "face to face," directly (<span class="scripture-reference">Numbers 12:7-8</span>).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question 4 Section -->
+<div class="question-section">
+  <h3 class="question-title">4) On what basis do we believe that apostles and prophets are trustworthy?</h3>
+  <div class="answer-box">
+      <ul class="evidence-list">
+          <li class="evidence-item">
+              <div class="evidence-header">
+                  <span class="evidence-icon">📚</span>
+                  <h4>Historical Reliability</h4>
+              </div>
+              <p>Modern archaeology has uncovered evidence confirming the Bible's reliability 
+                  <span class="scripture-reference">Luke 19:40</span>
+              </p>
+          </li>
+
+          <li class="evidence-item">
+              <div class="evidence-header">
+                  <span class="evidence-icon">⚖️</span>
+                  <h4>Unique Experience</h4>
+              </div>
+              <p>They risked their lives to bear witness to God's will, always siding with truth and justice 
+                  <span class="scripture-reference">Jeremiah 4:3</span>
+              </p>
+          </li>
+
+          <li class="evidence-item">
+              <div class="evidence-header">
+                  <span class="evidence-icon">🤝</span>
+                  <h4>Unity of Message</h4>
+              </div>
+              <p>Despite spanning 1,500 years and various locations, their message maintains extraordinary unity 
+                  <span class="scripture-reference">2 Peter 1:19-21</span>
+              </p>
+          </li>
+
+          <li class="evidence-item">
+              <div class="evidence-header">
+                  <span class="evidence-icon">⚡</span>
+                  <h4>Unconventional Nature</h4>
+              </div>
+              <p>They proclaimed one God in a polytheistic world 
+                  <span class="scripture-reference">Deuteronomy 6:4</span>
+              </p>
+          </li>
+
+          <li class="evidence-item">
+              <div class="evidence-header">
+                  <span class="evidence-icon">🔮</span>
+                  <h4>Fulfilled Prophecies</h4>
+              </div>
+              <p>Hundreds of prophecies fulfilled in history 
+                  <span class="scripture-reference">Isaiah 46:5-10</span>
+              </p>
+          </li>
+
+          <li class="evidence-item">
+              <div class="evidence-header">
+                  <span class="evidence-icon">✝️</span>
+                  <h4>Christ's Teaching</h4>
+              </div>
+              <p>Teachings about Jesus are too extraordinary to be human invention 
+                  <span class="scripture-reference">1 Corinthians 1:22-25</span>
+              </p>
+          </li>
+      </ul>
+  </div>
+</div>
+
+<!-- Questions 5-9 Sections -->
+<div class="question-section">
+  <h3 class="question-title">5) What did Jesus think of the Scriptures?</h3>
+  <div class="answer-box highlight-box">
+      <div class="scripture-block">
+          <span class="scripture-reference">John 5:39</span>
+          <p>Jesus speaks of the Scriptures as worthy of study to discover Him and obtain salvation.</p>
+      </div>
+      <p class="insight-note">If this applies to the Old Testament, where Jesus was only foreshadowed, how much more does it apply to the New Testament, where He is fully revealed?</p>
+  </div>
+</div>
+
+<!-- Question 6 Section -->
+<div class="question-section">
+  <h3 class="question-title">6) According to the apostle Paul, what is the purpose of Scripture?</h3>
+  <div class="answer-box">
+      <div class="scripture-highlight">
+          <span class="scripture-reference">2 Timothy 3:16-17</span>
+          <div class="purpose-grid">
+              <div class="purpose-item">
+                  <span class="purpose-icon">📚</span>
+                  <h4>Teaching</h4>
+                  <p>For doctrinal instruction</p>
+              </div>
+              <div class="purpose-item">
+                  <span class="purpose-icon">⚖️</span>
+                  <h4>Rebuking</h4>
+                  <p>For correction of error</p>
+              </div>
+              <div class="purpose-item">
+                  <span class="purpose-icon">🔄</span>
+                  <h4>Correcting</h4>
+                  <p>For behavioral guidance</p>
+              </div>
+              <div class="purpose-item">
+                  <span class="purpose-icon">🎯</span>
+                  <h4>Training</h4>
+                  <p>For righteousness</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Question 7 Section -->
+<div class="question-section">
+  <h3 class="question-title">7) What standards should we follow in discovering spiritual and moral truth?</h3>
+  <div class="answer-box">
+      <div class="truth-standards">
+          <div class="standard-item">
+              <span class="scripture-reference">John 17:17</span>
+              <p class="highlight-text">"Your word is truth"</p>
+              <p class="explanation">Jesus declares God's Word as the standard of truth</p>
+          </div>
+          <div class="standard-item">
+              <span class="scripture-reference">Acts 17:10-11</span>
+              <p class="highlight-text">The Berean Example</p>
+              <p class="explanation">They examined the Scriptures daily to verify teachings</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Question 8 Section -->
+<div class="question-section">
+  <h3 class="question-title">8) Is the Bible too difficult for ordinary people?</h3>
+  <div class="answer-box">
+      <div class="misconception-box">
+          <h4>Historical Misconception:</h4>
+          <p>In Catholicism, the Bible was not widely accessible, leading some to think it should be left to scholars.</p>
+      </div>
+      
+      <div class="truth-reveal">
+          <div class="scripture-block">
+              <span class="scripture-reference">Luke 10:21</span>
+              <p class="revelation-text">Jesus thanks God for revealing truth to the <span class="highlight-term">humble</span>, not just the wise.</p>
+          </div>
+          
+          <div class="accessibility-note">
+              <p><span class="highlight-term">The Bible was written for ordinary people.</span></p>
+              <ul class="note-list">
+                  <li>Most passages are accessible to all</li>
+                  <li>Even children can understand its core messages</li>
+                  <li>Some passages may require more study</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Question 9 Section -->
+<div class="question-section">
+  <h3 class="question-title">9) What does God say about those who read and listen to the Bible?</h3>
+  <div class="answer-box">
+      <div class="blessing-box">
+          <span class="scripture-reference">Revelation 1:3</span>
+          <div class="blessing-content">
+              <p class="blessing-text">"Blessed is the one who reads, and blessed are those who hear the words of this prophecy and take to heart what is written in it, because the time is near."</p>
+              <div class="blessing-categories">
+                  <div class="category">
+                      <span class="category-icon">📖</span>
+                      <p>Those who read</p>
+                  </div>
+                  <div class="category">
+                      <span class="category-icon">👂</span>
+                      <p>Those who hear</p>
+                  </div>
+                  <div class="category">
+                      <span class="category-icon">❤️</span>
+                      <p>Those who take to heart</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+                <div class="content-section">
+                    <div class="reflection-box">
+                        <h2>To Reflect:</h2>
+                        <p>The words of the text just read are directed particularly to the readers of the book of Revelation, the most difficult book in the entire Bible. But if God blesses those who study this book, can we believe that the same blessing is available for those who read the entire Bible?</p>
+                    </div>
+                </div>
+        
+                <!-- Chapter Navigation -->
+                <div class="chapter-navigation">
+                    <div class="chapter-title">You've completed Chapter 1: Introductory Studies</div>
+                    <div class="navigation">
+                        <a href="/IntroStudies/1.5.html" class="btn btn-secondary">← Previous Lesson</a>
+                        <a href="/IntroStudies/1.6.1.html" class="btn btn-study">More Study Quests on This Topic </a>
+                        <a href="/HistOfSalvation/2.1.html" class="btn next-chapter-btn">Begin Chapter 2 →</a>
+                        <a href="/Index.html" class="btn btn-secondary">Home</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!--Copy Protection Script-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+  
+        // Disable keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (
+                // Disable Ctrl+C, Ctrl+X, Ctrl+U
+                (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85)) ||
+                // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+                (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+                // Disable F12
+                e.keyCode === 123
+            ) {
+                e.preventDefault();
+                return false;
+            }
+        });
+  
+        // Disable drag and drop
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+  
+        // Disable text selection via double click
+        document.addEventListener('mousedown', function(e) {
+            if (e.detail > 1) {
+                e.preventDefault();
+            }
+        });
+    });
+  </script>
+      
+    </body>
+</html>
+
+
+
+
+
+
+
+

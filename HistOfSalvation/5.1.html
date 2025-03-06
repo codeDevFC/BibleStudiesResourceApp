@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.1 Prayer | Doctrine of Sanctification and Obedience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #7E57C2;    /* Deep Purple */
+            --accent-color: #9575CD;     /* Light Purple */
+            --secondary-color: #D1C4E9;   /* Lighter Purple */
+            --bg-primary: #ffffff;
+            --bg-secondary: #F5F2FF;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #673AB7;   /* Bright Purple */
+            --prayer-theme-light: #EDE7F6; /* Very Light Purple */
+            --prayer-theme-dark: #4527A0;  /* Dark Purple */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--prayer-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--prayer-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('path-to-prayer-image.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Purpose Box */
+        .purpose-box {
+            background: var(--prayer-theme-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--prayer-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--prayer-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        /* Additional Styles for Content Sections */
+.introduction-box {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.quote-box {
+    background: var(--prayer-theme-light);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.quote-box i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.elements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.element-card {
+    background: var(--prayer-theme-light);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.element-card:hover {
+    transform: translateY(-5px);
+}
+
+.element-card i {
+    font-size: 2rem;
+    color: var(--prayer-theme-dark);
+    margin-bottom: 1rem;
+}
+
+.dual-perspective {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.perspective-card {
+    background: var(--prayer-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.perspective-card h3 {
+    color: var(--prayer-theme-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.note {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .elements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dual-perspective {
+        grid-template-columns: 1fr;
+    }
+
+    .element-card {
+        padding: 1rem;
+    }
+
+    .characteristics-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.characteristics-list li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.characteristics-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.interactive-prompt {
+    background: linear-gradient(to right, var(--prayer-theme-light), transparent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.interactive-prompt i {
+    font-size: 1.5rem;
+    color: var(--prayer-theme-dark);
+}
+
+.consolation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.consolation-card {
+    background: var(--prayer-theme-light);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.consolation-card h3 {
+    color: var(--prayer-theme-dark);
+    margin: 1rem 0;
+}
+
+.scripture-references {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.explanation-box {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.key-points {
+    list-style: none;
+    padding-left: 0;
+}
+
+.key-points li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "→";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Hover Effects */
+.consolation-card {
+    transition: transform 0.3s ease;
+}
+
+.consolation-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .consolation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .scripture-references {
+        flex-direction: column;
+    }
+
+    .explanation-box {
+        padding: 1.5rem;
+    }
+}
+
+
+
+/* Additional Styles for New Sections */
+.answer-box {
+    background: var(--prayer-theme-light);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.emphatic-no {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--prayer-theme-dark);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.reasoning-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.issue-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.issue-list li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.issue-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.meaning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.meaning-card {
+    background: var(--prayer-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.meaning-card i {
+    font-size: 2rem;
+    color: var(--prayer-theme-dark);
+}
+
+.final-thoughts {
+    list-style: none;
+    padding-left: 0;
+}
+
+.final-thoughts li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.final-thoughts li::before {
+    content: "→";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .reasoning-box,
+    .meaning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .meaning-card {
+        padding: 1rem;
+    }
+}
+
+
+/* Additional Styles */
+.practical-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 3rem 0;
+}
+
+.prayer-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.guide-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: var(--prayer-theme-light);
+    border-radius: 8px;
+}
+
+.step i {
+    font-size: 2rem;
+    color: var(--prayer-theme-dark);
+    margin-bottom: 1rem;
+}
+
+.prayer-elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.element {
+    text-align: center;
+    padding: 1rem;
+    background: var(--prayer-theme-light);
+    border-radius: 8px;
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.challenge-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.summary-section {
+    background: linear-gradient(135deg, var(--prayer-theme-dark), var(--accent-color));
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin: 3rem 0;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.summary-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.summary-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .practical-section,
+    .summary-section {
+        padding: 1.5rem;
+    }
+
+    .prayer-guide-grid,
+    .challenges-grid,
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Collapsible Resources Styles */
+.collapsible-resources {
+    margin: 3rem 0;
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.resources-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.resource-toggle {
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.toggle-button {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+    background: var(--prayer-theme-light);
+}
+
+.toggle-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--prayer-theme-dark);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.toggle-button.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.toggle-content {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.method-card {
+    background: var(--prayer-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.practice-input {
+    width: 100%;
+    min-height: 80px;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/* Animation */
+.toggle-content.active {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .collapsible-resources {
+        padding: 1rem;
+    }
+
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .toggle-button {
+        padding: 1rem;
+    }
+}
+
+/* Scripture Prayer Styles */
+.scripture-guide {
+    padding: 1.5rem;
+}
+
+.psalm-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.psalm-display {
+    background: var(--prayer-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    min-height: 100px;
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.template-card {
+    background: var(--prayer-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Prayer Journal Styles */
+.journal-template {
+    padding: 1.5rem;
+}
+
+.journal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.print-button {
+    background: var(--prayer-theme-dark);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.journal-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.journal-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+}
+
+.journal-lines {
+    height: 24px;
+    border-bottom: 1px solid var(--secondary-color);
+    margin: 1rem 0;
+}
+
+.checkbox-item {
+    margin: 0.5rem 0;
+}
+
+.request-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.date-box {
+    margin-left: auto;
+    font-size: 0.9rem;
+}
+
+.reflection-lines {
+    height: 24px;
+    border-bottom: 1px solid var(--secondary-color);
+    margin: 1rem 0;
+}
+
+@media print {
+    .journal-template {
+        background: white;
+        padding: 0;
+    }
+
+    .print-button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .template-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journal-grid {
+        gap: 1rem;
+    }
+}
+
+}
+        
+    </style>
+</head>
+<body>
+    <div class="series-banner">
+        Doctrine of Sanctification and Obedience
+    </div>
+
+    <div class="series-header">
+        <div class="content">
+            <h1>5.1 Prayer</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Purpose Section -->
+        <div class="purpose-box">
+            <h2>Purpose:</h2>
+            <p>To understand and experience prayer as humble dialogue with God to praise Him and receive light and help.</p>
+        </div>
+
+
+        <!-- Add after the purpose-box and before navigation -->
+
+<!-- Introduction Section -->
+<div class="introduction-box">
+  <h2>Introduction</h2>
+  <div class="quote-box">
+      <i class="fas fa-quote-left"></i>
+      <p>Ellen G. White defined prayer as "the breath of the soul." Just as we cannot live physically without breathing, spiritually, we cannot live without praying.</p>
+  </div>
+</div>
+
+<!-- Main Content Sections -->
+<div class="main-sections">
+  <!-- Section 1 -->
+  <div class="content-section">
+      <h2>1. What is Prayer?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">Philippians 4:6</span>
+          <p>A dialogue with God in which we open our hearts to Him and seek His voice.</p>
+      </div>
+
+      <div class="prayer-elements">
+          <h3>Prayer Should Include:</h3>
+          <div class="elements-grid">
+              <div class="element-card">
+                  <i class="fas fa-pray"></i>
+                  <h4>1. Praise</h4>
+                  <span class="scripture-reference">Psalm 100:4; Revelation 19:5</span>
+              </div>
+
+              <div class="element-card">
+                  <i class="fas fa-heart"></i>
+                  <h4>2. Gratitude</h4>
+                  <span class="scripture-reference">Colossians 4:2</span>
+              </div>
+
+              <div class="element-card">
+                  <i class="fas fa-users"></i>
+                  <h4>3. Intercession</h4>
+                  <span class="scripture-reference">Colossians 4:3; Ephesians 6:18,19</span>
+              </div>
+
+              <div class="element-card">
+                  <i class="fas fa-ear"></i>
+                  <h4>4. Listening</h4>
+                  <p>Prayer cannot be only speaking without listening. Listening occurs when we allow God's answer to work in our lives with our cooperation, when the Spirit's voice finds a sensitive heart.</p>
+                  <p class="note">Meditation on God's Word can be considered part of the prayer experience.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="content-section">
+      <h2>2. To Whom Should Prayers Be Directed?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">Philippians 4:6; Matthew 6:9</span>
+      </div>
+
+      <div class="dual-perspective">
+          <div class="perspective-card">
+              <h3>Regarding Catholicism</h3>
+              <p>With its array of mediators, we affirm that prayer directed straight to God is the inalienable privilege the heavenly Father gives to all His children.</p>
+          </div>
+
+          <div class="perspective-card">
+              <h3>Regarding Secularism</h3>
+              <p>Entering Christianity, we affirm that prayer is not just internal psychological examination but a real relationship with Another outside ourselves, not to be confused with seeking one's own self common in Eastern ascetic practices.</p>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- Section 3 -->
+<div class="content-section">
+  <h2>3. What Example of Prayer Did Jesus Give Us?</h2>
+  <div class="scripture-box">
+      <span class="scripture-reference">Matthew 6:9-14</span>
+      <div class="explanation">
+          <p>This is not meant to be memorized, although that may be desirable. It's never repeated in the New Testament church experience. Rather, it's an example of prayer, characterized by:</p>
+          <ul class="characteristics-list">
+              <li>Simplicity</li>
+              <li>Direct dialogue with the Father</li>
+              <li>Trust</li>
+              <li>Selflessness</li>
+          </ul>
+          <div class="important-note">
+              <p>We can certainly use it in community liturgical moments or as personal prayer, but if we limited ourselves to memorized recitation, we would do the opposite of what Jesus wants to teach us.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="interactive-prompt">
+      <i class="fas fa-lightbulb"></i>
+      <p>Why not try commenting on this prayer together?</p>
+  </div>
+</div>
+
+<!-- Section 4 -->
+<div class="content-section">
+  <h2>4. Many Fear Not Knowing How to Pray. What Consolation Does the Gospel Give Us?</h2>
+  
+  <div class="consolation-grid">
+      <div class="consolation-card">
+          <span class="scripture-reference">Matthew 6:7,8</span>
+          <h3>We Can Learn</h3>
+          <p>What does this teach us about mechanically repeated prayers?</p>
+      </div>
+
+      <div class="consolation-card">
+          <span class="scripture-reference">Romans 8:26</span>
+          <h3>The Spirit Helps Us</h3>
+          <p>The Spirit sustains us and intercedes for us.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Section 5 -->
+<div class="content-section">
+  <h2>5. Is It Possible to Pray for One Another?</h2>
+  
+  <div class="scripture-references">
+      <span class="scripture-reference">Matthew 5:44</span>
+      <span class="scripture-reference">Ephesians 6:18</span>
+      <span class="scripture-reference">Colossians 4:3</span>
+  </div>
+
+  <div class="explanation-box">
+      <h3>Understanding Intercessory Prayer</h3>
+      <ul class="key-points">
+          <li>Praying for others shows love and responsibility</li>
+          <li>Those who pray for others aren't necessarily better or more worthy</li>
+          <li>They appeal to God's perfect love</li>
+          <li>We all have the duty to pray for others</li>
+          <li>We all need others to pray for us</li>
+          <li>It's a humble and reciprocal experience</li>
+      </ul>
+  </div>
+</div>
+
+
+<!-- Section 6 -->
+<div class="content-section">
+  <h2>6. Can We Pray to Saints to Pray to God on Our Behalf?</h2>
+  <div class="answer-box">
+      <div class="emphatic-no">
+          <i class="fas fa-exclamation-circle"></i>
+          <p>No!</p>
+      </div>
+      <div class="explanation">
+          <p>As we've seen, our prayers should be directed straight to God. Throughout the Bible, we never find a prayer directed to anyone but Him. This isn't by chance, but because this is God's teaching.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Section 7 -->
+<div class="content-section">
+  <h2>7. But if Paul Asks the Church to Pray for Him, Why Can't We Ask Saints to Pray for Us? Aren't They Also Part of the Church?</h2>
+  <div class="reasoning-box">
+      <div class="point-card">
+          <h3>The State of the Dead</h3>
+          <p>Yes, they are part of the church. But the people considered Saints are dead, and the dead know nothing (<span class="scripture-reference">Ecclesiastes 9:5</span>. See lesson on the state of the dead).</p>
+      </div>
+
+      <div class="point-card">
+          <h3>Misconception of Saints' Role</h3>
+          <ul class="issue-list">
+              <li>Their help is invoked because they're thought to be holier than others</li>
+              <li>They're believed to have special merits before God</li>
+              <li>These merits supposedly help gain God's favor for us</li>
+          </ul>
+          <div class="biblical-truth">
+              <p>In this perspective, we are outside God's grace (<span class="scripture-reference">Romans 3:24</span>) and don't honor Him.</p>
+          </div>
+      </div>
+
+      <div class="point-card">
+          <h3>Biblical Understanding</h3>
+          <p>In the gospel, we're invited to pray for each other not because some are better than others, but simply because we're God's family and prayer expresses mutual love, our being family before the common Father.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Section 8 -->
+<div class="content-section">
+  <h2>8. In Whose Name Should Prayers Be Directed to God?</h2>
+  <div class="scripture-box">
+      <span class="scripture-reference">John 14:13,14</span>
+      <p>In Jesus' name</p>
+  </div>
+
+  <div class="meaning-grid">
+      <h3>Praying in Jesus' Name Means:</h3>
+      <div class="meaning-card">
+          <i class="fas fa-heart-broken"></i>
+          <p>1. Recognizing our unworthiness before God</p>
+      </div>
+      <div class="meaning-card">
+          <i class="fas fa-cross"></i>
+          <p>2. Appealing to God through the same love He expressed for us through Jesus</p>
+      </div>
+  </div>
+
+  <div class="important-note">
+      <p>This isn't about considering Jesus more benevolent than the Father but recognizing Him as the expression of God's love (<span class="scripture-reference">John 14:7,9; 15:9</span>).</p>
+  </div>
+</div>
+
+<!-- Section 9 -->
+<div class="content-section">
+  <h2>9. What Did Jesus Teach About Mediators in Prayer?</h2>
+  <div class="teaching-box">
+      <div class="scripture-box">
+          <span class="scripture-reference">John 16:26,27</span>
+          <p>We pray in Jesus' name, our only mediator (<span class="scripture-reference">1 Timothy 2:5</span>).</p>
+      </div>
+
+      <div class="explanation-grid">
+          <div class="explanation-card">
+              <h3>Jesus as Advocate</h3>
+              <p>Jesus is our "advocate" with God (<span class="scripture-reference">1 John 2:1,2</span>). Yet, Jesus says He doesn't need to convince the Father to be benevolent toward us "because the Father himself loves you."</p>
+          </div>
+
+          <div class="explanation-card">
+              <h3>Purpose of the Advocate Image</h3>
+              <p>This image exists not to suggest God needs convincing, but to convince us to trust we're welcomed by God despite our unworthiness.</p>
+          </div>
+
+          <div class="explanation-card">
+              <h3>Key Remember</h3>
+              <p>Jesus came to manifest God's already existing love (<span class="scripture-reference">John 3:16</span>), not to convince God to love us.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Section 10 -->
+<div class="content-section">
+  <h2>10. With What Attitude Should We Come Before God?</h2>
+  <div class="scripture-box highlight">
+      <span class="scripture-reference">Hebrews 4:14-16</span>
+  </div>
+
+  <div class="conclusion-points">
+      <ul class="final-thoughts">
+          <li>God sent His Son to save us</li>
+          <li>Jesus is the creator of the universe (<span class="scripture-reference">John 1:1-3</span>)</li>
+          <li>Yet He became like us, humbling Himself to die on the cross (<span class="scripture-reference">Philippians 2:5-11</span>)</li>
+          <li>He did this to convince us of God's deep love</li>
+          <li>If we accept Jesus as our Savior, Mediator, and Friend, we have everything (<span class="scripture-reference">Romans 8:17,32</span>)</li>
+      </ul>
+  </div>
+</div>
+
+
+<!-- Practical Application Section -->
+<div class="practical-section">
+  <h2>Practical Prayer Guide</h2>
+  
+  <div class="prayer-guide-grid">
+      <div class="guide-card">
+          <h3>Getting Started</h3>
+          <div class="steps-list">
+              <div class="step">
+                  <i class="fas fa-clock"></i>
+                  <h4>Set a Regular Time</h4>
+                  <p>Choose a specific time each day for prayer, making it a consistent habit.</p>
+              </div>
+              <div class="step">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <h4>Find a Quiet Place</h4>
+                  <p>Select a peaceful location where you can focus without distractions.</p>
+              </div>
+              <div class="step">
+                  <i class="fas fa-book-open"></i>
+                  <h4>Keep a Prayer Journal</h4>
+                  <p>Write down prayer requests, answers, and spiritual insights.</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="guide-card">
+          <h3>Prayer Structure</h3>
+          <div class="prayer-elements">
+              <div class="element">
+                  <i class="fas fa-heart"></i>
+                  <h4>Adoration</h4>
+                  <p>Begin by praising God for who He is</p>
+              </div>
+              <div class="element">
+                  <i class="fas fa-hands"></i>
+                  <h4>Confession</h4>
+                  <p>Honestly share your struggles and sins</p>
+              </div>
+              <div class="element">
+                  <i class="fas fa-dove"></i>
+                  <h4>Thanksgiving</h4>
+                  <p>Express gratitude for God's blessings</p>
+              </div>
+              <div class="element">
+                  <i class="fas fa-pray"></i>
+                  <h4>Supplication</h4>
+                  <p>Present your requests and intercessions</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Common Challenges Section -->
+  <div class="challenges-section">
+      <h3>Overcoming Common Prayer Challenges</h3>
+      <div class="challenges-grid">
+          <div class="challenge-card">
+              <h4>Distractions</h4>
+              <p>Write down distracting thoughts to address later, helping maintain focus during prayer.</p>
+          </div>
+          <div class="challenge-card">
+              <h4>Feeling Unworthy</h4>
+              <p>Remember that access to God is through Jesus' merit, not our own.</p>
+          </div>
+          <div class="challenge-card">
+              <h4>Limited Time</h4>
+              <p>Start with short, regular prayers rather than irregular long ones.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Summary Section -->
+<div class="summary-section">
+  <h2>Key Takeaways</h2>
+  <div class="summary-grid">
+      <div class="summary-card">
+          <i class="fas fa-bullseye"></i>
+          <h3>Direct Access</h3>
+          <p>We can approach God directly through Jesus Christ, our only mediator.</p>
+      </div>
+      <div class="summary-card">
+          <i class="fas fa-comments"></i>
+          <h3>Two-Way Communication</h3>
+          <p>Prayer involves both speaking and listening to God.</p>
+      </div>
+      <div class="summary-card">
+          <i class="fas fa-users"></i>
+          <h3>Community Aspect</h3>
+          <p>We're called to pray both individually and for one another.</p>
+      </div>
+      <div class="summary-card">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h3>God's Love</h3>
+          <p>Prayer is based on God's existing love, not our worthiness.</p>
+      </div>
+  </div>
+</div>
+
+
+<!-- Interactive Prayer Resources -->
+<div class="collapsible-resources">
+  <h2>Prayer Resources & Exercises</h2>
+  <p class="resources-intro">Click each section to expand</p>
+
+  <!-- ACTS Prayer Method -->
+  <div class="resource-toggle">
+      <button class="toggle-button" onclick="toggleSection('acts-method')">
+          <span class="toggle-icon">+</span>
+          <h3>The ACTS Prayer Method</h3>
+      </button>
+      <div class="toggle-content" id="acts-method">
+          <div class="method-grid">
+              <div class="method-card">
+                  <h4>A - Adoration</h4>
+                  <p>Express love and admiration for God</p>
+                  <textarea class="practice-input" placeholder="Write your praise..."></textarea>
+              </div>
+              <div class="method-card">
+                  <h4>C - Confession</h4>
+                  <p>Acknowledge sins and shortcomings</p>
+                  <textarea class="practice-input" placeholder="Write your confession..."></textarea>
+              </div>
+              <div class="method-card">
+                  <h4>T - Thanksgiving</h4>
+                  <p>Express gratitude for blessings</p>
+                  <textarea class="practice-input" placeholder="Write your thanks..."></textarea>
+              </div>
+              <div class="method-card">
+                  <h4>S - Supplication</h4>
+                  <p>Present your requests</p>
+                  <textarea class="practice-input" placeholder="Write your requests..."></textarea>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Scripture Prayer Guide -->
+<div class="resource-toggle">
+  <button class="toggle-button" onclick="toggleSection('scripture-prayer')">
+      <span class="toggle-icon">+</span>
+      <h3>Praying with Scripture</h3>
+  </button>
+  <div class="toggle-content" id="scripture-prayer">
+      <div class="scripture-guide">
+          <!-- Psalm Selection -->
+          <div class="psalm-section">
+              <h4>Select a Psalm for Prayer</h4>
+              <select class="psalm-select" onchange="loadPsalm(this.value)">
+                  <option value="">Choose a Psalm...</option>
+                  <option value="psalm23">Psalm 23 - The Lord is my Shepherd</option>
+                  <option value="psalm51">Psalm 51 - Prayer of Repentance</option>
+                  <option value="psalm103">Psalm 103 - Blessings of God</option>
+                  <option value="psalm139">Psalm 139 - God's Perfect Knowledge</option>
+              </select>
+              
+              <div class="psalm-display" id="psalm-content"></div>
+              
+              <div class="prayer-application">
+                  <h5>Personal Application</h5>
+                  <textarea class="application-input" placeholder="Write your prayer based on this Psalm..."></textarea>
+              </div>
+          </div>
+
+          <!-- Scripture Prayer Templates -->
+          <div class="scripture-templates">
+              <h4>Prayer Templates from Scripture</h4>
+              <div class="template-grid">
+                  <div class="template-card">
+                      <h5>Prayer for Wisdom</h5>
+                      <span class="scripture-reference">James 1:5</span>
+                      <p class="template-text">Template: "God of wisdom, I come before you seeking understanding about [situation]. You promise to give wisdom generously to those who ask. Guide me in..."</p>
+                  </div>
+
+                  <div class="template-card">
+                      <h5>Prayer for Strength</h5>
+                      <span class="scripture-reference">Philippians 4:13</span>
+                      <p class="template-text">Template: "Lord, I face [challenge] today. I claim your promise that I can do all things through Christ who strengthens me..."</p>
+                  </div>
+
+                  <div class="template-card">
+                      <h5>Prayer for Peace</h5>
+                      <span class="scripture-reference">John 14:27</span>
+                      <p class="template-text">Template: "Prince of Peace, regarding [concern], I receive your peace which surpasses understanding..."</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Printable Prayer Journal -->
+<div class="resource-toggle">
+  <button class="toggle-button" onclick="toggleSection('prayer-journal')">
+      <span class="toggle-icon">+</span>
+      <h3>Printable Prayer Journal</h3>
+  </button>
+  <div class="toggle-content" id="prayer-journal">
+      <div class="journal-template">
+          <div class="journal-header">
+              <h4>Daily Prayer Journal</h4>
+              <button onclick="printJournal()" class="print-button">
+                  <i class="fas fa-print"></i> Print Journal
+              </button>
+          </div>
+
+          <div class="journal-content" id="printableJournal">
+              <div class="date-section">
+                  <label>Date:</label>
+                  <div class="date-line"></div>
+              </div>
+
+              <div class="journal-grid">
+                  <div class="journal-section">
+                      <h5>Today's Scripture Reading</h5>
+                      <div class="journal-lines"></div>
+                      <div class="journal-lines"></div>
+                  </div>
+
+                  <div class="journal-section">
+                      <h5>Gratitude List</h5>
+                      <div class="checkbox-list">
+                          <div class="checkbox-item">□ _________________________</div>
+                          <div class="checkbox-item">□ _________________________</div>
+                          <div class="checkbox-item">□ _________________________</div>
+                      </div>
+                  </div>
+
+                  <div class="journal-section">
+                      <h5>Prayer Requests</h5>
+                      <div class="prayer-list">
+                          <div class="request-item">
+                              <span class="bullet">•</span> ________________________
+                              <div class="date-box">Date: ____/____/____</div>
+                          </div>
+                          <div class="request-item">
+                              <span class="bullet">•</span> ________________________
+                              <div class="date-box">Date: ____/____/____</div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="journal-section">
+                      <h5>Answered Prayers</h5>
+                      <div class="answer-box">
+                          <p>Prayer: _________________________</p>
+                          <p>Answer: _________________________</p>
+                          <p>Date Answered: ____/____/____</p>
+                      </div>
+                  </div>
+
+                  <div class="journal-section">
+                      <h5>Personal Reflections</h5>
+                      <div class="reflection-lines"></div>
+                      <div class="reflection-lines"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!-- Prayer Types Guide -->
+<div class="resource-toggle">
+  <button class="toggle-button" onclick="toggleSection('prayer-types')">
+      <span class="toggle-icon">+</span>
+      <h3>Types of Prayer</h3>
+  </button>
+  <div class="toggle-content" id="prayer-types">
+      <div class="types-grid">
+          <div class="type-card">
+              <i class="fas fa-heart"></i>
+              <h4>Personal Prayer</h4>
+              <ul class="type-list">
+                  <li>Private communion with God</li>
+                  <li>Personal needs and concerns</li>
+                  <li>Spiritual growth focus</li>
+              </ul>
+              <div class="scripture-note">
+                  <span class="scripture-reference">Matthew 6:6</span>
+              </div>
+          </div>
+
+          <div class="type-card">
+              <i class="fas fa-users"></i>
+              <h4>Intercessory Prayer</h4>
+              <ul class="type-list">
+                  <li>Praying for others' needs</li>
+                  <li>Community concerns</li>
+                  <li>Global issues</li>
+              </ul>
+              <div class="scripture-note">
+                  <span class="scripture-reference">1 Timothy 2:1</span>
+              </div>
+          </div>
+
+          <div class="type-card">
+              <i class="fas fa-music"></i>
+              <h4>Praise and Worship</h4>
+              <ul class="type-list">
+                  <li>Focusing on God's attributes</li>
+                  <li>Expressing joy and gratitude</li>
+                  <li>Musical prayer</li>
+              </ul>
+              <div class="scripture-note">
+                  <span class="scripture-reference">Psalm 95:1-2</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Common Prayer Challenges -->
+<div class="resource-toggle">
+  <button class="toggle-button" onclick="toggleSection('prayer-challenges')">
+      <span class="toggle-icon">+</span>
+      <h3>Overcoming Prayer Challenges</h3>
+  </button>
+  <div class="toggle-content" id="prayer-challenges">
+      <div class="challenges-container">
+          <div class="challenge-card">
+              <h4>Distraction During Prayer</h4>
+              <div class="solution-box">
+                  <h5>Solutions:</h5>
+                  <ul>
+                      <li>Keep a prayer journal nearby</li>
+                      <li>Set a specific prayer time</li>
+                      <li>Create a dedicated prayer space</li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="challenge-card">
+              <h4>Lack of Focus</h4>
+              <div class="solution-box">
+                  <h5>Solutions:</h5>
+                  <ul>
+                      <li>Start with written prayers</li>
+                      <li>Use scripture as a guide</li>
+                      <li>Pray out loud</li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="challenge-card">
+              <h4>Finding Time</h4>
+              <div class="solution-box">
+                  <h5>Solutions:</h5>
+                  <ul>
+                      <li>Start with short, regular prayers</li>
+                      <li>Combine prayer with daily activities</li>
+                      <li>Set prayer reminders</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Prayer Prompts -->
+<div class="resource-toggle">
+  <button class="toggle-button" onclick="toggleSection('prayer-prompts')">
+      <span class="toggle-icon">+</span>
+      <h3>Daily Prayer Prompts</h3>
+  </button>
+  <div class="toggle-content" id="prayer-prompts">
+      <div class="prompts-container">
+          <div class="prompt-card" onclick="showPrompt('morning')">
+              <h4>Morning Prayer</h4>
+              <div class="prompt-content">
+                  <ul>
+                      <li>Thank God for a new day</li>
+                      <li>Seek guidance for daily decisions</li>
+                      <li>Pray for strength and wisdom</li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="prompt-card" onclick="showPrompt('noon')">
+              <h4>Midday Prayer</h4>
+              <div class="prompt-content">
+                  <ul>
+                      <li>Reflect on morning experiences</li>
+                      <li>Seek renewed focus</li>
+                      <li>Express gratitude for blessings</li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="prompt-card" onclick="showPrompt('evening')">
+              <h4>Evening Prayer</h4>
+              <div class="prompt-content">
+                  <ul>
+                      <li>Review the day with God</li>
+                      <li>Confess shortcomings</li>
+                      <li>Thank God for His presence</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="/HistOfSalvation/4.5.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">4.5 Peter & The Foundation of The Christian Church</span>
+            </a>
+            <a href="/HistOfSalvation/5.2.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">5.2 A Holy Life</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+      function toggleSection(sectionId) {
+          const content = document.getElementById(sectionId);
+          const button = content.previousElementSibling;
+          const allContents = document.querySelectorAll('.toggle-content');
+          const allButtons = document.querySelectorAll('.toggle-button');
+      
+          // Close all other sections
+          allContents.forEach(item => {
+              if (item.id !== sectionId) {
+                  item.classList.remove('active');
+                  item.style.display = 'none';
+              }
+          });
+      
+          allButtons.forEach(item => {
+              if (item !== button) {
+                  item.classList.remove('active');
+              }
+          });
+      
+          // Toggle current section
+          button.classList.toggle('active');
+          if (content.style.display === 'none' || !content.style.display) {
+              content.style.display = 'block';
+              content.classList.add('active');
+          } else {
+              content.style.display = 'none';
+              content.classList.remove('active');
+          }
+      }
+      </script>
+
+
+<script>
+  // Add to existing script
+  const psalms = {
+      psalm23: "The Lord is my shepherd, I shall not want...",
+      psalm51: "Have mercy on me, O God, according to your unfailing love...",
+      psalm103: "Bless the Lord, O my soul...",
+      psalm139: "O Lord, you have searched me and known me..."
+  };
+  
+  function loadPsalm(psalm) {
+      const psalmContent = document.getElementById('psalm-content');
+      psalmContent.textContent = psalms[psalm] || '';
+  }
+  
+  function printJournal() {
+      window.print();
+  }
+  </script>
+
+
+
+</body>
+</html>

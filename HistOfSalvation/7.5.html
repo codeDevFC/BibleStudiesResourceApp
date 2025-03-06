@@ -1,0 +1,1131 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.5 - Saints and Miracles | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+          --primary-color: #fcd546;    /* Deep Teal */
+          --accent-color: #00ACC1;     /* Lighter Teal */
+          --secondary-color: #B2EBF2;   /* Very Light Teal */
+          --bg-primary: #ffffff;
+          --bg-secondary: #E0F7FA;
+          --text-primary: #2C3E50;
+          --text-secondary: #546E7A;
+          --highlight-color: #00BCD4;   /* Bright Teal */
+          --holy-theme-light: #E0F7FA; /* Very Light Teal */
+          --holy-theme-dark: #006064;  /* Dark Teal */
+          --success: #4CAF50;
+          --warning: #FFA726;
+          --error: #EF5350;
+      }
+      
+      /* Base Styles */
+      body {
+          font-family: 'Poppins', sans-serif;
+          line-height: 1.6;
+          color: var(--text-primary);
+          background: var(--bg-primary);
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+      }
+      
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 2rem;
+      }
+
+      /* Series Banner */
+  .series-banner {
+      background: var(--holy-theme-dark);
+      color: rgb(255, 255, 255);
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.2rem;
+  }
+  
+  /* Header Styling */
+  .series-header {
+      background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  
+  .series-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+      opacity: 0.1;
+      z-index: 0;
+  }
+  
+  .series-header .content {
+      position: relative;
+      z-index: 1;
+  }
+  
+  /* Question Styling */
+  .question {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid var(--accent-color);
+  }
+  
+  .question:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  
+  .question h3 {
+      color: var(--holy-theme-dark);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+  }
+  
+  .question h3::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      margin-right: 10px;
+      font-size: 14px;
+      font-weight: bold;
+  }
+  
+  .scripture-reference {
+      background: var(--holy-theme-dark);
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+  }
+  
+  /* Collapsible Content */
+  .collapsible-header {
+      background: var(--bg-secondary);
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      margin: 1rem 0;
+      font-weight: 600;
+      color: var(--holy-theme-dark);
+  }
+  
+  .collapsible-header:hover {
+      background: var(--secondary-color);
+  }
+  
+  .collapsible-header .toggle-icon {
+      transition: transform 0.3s ease;
+  }
+  
+  .collapsible-header.active .toggle-icon {
+      transform: rotate(180deg);
+  }
+  
+  .collapsible-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: white;
+      border-radius: 0 0 8px 8px;
+      padding: 0 1.5rem;
+      border-left: 3px solid var(--accent-color);
+  }
+  
+  .collapsible-content.show {
+      max-height: 2000px; /* Adjust as needed */
+      padding: 1.5rem;
+  }
+  
+  /* Navigation */
+  .navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  
+  .nav-button {
+      padding: 1.2rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      min-width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .previous-chapter {
+  background: var(--holy-theme-dark);
+  }
+  
+  .previous-chapter {
+      background: var(--holy-theme-dark);
+  }
+  
+  .next-chapter {
+      background: var(--accent-color);
+  }
+  
+  .toc {
+      background: var(--primary-color);
+  }
+  
+  .home-button {
+      background: var(--holy-theme-dark);
+  }
+  
+  .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  
+  .nav-button .hover-text {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      pointer-events: none;
+      margin-bottom: 8px;
+      z-index: 100;
+  }
+  
+  .nav-button:hover .hover-text {
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  /* Think About It Box */
+  .think-about-it {
+      background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--highlight-color);
+  }
+  
+  .think-about-it h3 {
+      display: flex;
+      align-items: center;
+      color: var(--holy-theme-dark);
+  }
+  
+  .think-about-it h3 i {
+      margin-right: 10px;
+      color: var(--highlight-color);
+  }
+  
+  /* In-Depth Study Section */
+  .in-depth-study {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 3rem 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  
+  .in-depth-study h2 {
+      text-align: center;
+      color: var(--holy-theme-dark);
+      margin-bottom: 2rem;
+      position: relative;
+  }
+  
+  .in-depth-study h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: var(--accent-color);
+  }
+  
+  /* Details/Summary Styling */
+  details {
+      margin: 1rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: white;
+  }
+  
+  summary {
+      padding: 1.2rem;
+      cursor: pointer;
+      background: var(--bg-secondary);
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      position: relative;
+      outline: none;
+  }
+  
+  summary:hover {
+      background: var(--secondary-color);
+  }
+  
+  summary::after {
+      content: '⌄';
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+  }
+  
+  details[open] summary::after {
+      transform: rotate(180deg);
+  }
+  
+  details[open] summary {
+      border-bottom: 1px solid var(--secondary-color);
+  }
+  
+  details .content {
+      padding: 1.5rem;
+  }
+  
+  /* Bible Reference Styling */
+  .bible-reference {
+      font-style: italic;
+      color: var(--text-secondary);
+  }
+  
+  /* Footer */
+  .page-footer {
+      background: var(--holy-theme-dark);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 4rem;
+  }
+  
+  .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+  }
+  
+  .copyright-notice {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+  }
+  
+  .copyright-notice a {
+      color: var(--secondary-color);
+      text-decoration: none;
+  }
+  
+  .copyright-notice a:hover {
+      text-decoration: underline;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+      .container {
+          padding: 1rem;
+      }
+  
+      .series-header {
+          padding: 2rem 1rem;
+      }
+  
+      .nav-button {
+          min-width: 120px;
+          padding: 1rem 1.5rem;
+      }
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .question {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+  }
+  
+  .question:nth-child(1) { animation-delay: 0.1s; }
+  .question:nth-child(2) { animation-delay: 0.2s; }
+  .question:nth-child(3) { animation-delay: 0.3s; }
+  .question:nth-child(4) { animation-delay: 0.4s; }
+  .question:nth-child(5) { animation-delay: 0.5s; }
+  .question:nth-child(6) { animation-delay: 0.6s; }
+  .question:nth-child(7) { animation-delay: 0.7s; }
+  .question:nth-child(8) { animation-delay: 0.8s; }
+  .question:nth-child(9) { animation-delay: 0.9s; }
+  .question:nth-child(10) { animation-delay: 1s; }
+  .question:nth-child(11) { animation-delay: 1.1s; }
+  .question:nth-child(12) { animation-delay: 1.2s; }
+  .question:nth-child(13) { animation-delay: 1.3s; }
+  .question:nth-child(14) { animation-delay: 1.4s; }
+  .question:nth-child(15) { animation-delay: 1.5s; }
+  
+  /* Custom Details/Summary styling */
+  .custom-details {
+      margin-bottom: 1.5rem;
+  }
+  
+  .custom-details summary {
+      background-color: var(--bg-secondary);
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--holy-theme-dark);
+      transition: background-color 0.3s ease;
+      outline: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .custom-details summary::-webkit-details-marker {
+      display: none;
+  }
+  
+  .custom-details summary::after {
+      content: '+';
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+  }
+  
+  .custom-details[open] summary::after {
+      content: '−';
+  }
+  
+  .custom-details summary:hover {
+      background-color: var(--secondary-color);
+  }
+  
+  .custom-details .details-content {
+      padding: 1.5rem;
+      background-color: white;
+      border-radius: 0 0 8px 8px;
+      margin-top: -8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-left: 3px solid var(--accent-color);
+  }
+  
+  /* Scripture Box */
+  .scripture-box {
+      background: var(--holy-theme-light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      border-left: 4px solid var(--accent-color);
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .scripture-box::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      font-size: 100px;
+      color: rgba(0,0,0,0.05);
+      font-family: Georgia, serif;
+  }
+  
+  /* Highlight for important points */
+  .highlight {
+      background-color: rgba(0, 188, 212, 0.1);
+      padding: 3px 5px;
+      border-radius: 3px;
+  }
+  
+  /* Numbered lists with custom styling */
+  ol.styled-list {
+      counter-reset: item;
+      list-style-type: none;
+      padding-left: 0;
+  }
+  
+  ol.styled-list li {
+      counter-increment: item;
+      margin-bottom: 10px;
+      padding-left: 2rem;
+      position: relative;
+  }
+  
+  ol.styled-list li::before {
+      content: counter(item);
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      position: absolute;
+      left: 0;
+      top: 2px;
+  }
+  
+  /* Bulleted lists with custom styling */
+  ul.styled-list {
+      list-style-type: none;
+      padding-left: 0;
+  }
+  
+  ul.styled-list li {
+      margin-bottom: 10px;
+      padding-left: 1.5rem;
+      position: relative;
+  }
+  
+  ul.styled-list li::before {
+      content: "•";
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -5px;
+  }
+  
+  /* Prophecy Diagram */
+  .prophecy-diagram {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+  }
+  
+  .prophecy-diagram img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+        /* Additional styles for collapsible sections */
+        .collapsible-section {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .collapsible-header {
+            background-color: var(--bg-secondary);
+            color: var(--holy-theme-dark);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .collapsible-header:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .collapsible-header.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible-content {
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .collapsible-content p:first-child {
+            margin-top: 1.5rem;
+        }
+        
+        .collapsible-content p:last-child {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+        
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+        
+        /* In-depth study section */
+        .in-depth-study {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .in-depth-study h2 {
+            color: var(--holy-theme-dark);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+  
+ 
+      </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>7.5 - Saints and Miracles</h1>
+            <p>Understanding the biblical teaching about sainthood and miraculous manifestations</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                Introduction
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Saints and miracles are part of biblical teaching and have special importance for much of the Christian world, but there are some problems: not everyone understands their reality in the same way, and a wrong understanding can cause serious damage to our lives. In this study, we will discover what God says on this topic and how to avoid some dangers.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                1. What does it mean to be a saint?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>"Saint" means "dedicated, consecrated to God." Two elements are implied in this meaning. 1 Corinthians 1:2 contains both: "To the church of God which is at Corinth, to those who are sanctified in Christ Jesus, called to be saints" (NKJV).</p>
+                
+                <ol class="styled-list">
+                    <li><strong>Sanctified in Christ Jesus.</strong> This means that we do not become saints because of something we do, but because of what Jesus has done for us (see also 1 Cor. 6:11; 1 Peter 1:19; 2:9,10). Because Jesus forgives our sins, we can appear before God as totally pure. Theologians call this experience "justification."</li>
+                    <li><strong>Called to be saints.</strong> Jesus has won us to God, but when we live with God, we learn to be and live like Him (Lev 11:44; 1 Pet 1:15,16). Theologians call this process "sanctification."</li>
+                </ol>
+                
+                <div class="scripture-box">
+                    <p>"To the church of God which is at Corinth, to those who are sanctified in Christ Jesus, called to be saints, with all who in every place call on the name of Jesus Christ our Lord, both theirs and ours." (1 Corinthians 1:2)</p>
+                </div>
+                
+                <p>In summary: a "saint" is a person who has accepted Jesus as their Savior, and who, living with Jesus, learns to resemble Him: "Imitate me, just as I also imitate Christ" (1 Cor 11:1. See also Eph 4:13).</p>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                    <p>The biblical concept of sainthood is both a status (already accomplished through Christ's work) and a process (growing in Christlikeness). This differs significantly from the popular understanding that limits sainthood to a few exceptionally virtuous individuals. How might this biblical understanding change our self-perception as Christians?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                2. Many Christians consider a "saint" to be a person who is supposed to have gone to heaven after death. The sign of their sainthood would be that they perform miracles. Is this what the Bible says about saints?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <ol class="styled-list">
+                    <li><strong>Acts 9:32; 2 Corinthians 1:1.</strong> The Bible calls all Christians saints, not just a select group. And these are living people, not necessarily deceased.</li>
+                    <li><strong>1 Corinthians 12:8-11.</strong> The gift of performing miracles is one among many. The Bible never says that saints, to be such, must perform miracles.</li>
+                </ol>
+                
+                <div class="scripture-box">
+                    <p>"Now it came to pass, as Peter went through all parts of the country, that he also came down to the saints who dwelt in Lydda." (Acts 9:32)</p>
+                </div>
+                
+                <div class="scripture-box">
+                    <p>"Paul, an apostle of Jesus Christ by the will of God, and Timothy our brother, to the church of God which is at Corinth, with all the saints who are in all Achaia." (2 Corinthians 1:1)</p>
+                </div>
+                
+                <p>These passages clearly show that in the New Testament, the term "saint" (hagios in Greek) was applied to all believers in Christ, not a special category of Christians who had achieved extraordinary holiness or performed miracles. The saints were simply the members of the Christian community, living people who had been set apart for God through faith in Christ.</p>
+                
+                <p>This understanding contrasts with later developments in church tradition where sainthood became associated with posthumous recognition, canonization processes, and miracle-working.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                3. How does one become a saint?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>The first meaning of holiness (justification) is the result of Jesus' grace in our lives. Thankfully, it does not depend on our abilities but on Him: "For by grace you have been saved through faith, and that not of yourselves; it is the gift of God" (Eph 2:8).</p>
+                
+                <p>The second meaning also depends mainly on God's power working in us through the Holy Spirit (Phil 2:13; Rom. 8:11-13).</p>
+                
+                <div class="scripture-box">
+                    <p>"For it is God who works in you both to will and to do for His good pleasure." (Philippians 2:13)</p>
+                </div>
+                
+                <p>Becoming a saint involves both God's initiative and our response. God justifies us through Christ's sacrifice, declaring us righteous despite our sinfulness. He then begins the process of sanctification, transforming us from the inside out through the Holy Spirit's work.</p>
+                
+                <p>Our role in this process is to cooperate with the Spirit's work—yielding to God's guidance, studying His Word, participating in worship and fellowship, and practicing spiritual disciplines. Yet even our ability to respond comes from God's enabling grace.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                4. Is the privilege of sainthood reserved for some Christians or is it for all of them?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"Pursue peace with all people, and holiness, without which no one will see the Lord." (Hebrews 12:14)</p>
+                </div>
+                
+                <p>Without holiness, we cannot see God; we cannot be saved. All Christians must therefore be saints, otherwise they are not Christians at all.</p>
+                
+                <p>This verse makes it clear that holiness is not optional for Christians—it is essential. The author of Hebrews places holiness alongside peace as something to be actively pursued by all believers. This pursuit of holiness is not about earning salvation but about living out the reality of what Christ has already accomplished.</p>
+                
+                <p>The universal call to holiness means that sainthood is not an elite status for a few exceptional Christians but the normal expectation for all who follow Christ. Every believer is called to grow in Christlikeness and to reflect God's character in their daily lives.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                5. Many are accustomed to thinking that one becomes a Christian through their merits. They also believe that a saint has acquired extra merits not necessary for their own salvation, and that these can be used for the salvation of others. Is this a biblical doctrine?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>No. As we have seen in the study on Law and Grace, the Gospel clearly rejects all kinds of merits.</p>
+                
+                <ol class="styled-list">
+                    <li>Merits are based on something we do, while salvation is offered by grace, which is a gift from God (Eph 2:8).</li>
+                    <li>If no one has merits for themselves, then they cannot pass them on to others. Everyone is saved by their personal relationship with God. No one can be saved thanks to the holiness of another (Ezek. 14:13,14; 18:28).</li>
+                </ol>
+                
+                <div class="scripture-box">
+                    <p>"Though these three men, Noah, Daniel, and Job, were in it, they would deliver only themselves by their righteousness," says the Lord GOD." (Ezekiel 14:14)</p>
+                </div>
+                
+                <p>The concept of a "treasury of merits" that can be transferred from saints to other believers contradicts the biblical teaching that salvation is by grace through faith, not by works. Each person stands before God individually, and no one can be saved by another person's righteousness.</p>
+                
+                <p>Even the most exemplary saints in Scripture (like Noah, Daniel, and Job mentioned in Ezekiel) could only save themselves by their righteousness—they could not transfer merit to others. This emphasizes the personal nature of faith and salvation.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                6. Can we pray to saints to receive grace?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>No, and for several reasons:</p>
+                
+                <ol class="styled-list">
+                    <li>We must pray only to God (Matt. 6:9).</li>
+                    <li>The saints are dead and cannot hear us (Eccl. 9:10; Isaiah 8:19).</li>
+                    <li>Jesus is our only mediator (1 Tim. 2:5).</li>
+                    <li>Saints have no special merit to intercede for us.</li>
+                </ol>
+                
+                <div class="scripture-box">
+                    <p>"For there is one God and one Mediator between God and men, the Man Christ Jesus." (1 Timothy 2:5)</p>
+                </div>
+                
+                <div class="scripture-box">
+                    <p>"For the living know that they will die; but the dead know nothing, and they have no more reward, for the memory of them is forgotten. Also their love, their hatred, and their envy have now perished; nevermore will they have a share in anything done under the sun." (Ecclesiastes 9:5-6)</p>
+                </div>
+                
+                <p>The Bible consistently teaches that prayer should be directed to God alone. Jesus taught His disciples to pray "Our Father in heaven" (Matthew 6:9), not to saints or angels. Furthermore, Scripture indicates that the dead are not conscious and cannot interact with the living world.</p>
+                
+                <p>Most importantly, the New Testament emphasizes Christ's unique mediatorial role. As the only perfect human who is also fully divine, Jesus alone bridges the gap between humanity and God. Adding other mediators diminishes Christ's sufficient work and creates unnecessary barriers between believers and God.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                7. Are miracles proof that saints are with God and intercede for us?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <ol class="styled-list">
+                    <li>Not miracles but truth and faithfulness to God's teachings prove that one is with God (Deut 13:1-5). Since miracles attributed to dead people contradict the teaching of God's Word on the state of the dead, it is better to believe God rather than what people say.</li>
+                    <li>Satan can also perform miracles as if they were done by God and thus deceive people (Matt 24:24; 2 Cor 11:4; 2 Thess 2:9,10; Rev 16:13,14).</li>
+                    <li>The Gospel of John emphasizes an important fact: many follow Jesus for the miracles He does, but Jesus is not happy about it (John 2:23). After the miracle of the multiplication of the loaves, many were so enthusiastic that they wanted to crown Jesus as their king, but when He began to speak to them about salvation as a way that required His sacrifice, His death, everyone abandoned Him (John 6:14,15,58-60, 66). True faith is not based on the miracles we see, but on our sincere and deep relationship of trust with God even without seeing (John 20:29).</li>
+                </ol>
+                
+                <div class="scripture-box">
+                    <p>"If there arises among you a prophet or a dreamer of dreams, and he gives you a sign or a wonder, and the sign or the wonder comes to pass, of which he spoke to you, saying, 'Let us go after other gods'—which you have not known—'and let us serve them,' you shall not listen to the words of that prophet or that dreamer of dreams, for the LORD your God is testing you to know whether you love the LORD your God with all your heart and with all your soul. You shall walk after the LORD your God and fear Him, and keep His commandments and obey His voice; you shall serve Him and hold fast to Him." (Deuteronomy 13:1-4)</p>
+                </div>
+                
+                <p>Scripture warns that miracles alone are not reliable indicators of God's approval or presence. Even false prophets can perform signs and wonders. The true test is whether the miracle points people toward faithfulness to God's revealed truth in Scripture.</p>
+                
+                <p>Jesus Himself cautioned against an excessive focus on miracles, often emphasizing that faith should be based on truth rather than spectacular demonstrations. When people followed Him merely for the miracles, He challenged them to deeper commitment.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                8. Why do people feel the need for saints?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>It is not our task to judge the hearts of others, but there is a common problem behind all this. Some Christians think that God is too glorious, powerful, and distant. Some even fear Him. Some think they are not worthy of His personal attention, that they do not deserve His grace. They therefore seek someone who is closer to God than they are to act as their intercessor. Saints would correspond to this need.</p>
+                
+                <p>This tendency reflects a deeply human desire for intermediaries who seem more approachable than God Himself. Throughout history, people have sought ways to bridge what they perceive as a gap between their own unworthiness and God's holiness.</p>
+                
+                <p>The practice also reflects a natural human tendency to venerate heroes of the faith—those whose lives exemplified extraordinary devotion to God. While honoring the memory of faithful believers is appropriate, elevating them to intercessory roles goes beyond biblical teaching.</p>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                    <p>Consider how your own view of God affects your approach to prayer. Do you sometimes feel God is too distant or holy to approach directly with your needs? How might a fuller understanding of Christ's mediatorial role change this perception?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                9. What problem does this view entail?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <div class="scripture-box">
+                    <p>"Seeing then that we have a great High Priest who has passed through the heavens, Jesus the Son of God, let us hold fast our confession. For we do not have a High Priest who cannot sympathize with our weaknesses, but was in all points tempted as we are, yet without sin. Let us therefore come boldly to the throne of grace, that we may obtain mercy and find grace to help in time of need." (Hebrews 4:14-16)</p>
+                </div>
+                
+                <p>All this stems from a misunderstanding of the gospel as the "good news" about God's love. When we understand that God loves us, and how this love was manifested through Jesus, then we understand that no matter how unworthy we may be, God remains a merciful father. He is ready to listen to us and welcome us. Like the father of the prodigal son, He is there waiting for us and can't wait to embrace us again. Like the son, we only need to do one thing: ask for forgiveness and accept the Father's love (Luke 15:18-22).</p>
+                
+                <p>The search for saints creates many problems because it contradicts many biblical doctrines (state of the dead, salvation by grace alone, prayer...). However, the biggest problem is that it reduces the importance of Jesus in our lives, as the one who alone can help us sufficiently for the present life and for eternal salvation (Eph 1:3-8; Col 1:13-20; 2:8-10).</p>
+                
+                <p>The practice of praying to saints can inadvertently create spiritual barriers between believers and God, complicated religious systems that may burden rather than liberate, and diminish the sufficiency of Christ's work. It can lead to a form of spiritual insecurity where believers feel they need multiple advocates before God rather than resting in Christ's completed work.</p>
+            </div>
+        </div>
+
+        <div class="in-depth-study">
+            <h2>In-Depth Study</h2>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    10. Does being a saint mean being perfect?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>The gospel says that we are saved by grace alone. At the same time, it invites us to obey God's commandments and live a holy life. Both of these elements are important. Without grace, no one could be saved by virtue of their works (Rom 3:20). However, grace without obedience would become license, which would offend our dignity as God's children and destroy the Christian hope for a better world.</p>
+                    
+                    <p>We certainly need both grace and obedience, but their function is different: grace saves us, obedience honors and manifests the salvation we have received. In this perspective, we desire to be perfect as God is perfect, because we are His children and want to resemble Him, because we love His kingdom and His will.</p>
+                    
+                    <p>Day by day we will grow in God's grace (Eph 4:13). Day by day sin will lose its power in our lives, but we will experience this growth process as a sign of God's grace working in us (Rom 8:3-11), and if we happen to sin, then God's grace will continue to forgive us and raise us up to continue our journey toward perfection.</p>
+                    
+                    <p>When we will reach this goal, whether at Jesus' return when we will be instantly transformed (1 Cor. 15:51,52), or while we are still alive on this earth, this does not matter and is not our concern. The issue is not when we will be perfect, but whether we desire to be so. In the Christian life, what matters is not so much where we have arrived but where we want to go (Phil 3:12). In this search for perfection, we perhaps best manifest the fact that we are already living it now, even in our condition of weakness.</p>
+                    
+                    <div class="scripture-box">
+                        <p>"Not that I have already attained, or am already perfected; but I press on, that I may lay hold of that for which Christ Jesus has also laid hold of me." (Philippians 3:12)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    11. If we must reject the intercession of saints, why does the Bible invite us to pray for one another?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>James 5:16. The Bible invites us to pray for one another as a sign of brotherly love and unity. We are God's children, and the Father is always happy to see His children united and full of love for one another. But this does not mean that the one who prays for their brother is holier or has more merit than them. On the contrary, we see the great apostle Paul inviting simple believers to pray for him (2 Thess 3:1). Even Jesus Himself invites His disciples to watch in prayer with Him as a sign of affectionate solidarity and comfort (Matt 26:36-41).</p>
+                    
+                    <p>We can also pray for people outside the church (1 Tim 2:1,2) because we love them or even because we need their help, but this does not mean that we claim to have some merit before God.</p>
+                    
+                    <p>In summary: we pray for one another because we love each other and because this honors our common Father. We do not pray trusting in our holiness but in God's grace that manifests itself to all with equal love (Matt 5:45).</p>
+                    
+                    <div class="scripture-box">
+                        <p>"Confess your trespasses to one another, and pray for one another, that you may be healed. The effective, fervent prayer of a righteous man avails much." (James 5:16)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    12. If Satan can perform miracles to deceive people, does it mean that all miracles done through people who do not know or fully honor God's will come from the devil?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>We must be aware of the danger and never let ourselves be dragged away from biblical ground because of a miracle. But this does not necessarily mean that God, in His mercy, cannot hear the prayer of a person who, though in their honesty, does not yet fully know His will.</p>
+                    
+                    <p>God's grace extends beyond our complete understanding, and He may respond to sincere prayers even when the person praying has an incomplete theological framework. Jesus acknowledged faith in unexpected places, such as the Roman centurion (Matthew 8:10) and the Syrophoenician woman (Mark 7:24-30).</p>
+                    
+                    <p>The key principle is to evaluate all miraculous claims against Scripture. A genuine miracle from God will never contradict His revealed Word or lead people away from biblical truth. While we should maintain healthy skepticism about miracle claims, we should also avoid dismissing all such experiences outside our own tradition as demonic.</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    13. How to understand popular religiosity regarding saints?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>Sad to say, much of popular religiosity retraces the paths of ancient paganism. Pagans had one or more gods as protectors of a city or profession. After the period of persecutions, when being Christian became simple and even convenient, many nominally adhered to Christianity while keeping these practices in their hearts, with the difference that instead of pagan gods, martyrs were put in place, who gradually became saints.</p>
+                    
+                    <p>If for theologians saints should be a manifestation of God's grace and power (even in this respect there are several criticizable aspects), for common people, they become almost independent of God, as if they had their own personal power.</p>
+                    
+                    <p>In the Bible, when a miracle happens, believers never say that it is Moses or Paul who does it: the miracle is always attributed to God, and the honor goes to Him alone (Acts 3:12-13; 12:8-15). In popular religiosity, however, people never say that God performed the miracle for them: it is always the saint who is mentioned; sanctuaries are erected to them, and where the miracle occurred, pilgrimages are made. In the Bible, we never find anything like this. There are no festivals organized for prophets or apostles, no monuments are erected in their name, and there are no pilgrimages except those to the temple in Jerusalem, the only temple that represented God's presence among His people. Only God is praised.</p>
+                    
+                    <p>Pilgrimages have particular importance in popular religiosity, but, from a biblical perspective, it is hard to understand why one needs to go to a particular place to receive a miracle from God: isn't God the same in any place? The only possible explanation for pilgrimage arises from the feeling that the presence of the saint and his miraculous power in a place has made the location full of sacredness and power. But this too is a characteristic element of pagan religiosity.</p>
+                    
+                    <p>It is also sad to see, in popular religiosity, religious elements mixed with totally profane elements whose only purpose is to entertain people. Bands playing songs sometimes in total opposition to the Christian faith, commerce, fireworks, the competition that accompanies many of these manifestations, are certainly not an appropriate sign of consciously Christian religiosity.</p>
+                    
+                    <p>The sacred power of the place sometimes almost splits and multiplies the same holy person. It happens especially with the Madonna: some are particularly devoted, for example, to the Madonna of Pompei while others honor above all the Madonna of Fatima, as if there were different Madonnas. Is this Christianity?</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    14. Can we accept the difference made between adoration directed only to God and veneration directed to saints?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>The Catholic Church distinguishes between "latria," adoration, which should be directed only to God, and "dulia," veneration, which is appropriate for saints. They also accept "hyperdulia" regarding the Madonna. In this way, it is taught that people can kneel before human beings, as long as this gesture remains within the boundaries of veneration and does not become adoration.</p>
+                    
+                    <p>To say "adore," the Old Testament uses the verb shachah which means "to bow down." The New Testament uses the verb proskuneo which has the same meaning. But how are the two attitudes and the feelings from which they arise distinguished? In short, adoration is expressed precisely through an attitude, through the gesture of bowing down, kneeling before someone in a religious context.</p>
+                    
+                    <p>For this reason, the second commandment of the Decalogue (Ex 20:5) prohibits adoring (bowing down) before anything. For this reason, in the Gospel, no one is allowed to kneel before a creature. The apostle Peter asks Cornelius to stand up, saying to him: "I myself am also a man" (Acts 10:26). Cornelius was a God-fearing man (v. 2). As such, he knew that no man should be worshiped but only God. Consequently, by kneeling before Peter, he certainly did not intend to equate him with God. His was a gesture of respect, of veneration we would say with Catholic terminology. But Peter refuses even this because that gesture is reserved only for God. For Peter, there was no subtle distinction between dulia and latria if they are expressed through the gesture of kneeling: one kneels only before God.</p>
+                    
+                    <p>The apostle John certainly knew that only God should be worshiped, yet, conquered by the wonder of the glory of the angel who guided him in his visions, he knelt before him. He did it twice, and twice the angel rebuked him: "I fell at his feet to worship (proskuneo) him. But he said to me, 'See that you do not do that! I am your fellow servant, and of your brethren who have the testimony of Jesus. Worship (proskuneo) God!'" (Rev 19:10). "... I fell down to worship (proskuneo) at the feet of the angel who showed me these things. Then he said to me, 'See that you do not do that. For I am your fellow servant, and of your brethren the prophets, and of those who keep the words of this book. Worship (proskuneo) God!'" (Rev 22:8-9).</p>
+                    
+                    <p>The message is clear: in the Bible, the gesture of bowing before someone is considered adoration and is reserved only for God. See also Acts 14:8-15 for the reaction of Paul and Barnabas to pagans who tried to honor them in a way that should be reserved for God.</p>
+                    
+                    <p><strong>NOTE:</strong> If latria were to be reserved for God and dulia for human creatures, why would the Madonna deserve hyperdulia, a super dulia. Is she perhaps halfway between a woman and God?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="7.4.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">7.4 - Angels</span>
+            </a>
+            <a href="7.6.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">7.6 - Mary of the Gospel and the Madonna of the Church</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+      <!-- No-copy protection scripts -->
+      <script>
+        // Updated no-copy protection scripts
+        document.addEventListener('keydown', function(e) {
+            // Prevent Ctrl+C (copy)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.keyCode === 67)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+U (view source)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+S (save)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
+                e.preventDefault();
+                alert('Content saving is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+P (print)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P' || e.keyCode === 80)) {
+                e.preventDefault();
+                alert('Content printing is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+Shift+I (inspect element)
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.keyCode === 73)) {
+                e.preventDefault();
+                alert('Inspect element is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+        });
+
+        // Prevent right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Additional protection to disable copy
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable cut
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            alert('Content cutting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable paste
+        document.addEventListener('paste', function(e) {
+            e.preventDefault();
+            alert('Content pasting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+        
+        // Toggle collapsible sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.querySelector('.toggle-icon').textContent = '+';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        this.querySelector('.toggle-icon').textContent = '−';
+                    }
+                });
+            });
+            
+            // Auto-open the first section
+            if (collapsibleHeaders.length > 0) {
+                collapsibleHeaders[0].click();
+            }
+        });
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,813 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hygienic Laws: Alcoholic Beverages | Doctrine of Sanctification and Obedience</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Question Styling */
+        .question {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .question h3::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Collapsible Content */
+        .collapsible-header {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+        }
+
+        .collapsible-header:hover {
+            background: var(--secondary-color);
+        }
+
+        .collapsible-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            padding: 0 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .collapsible-content.show {
+            max-height: 2000px; /* Adjust as needed */
+            padding: 1.5rem;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* In-Depth Study Section */
+        .in-depth-study {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .in-depth-study h2 {
+            text-align: center;
+            color: var(--holy-theme-dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Details/Summary Styling */
+        details {
+            margin: 1rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: white;
+        }
+
+        summary {
+            padding: 1.2rem;
+            cursor: pointer;
+            background: var(--bg-secondary);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            position: relative;
+            outline: none;
+        }
+
+        summary:hover {
+            background: var(--secondary-color);
+        }
+
+        summary::after {
+            content: '⌄';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        details .content {
+            padding: 1.5rem;
+        }
+
+        /* Bible Reference Styling */
+        .bible-reference {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+            }
+
+            .nav-button {
+                min-width: 120px;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+        .question:nth-child(6) { animation-delay: 0.6s; }
+        .question:nth-child(7) { animation-delay: 0.7s; }
+        .question:nth-child(8) { animation-delay: 0.8s; }
+        .question:nth-child(9) { animation-delay: 0.9s; }
+        .question:nth-child(10) { animation-delay: 1s; }
+        .question:nth-child(11) { animation-delay: 1.1s; }
+        .question:nth-child(12) { animation-delay: 1.2s; }
+
+        /* Custom Details/Summary styling */
+        .custom-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-details summary {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            transition: background-color 0.3s ease;
+            outline: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .custom-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .custom-details summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-details[open] summary::after {
+            content: '−';
+        }
+
+        .custom-details summary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .custom-details .details-content {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Highlight for important points */
+        .highlight {
+            background-color: rgba(0, 188, 212, 0.1);
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        /* Numbered lists with custom styling */
+        ol.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Bulleted lists with custom styling */
+        ul.styled-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background-color: rgba(255, 167, 38, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        /* Image container */
+        .image-container {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>5.10 Hygienic Laws: Alcoholic Beverages</h1>
+            <p>Alcohol represents one of the worst problems in the world. What does God's Word say about it?</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="question">
+            <p>Alcohol represents one of the worst problems in the world. Nations have been destroyed by its use, and hundreds of millions of people suffer because of it even in modern nations of our world. Many rightly consider it a legalized drug, and if many accept it, it's only because it's part of a cultural heritage we've inherited from the past. For the same reason, in South America, some native Americans are accustomed to chewing coca leaves. As Christians, we should honor God in our body and in our heart, and also help our neighbors by giving them a good testimony with our words and example. What attitude should we therefore adopt regarding alcoholic beverages?</p>
+        </div>
+
+        <div class="question">
+            <h3>1. How dangerous can alcohol become?</h3>
+            <span class="scripture-reference">1 Corinthians 6:10</span>
+            <p>Because of alcohol, we can even lose the kingdom of God. See also 1 Corinthians 5:11.</p>
+        </div>
+
+        <div class="question">
+            <h3>2. What warning did Jesus give to His disciples so they would be ready for His return?</h3>
+            <span class="scripture-reference">Luke 21:34</span>
+            <p>"Be careful, or your hearts will be weighed down with carousing, drunkenness and the anxieties of life, and that day will close on you suddenly like a trap."</p>
+        </div>
+
+        <div class="question">
+            <h3>3. The book of Proverbs is one of the so-called wisdom books, which teach how to be wise. What advice do we find there about the use of alcoholic beverages?</h3>
+            <span class="scripture-reference">Proverbs 23:29-35</span>
+            <p>Note that here the problem is not just getting drunk but drinking itself. Many Christians are aware that getting drunk is against God's will, but they think that drinking wine or beer moderately is Christianly allowed. We should consider that the millions of alcoholics all started by drinking a few glasses occasionally.</p>
+            
+            <p>Of course, this reasoning doesn't apply to dangers that exist even when using something good, but alcohol is not something good that can involve dangers: it's simply a drug and causes incalculable damage.</p>
+            
+            <div class="warning-box">
+                <p><strong>FACT:</strong> It has been calculated that for every seven people who use alcohol moderately, one becomes enslaved to it. Would you keep a dog at home that bites one out of every seven guests who come to visit you? And what about the damage produced even when one doesn't become an alcoholic?</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>4. It's evident that for God, alcohol is dangerous. Can we find other evidence that God didn't want His people to drink it?</h3>
+            <p>The Bible is very clear that anyone who has a social and spiritual responsibility should absolutely not drink any type of alcohol (at that time, distilled spirits didn't exist). The reason is that alcohol has the ability to influence our mind by reducing or destroying our moral and spiritual awareness, our judgment capacity, and it doesn't allow us to honor and serve God and our neighbor in the best way.</p>
+            
+            <ol class="styled-list">
+                <li>Kings should not drink wine. <span class="bible-reference">(Proverbs 31:4-5)</span></li>
+                <li>Nazirites, people dedicated to God, had to avoid everything connected with grapes. <span class="bible-reference">(Numbers 6:2-3)</span></li>
+                <li>The mother of a future Nazirite had to avoid any kind of alcoholic drink <span class="bible-reference">(Judges 13:7)</span>. Note how modern the biblical perspective is. It's as if they knew that alcohol could harm the fetus through the mother. Now this is scientifically proven, but at that time, how did they know?</li>
+                <li>Priests had to abstain from alcohol in the context of their priestly service to distinguish the pure from the impure and the profane from the sacred <span class="bible-reference">(Leviticus 10:9,10)</span></li>
+                <li>The elders of the Christian church had to be "nephelios" <span class="bible-reference">(1 Timothy 3:2-3)</span>. This term can be translated as "temperate," "sober," and refers to abstention from alcohol.</li>
+            </ol>
+        </div>
+
+        <div class="question">
+            <h3>5. How can we apply these facts to ourselves?</h3>
+            <p>These texts clearly show that God's desire for those who want to dedicate themselves to Him at their best and who feel their responsibility toward their own life and that of others, is that they completely abstain from using alcohol. It's for this reason that Seventh-day Adventists, people who want to prepare themselves to enter God's kingdom, and who feel the Lord's call to help others prepare, have also decided to abstain from alcohol.</p>
+            
+            <div class="think-about-it">
+                <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                <p>There are two different types of "spirit": the "divine" one and the "wine" one. It seems that the two are not compatible. Which is better to choose?</p>
+            </div>
+        </div>
+
+        <div class="in-depth-study">
+            <h2>In-Depth Study</h2>
+            
+            <details class="custom-details">
+                <summary>6. As a general rule, does the Bible require abstinence from alcohol or moderation?</summary>
+                <div class="details-content">
+                    <p>Not all Adventists understand this in the same way. For some, the Bible requires total abstinence. They rely on the texts we've already considered and believe that other texts, in which there seems to be a more permissive approach, refer to non-alcoholic beverages. This involves some linguistic confusion since both in Hebrew and Greek, the word for wine can refer to both alcoholic wine and unfermented grape juice.</p>
+                    
+                    <p>Others think that the situation is more uncertain and that the Bible doesn't explicitly require total abstinence for everyone. However, they also believe that the spirit of the Bible favors total abstinence and that this becomes all the more necessary in our time due to the greater dangers that alcohol involves (ease of obtaining alcohol and therefore using it more often than in the past, presence of distilled spirits) and for the specific teaching that in these last times God has given us through the Spirit of prophecy.</p>
+                </div>
+            </details>
+            
+            <details class="custom-details">
+                <summary>7. Why don't Seventh-day Adventists use any type of alcohol?</summary>
+                <div class="details-content">
+                    <ol class="styled-list">
+                        <li>Because the Bible never encourages the use of alcohol. On the contrary, it warns against its consumption. Even from the perspective of divine patience manifested in the past because of the hardness of man's heart <span class="bible-reference">(Matthew 19:8)</span>, today we must go beyond that situation. In the Bible, God allowed His people very bad things like war, polygamy, slavery. Regarding the latter, we must say that it's not explicitly forbidden even in the New Testament, but we hope that for this reason no Christian would want to say that it's okay. Regarding alcohol, God is very clear about its dangers, and by requiring abstinence from those who want to consecrate themselves totally to Him, He makes us understand what our choice should be today if we too want to love Him with "all our heart." Beyond the ritual aspects, we want to be consecrated to God like the Nazirites, and we are called by God to be His kings and priests <span class="bible-reference">(1 Peter 2:9; 2 Timothy 2:12; Revelation 5:10)</span>.</li>
+                        
+                        <li>Because the danger of alcohol is now much greater than in biblical times. At that time, wine wasn't as alcoholic as today, and distilled spirits like whiskey and vodka didn't exist. Perhaps because wine was an expensive drink and therefore not so easy to obtain for many, or perhaps just for a matter of taste, people liked to drink it diluted with water or even heated, which significantly lowered the alcohol content.</li>
+                        
+                        <li>Because Seventh-day Adventists have a special mission to fulfill in our world, similar to that of John the Baptist who preached the coming of the Messiah. As John prepared the people for Christ's first coming, so we must do for His second coming. As God asked John, in view of the importance of his task, to be a Nazirite thus abstaining from alcohol <span class="bible-reference">(Luke 1:15)</span>, so we believe we are called to do the same.</li>
+                        
+                        <li>Because God has directly asked us to do so thanks to the teachings given to us through the prophetic gift of Ellen G. White, overcoming the limits imposed by ancient times and reaching toward a better lifestyle in which there is nothing that can destroy our spiritual awareness, like alcohol and other drugs.</li>
+                        
+                        <li>Because only if we use unfermented grape juice can we allow everyone, and especially former alcoholics - who must avoid even the slightest use of alcohol at all costs - to participate in the Lord's Supper.</li>
+                    </ol>
+                </div>
+            </details>
+            
+            <details class="custom-details">
+                <summary>Discussion of some biblical texts</summary>
+                <div class="details-content">
+                    <h4>8. John 2. Didn't Jesus perform His first miracle by turning water into wine? Why did He do it if wine is dangerous?</h4>
+                    
+                    <p>At Cana, Jesus transformed water into "good" wine (v. 10), but this doesn't mean it was alcoholic. The Jews were accustomed to using sweet, unfermented wine (consider, for example, Acts 2:13 in which the disciples were ironically accused of being "full - that is, drunk - of sweet wine") and we believe this was the wine created by Jesus.</p>
+                    
+                    <p>In Jesus' time, sugar didn't exist, and good wine wasn't necessarily the strong one as today, but the sweet one, grape juice, a real delight for the palate. We've already seen that many used to drink wine mixed with water (see the apocryphal book of 2 Maccabees 15:39) and flavored it with herbs and sweetened it with honey. Their tastes and the measure of their judgment were decidedly different from ours.</p>
+                    
+                    <p>Ellen G. White comments:</p>
+                    <div class="scripture-box">
+                        <p>"It was Christ who in the Old Testament gave the warning to Israel, 'Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise.' (Proverbs 20:1.) And He Himself provided no such beverage. Satan tempts men to indulgence that will becloud reason and benumb the spiritual perceptions, but Christ teaches us to bring the lower nature into subjection. His whole life was an example of self-denial. In order to break the power of appetite, He suffered in our behalf the severest test that humanity could endure. It was Christ who directed that John the Baptist should drink neither wine nor strong drink. It was He who enjoined similar abstinence upon the wife of Manoah. And He pronounced a curse upon the man who should put the bottle to his neighbor's lips. Christ did not contradict His own teaching. The unfermented wine which He provided for the wedding guests was a wholesome and refreshing drink. It was the wine which He Himself had used in the communion service. This is the wine that should always be used on the communion table as a symbol of the Saviour's blood. The sacramental service is designed to be soul-refreshing and life-giving. There is to be connected with it nothing that could minister to evil."</p>
+                        <p class="bible-reference">- The Ministry of Healing, p. 333</p>
+                    </div>
+                    
+                    <h4>9. 1 Timothy 5:23. Why did Paul ask Timothy to drink a little wine?</h4>
+                    
+                    <p>First of all, we note that Timothy was accustomed to drinking only water. If Paul asks him to add a little wine to the water (this is the meaning of his words), it's only for a particular reason and not as a general command. We must remember that Paul himself had taught that the elders of the church had to be abstinent <span class="bible-reference">(1 Timothy 3:3)</span>. How could he have asked Timothy, who had an even greater responsibility than that of an elder, to use fermented wine? Evidently, what Paul is asking is to use a little grape juice. This understanding is supported by the fact that, in Paul's time, many used unfermented wine (sometimes a syrup) diluted with water to treat stomach disorders. (See Samuele Bacchiocchi, Wine in the Bible, p. 218).</p>
+                    
+                    <div class="scripture-box">
+                        <p>"The use of fermented wine caused Nadab and Abihu to confuse the sacred with the common, and they paid for this error with their death. After this, strict restrictions were imposed in relation to the sacred service. They were forbidden to touch wine or to use grapes in any way ... </p>
+
+                        <div class="scripture-box">
+                          <p>"The use of fermented wine caused Nadab and Abihu to confuse the sacred with the common, and they paid for this error with their death. After this, strict restrictions were imposed in relation to the sacred service. They were forbidden to touch wine or to use grapes in any way, to avoid the consequences that would arise from their familiarity with fermented wine. When food or drinks that put the brain at risk are introduced into our mouth, the Destroyer finds his opportunity to enter and dethrone reason. Be certain that Paul never advised Timothy to use what the Lord had forbidden."</p>
+                          <p class="bible-reference">- E. G. White, Manuscript Releases Volume Ten, p. 200</p>
+                      </div>
+                      
+                      <h4>10. Didn't Jesus use wine for the Last Supper?</h4>
+                      
+                      <p>Yes, He did. But we have good reasons to think it was non-alcoholic wine:</p>
+                      
+                      <ol class="styled-list">
+                          <li>Jesus called that wine "fruit of the vine" <span class="bible-reference">(Matthew 26:29; Mark 14:25; Luke 22:18)</span>, an expression most likely referring to unfermented wine, as it comes from the grape cluster.</li>
+                          
+                          <li>The law did not allow the use of anything fermented during the Passover meal <span class="bible-reference">(Exodus 12:15 prohibits any fermented substance, not just bread)</span>. Even if some Jews had abandoned this rule, we can believe that Jesus honored it at best to represent the uncorrupted sacrifice of His blood <span class="bible-reference">(see 1 Corinthians 5:7,8)</span>.</li>
+                          
+                          <li>There is some evidence that some ancient Christian churches used unfermented wine <span class="bible-reference">(see Bacchiocchi, pp. 154-155)</span>. Where could they have drawn this practice from if not from the gospel tradition?</li>
+                          
+                          <li>At the time of Jesus, there were two different religious calendars in Israel. On the occasion of the Last Supper, Jesus celebrates the Passover one day before the official one, the one in which Jesus Himself would be put to death as the Passover lamb <span class="bible-reference">(John 13:1)</span>. It's possible that Jesus did this also favored by the presence of the Essene calendar. However, it's a fact that in Israel, the Essenes were accustomed to never using fermented wine. We read in their book, Rule of the Community (1QSa), par. 17-21: "And when they shall prepare the table to eat or the sweet wine to drink..." Luigi Moraldi comments: "The Hebrew term (tirôsh) translated as 'sweet wine' literally means 'must' and is totally different from the Hebrew word for 'wine' (jaîn). We can therefore deduce that the members of the sect did not drink fermented wine." <span class="bible-reference">(Luigi Morali, The Manuscripts of Qumran, Vol 1, 1971, p. 151)</span>.</li>
+                      </ol>
+                      
+                      <h4>11. Proverbs 31:6,7 allows those who are perishing to drink wine. Why?</h4>
+                      
+                      <p>The meaning of the text is ironic. Kings must not drink wine so that their mind is clear and they can properly guide their people. Only those who need to forget can have some benefit from using it. As for us Christians, we must ask ourselves if it's wise to drown our sorrows in alcohol or if we should instead ask for help from the Spirit of God <span class="bible-reference">(Ephesians 5:18)</span> and bring everything to the feet of Him who invited us to bring to Him what distresses us <span class="bible-reference">(Matthew 11:28)</span>.</p>
+                      
+                      <h4>12. Doesn't Deuteronomy 14:26 invite people to drink strong alcoholic beverages?</h4>
+                      
+                      <p>If this were the case, we should note that the text would not express a command but a permission for people to rejoice as they are accustomed to doing. However, we must note that the translation "strong drink" is incorrect as it suggests that it refers to our distilled spirits, something that did not exist at that time (distillation began to be practiced only 500 years after Christ). The original word (shekar) refers to any type of sweet drink different from grape juice (it's from the same root of this word that our word "sugar" comes). These drinks, as happens to everything that is sweetened, could also become alcoholic over time, but it wasn't always the case.</p>
+                  </div>
+              </details>
+          </div>
+  
+          <!-- Navigation -->
+          <div class="navigation">
+              <a href="5.9.html" class="nav-button previous-chapter">
+                  ← Previous
+                  <span class="hover-text">5.9 Hygienic Laws: Food</span>
+              </a>
+              <a href="5.11.html" class="nav-button next-chapter">
+                  Next →
+                  <span class="hover-text">5.11 Our Christian Life & Money (Tithing)</span>
+              </a>
+              <a href="/00Intro&Topics.html" class="nav-button toc">
+                  Contents
+              </a>
+              <a href="/Index.html" class="nav-button home-button">
+                  Home
+              </a>
+          </div>
+  
+          <!-- Copyright Footer -->
+          <footer class="page-footer">
+              <div class="footer-content">
+                  <div class="copyright-notice">
+                      <p>© 2025 All Rights Reserved</p>
+                      <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                  </div>
+              </div>
+          </footer>
+      </div>
+  
+      <!-- No-copy protection scripts -->
+      <script>
+          document.addEventListener('keydown', function(e) {
+              if (e.ctrlKey && 
+                  (e.key === 'c' || 
+                   e.key === 'C' || 
+                   e.key === 'u' || 
+                   e.key === 'U' || 
+                   e.key === 'p' || 
+                   e.key === 'P')) {
+                   e.preventDefault();
+                  alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+              }
+          });
+  
+          document.addEventListener('contextmenu', function(e) {
+              e.preventDefault();
+              alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+          });
+          
+          // Toggle details content when clicking on summary
+          document.addEventListener('DOMContentLoaded', function() {
+              const details = document.querySelectorAll('.custom-details');
+              
+              details.forEach(detail => {
+                  const summary = detail.querySelector('summary');
+                  
+                  summary.addEventListener('click', function(e) {
+                      e.preventDefault(); // Prevent default browser behavior
+                      
+                      // Toggle the open attribute
+                      if (detail.hasAttribute('open')) {
+                          detail.removeAttribute('open');
+                      } else {
+                          detail.setAttribute('open', 'true');
+                      }
+                  });
+              });
+              
+              // Animate questions on scroll
+              const questions = document.querySelectorAll('.question');
+              const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                      if (entry.isIntersecting) {
+                          entry.target.style.opacity = '1';
+                          entry.target.style.transform = 'translateY(0)';
+                      }
+                  });
+              }, { threshold: 0.1 });
+              
+              questions.forEach(question => {
+                  observer.observe(question);
+              });
+          });
+          
+          // Smooth scroll to anchors
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  
+                  document.querySelector(this.getAttribute('href')).scrollIntoView({
+                      behavior: 'smooth'
+                  });
+              });
+          });
+      </script>
+  </body>
+  </html>
+  
+
+
+              

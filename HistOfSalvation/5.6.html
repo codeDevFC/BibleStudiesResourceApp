@@ -1,0 +1,1514 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sabbath in the New Testament | Doctrine of Sanctification and Obedience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+
+ <!-- No-copy protection styles -->
+ <style>
+  body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+
+  :root {
+      --primary-color: #006064;    /* Deep Teal */
+      --accent-color: #00ACC1;     /* Lighter Teal */
+      --secondary-color: #B2EBF2;   /* Very Light Teal */
+      --bg-primary: #ffffff;
+      --bg-secondary: #E0F7FA;
+      --text-primary: #2C3E50;
+      --text-secondary: #546E7A;
+      --highlight-color: #00BCD4;   /* Bright Teal */
+      --holy-theme-light: #E0F7FA; /* Very Light Teal */
+      --holy-theme-dark: #006064;  /* Dark Teal */
+      --success: #4CAF50;
+      --warning: #FFA726;
+      --error: #EF5350;
+  }
+
+  /* Base Styles */
+  body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      margin: 0;
+      padding: 0;
+  }
+
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+  }
+
+  /* Series Banner */
+  .series-banner {
+      background: var(--holy-theme-dark);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-size: 1.2rem;
+  }
+
+  /* Header Styling */
+  .series-header {
+      background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .series-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('path-to-holy-living-image.jpg') center/cover;
+      opacity: 0.1;
+      z-index: 0;
+  }
+
+  .series-header .content {
+      position: relative;
+      z-index: 1;
+  }
+
+  /* Purpose Box */
+  .purpose-box {
+      background: var(--holy-theme-light);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border-left: 4px solid var(--accent-color);
+  }
+
+  /* Navigation */
+  .navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+      padding: 1rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+
+  .nav-button {
+      padding: 1.2rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      color: white;
+      min-width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .previous-chapter {
+      background: var(--holy-theme-dark);
+  }
+
+  .next-chapter {
+      background: var(--accent-color);
+  }
+
+  .toc {
+      background: var(--primary-color);
+  }
+
+  .home-button {
+      background: var(--holy-theme-dark);
+  }
+
+  .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+
+  .nav-button .hover-text {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      pointer-events: none;
+      margin-bottom: 8px;
+      z-index: 100;
+  }
+
+  .nav-button:hover .hover-text {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  /* Additional Styles */
+.content-section {
+background: white;
+padding: 2rem;
+border-radius: 12px;
+margin: 2rem 0;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-box {
+background: var(--holy-theme-light);
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1rem 0;
+border-left: 4px solid var(--accent-color);
+}
+
+.scripture-reference {
+background: var(--holy-theme-dark);
+color: white;
+padding: 0.2rem 0.5rem;
+border-radius: 4px;
+font-size: 0.9rem;
+margin-right: 0.5rem;
+}
+
+.scripture-insights {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 1.5rem;
+margin-top: 1.5rem;
+}
+
+.insight-card {
+background: white;
+padding: 1.5rem;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reflection-prompt {
+background: linear-gradient(to right, var(--holy-theme-light), transparent);
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1.5rem 0;
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.reflection-prompt i {
+font-size: 1.5rem;
+color: var(--holy-theme-dark);
+}
+
+.scripture-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1.5rem;
+margin: 1.5rem 0;
+}
+
+.principle-box {
+background: var(--bg-secondary);
+padding: 2rem;
+border-radius: 12px;
+margin: 2rem 0;
+}
+
+.reference-list {
+list-style: none;
+padding-left: 0;
+}
+
+.reference-list li {
+margin: 0.75rem 0;
+padding-left: 1.5rem;
+position: relative;
+}
+
+.reference-list li::before {
+content: "•";
+color: var(--accent-color);
+position: absolute;
+left: 0;
+}
+
+/* Additional Styles for Content Sections */
+.content-section {
+background: white;
+padding: 2rem;
+border-radius: 12px;
+margin: 2rem 0;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-box {
+background: var(--holy-theme-light);
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1rem 0;
+border-left: 4px solid var(--accent-color);
+}
+
+.scripture-box.highlight {
+background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+}
+
+.reference-card {
+background: white;
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1rem 0;
+box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reflection-prompt {
+background: var(--bg-secondary);
+padding: 1.5rem;
+border-radius: 8px;
+margin: 1rem 0;
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.reflection-prompt i {
+color: var(--holy-theme-dark);
+font-size: 1.5rem;
+}
+
+.principles-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1.5rem;
+margin: 1.5rem 0;
+}
+
+.principle-card {
+background: var(--holy-theme-light);
+padding: 1.5rem;
+border-radius: 8px;
+border-left: 4px solid var(--accent-color);
+}
+
+.general-principle {
+background: var(--bg-secondary);
+padding: 1.5rem;
+border-radius: 8px;
+grid-column: 1 / -1;
+text-align: center;
+font-weight: 500;
+}
+
+.reference-list {
+list-style: none;
+padding-left: 0;
+}
+
+.reference-list li {
+margin: 0.75rem 0;
+padding-left: 1.5rem;
+position: relative;
+}
+
+.reference-list li::before {
+content: "•";
+color: var(--accent-color);
+position: absolute;
+left: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+.principles-grid {
+  grid-template-columns: 1fr;
+}
+
+.content-section {
+  padding: 1.5rem;
+}
+}
+
+/* Interactive Studies Styles */
+.interactive-studies {
+margin: 3rem 0;
+background: var(--bg-secondary);
+padding: 2rem;
+border-radius: 12px;
+}
+
+.studies-intro {
+text-align: center;
+color: var(--text-secondary);
+margin-bottom: 2rem;
+}
+
+.study-topic {
+margin-bottom: 1rem;
+background: white;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.topic-toggle {
+width: 100%;
+padding: 1.5rem;
+display: flex;
+align-items: center;
+gap: 1rem;
+background: none;
+border: none;
+cursor: pointer;
+text-align: left;
+transition: background-color 0.3s ease;
+}
+
+.topic-toggle:hover {
+background: var(--holy-theme-light);
+}
+
+.toggle-icon {
+width: 24px;
+height: 24px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: var(--holy-theme-dark);
+color: white;
+border-radius: 50%;
+font-weight: bold;
+transition: transform 0.3s ease;
+}
+
+.topic-toggle.active .toggle-icon {
+transform: rotate(45deg);
+}
+
+.topic-content {
+display: none;
+padding: 0 1.5rem 1.5rem;
+}
+
+.concept-grid,
+.application-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 1.5rem;
+margin: 1rem 0;
+}
+
+.concept-card,
+.application-card {
+background: var(--holy-theme-light);
+padding: 1.5rem;
+border-radius: 8px;
+border-left: 4px solid var(--accent-color);
+}
+
+.checklist {
+display: flex;
+flex-direction: column;
+gap: 0.75rem;
+}
+
+.check-item {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+cursor: pointer;
+}
+
+.check-item input[type="checkbox"] {
+width: 18px;
+height: 18px;
+cursor: pointer;
+}
+
+.principles-explanation {
+display: grid;
+gap: 1.5rem;
+}
+
+.principle-section {
+background: var(--holy-theme-light);
+padding: 1.5rem;
+border-radius: 8px;
+}
+
+.application-points {
+list-style: none;
+padding-left: 0;
+}
+
+.application-points li {
+margin: 0.75rem 0;
+padding-left: 1.5rem;
+position: relative;
+}
+
+.application-points li::before {
+content: "→";
+color: var(--accent-color);
+position: absolute;
+left: 0;
+}
+
+@media (max-width: 768px) {
+.concept-grid,
+.application-grid {
+  grid-template-columns: 1fr;
+}
+
+.topic-toggle {
+  padding: 1rem;
+}
+}
+.content-section {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.meaning-grid,
+.observance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.meaning-card,
+.observance-card {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.study-topic {
+  margin: 1rem 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.topic-toggle {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+}
+
+.study-content {
+  padding: 1.5rem;
+}
+
+.scholar-quote {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.analysis-points ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.analysis-points li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.analysis-points li::before {
+  content: "•";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.timeline-item {
+  background: var(--holy-theme-light);
+  padding: 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-color);
+}
+
+.evidence-grid,
+.analysis-grid,
+.attitude-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.evidence-card,
+.analysis-card,
+.attitude-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--accent-color);
+}
+
+.important-note {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--holy-theme-light);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.timing-details {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.timing-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.timing-list li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.timing-list li::before {
+  content: "•";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .timeline-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .timeline-item::after {
+      content: "↓";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+}
+
+/* Purpose Box Styles */
+.purpose-box {
+  background: linear-gradient(135deg, var(--holy-theme-light), white);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.purpose-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.purpose-header i {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+.study-goals {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.goals-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.goals-list li {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.goals-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+/* In-depth Studies Styles */
+.in-depth-studies {
+  margin: 3rem 0;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.studies-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.studies-header i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.evidence-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.note-box {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.note-box i {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+}
+
+/* Footer Styles */
+.page-footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright-notice {
+  text-align: center;
+}
+
+.copyright-notice a {
+  color: var(--holy-theme-light);
+  text-decoration: none;
+}
+
+.footer-navigation {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-navigation a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.1);
+  transition: background 0.3s ease;
+}
+
+.footer-navigation a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-navigation {
+      width: 100%;
+      justify-content: center;
+  }
+}
+
+.topic-toggle {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.topic-toggle:hover {
+  background-color: var(--accent-color);
+}
+
+.topic-toggle.active {
+  background-color: var(--accent-color);
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.topic-toggle.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.topic-content {
+  background: white;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.topic-content.active {
+  padding: 1.5rem;
+  max-height: none;
+}
+
+/* Animation for content */
+.topic-content {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.topic-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect for toggle button */
+.topic-toggle:hover .toggle-icon {
+  background: rgba(255,255,255,0.3);
+}
+
+/* Focus styles for accessibility */
+.topic-toggle:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .topic-toggle {
+      padding: 1rem;
+  }
+
+  .topic-content.active {
+      padding: 1rem;
+  }
+}
+.in-depth-studies {
+  margin: 3rem 0;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.studies-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.studies-header i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.study-topic {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.topic-toggle {
+  width: 100%;
+  padding: 1.5rem;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle-icon {
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.study-content {
+  display: none;
+  padding: 0;
+  background: white;
+}
+
+.content-wrapper {
+  padding: 2rem;
+}
+
+.evidence-box {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.practical-note {
+  display: flex;
+  gap: 1rem;
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.scripture-text {
+  font-style: italic;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--holy-theme-light);
+  border-radius: 8px;
+}
+
+.scholarly-insight {
+  background: var(--holy-theme-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.analysis-sections {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+      padding: 1rem;
+  }
+}
+@keyframes slideDown {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+}
+.teaching-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .teaching-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        border-left: 4px solid var(--accent-color);
+    }
+
+    .evidence-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .evidence-card {
+        background: var(--holy-theme-light);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .conclusion-box {
+        background: linear-gradient(135deg, var(--holy-theme-light), white);
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 1.5rem;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .insight-box {
+        background: var(--holy-theme-light);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+
+    .highlight {
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+
+    .principle-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 1rem;
+    }
+
+    .principle-list li {
+        margin: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .principle-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
+    .implications {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .teaching-grid,
+        .evidence-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    .in-depth-studies {
+        margin: 3rem 0;
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        padding: 2rem;
+    }
+
+    .studies-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .studies-header i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .interpretation-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .interpretation-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .context-box,
+    .implications-box {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+
+
+</style>
+
+
+</head>
+<body oncontextmenu="return false">
+    <div class="series-banner">
+        Doctrine of Sanctification and Obedience
+    </div>
+
+    <div class="series-header">
+        <div class="content">
+            <h1>5.6 The Sabbath in the New Testament</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Introduction Box -->
+        <div class="purpose-box">
+            <div class="purpose-header">
+                <i class="fas fa-book-open"></i>
+                <h2>Introduction</h2>
+            </div>
+            <div class="purpose-content">
+                <p>The Sabbath was given at creation and has eternal value because this day celebrates God as our Father-Creator, and He will remain so forever. It is therefore natural that we find the Sabbath also in the New Testament.</p>
+            </div>
+        </div>
+
+        <!-- Main Content Section 1 -->
+        <div class="content-section">
+            <h2>1. Understanding Jesus' Perspective on the Law</h2>
+            <div class="scripture-analysis">
+                <span class="scripture-reference">Matthew 5:17-20</span>
+                <div class="analysis-content">
+                    <p>Some interpret these verses as if Jesus had fulfilled, finished the law, and therefore we no longer need to concern ourselves with it. If this were true, we would have to ask whether we have license to kill since Jesus perfectly fulfilled the commandment "do not kill."</p>
+                    <div class="key-points">
+                        <h3>Key Understanding:</h3>
+                        <ul>
+                            <li>Jesus said: "Think not that I am come to destroy... but to fulfill"</li>
+                            <li>Greek word "pleroo" means "to fulfill, complete, bring to perfection"</li>
+                            <li>Jesus revealed law's deep meaning of love and non-violence</li>
+                            <li>Called for deeper observance than the Pharisees</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- Section 2 -->
+<div class="content-section">
+  <h2>2. Jesus' Sabbath Observance</h2>
+  <div class="scripture-box">
+      <span class="scripture-reference">Luke 4:15</span>
+      <div class="insight-box">
+          <p class="highlight">Note: Jesus observed the Sabbath not as a Jewish custom but as His own habit.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Section 3 -->
+<div class="content-section">
+  <h2>3. Jesus' Teaching About Sabbath Observance</h2>
+  <div class="teaching-grid">
+      <div class="teaching-card">
+          <span class="scripture-reference">Luke 6:5</span>
+          <h3>Lord of the Sabbath</h3>
+          <p>Jesus is Lord of the Sabbath and can reveal its true meaning and how to observe it.</p>
+      </div>
+
+      <div class="teaching-card">
+          <span class="scripture-reference">Matthew 12:12</span>
+          <h3>Doing Good</h3>
+          <p>"It is lawful to do good on the Sabbath." For Jesus, the Sabbath isn't inactivity but a day of love.</p>
+      </div>
+
+      <div class="teaching-card">
+          <span class="scripture-reference">Mark 2:27-28</span>
+          <h3>Made for Man</h3>
+          <p>"The Sabbath was made for man, not man for the Sabbath."</p>
+          <ul class="principle-list">
+              <li>Connects to creation purpose (Genesis 2:1-3)</li>
+              <li>Shows Sabbath as God's gift and blessing</li>
+              <li>Applies to all humanity, not just Israel</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<!-- Section 4 -->
+<div class="content-section">
+  <h2>4. Did Jesus Teach Sabbath Abolition After His Death?</h2>
+  <div class="evidence-box">
+      <span class="scripture-reference">Matthew 24:20</span>
+      <div class="analysis-content">
+          <p>Speaking of Jerusalem's destruction (70 AD), Jesus said to pray that flight wouldn't be in winter or on Sabbath.</p>
+          <div class="implications">
+              <h3>Key Implications:</h3>
+              <ul>
+                  <li>Assumes continued Sabbath observance after His death</li>
+                  <li>Shows concern for Sabbath sanctity</li>
+                  <li>Indicates ongoing validity for Christians</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Section 5 -->
+<div class="content-section">
+  <h2>5. Early Christian Church Evidence</h2>
+  <div class="evidence-grid">
+      <div class="evidence-card">
+          <h3>a) Terminology</h3>
+          <p>In all NT writings, "Sabbath" maintains its meaning of "rest"</p>
+      </div>
+
+      <div class="evidence-card">
+          <h3>b) Paul's Practice</h3>
+          <span class="scripture-reference">Acts 13:14,42,44; 16:13; 17:2</span>
+          <p>Regular Sabbath observance and teaching</p>
+      </div>
+
+      <div class="evidence-card">
+          <h3>c) Apocalyptic Vision</h3>
+          <span class="scripture-reference">Revelation 14:6-13</span>
+          <p>References creation language from Sabbath commandment</p>
+      </div>
+  </div>
+</div>
+
+<!-- Section 6 -->
+<div class="content-section">
+  <h2>6. Conclusion</h2>
+  <div class="conclusion-box">
+      <p>Jesus, our Lord and model, observed the Sabbath and taught His disciples to do likewise, rediscovering its original meaning as God's gift, a sign of His love, and filling it with our love for God and others. This is what the early Christians did and what we want to continue doing.</p>
+  </div>
+</div>
+
+
+<div class="in-depth-studies">
+  <div class="studies-header">
+      <i class="fas fa-microscope"></i>
+      <h2>Additional In-depth Studies</h2>
+      <p>Click each topic to explore deeper insights</p>
+  </div>
+
+  <!-- Study 7 -->
+  <div class="study-topic">
+      <button class="topic-toggle" onclick="toggleStudy('study-7')">
+          <div class="toggle-header">
+              <span class="toggle-icon">+</span>
+              <h3>7. Understanding "Sabbatismos" in Hebrews 4:9</h3>
+          </div>
+      </button>
+      <div class="study-content" id="study-7">
+          <div class="content-wrapper">
+              <div class="scripture-box">
+                  <span class="scripture-reference">Hebrews 4:9</span>
+                  <p>"There remains, then, a Sabbath-rest (sabbatismos) for the people of God."</p>
+              </div>
+
+              <div class="analysis-grid">
+                  <div class="analysis-card">
+                      <h4>Three Types of Rest in Context:</h4>
+                      <ul>
+                          <li>Rest in Canaan after wilderness journey (vv. 1-3,5)</li>
+                          <li>Seventh-day rest at creation (vv. 3,4)</li>
+                          <li>Salvation rest (vv. 6-8)</li>
+                      </ul>
+                  </div>
+
+                  <div class="analysis-card">
+                      <h4>Interpretation</h4>
+                      <p>All three aspects contribute to a complete understanding where God is the source of all rest:</p>
+                      <ul>
+                          <li>Seventh-day Sabbath</li>
+                          <li>Promised land rest</li>
+                          <li>Peace in Christ</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Study 8 -->
+  <div class="study-topic">
+      <button class="topic-toggle" onclick="toggleStudy('study-8')">
+          <div class="toggle-header">
+              <span class="toggle-icon">+</span>
+              <h3>8. Galatians 4:10 - Days, Months, Seasons, and Years</h3>
+          </div>
+      </button>
+      <div class="study-content" id="study-8">
+          <div class="content-wrapper">
+              <div class="scripture-analysis">
+                  <span class="scripture-reference">Galatians 4:10</span>
+                  <p>"You observe days and months and seasons and years!"</p>
+                  
+                  <div class="key-points">
+                      <h4>Why This Doesn't Refer to Biblical Sabbath:</h4>
+                      <ul>
+                          <li>List doesn't match Old Testament festivals</li>
+                          <li>Context refers to pagan practices (v. 8)</li>
+                          <li>Addresses return to former idolatrous practices</li>
+                          <li>Refers to astrological superstitions</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Study 9 -->
+  <div class="study-topic">
+      <button class="topic-toggle" onclick="toggleStudy('study-9')">
+          <div class="toggle-header">
+              <span class="toggle-icon">+</span>
+              <h3>9. Romans 14:5-6 - Regarding Special Days</h3>
+          </div>
+      </button>
+      <div class="study-content" id="study-9">
+          <div class="content-wrapper">
+              <div class="analysis-sections">
+                  <div class="context-box">
+                      <h4>Context Understanding</h4>
+                      <ul>
+                          <li>Not about weekly worship day</li>
+                          <li>Connected to eating practices</li>
+                          <li>Likely refers to fasting days</li>
+                          <li>Addresses personal devotional practices</li>
+                      </ul>
+                  </div>
+
+                  <div class="implications-box">
+                      <h4>Practical Implications</h4>
+                      <ul>
+                          <li>Not about communal worship times</li>
+                          <li>Preserves church unity</li>
+                          <li>Addresses individual devotional practices</li>
+                          <li>Maintains importance of corporate worship</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Study 10 -->
+  <div class="study-topic">
+      <button class="topic-toggle" onclick="toggleStudy('study-10')">
+          <div class="toggle-header">
+              <span class="toggle-icon">+</span>
+              <h3>10. Colossians 2:16,17 - Shadows of Things to Come</h3>
+          </div>
+      </button>
+      <div class="study-content" id="study-10">
+          <div class="content-wrapper">
+              <div class="scripture-box">
+                  <span class="scripture-reference">Colossians 2:16,17</span>
+                  <p>"Therefore do not let anyone judge you by what you eat or drink, or with regard to a religious festival, a New Moon celebration or a Sabbath day. These are a shadow of the things that were to come; the reality, however, is found in Christ."</p>
+              </div>
+
+              <div class="interpretation-grid">
+                  <div class="interpretation-card">
+                      <h4>Three Possible Interpretations:</h4>
+                      <ol>
+                          <li>Freedom to observe or not observe</li>
+                          <li>Manner of observance</li>
+                          <li>Reasons for observance</li>
+                      </ol>
+                  </div>
+
+                  <div class="interpretation-card">
+                      <h4>Correct Understanding</h4>
+                      <p>Addresses manner of observance and unity in Christ, not abolition of Sabbath</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="5.5.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">5.5 The Sabbath in the Old Testament</span>
+            </a>
+            <a href="5.7.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">5.7- Sunday In the Bible</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+<!--Collapsible feature for Addition In-depth Section-->
+    <script>
+      function toggleStudy(studyId) {
+          const content = document.getElementById(studyId);
+          const button = content.previousElementSibling;
+          const icon = button.querySelector('.toggle-icon');
+          const allContents = document.querySelectorAll('.study-content');
+          const allButtons = document.querySelectorAll('.topic-toggle');
+          
+          // Close all other sections
+          allContents.forEach(item => {
+              if (item.id !== studyId) {
+                  item.style.display = 'none';
+                  item.previousElementSibling.classList.remove('active');
+                  item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+              }
+          });
+  
+          // Toggle current section
+          button.classList.toggle('active');
+          
+          if (content.style.display === 'none' || !content.style.display) {
+              content.style.display = 'block';
+              icon.textContent = '−';
+              content.style.animation = 'slideDown 0.3s ease-out';
+          } else {
+              content.style.animation = 'slideUp 0.3s ease-out';
+              setTimeout(() => {
+                  content.style.display = 'none';
+              }, 280);
+              icon.textContent = '+';
+          }
+      }
+  
+      // Initialize all sections as closed
+      document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.study-content').forEach(content => {
+              content.style.display = 'none';
+          });
+      });
+  </script>
+
+
+    <!-- No-copy protection scripts -->
+    <script>
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && 
+                (e.key === 'c' || 
+                 e.key === 'C' || 
+                 e.key === 'u' || 
+                 e.key === 'U' || 
+                 e.key === 'p' || 
+                 e.key === 'P')) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+            }
+        });
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+        });
+    </script>
+</body>
+</html>

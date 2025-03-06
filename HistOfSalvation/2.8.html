@@ -1,0 +1,885 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>2.3 God Promises a Savior | History of Salvation</title>
+    <link rel="stylesheet" href="/HistOfSalvation/styles2.css">
+    
+    
+    <style>
+/* Alternative Purpose Box Styling */
+.purpose-box {
+    background: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin: 2.5rem 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+}
+
+.purpose-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--divine-color), var(--wisdom-color));
+    border-radius: 15px 15px 0 0;
+}
+
+.purpose-box h2 {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.purpose-box h2::before {
+    content: '✦';
+    color: var(--divine-color);
+    font-size: 1.5rem;
+}
+
+.purpose-text {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.purpose-text p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.purpose-highlight {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.2) 0%, rgba(218, 165, 32, 0) 100%);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.purpose-highlight:hover {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.3) 0%, rgba(218, 165, 32, 0.1) 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .purpose-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .purpose-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .purpose-text {
+        padding-left: 1rem;
+    }
+
+    .purpose-text p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+.signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.sign-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.sign-card:hover {
+    transform: translateY(-5px);
+}
+
+.historical-note {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(to right, var(--accent-color-light), transparent);
+    border-radius: 8px;
+}
+
+.reflection-box {
+    background: var(--bg-accent);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.warning-box {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1rem 0;
+}
+
+.takeaway-points {
+    list-style: none;
+    padding: 0;
+}
+
+.takeaway-points li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.takeaway-points li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+
+      /* Page-specific styles */
+      .page-background {
+          background-image: url('../images/creation-bg.jpg');
+      }
+
+      .scripture-reference {
+          display: inline-block;
+          background: var(--divine-color);
+          color: var(--text-primary);
+          padding: 0.2rem 0.5rem;
+          border-radius: 4px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+      }
+
+      .question-section {
+          margin-bottom: 2rem;
+          background: white;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .comparison-table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin: 1.5rem 0;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+          padding: 1rem;
+          border: 1px solid var(--accent-color);
+      }
+
+      .comparison-table th {
+          background: var(--primary-color);
+          color: white;
+      }
+
+      .comparison-table tr:nth-child(even) {
+          background: var(--bg-accent);
+      }
+
+      /* Add hover effects */
+      .scripture-reference:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .question-section:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+      }
+
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+          .comparison-table {
+              font-size: 0.9rem;
+          }
+          
+          .comparison-table th,
+          .comparison-table td {
+              padding: 0.5rem;
+          }
+          
+          .question-section {
+              padding: 1rem;
+          }
+      }
+  
+      .insights-section {
+    margin: 3rem 0;
+    padding: 2rem;
+}
+
+.insight-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.analysis-points {
+    counter-reset: insight-counter;
+    list-style: none;
+    padding: 0;
+}
+
+.analysis-points li {
+    counter-increment: insight-counter;
+    margin-bottom: 1.5rem;
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.analysis-points li::before {
+    content: counter(insight-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scripture-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.dual-perspective {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.perspective-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.scripture-list {
+    list-style: none;
+    padding: 0;
+}
+
+.scripture-list li {
+    margin-bottom: 0.5rem;
+}
+
+    
+    
+        /* Additional page-specific styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--spacing-md);
+            border: 1px solid var(--primary-color);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: var(--bg-primary);
+        }
+
+        .scripture-reference {
+            color: var(--prophecy-color);
+            font-weight: 600;
+        }
+
+        .question-number {
+            color: var(--wisdom-color);
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .reflection-box {
+            background: linear-gradient(to right, var(--bg-accent), transparent);
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--wisdom-color);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+/* Navigation Button Styles */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Next Chapter Button - Royal Gold */
+.next-chapter {
+    background: #DAA520;
+    color: white;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
+.next-chapter:hover {
+    background: #B8860B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+}
+
+/* Additional Insight Button - Deep Burgundy */
+.study-button {
+    background: #800020;
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+}
+
+.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+/* Table of Contents Button - Rich Brown */
+.nav-button.toc {
+    background: #8B4513;
+    color: white;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.nav-button.toc:hover {
+    background: #723A0F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Home Button - Deep Forest Green */
+.home-button {
+    background: #2F4F4F;
+    color: white;
+    box-shadow: 0 4px 15px rgba(47, 79, 79, 0.3);
+}
+
+.home-button:hover {
+    background: #1F3333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(47, 79, 79, 0.4);
+}
+
+/* Hover Text for Buttons */
+.nav-button .hover-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 8px;
+}
+
+.nav-button:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Add arrow to hover text */
+.nav-button .hover-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+
+/* Additional Study Button Styling */
+.nav-button.study-button {
+    background: #800020; /* Deep burgundy */
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+.nav-button.study-button::before {
+    content: '📚'; /* Book emoji or can use Font Awesome icon */
+    margin-right: 8px;
+}
+
+
+
+
+
+.scripture-reference {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .navigation {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-button.study-button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-button .hover-text {
+        display: none; /* Hide hover text on mobile */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="chapter-header">
+            <h1>When Will Jesus Return?</h1>
+            <div class="purpose-box">
+                <h2>Purpose:</h2>
+                <div class="purpose-text">
+                    <p>To understand that Jesus' return concerns our present life, not just a distant, indefinite time. Although we don't know the day or hour, we can understand that the signs of the times are being fulfilled and that we already live in the last days. In any case, whenever the Lord comes, we should live as if He were coming today. While cultivating the joy of His coming, we must avoid being seduced by presumed signs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="introduction-box">
+            <p>Jesus' return is so important that we wish it would happen immediately. If we had been with His disciples on the Mount of Olives, we too would have asked: "Tell us, when will these things be, and what will be the sign of Your coming and of the end of the age?" (<span class="scripture-reference">Matthew 24:3</span>). Jesus had just announced that of the temple they had admired, not one stone would be left upon another. It was a terrible announcement that had disturbed their minds. The temple was God's house; how could it be destroyed? Their minds probably went to "apocalyptic" scenarios of the world's end. So they asked Jesus about the time of the temple's destruction and the end of the present age, as if they were one and the same reality. Jesus, of course, knew these were different realities. We find His answer in Matthew 24 and Luke 21.</p>
+        </div>
+
+        <!-- Main Questions -->
+        <div class="content-section">
+            <div class="question-section">
+                <h3><span class="question-number">1)</span> Can we know the moment when Jesus will return?</h3>
+                <div class="answer-box">
+                    <span class="scripture-reference">Matthew 24:1</span>
+                    <p>No one knows the day (see also <span class="scripture-reference">Acts 1:6,7</span>)</p>
+                </div>
+            </div>
+
+           <!-- Main Questions Continued -->
+<div class="question-section">
+  <h3><span class="question-number">2)</span> Can we know something about the general period?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">Matthew 24:32</span>
+      <p>"When you see these things, know that I am at the door."</p>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">3)</span> Is there a danger of seeking false signs?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">Matthew 24:4-11</span>
+      <div class="warning-box">
+          <p>Jesus warns about false signs and false messiahs that could deceive many.</p>
+      </div>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">4)</span> What specific sign does Jesus offer to understand when the world's end is near?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">Matthew 24:14</span>
+      <p>"This gospel of the kingdom will be preached in all the world as a witness to all nations, and then the end will come."</p>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">5)</span> What specific sign does Jesus give regarding Jerusalem's temple?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">Matthew 24:15-20</span>
+      <p>See explanation in <span class="scripture-reference">Luke 21:20</span></p>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">6)</span> What other signs does Jesus give?</h3>
+  <div class="signs-grid">
+      <div class="sign-card">
+          <h4>Celestial Signs</h4>
+          <span class="scripture-reference">Matthew 24:29</span>
+          <ul>
+              <li>Signs in sun, moon, and stars</li>
+              <li>The "Dark Day" - May 19, 1780</li>
+              <li>Meteoric shower - November 13, 1833</li>
+          </ul>
+          <div class="historical-note">
+              <p>These dates are significant in relation to prophetic times announcing the beginning of judgment in 1844 (<span class="scripture-reference">Daniel 8:14</span>).</p>
+          </div>
+      </div>
+
+      <div class="sign-card">
+          <h4>Social and Moral Signs</h4>
+          <ul>
+              <li><span class="scripture-reference">Matthew 24:37-39</span> - Indifference to God</li>
+              <li><span class="scripture-reference">Matthew 24:12</span> - Moral corruption</li>
+              <li><span class="scripture-reference">Revelation 11:17,18</span> - Ecological destruction and modern warfare risks</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">7)</span> Why has Jesus indicated signs but not the exact moment of His return?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">Matthew 24:42-51</span>
+      <ul>
+          <li>We must be ready every day</li>
+          <li>Not just when forced by fear of judgment</li>
+          <li>Understanding Jesus is near encourages preparation out of love</li>
+      </ul>
+  </div>
+</div>
+
+<div class="question-section">
+  <h3><span class="question-number">8)</span> Do you desire to be ready to meet Jesus?</h3>
+  <div class="answer-box">
+      <span class="scripture-reference">Matthew 7:21-27</span>
+      <p>"Not everyone who says to Me, 'Lord, Lord'..."</p>
+      <div class="reflection-box">
+          <h4>For Reflection:</h4>
+          <p>Being "Adventist," waiting for Christ's return, is more than waiting for Jesus at a chronologically determined time. This is important, but more important is living one's life in constant expectation of the Lord. He can return at any moment, and at any moment we desire to be ready.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Additional Insights Section -->
+<div class="insights-section">
+  <h2>Additional Insights</h2>
+
+  <!-- Insight 9: Historical Signs -->
+  <div class="insight-card">
+      <h3>9. How Should We Evaluate Christians Seeing Signs in Their Time?</h3>
+      <div class="insight-content">
+          <ol class="analysis-points">
+              <li>
+                  <h4>Heart's Tendency</h4>
+                  <p>The heart tends to see what it dreams. While this is a risk, it also testifies to love for Jesus' return. If we must choose, it's better to err through too much love than to be among those who don't err because of disinterest.</p>
+              </li>
+              <li>
+                  <h4>Growing Prophetic Understanding</h4>
+                  <p>The Bible itself predicts that knowledge of prophetic messages will increase toward the end times (<span class="scripture-reference">Daniel 12:4</span>). Without this better understanding, misinterpretation was possible.</p>
+              </li>
+              <li>
+                  <h4>Better Hermeneutical Understanding</h4>
+                  <p>Better understanding of interpretative principles now helps distinguish true signs from false ones. For example, wars and earthquakes mentioned in <span class="scripture-reference">Matthew 24</span> are often mistakenly considered as signs, when Jesus actually warns against this interpretation.</p>
+              </li>
+              <li>
+                  <h4>Indeterminate Signs</h4>
+                  <p>Some "signs" like moral corruption or lack of faith are inherently indeterminate. Faith is never enough, and immorality is always too much in this world.</p>
+              </li>
+          </ol>
+      </div>
+  </div>
+
+  <!-- Insight 10: Kingdom Focus -->
+  <div class="insight-card">
+      <h3>10. Does Waiting for Heaven's Kingdom Alienate Us from Earthly Engagement?</h3>
+      <div class="insight-content">
+          <div class="biblical-perspective">
+              <p>Christian hope should actually increase engagement for a better present:</p>
+              <div class="scripture-box">
+                  <span class="scripture-reference">Romans 14:17</span>
+                  <p>"For the kingdom of God is not eating and drinking, but righteousness, peace, and joy in the Holy Spirit."</p>
+              </div>
+
+              <h4>Fruits of the Spirit</h4>
+              <div class="scripture-box">
+                  <span class="scripture-reference">Galatians 5:22</span>
+                  <p>"Love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control"</p>
+              </div>
+
+              <div class="application-points">
+                  <h4>Two Key Principles:</h4>
+                  <ol>
+                      <li>Kingdom hope leads to present kingdom values</li>
+                      <li>Future certainty encourages present perseverance</li>
+                  </ol>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Insights 11-13: Understanding Time References -->
+  <div class="insight-card">
+      <h3>11-13. Understanding New Testament Time References</h3>
+      <div class="time-perspectives">
+          <div class="perspective-box">
+              <h4>"Last Times" References</h4>
+              <ul class="scripture-list">
+                  <li><span class="scripture-reference">Acts 2:17</span></li>
+                  <li><span class="scripture-reference">2 Timothy 3:1</span></li>
+                  <li><span class="scripture-reference">Hebrews 1:2</span></li>
+                  <li><span class="scripture-reference">James 5:3</span></li>
+                  <li><span class="scripture-reference">1 Peter 1:5</span></li>
+              </ul>
+              <p>With Jesus' coming, we entered a new phase of history. Everything necessary has been accomplished; we await only the final fulfillment.</p>
+          </div>
+
+          <div class="perspective-box">
+              <h4>Immediacy vs. Delay</h4>
+              <div class="dual-perspective">
+                  <div class="immediate">
+                      <h5>Sense of Immediacy</h5>
+                      <ul>
+                          <li><span class="scripture-reference">Romans 13:12</span></li>
+                          <li><span class="scripture-reference">Philippians 4:5</span></li>
+                          <li><span class="scripture-reference">Revelation 22:20</span></li>
+                      </ul>
+                  </div>
+                  <div class="delay">
+                      <h5>Recognition of Delay</h5>
+                      <ul>
+                          <li><span class="scripture-reference">Matthew 25:5</span> - Sleeping virgins</li>
+                          <li><span class="scripture-reference">Matthew 25:19</span> - "After a long time"</li>
+                          <li><span class="scripture-reference">2 Peter 3:8-9</span> - God's timing</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- Understanding Specific Time References -->
+<div class="specific-passages-section">
+    <h3>13. Understanding Specific Time References</h3>
+
+    <!-- Matthew 10:23 Analysis -->
+    <div class="passage-analysis">
+        <h4>The Mission of the Twelve (<span class="scripture-reference">Matthew 10:23</span>)</h4>
+        <div class="context-box">
+            <h5>Context:</h5>
+            <p>Jesus tells the disciples that the "Son of Man" would come before they finished preaching the gospel.</p>
+            
+            <div class="key-points">
+                <h5>Important Considerations:</h5>
+                <ul>
+                    <li>Limited Geographic Scope:
+                        <ul>
+                            <li>"Do not go among the Gentiles" (<span class="scripture-reference">Matthew 10:5-6</span>)</li>
+                            <li>Only to "the lost sheep of Israel"</li>
+                            <li>Temporary, local mission</li>
+                        </ul>
+                    </li>
+                    <li>Immediate Context:
+                        <ul>
+                            <li>Short-term separation from Jesus</li>
+                            <li>Mission lasted days or weeks</li>
+                            <li>Jesus continued teaching in their cities (<span class="scripture-reference">Matthew 11:1</span>)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transfiguration Passages -->
+    <div class="passage-analysis">
+        <h4>The Transfiguration Promise</h4>
+        <div class="scripture-group">
+            <span class="scripture-reference">Matthew 16:28; Mark 9:1; Luke 9:27</span>
+        </div>
+        
+        <div class="explanation-box">
+            <h5>Understanding the Promise:</h5>
+            <ul class="interpretation-points">
+                <li>Not referring to final kingdom manifestation</li>
+                <li>Refers to Transfiguration preview</li>
+                <li>Three disciples witnessed Christ's glory</li>
+                <li>Represents two groups of saved:
+                    <ul>
+                        <li>Moses - Those who die and are resurrected</li>
+                        <li>Elijah - Those translated without seeing death</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="textual-evidence">
+                <h5>Textual Support:</h5>
+                <ul>
+                    <li>All three gospels follow this saying with Transfiguration account</li>
+                    <li>Specific time references in each account</li>
+                    <li>Direct fulfillment in Peter, James, and John's experience</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Summary Section -->
+<div class="summary-section">
+  <h2>Key Takeaways</h2>
+  <ul class="takeaway-points">
+      <li>We cannot know the exact time of Jesus' return</li>
+      <li>We can recognize the signs of His coming</li>
+      <li>We should live in constant readiness</li>
+      <li>Our preparation should be motivated by love, not fear</li>
+  </ul>
+</div>
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation">
+            <a href="/HistOfSalvation/2.7.html" class="nav-button previous-chapter">
+                ← Previous Lesson
+                <span class="hover-text">2.7 The Return of Jesus</span>
+            </a>
+            <a href="/HistOfSalvation/2.9.html" class="nav-button next-chapter">
+                Next Lesson →
+                <span class="hover-text">2.9 The Millennium</span>
+            </a>
+                    <!---  
+          <a href="/HistOfSalvation/2.8.1.html" class="nav-button study-button">
+                Additional Study
+                <span class="hover-text">Deeper Study on the Timing of Christ's Return</span>
+            </a>
+                        -->
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Table of Contents
+                <span class="hover-text">View All Lessons</span>
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Main Page
+                <span class="hover-text">Return to Homepage</span>
+            </a>
+        </div>
+    </div>
+
+
+
+<!--Copy protection script-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Disable right-click
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+          if (
+              // Disable Ctrl+C, Ctrl+X, Ctrl+U
+              (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85)) ||
+              // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+              (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+              // Disable F12
+              e.keyCode === 123
+          ) {
+              e.preventDefault();
+              return false;
+          }
+      });
+
+      // Disable drag and drop
+      document.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable text selection via double click
+      document.addEventListener('mousedown', function(e) {
+          if (e.detail > 1) {
+              e.preventDefault();
+          }
+      });
+  });
+</script>
+</body>
+</html>

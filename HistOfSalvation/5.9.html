@@ -1,0 +1,879 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hygienic Laws: Food | Doctrine of Sanctification and Obedience</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Question Styling */
+        .question {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .question h3::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Collapsible Content */
+        .collapsible-header {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+        }
+
+        .collapsible-header:hover {
+            background: var(--secondary-color);
+        }
+
+        .collapsible-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            padding: 0 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .collapsible-content.show {
+            max-height: 2000px; /* Adjust as needed */
+            padding: 1.5rem;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* In-Depth Study Section */
+        .in-depth-study {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .in-depth-study h2 {
+            text-align: center;
+            color: var(--holy-theme-dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Details/Summary Styling */
+        details {
+            margin: 1rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: white;
+        }
+
+        summary {
+            padding: 1.2rem;
+            cursor: pointer;
+            background: var(--bg-secondary);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            position: relative;
+            outline: none;
+        }
+
+        summary:hover {
+            background: var(--secondary-color);
+        }
+
+        summary::after {
+            content: '⌄';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        details .content {
+            padding: 1.5rem;
+        }
+
+        /* Bible Reference Styling */
+        .bible-reference {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+            }
+
+            .nav-button {
+                min-width: 120px;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+        .question:nth-child(6) { animation-delay: 0.6s; }
+        .question:nth-child(7) { animation-delay: 0.7s; }
+        .question:nth-child(8) { animation-delay: 0.8s; }
+        .question:nth-child(9) { animation-delay: 0.9s; }
+        .question:nth-child(10) { animation-delay: 1s; }
+
+        /* Custom Details/Summary styling */
+        .custom-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-details summary {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            transition: background-color 0.3s ease;
+            outline: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .custom-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .custom-details summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-details[open] summary::after {
+            content: '−';
+        }
+
+        .custom-details summary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .custom-details .details-content {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Highlight for important points */
+        .highlight {
+            background-color: rgba(0, 188, 212, 0.1);
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        /* Numbered lists with custom styling */
+        ol.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Bulleted lists with custom styling */
+        ul.styled-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>5.9 Hygienic Laws: Food</h1>
+            <p>Someone said, "We are what we eat." What does God say about the foods we eat?</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="question">
+            <h3>1. What diet did God prescribe at creation?</h3>
+            <span class="scripture-reference">Genesis 1:29-30</span>
+            <p>It was a vegetarian diet because eating meat means killing creatures, and God created everything for life, not for death. Death is the result of sin <span class="bible-reference">(Romans 6:23)</span>. At creation, everything was good <span class="bible-reference">(Genesis 1:31)</span>, which means there was harmony and peace among all creatures.</p>
+        </div>
+
+        <div class="question">
+            <h3>2. What happened because of sin, and how did God react to this situation?</h3>
+            <span class="scripture-reference">Genesis 6:5-7,12</span>
+            <p>The earth was filled with violence. God's creatures began to kill each other. The peaceful vegetarian diet was abandoned, and creatures began killing to feed on other living creatures. What should we learn from God's reaction? Was He happy with that spectacle of violence?</p>
+        </div>
+
+        <div class="question">
+            <h3>3. When did God permit man to eat meat?</h3>
+            <span class="scripture-reference">Genesis 9:2-3</span>
+            <p>God permitted eating meat after the flood, perhaps because they were already accustomed to doing so and perhaps because in the post-flood disrupted world, edible plants would not have been readily available for some time.</p>
+        </div>
+
+        <div class="question">
+            <h3>4. While eating meat, what rule did God ask to respect?</h3>
+            <span class="scripture-reference">Genesis 9:4</span>
+            <p>They were not to eat the animal's blood. This rule was explicitly reconfirmed for Christians at the first council of Jerusalem <span class="bible-reference">(Acts 15:20)</span>. This means that a Christian should not eat either blood or meat with blood. Practically, it means we should not eat meat from animals killed by suffocation.</p>
+        </div>
+
+        <div class="question">
+            <h3>5. What could be the meaning of this prohibition of blood?</h3>
+            <details class="custom-details">
+                <summary>Click to expand</summary>
+                <div class="details-content">
+                    <p>We offer two possible explanations:</p>
+                    <ol class="styled-list">
+                        <li><strong>Hygienic:</strong> It's better not to eat blood because it contains toxins, poisons produced by the animal, especially at the moment when, frightened, it is killed.</li>
+                        <li><strong>Spiritual:</strong> By asking us not to eat blood because it is the "life" of the animal, God tries to teach us to respect the life of living beings. In other words: God allows us to eat meat but teaches us that we should not consider it normal. The best way to respect the "life" of the animal is not to avoid eating its blood but to avoid killing it.</li>
+                    </ol>
+                </div>
+            </details>
+        </div>
+
+        <div class="question">
+            <h3>6. Since God permitted eating meat after the flood, does it mean that the original vegetarian diet, a sign of a harmonious world, has been forgotten?</h3>
+            <span class="scripture-reference">Isaiah 11:6-9</span>
+            <p>Not at all. It remains implicit in the prophetic expectation of a restored world where the wolf and the lamb will peacefully coexist. If wolves become non-violent, should humans continue to kill? The Bible teaches that in the new earth, God's creatures will do "neither harm nor damage because the knowledge of the Lord will fill the whole earth." This means that all creatures will live in full communion with God and in harmony with His desire for love and peace for all of them, not according to the will of sin that brings violence and death.</p>
+        </div>
+
+        <div class="question">
+            <h3>7. As Christians, we believe in the coming of God's kingdom. What consequences should this hope have in our present life?</h3>
+            <span class="scripture-reference">2 Peter 3:11-14 (Romans 14:17)</span>
+            <p>Waiting for God's kingdom doesn't just mean waiting for something in the future but beginning to live today according to the hope we have for tomorrow. God's kingdom, where peace and justice reign, must become a model for our current daily life.</p>
+            
+            <div class="think-about-it">
+                <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                <p>Does knowing that we won't eat meat in God's kingdom make us sad or happy? Could we have problems stopping eating meat today? How can we overcome them?</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>8. If we cannot be vegetarians, what limits should we accept?</h3>
+            <span class="scripture-reference">Leviticus 11</span>
+            <p>God, who knows the nature of all His creatures, teaches us to consider some animals, fish, and birds as unclean, meaning harmful to human nutrition. Trusting God, we make this teaching our own. This means we don't eat animals like pork, horse, rabbit, and all their derivatives like ham, bacon, etc. We also don't eat cats, dogs, mice, but this isn't a big problem for anyone, at least in our culture. We don't eat shellfish, octopus, and any aquatic creature that doesn't have both fins and scales. No one has problems with insects since we don't use them in our culture.</p>
+        </div>
+
+        <div class="question">
+            <h3>9. How can we understand the difference between clean and unclean animals?</h3>
+            <p>The Bible doesn't explain why some animals are clean and others unclean. How could God have explained it at the time when He gave these laws! As we've already seen, they were called to an act of faith and obedience, and the same applies to us. However, we have some possibility of understanding. Some unclean animals can more easily transmit diseases (mice) or are fattier (pork). All shellfish are like water purification filters and retain impurities in their bodies: eating them would be like having a water filter on our taps and then making a broth of it when it's nice and black.</p>
+        </div>
+
+        <div class="question">
+            <h3>10. What is the best way to understand Leviticus 11?</h3>
+            <span class="scripture-reference">Matthew 19:3-9</span>
+            <p>Jesus clearly teaches that not all laws found in the Old Testament express God's original perfect will. Some have provisional value due to human inability to live according to a higher ideal. Among these laws due to sin is also the one that allows eating clean animals. In Eden, before sin, when man was perfect and lived in an uncorrupted world, God gave an absolutely perfect law that prescribed the dietary use of only vegetables. In God's perfect coming kingdom, we will return to using only vegetables. In this perspective, eating clean meat is permitted, but we should try to honor God's ideal above all. If that's not possible for us, let's at least avoid eating unclean foods and blood, to better protect our health and to educate ourselves, little by little, to live in a way that testifies to our love for God's ideal of a world of love and peace.</p>
+        </div>
+
+        <div class="in-depth-study">
+            <h2>In-Depth Study</h2>
+            
+            <details class="custom-details">
+                <summary>1. In Israel, meat was eaten regularly, and sometimes God's law allowed and prescribed it. On what biblical basis can we support vegetarianism?</summary>
+                <div class="details-content">
+                    <p>We don't claim there's a commandment saying, "You shall be vegetarian!" Studying the Bible from a Christian perspective is much more than looking for a commandment. We are no longer servants who do something only if commanded (legalists) but children who love their heavenly Father and look to His heart and life to learn to imitate Him. If we understand that God likes something, we don't need Him to command us to do it, because we love and honor Him, and because we trust that what He desires is always the best for us.</p>
+                    
+                    <p>In this perspective, as we've already seen, we've discovered two important facts:</p>
+                    <ol class="styled-list">
+                        <li>God's perfect plan for the life of His creatures was vegetarianism <span class="bible-reference">(Genesis 1:29,30)</span>.</li>
+                        <li>God's plan for the next perfect world is once again vegetarianism <span class="bible-reference">(Isaiah 11:6-9)</span>.</li>
+                    </ol>
+                    
+                    <p>As we've seen, after the flood, God officially consented to His people consuming meat foods, but He continued to offer elements that encouraged vegetarianism:</p>
+                    <ol class="styled-list" start="3">
+                        <li>When God performed a miracle to give food to His people, He gave them manna, a vegetable food <span class="bible-reference">(Exodus 16)</span>.</li>
+                        <li>Along with manna, God sent them quails <span class="bible-reference">(Exodus 16:13)</span>, but while the quails lasted only one day, the manna lasted forty years. Some were not happy with this fact and began to complain, asking for a different diet, but what they really had in their hearts was the desire for meat <span class="bible-reference">(Numbers 11:4-10)</span>. These complainers were a "mixed multitude" (v. 4), that is, foreigners – probably Egyptians – who had mingled with the Israelites. They had joined God's people, impressed by the miracles they had seen done, but their hearts remained tied to their old habits, and they wanted to eat meat. And God gave it to them, but as soon as they had brought it to their lips (thus even before eating it), an epidemic struck many of them, causing a large number to die <span class="bible-reference">(Numbers 11:18-20,33)</span>. We can thus see how God Himself sometimes gives meat to His people, but also how, when it becomes an idol that commands our worship, He expresses His condemnation.</li>
+                    </ol>
+                </div>
+            </details>
+            
+            <details class="custom-details">
+                <summary>2. What are some reasons for being vegetarian?</summary>
+                <div class="details-content">
+                    <ol class="styled-list">
+                        <li><strong>Our physical health.</strong> Man was not created to be a carnivore. Even now, after a long history of sin, our biological structure is that of a vegetarian: consider the length of the intestine, for example, longer than that of carnivores. Even if we can eat meat, our body is not equipped to digest it harmlessly: the uric acid produced is harmful to our body. Consider animal fats that increase the amount of cholesterol in our body with often tragic consequences. Let's not neglect the fact that through meat we can be infected in many ways.</li>
+                        
+                        <li><strong>Modern breeding methods.</strong> Meat consumption becomes even more dangerous in our time due to the methods used in intensive farming that forces animals into an unnatural life, aggravated by the use of medicines, hormones, and unnatural foods.</li>
+                        
+                        <li><strong>Our spiritual growth and our testimony.</strong> Eating meat implies violence on God's creation and educates us to violence. Those who have God's kingdom in their hearts educate themselves to love and peace toward all creation. Vegetarianism is increasingly practiced in our countries, even outside the Christian faith, both for health reasons and for moral and spiritual reasons. Many do it influenced by non-Christian philosophies and religions. Isn't it a pity that Christians don't give a testimony that exalts the profound values of God's revelation?</li>
+                        
+                        <li><strong>Environmental protection and respect for the poor.</strong> Strange as it may seem, meat production implies an enormous waste of resources, making our planet poorer. If everyone were vegetarian, there would be more land and more food available for all.</li>
+                    </ol>
+                </div>
+            </details>
+            
+            <details class="custom-details">
+                <summary>3. Is it mandatory to be a vegetarian to be a Seventh-day Adventist?</summary>
+                <div class="details-content">
+                    <p>No. Vegetarianism is an ideal that everyone should try to live by, but not a law that we can impose indiscriminately. Some might have physical problems with a vegetarian diet. Some live in regions where it is very difficult to obtain vegetables. Even in our countries, a vegetarian diet requires some knowledge and experience to avoid creating deficiencies and eating disorders through an incorrect vegetarian diet.</p>
+                </div>
+            </details>
+            
+            <details class="custom-details">
+                <summary>4. What about veganism?</summary>
+                <div class="details-content">
+                    <p>Vegetarians normally eat a little milk, cheese, and eggs. For this reason, their diet is called ovo-lacto-vegetarian. Vegans, on the other hand, use only vegetables. Ellen G. White wrote that, due to pollution, the time would come for God's people to avoid eggs, milk, and derivatives. Some think that such times have already arrived or are anyway convinced that it is better to be exclusively vegetarian (vegan). It seems right to us that on an issue that concerns everyone's personal life, everyone should be free to decide in complete freedom. However, it's important to know, if you want to be vegan, that you need to be careful about the danger of lacking certain nutrients.</p>
+                </div>
+            </details>
+            
+            <details class="custom-details">
+                <summary>5. Some think that the law on clean and unclean meats was given only because of the climatic conditions in which ancient Israel lived, and that in our countries there is no reason to observe them.</summary>
+    
+                    <div class="details-content">
+                      <p>We could understand such an objection if the law concerned only the consumption of pork, which is very fatty and not suitable for very hot regions. But God's law goes far beyond this simple problem. If that had been the problem, God would have given a simple list of local animals not to eat. Instead, He distinguishes animals based on morphological characteristics that can be applied universally. For example, God forbids eating seal, a very common animal in cold countries inhabited by Eskimos. And it's no coincidence that the average lifespan of these people is among the lowest in the world. The objection doesn't work at all, not even regarding the prohibition of aquatic animals and unclean insects.</p>
+                  </div>
+              </details>
+              
+              <details class="custom-details">
+                  <summary>Discussion of some texts</summary>
+                  <div class="details-content">
+                      <h4>Introduction</h4>
+                      <p>Christians accustomed to respecting the distinction between clean and unclean meats are very few. Many simply don't know about it, others think that Christ and the apostles have abrogated this law. It's therefore useful to consider the texts that would prove this thesis to see if they are understood correctly, according to the intention of who wrote them and the context in which they are placed. The assumption of such misunderstandings is that Jesus abolished the Old Testament as a norm for Christians, but Jesus said just the opposite <span class="bible-reference">(Matthew 5:17-20)</span>. To avoid misunderstanding, we must apply the following principles:</p>
+                      
+                      <ol class="styled-list">
+                          <li>Place each text against the background of the general perspective of biblical teaching.</li>
+                          <li>Always consider the immediate literary context to see everything it says.</li>
+                          <li>Always consider the text for what it actually wants to say (what is it talking about?) and not for what we would like it to say.</li>
+                          <li>Always try to discover the social and religious context from which the problematic of the text might arise.</li>
+                      </ol>
+                      
+                      <p>Applying these simple principles, we'll see that the texts in discussion never talk about Leviticus 11 and refer to different issues.</p>
+                      
+                      <h4>Genesis 9:3</h4>
+                      <p><strong>Did God permit humans to eat every type of meat after the flood?</strong></p>
+                      
+                      <div class="scripture-box">
+                          <p>The text says: "Everything that lives and moves about will be food for you. Just as I gave you the green plants, I now give you everything."</p>
+                      </div>
+                      
+                      <p>Considering this text outside its context, we might conclude that any distinction between animals is excluded. However, we must note that the flood story tells us that God saved in the ark one pair of unclean animals and seven pairs of clean animals to "keep their kinds alive" <span class="bible-reference">(Genesis 7:3)</span>. We observe two elements:</p>
+                      
+                      <ol class="styled-list">
+                          <li>The distinction between clean and unclean animals already existed at the time of the flood. What was the purpose of this distinction? The only reason the Bible offers is to make a difference for food purposes and/or regarding sacrifices <span class="bible-reference">(Gen 8:20)</span>.</li>
+                          <li>Since only one pair of each unclean species was saved, if humans had killed even one, the species would have been destroyed, defeating the purpose for which they were saved in the ark.</li>
+                      </ol>
+                      
+                      <p>We can therefore conclude that immediately after the flood, when God's command already applied, it was assumed that people would eat only clean animals even though God "seems" to permit eating everything.</p>
+                      
+                      <p>Why then does it say: "Everything that lives and moves about will be food for you. Just as I gave you the green plants, I now give you everything"? The most likely answer is that the text expresses itself through an emphasized generalization, as if to say: "As at creation I gave you permission to use the plant kingdom, now I give you permission to use the animal kingdom." The Hebrew was accustomed to this type of language and understood it perfectly. Compare, for example, Exodus 9:6, which announces the death of "all" the livestock of Egypt, yet in Exodus 11:4 there are still animals. Obviously that "all" had a relative value, meaning "a great quantity." In fact, in the same account, in verse 3, it simply says "there will be a terrible plague."</p>
+                      
+                      <p>In any case, even if God had permitted eating any meat at the time of the flood, Leviticus 11 comes later and expresses God's real will for His people.</p>
+                      
+                      <h4>Matthew 15:1-20; Mark 7:1-23</h4>
+                      <p><strong>Did Jesus abolish the distinction between clean and unclean animals from Leviticus 11?</strong></p>
+                      
+                      <p>Some use Matthew 15:1-20 and the parallel in Mark 7:1-23 to support this thesis. However, if we read the context, we see that Jesus is not discussing Leviticus 11 at all, but a Pharisaic tradition that required washing hands before eating. We must also strongly note that while Jesus distances Himself from Pharisaic traditions, He affirms the necessity of observing God's commandments. He does this in our specific case by rebuking the Pharisees for transgressing God's commandments because of their tradition <span class="bible-reference">(Mt 15:3-9; Mk 7:6-13)</span>. Now Leviticus 11 is also God's law for Jesus, and it's absurd to present Him, contrary to what He Himself says, as if He were inviting people to transgress it.</p>
+                      
+                      <p>We must also note that the problem they were discussing was not hygienic but spiritual, otherwise we would have to believe that Jesus condemned washing hands before eating. To correctly understand the discussion between Jesus and the Pharisees, we need to know some facts:</p>
+                      
+                      <ol class="styled-list">
+                          <li>Initially, in the Pentateuch, even if the motivations given were clothed in spiritual values, the purity laws had an exclusively hygienic value. For example, if someone touched a dead person's body, they became unclean <span class="bible-reference">(Numbers 19:13)</span>, but this didn't mean it was forbidden to touch a dead person for burial: they simply had to wash themselves. This is evidently a hygienic rule that we ourselves observe even without tracing it back to the Bible. A person doesn't become bad because they've touched a corpse. We can understand this reality when we further note how, in Israel, the concept of unclean was paralleled with that of sacred, and that of pure with that of profane <span class="bible-reference">(Leviticus 10:10)</span>. It means that while the profane is pure, and therefore ordinary people can handle it normally, the sacred is unclean, not because it's bad, but because it can harm and therefore should not be handled in the wrong way or by the wrong people: if an unconsecrated man touches the sacred ark, he dies <span class="bible-reference">(1 Chronicles 13:9-10)</span>. Similarly, it's dangerous to touch anything that is unclean.</li>
+                          
+                          <li>However, over time, the concept of pure and impure was associated with moral and spiritual values, to indicate what was compatible or incompatible with communion with God. Isaiah, for example, considers himself a man of "unclean lips" who lives among a people of "unclean lips" <span class="bible-reference">(Isaiah 6:5)</span>. This doesn't mean the prophet had dirty lips or that he had touched, so to speak, a pig. He was unclean because he was a sinner, a member of a people of sinners, and therefore felt his unworthiness to stand before God's holiness.</li>
+                          
+                          <li>In Jesus' time, probably, the hygienic meaning of Levitical laws had been replaced by the moral and spiritual meaning of later times. Consequently, the Pharisees, who among other things exaggerated and improperly extended the scope of biblical laws, considered as sinners, and therefore unable to enjoy welcome from God, any person who had touched something "unclean." Jesus rejects this belief, saying that morally, what makes a person unclean is not what one touches or food eaten without having washed hands, but the state of one's heart regarding the values of love, honesty, justice, and faithfulness. As we can see, the discussion has nothing to do with the laws of Leviticus 11.</li>
+                      </ol>
+                      
+                      <p>Of course, this whole discussion doesn't mean we do well not to wash our hands. The problem doesn't arise from the thing itself but from the wrong meaning the Pharisees gave it.</p>
+                      
+                      <p>The phrase found in Mark 7:19, "In saying this, Jesus declared all foods clean" should be understood within the above discussion. All foods are pure, not in relation to their nature but to the way they are used and in relation to the purity of the hearts of God's children. In the specific case, food doesn't make one spiritually unclean just because it's touched with unwashed hands. We might perhaps also say that not even eating pork makes a person spiritually inferior (except when it happens as a sign of rebellion against God). But this doesn't mean it's wrong to wash one's hands or to avoid anything that can have a negative influence on our health.</p>
+                      
+                      <h4>Acts 10:11-16</h4>
+                      <p><strong>Many think that the vision Peter had means that after Jesus' death all animals are clean and can be eaten.</strong></p>
+                      
+                      <p>This is an unacceptable interpretation for several reasons:</p>
+                      
+                      <ul class="styled-list">
+                          <li>In what sense would God have purified unclean animals? Perhaps God has changed their biological nature and their way of living so they would no longer do harm? And if they retained their nature, if they weren't suitable for Israel, why should they be for Christians?</li>
+                          
+                          <li>Peter himself doesn't understand the vision as many do today. At first, he can't make sense of it, but when he sees the Gentile servants of the Gentile Cornelius arrive, and hears the angel's words inviting him to go with them without hesitation <span class="bible-reference">(Acts 10:17-21)</span>, then he understands that those unclean animals were the symbol of Gentiles, considered unclean by the Jews, but who now must be welcomed without discrimination into the Christian church <span class="bible-reference">(Acts 10:28)</span>. Note how the vision is inserted within the story of Cornelius, which begins shortly before and continues immediately after.</li>
+                          
+                          <li>The fact that Peter continues not to eat unclean foods <span class="bible-reference">(Acts 10:14)</span> even after having listened to Jesus' teaching on what defiles or doesn't defile <span class="bible-reference">(Matthew 15:1-20)</span>, strengthens the explanation we gave on this text in the previous discussion. Compare Acts 10:14 with Matthew 15:15, which shows how Peter was very attentive to what Jesus was teaching.</li>
+                      </ul>
+                      
+                      <h4>Romans 14</h4>
+                      <p><strong>Doesn't the Apostle Paul say that eating or not eating unclean foods concerns only individual choice?</strong></p>
+                      
+                      <p>Not at all. There is nothing in this chapter that could make us think of Leviticus 11. What the Apostle says is that some brothers think of eating only vegetables while others think of eating everything (v. 2). What does this discussion refer to? No one can say with certainty, because we don't know what issues were being discussed in the church of Rome. What is certain is that they are not discussing clean or unclean meats because otherwise, we wouldn't understand why some, in contrast with those who would like to eat everything, eat only vegetables. Most likely, the problem is the same as in the church of Corinth where some believers, to avoid eating meat from sacrifices to gods, not being able to know which meat came from such rituals and which didn't, decided not to eat meat at all <span class="bible-reference">(See 1 Corinthians 8:13)</span>. In that "everything" we must therefore see a reference to this problem, without this authorizing us to extend it also to the unclean meats of Leviticus 11. At most, one could suppose a reference to a sort of asceticism or dietary discipline favorable to vegetarianism. This could be left to individual choice. The issue is different if it's about obeying or not obeying a divine law.</p>
+                      
+                      <h4>1 Corinthians 10:19-32</h4>
+                      <p><strong>Doesn't Paul say that we can eat anything sold in the market or anything that people offer us?</strong></p>
+                      
+                      <p>The context clarifies that Paul is not talking about eating or not eating meat itself. His is not a dietary problem. He's only saying that if one wants to eat meat, one can do so without worrying about the fact that it might come from sacrifices made to idols, except if a brother, whose heart could be disturbed by this choice, explicitly informs you about the ritually pagan origin of that meat. In this case, Paul invites respecting the other's sensitivity. Not even in this text is there any reference to Leviticus 11, and we cannot therefore make Paul say something he doesn't talk about. See also chapter 8 to see how Paul was talking about the issue of meat sacrificed to idols.</p>
+                      
+                      <h4>Colossians 2:16,20-23</h4>
+                      <p><strong>Doesn't Paul invite us not to judge each other regarding "eating and drinking"? Doesn't he condemn those who teach "Do not handle! Do not taste! Do not touch!"?</strong></p>
+                      
+                      <p>Instead of "eating and drinking," some translations have "food and drink," but these are wrong translations. The Greek text doesn't refer to what is eaten (broma) but to the act of eating (brosis), it doesn't refer to the drink (poma) but to the act of drinking (posis). Therefore, it's not about the nature of what is eaten or drunk but about the way and times in which one eats and drinks. The same language "Do not handle! Do not taste! Do not touch!" has nothing to do with the dietary norms of Leviticus 11. Among other things, no Levitical law forbids drinking something except alcohol in a specific circumstance <span class="bible-reference">(Lev 10:9)</span>. To understand what the discussion is about, we must refer to realities different from biblical ones.</p>
+                      
+                      <p>Most likely, as many scholars recognize, the text refers to an ascetic tendency encouraged by the so-called philosophy teachers of Colossae <span class="bible-reference">(see Col 2:8)</span>. The Apostle is discussing their false non-biblical teachings, not what God teaches in the book of Leviticus. In other words, Paul is not criticizing those who respect the Levitical laws on clean and unclean meats, but people who try to impose human restrictions regarding eating and drinking as such. Most likely, they wanted to impose some sort of fasting as a sign of humility and contempt for the body <span class="bible-reference">(Col 2:23)</span>. The Levitical laws, on the other hand, were intended to protect the body, not to humiliate it.</p>
+                      
+                      <h4>1 Timothy 4:1-5</h4>
+                      <p><strong>This text has nothing to do with the hygienic laws of Leviticus.</strong></p>
+                      
+                      <p>The Apostle is not encouraging eating anything we can put in our mouth as long as we pray over it. Try with some poisonous mushroom and see if it works, or eat excessively and see the consequences! Nor is he saying that Christians can freely eat any type of meat. We don't want to load the Apostle's words with spurious meanings, but he is condemning people who forbid eating "foods that God created to be received with thanksgiving by those who believe and who know the truth" (v. 3). If we were to use this phrase literally, we should think that Paul wants to encourage eating only vegetables because only these God created to be used as food <span class="bible-reference">(Gen 1:29-30)</span>. However, it's clear from other texts that Paul is not talking about some special diet but about a general principle according to which everything God has created is good <span class="bible-reference">(Gen 1:31)</span>.</p>
+                      
+                      <p>Who are the adversaries he's confronting? The best answer is that they are adherents to Gnosticism. These believed that the creation of the physical world didn't come from the God revealed by Jesus and considered it something evil. Matter was the prison of the body, and marriage tended to be devalued and rejected because with the procreation it involved, it perpetuated the imprisonment of souls – considered as particles of God – in this world. In this perspective, many foods were considered more dangerous than others and were forbidden, not because they were unclean according to Leviticus 11, but because they came from the evil and inherently impure creation. We can thus understand why Paul says that "everything God created is good": not because we can eat anything we can put in our mouth, but because everything comes from God who created everything in a perfect and good way.</p>
+                      
+                      <h4>Hebrews 13:9</h4>
+                      <p><strong>We are invited not to be "carried away by all kinds of strange teachings. It is good for our hearts to be strengthened by grace, not by eating ceremonial foods, which is of no benefit to those who do so." What does this refer to?</strong></p>
+                      
+                      <p>It's not possible to say with certainty. The fact that these are "strange teachings" excludes that it refers to biblical teachings like those on clean and unclean foods. The following verses refer to the meat of sacrifices that the Israelite priests ate while Christians have an "altar" to which these cannot approach, a probable reference to the Lord's Supper in which Jesus becomes food and drink for believers. Who knows if, in this context, it doesn't want to think of some Judaizing practice supported by someone who wanted to reach some spiritual elevation, through participation in sacred banquets of some kind, almost imitating the priests of the old covenant! Who knows if these Judaizers didn't want to mix such practices with the Lord's Supper? Who knows if Paul isn't referring to former priests who missed their participation in the sanctuary rituals that also included eating portions of the sacrifices? <span class="bible-reference">(Lev 6:16-18; 7:15, 16, 31-34; Num 18:8-10; Dt 18:1,2)</span>. As we were saying, we can only make conjectures. In this sense, eating any food is of no benefit because it is grace in Christ that sustains us.</p>
+                      
+                      <p>Regarding strange practices, see 1 Timothy 1:3-4 where he invites Timothy to "command certain people not to teach false doctrines any longer or to devote themselves to myths and endless genealogies. Such things promote controversial speculations rather than advancing God's work—which is by faith." <span class="bible-reference">(See also Titus 3:9)</span>. We see how Paul is concerned about teachings that exaggerate the meaning and value of biblical laws, deviating their sense and impact in believers' lives.</p>
+                  </div>
+              </details>
+          </div>
+  
+          <!-- Navigation -->
+          <div class="navigation">
+              <a href="5.8.html" class="nav-button previous-chapter">
+                  ← Previous
+                  <span class="hover-text">5.8 Hygienic Laws: General Principles</span>
+              </a>
+              <a href="5.10.html" class="nav-button next-chapter">
+                  Next →
+                  <span class="hover-text">5.10 Hygienic Laws: Alcoholic Beverages</span>
+              </a>
+              <a href="/00Intro&Topics.html" class="nav-button toc">
+                  Contents
+              </a>
+              <a href="/Index.html" class="nav-button home-button">
+                  Home
+              </a>
+          </div>
+  
+          <!-- Copyright Footer -->
+          <footer class="page-footer">
+              <div class="footer-content">
+                  <div class="copyright-notice">
+                      <p>© 2025 All Rights Reserved</p>
+                      <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                  </div>
+              </div>
+          </footer>
+      </div>
+  
+      <!-- No-copy protection scripts -->
+      <script>
+          document.addEventListener('keydown', function(e) {
+              if (e.ctrlKey && 
+                  (e.key === 'c' || 
+                   e.key === 'C' || 
+                   e.key === 'u' || 
+                   e.key === 'U' || 
+                   e.key === 'p' || 
+                   e.key === 'P')) {
+                  e.preventDefault();
+                  alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+              }
+          });
+  
+          document.addEventListener('contextmenu', function(e) {
+              e.preventDefault();
+              alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+          });
+          
+          // Toggle details content when clicking on summary
+          document.addEventListener('DOMContentLoaded', function() {
+              const details = document.querySelectorAll('.custom-details');
+              
+              details.forEach(detail => {
+                  const summary = detail.querySelector('summary');
+                  
+                  summary.addEventListener('click', function(e) {
+                      e.preventDefault(); // Prevent default browser behavior
+                      
+                      // Toggle the open attribute
+                      if (detail.hasAttribute('open')) {
+                          detail.removeAttribute('open');
+                      } else {
+                          detail.setAttribute('open', 'true');
+                      }
+                  });
+              });
+              
+              // Animate questions on scroll
+              const questions = document.querySelectorAll('.question');
+              const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                      if (entry.isIntersecting) {
+                          entry.target.style.opacity = '1';
+                          entry.target.style.transform = 'translateY(0)';
+                      }
+                  });
+              }, { threshold: 0.1 });
+              
+              questions.forEach(question => {
+                  observer.observe(question);
+              });
+          });
+          
+          // Smooth scroll to anchors
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  
+                  document.querySelector(this.getAttribute('href')).scrollIntoView({
+                      behavior: 'smooth'
+                  });
+              });
+          });
+      </script>
+  </body>
+  </html>
+  

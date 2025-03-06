@@ -1,0 +1,978 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God's Sanctuary: The Holy Place and the Continual Service | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Question Styling */
+        .question {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .question h3::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Collapsible Content */
+        .collapsible-header {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+        }
+
+        .collapsible-header:hover {
+            background: var(--secondary-color);
+        }
+
+        .collapsible-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            padding: 0 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .collapsible-content.show {
+            max-height: 2000px; /* Adjust as needed */
+            padding: 1.5rem;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* In-Depth Study Section */
+        .in-depth-study {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .in-depth-study h2 {
+            text-align: center;
+            color: var(--holy-theme-dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Details/Summary Styling */
+        details {
+            margin: 1rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: white;
+        }
+
+        summary {
+            padding: 1.2rem;
+            cursor: pointer;
+            background: var(--bg-secondary);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            position: relative;
+            outline: none;
+        }
+
+        summary:hover {
+            background: var(--secondary-color);
+        }
+
+        summary::after {
+            content: '⌄';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        details .content {
+            padding: 1.5rem;
+        }
+
+        /* Bible Reference Styling */
+        .bible-reference {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+            }
+
+            .nav-button {
+                min-width: 120px;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+        .question:nth-child(6) { animation-delay: 0.6s; }
+        .question:nth-child(7) { animation-delay: 0.7s; }
+        .question:nth-child(8) { animation-delay: 0.8s; }
+        .question:nth-child(9) { animation-delay: 0.9s; }
+        .question:nth-child(10) { animation-delay: 1s; }
+        .question:nth-child(11) { animation-delay: 1.1s; }
+        .question:nth-child(12) { animation-delay: 1.2s; }
+        .question:nth-child(13) { animation-delay: 1.3s; }
+        .question:nth-child(14) { animation-delay: 1.4s; }
+        .question:nth-child(15) { animation-delay: 1.5s; }
+
+        /* Custom Details/Summary styling */
+        .custom-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-details summary {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            transition: background-color 0.3s ease;
+            outline: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .custom-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .custom-details summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-details[open] summary::after {
+            content: '−';
+        }
+
+        .custom-details summary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .custom-details .details-content {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Highlight for important points */
+        .highlight {
+            background-color: rgba(0, 188, 212, 0.1);
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        /* Numbered lists with custom styling */
+        ol.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Bulleted lists with custom styling */
+        ul.styled-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Sanctuary Diagram */
+        .sanctuary-diagram {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .sanctuary-diagram img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Two-column layout for sanctuary items */
+        .sanctuary-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .sanctuary-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sanctuary-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .sanctuary-item h4 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .sanctuary-item h4 i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        /* Tabbed content for sanctuary sections */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tab-label {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .tab-label:hover {
+            background: var(--secondary-color);
+        }
+
+        .tab-label.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            width: 100%;
+            padding: 1.5rem;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>6.1 God's Sanctuary: The Holy Place and the Continual Service</h1>
+            <p>Understanding the earthly sanctuary as a symbol of the plan of salvation centered in Christ</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="question">
+            <h3>Purpose</h3>
+            <p>To help understand the doctrine of the earthly sanctuary as a symbol of the plan of salvation centered in Christ. To show how the Lord taught and offered this plan even before the incarnation and death of Jesus. In this study, we will examine the service that took place in the courtyard and in the holy place, the service called "the continual," to prepare the way to understand the annual service of the day of atonement.</p>
+        </div>
+
+        <div class="question">
+            <h3>Introduction</h3>
+            <p>Not many Christians know the biblical teaching regarding the sanctuary. Yet it is something so important that, in addition to many other texts, two books of the Bible are almost entirely dedicated to it (Leviticus and Hebrews). Through the sanctuary, we know how God manifested His grace to sinners of the Old Testament and what is the meaning of salvation in Christ. The sanctuary helps us look to Jesus as our high priest and gives us confidence and hope.</p>
+        </div>
+
+        <div class="question">
+            <h3>Introductory Elements</h3>
+            <ol class="styled-list">
+                <li>The Bible teaches that the consequence of sin is death. <span class="bible-reference">Romans 6:23</span></li>
+                <li>Salvation and eternal life are offered through Jesus Christ. <span class="bible-reference">Romans 6:23</span></li>
+                <li>How could this salvation be represented and offered before the incarnation and sacrifice of Jesus?</li>
+            </ol>
+            
+            <p>From the beginning of human history, believers learned to express their faith in the coming of a Savior by offering sacrifices to God.</p>
+            
+            <p><span class="bible-reference">Genesis 3:7,21</span> tells us that after the first sin, the man and woman felt uncomfortable in their own minds and with the world around them. To remedy this situation, they covered themselves with fig leaves, a symbol of the inadequacy of human solutions to the problem of sin. What they needed was something more substantial than fig leaves, a durable "garment" that could truly cover their physical and spiritual "nakedness." To achieve this purpose, an animal was sacrificed and its skin used as a tunic. This was the first sacrifice: the life of an innocent being was offered to cover man's guilt and give him hope and security. God Himself offered this sacrifice, and it represents the gift that God would make of His Son on the cross as a sacrifice for salvation from our sins.</p>
+            
+            <p>Abel offered animal sacrifices to God <span class="bible-reference">(Genesis 4:4)</span> and the patriarchs continued this practice <span class="bible-reference">(Genesis 31:54)</span>. Many times these sacrifices are offered as a sign of gratitude to God, but sometimes their purpose is to ask for forgiveness of a committed sin <span class="bible-reference">(Job 1:5)</span>. At the beginning, everyone could offer their personal sacrifice wherever they were, but when Israel became God's people, He gave precise instructions on how and where to do it. The essential element of these norms was that the sacrifice could be offered only in one place, the sanctuary, which God commanded Moses to build <span class="bible-reference">(Exodus 25:8)</span>.</p>
+        </div>
+
+        <div class="question">
+            <h3>General Meaning of the Sanctuary</h3>
+            
+            <h4>4. After liberating them from slavery in Egypt, God asked His people to build a sanctuary, a tent intended for sacred use. What was its fundamental purpose?</h4>
+            
+            <span class="scripture-reference">Exodus 25:8,9</span>
+            <p>The sanctuary represented God's desire to share the life of His people, to assure them of His presence and love. Since at that time Israel lived in tents, the sanctuary was also a tent. When the people moved, God's tent moved with them, a wonderful symbol of Jesus who comes to stay with us and live our life. It's worth noting a special meaning of that tent: God Himself and not the people decides how it should be: it's God who decides how His people should be and what the way of salvation is. When Israel became sedentary and politically stable, Solomon built a temple in masonry, but the basic structure remained the same. However, even Solomon was aware of the limitations of that temple: however splendid, that building was only a pale reflection of God's true house, the temple in heaven <span class="bible-reference">(2 Chronicles 6:18-23)</span>. "The LORD is in his holy temple; the LORD's throne is in heaven; his eyes see, his eyelids test the children of man" <span class="bible-reference">(Psalm 11:4. See also 103:19; Isaiah 66:1)</span>.</p>
+        </div>
+
+        <div class="question">
+            <h3>5. How does the New Testament consider the sanctuary and its rites?</h3>
+            
+            <span class="scripture-reference">Hebrews 8:1-5</span>
+            <p>The letter to the Hebrews clarifies the spiritual and symbolic meaning of Israel's sanctuary: it was only a shadow, a parable, a symbol of the heavenly reality, and what happened there was a symbol of what Jesus would one day do for our salvation.</p>
+        </div>
+
+        <div class="question">
+            <h3>6. What was the sanctuary like?</h3>
+            
+            <div class="sanctuary-diagram">
+                <img src="/HistOfSalvation/images/Sanctuary.png" alt="Diagram of the Sanctuary" />
+            </div>
+            
+            <p>The complete description is found in Exodus 25-27, but Hebrews 9:1-5 offers us a summary (for the censer, see point 3 of paragraph a. below). It was divided into two rooms: the first was called the holy place, the second the most holy place or the holy of holies <span class="bible-reference">(Exodus 26:30-34)</span>.</p>
+            
+            <div class="tabs">
+                <div class="tab-label active" onclick="openTab(event, 'holy-place')">The Holy Place</div>
+                <div class="tab-label" onclick="openTab(event, 'most-holy-place')">The Most Holy Place</div>
+                <div class="tab-label" onclick="openTab(event, 'courtyard')">The Courtyard</div>
+            </div>
+            
+            <div id="holy-place" class="tab-content active">
+                <h4>The Holy Place contained:</h4>
+                <div class="sanctuary-items">
+                    <div class="sanctuary-item">
+                        <h4><i class="fas fa-menorah"></i> The Seven-branched Lampstand</h4>
+                        <p><span class="bible-reference">(Exodus 25:31-40; 26:35)</span> which had to burn perpetually <span class="bible-reference">(Exodus 27:20)</span>. In addition to a practical purpose, it can represent God's light. Jesus is the light of the world <span class="bible-reference">(John 9:5)</span>.</p>
+                    </div>
+                    
+                    <div class="sanctuary-item">
+                        <h4><i class="fas fa-bread-slice"></i> The Table of Showbread</h4>
+                        <p>On which twelve loaves were placed, one for each tribe <span class="bible-reference">(Exodus 26:35; Leviticus 24:5-9)</span>. It can represent the bread of life which is Jesus <span class="bible-reference">(John 6:48)</span>.</p>
+                    </div>
+                    
+                    <div class="sanctuary-item">
+                        <h4><i class="fas fa-fire-alt"></i> The Altar of Incense</h4>
+                        <p>Just before the veil that separated the holy place from the most holy place <span class="bible-reference">(Exodus 30:1,6)</span>. This incense represents the prayers of God's people, welcomed, indeed, as a sweet fragrance <span class="bible-reference">(Revelation 8:3)</span>.</p>
+                        <p>(In Hebrews 9:1 it is said that this altar belonged to the most holy place. This can be explained by the fact that, although located in the holy place, its incense rose above the curtain and penetrated into the most holy place, where God's presence was manifested. It thus served the most holy place even though it was in the holy place.)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="most-holy-place" class="tab-content">
+                <h4>The Most Holy Place contained:</h4>
+                <div class="sanctuary-items">
+                    <div class="sanctuary-item">
+                        <h4><i class="fas fa-box"></i> The Ark of the Covenant</h4>
+                        <p><span class="bible-reference">(Exodus 26:33)</span>, which served as a footstool of God's invisible throne <span class="bible-reference">(1 Chronicles 28:2)</span>.</p>
+                    </div>
+                    
+                    <div class="sanctuary-item">
+                        <h4><i class="fas fa-tablets"></i> The Tablets of the Law</h4>
+                        <p>Inside the ark were the two tablets of the ten commandments <span class="bible-reference">(Exodus 25:16)</span>. Ancient peoples used to place their treaties, their laws, at the feet of their gods, calling them to be their custodians and witnesses of their faithful observance. This means that the Decalogue was the fundamental law of the covenant between God and Israel, and that Israel committed to observe it faithfully. God would be a witness to any of their transgressions. The decalogue was therefore called the "testimony" <span class="bible-reference">(Exodus 25:21)</span> and the ark was called "the ark of the testimony" <span class="bible-reference">(Exodus 25:22)</span>.</p>
+                    </div>
+                    
+                    <div class="sanctuary-item">
+                        <h4><i class="fas fa-shield-alt"></i> The Mercy Seat</h4>
+                        <p>The ark was closed by a cover called kapporet, generally translated as mercy seat, but which can simply mean "cover" <span class="bible-reference">(Exodus 25:21)</span>.</p>
+                    </div>
+                    
+                    <div class="sanctuary-item">
+                        <h4><i class="fas fa-angel"></i> The Cherubim</h4>
+                        <p>Above the mercy seat were two angels representing the angelic court that worships God <span class="bible-reference">(Exodus 25:17-21)</span>. Angels were also embroidered on all the inner curtains of the sanctuary <span class="bible-reference">(Exodus 26:1)</span>.</p>
+                    </div>
+                    
+                  
+                          <div class="sanctuary-item">
+                            <h4><i class="fas fa-cloud"></i> The Shekinah</h4>
+                            <p>Between these two angels was manifested the Shekinah (a term used in rabbinic literature to indicate God's presence. From the same root as the verb "to dwell"), the glorious presence of God <span class="bible-reference">(Exodus 25:8,22)</span>.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="courtyard" class="tab-content">
+                    <h4>7. The sanctuary was located within a courtyard reserved for God's service <span class="bible-reference">(Exodus 27:9)</span></h4>
+                    <div class="sanctuary-items">
+                        <div class="sanctuary-item">
+                            <h4><i class="fas fa-fire"></i> The Altar for Burnt Offerings</h4>
+                            <p>("Burnt offering" means "entirely burned"), for burning part of the sacrifices <span class="bible-reference">(Exodus 40:6)</span>. At its foot, sacrifices were offered. It constituted the first stage in the journey toward God: it is thanks to the offering of a sacrifice, a symbol of Jesus' sacrifice, that we can begin our path toward God and the salvation He offers. These sacrifices are the symbol, as we will see, of Jesus' sacrifice who offers His life in our place. He is our way to God <span class="bible-reference">(John 14:6)</span>.</p>
+                        </div>
+                        
+                        <div class="sanctuary-item">
+                            <h4><i class="fas fa-water"></i> The Bronze Laver</h4>
+                            <p>A bronze basin for purifications <span class="bible-reference">(Exodus 40:7)</span> is the second furnishing, between the altar of burnt offerings and the sanctuary proper. It represents the purification offered to us through Christ. It is thanks to this purification that we can enter the sanctuary and enjoy full communion with God. We can see in it a symbol of Christian baptism, through which we have forgiveness of sins in Jesus' name and enter to be part of His people.</p>
+                        </div>
+                    </div>
+                    
+                    <h4>8. What spiritual meaning can we attribute to the courtyard as a whole?</h4>
+                    <p>While the earthly sanctuary represents the heavenly one and the mediation that Jesus performs there on our behalf, the courtyard can represent the experience that Jesus lived for us in this world (His cross) and the benefits of His grace already in this earthly life of ours.</p>
+                </div>
+            </div>
+    
+            <div class="question">
+                <h3>The Sin Offerings</h3>
+                <h4>9. Many different types of sacrifices were offered in the sanctuary. However, the most important were those for sin.</h4>
+                
+                <ol class="styled-list">
+                    <li>The sinner had to become aware of his sin and offer a sacrifice <span class="bible-reference">(Leviticus 5:5,6)</span>.</li>
+                    <li>He had to confess his sin <span class="bible-reference">(Leviticus 5:5)</span>. Note that sin was not confessed to a priest but directly to God.</li>
+                    <li>He had to place a hand on the head of the sacrifice <span class="bible-reference">(Leviticus 4:4,15,24,29)</span>. In this way, he identified himself with the animal that died taking his place. Other texts allow us to understand that this laying on of hands coincided with the confession of sins <span class="bible-reference">(Leviticus 16:20-22)</span>. Every time hands are laid on someone, it is always to transfer something to them. It could be a blessing on children <span class="bible-reference">(Genesis 48:14,20)</span> or, in the case of a consecration, the authority to perform the assigned office <span class="bible-reference">(Acts 13:2,3)</span>. In the case of confession of sin, what was transmitted was the sin itself, and the animal died for the sinner's sin.</li>
+                    <li>It was the sinner himself who had to kill the animal. Applying all this to our relationship with Jesus, we understand that our Savior was not put to death only by the Jews or the Romans because we are all morally responsible for His death: our sins killed Him <span class="bible-reference">(Isaiah 53:5; 1 Corinthians 15:3)</span>.</li>
+                </ol>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                    <p>When we understand this fact, what does our sinning become?</p>
+                </div>
+            </div>
+    
+            <div class="question">
+                <h3>10. On what basis can we say, as we have done, that the sin offering represented Jesus?</h3>
+                
+                <span class="scripture-reference">John 1:29</span>
+                <p>Jesus is the true sin offering. He gave His life for our forgiveness and salvation. The following texts will also confirm this understanding.</p>
+            </div>
+    
+            <div class="question">
+                <h3>11. What differences are there between animal sacrifices and that of Jesus?</h3>
+                
+                <ul class="styled-list">
+                    <li><span class="bible-reference">Hebrews 9:9,12; 10:1,4</span>: Animal sacrifices were only symbols and could not solve the problem of sin. Only Jesus' sacrifice can do that.</li>
+                    <li><span class="bible-reference">Hebrews 10:1,14</span>: Animal sacrifices cannot change our lives, but Jesus' sacrifice can.</li>
+                    <li><span class="bible-reference">Hebrews 9:26; 10:12</span>: Animal sacrifices were many, Jesus' sacrifice is unique and forever. This is why we cannot consider the Catholic Mass as a sacrifice and the Eucharist as the repeated offering of His body.</li>
+                </ul>
+            </div>
+    
+            <div class="question">
+                <h3>The Priests</h3>
+                <h4>12. Who helped the sinner present his sacrifice before God?</h4>
+                
+                <p>After the sacrifice was offered by the sinner, it had to be presented before God in the sanctuary, but the sinner could not enter it. There was therefore a need for a mediator, and this was the role played by the priests. There were two ways in which the sin offering could be presented before God:</p>
+                
+                <ol class="styled-list">
+                    <li>Through the blood brought into the sanctuary <span class="bible-reference">(Leviticus 4:5,6,16)</span>. This happened, however, only in the most important cases; the entire people or the (high) priest who represented them.</li>
+                    <li>For most sacrifices, those of common individuals, the sacrifice was brought directly into the sanctuary by the priests who ate its flesh in the holy place <span class="bible-reference">(Leviticus 10:17,18)</span>.</li>
+                </ol>
+            </div>
+    
+            <div class="question">
+                <h3>13. Why did the sacrifice have to be brought inside the sanctuary?</h3>
+                
+                <ol class="styled-list">
+                    <li>A first answer is that this had to be done simply because it was being presented to God whose presence was manifested in the sanctuary.</li>
+                    <li>But the text of Leviticus 10:17,18 emphasizes another aspect. If in the courtyard it was the sinner himself who offered the sacrifice, it was then brought inside the sanctuary, into God's presence, by a mediator: the priest. In this way, the priest took charge of the sin that had been forgiven and removed from the penitent sinner. In some way, he took it and carried it upon himself into the sanctuary to complete the process of atonement.</li>
+                </ol>
+            </div>
+    
+            <div class="question">
+                <h3>14. What relationship does the Gospel establish between the priests and Jesus?</h3>
+                
+                <ul class="styled-list">
+                    <li><span class="bible-reference">Hebrews 8:1</span>: Jesus is our only High Priest, our only mediator <span class="bible-reference">(1 Timothy 2:5)</span>, the one who offers Himself as a sacrifice for our sins.</li>
+                    <li><span class="bible-reference">1 Peter 2:24</span>: as the ancient priests had to bear the people's sins, so Jesus bore our sins in His body.</li>
+                </ul>
+            </div>
+    
+            <div class="question">
+                <h3>15. What differences exist between the priests of the Old Testament and Jesus?</h3>
+                
+                <ul class="styled-list">
+                    <li><span class="bible-reference">Hebrews 5:5,6</span>: The former were human, Jesus is the Son of God.</li>
+                    <li><span class="bible-reference">Hebrews 4:14-16; 5:8,9</span>: The former were imperfect, Jesus is perfect.</li>
+                    <li><span class="bible-reference">Hebrews 7:23</span>: The former were many, Jesus is unique (NOTE: This is why we do not call gospel ministers priests).</li>
+                    <li><span class="bible-reference">Hebrews 7:23-24</span>: The former lived only for a short time, Jesus has an eternal ministry.</li>
+                    <li><span class="bible-reference">Hebrews 9:11,12</span>: The former offered animal sacrifices, Jesus offers Himself.</li>
+                </ul>
+            </div>
+    
+            <div class="question">
+                <h3>The Continual</h3>
+                
+                <p>Everything we have seen happening so far in the earthly sanctuary and in the heavenly one has a permanent value. Every day the Hebrews could confess their sins and offer their sacrifices; we can do the same through Jesus who, in the heavenly sanctuary, "always lives to make intercession" for us <span class="bible-reference">(Hebrews 7:25. See also 13:15)</span>.</p>
+                
+                <p>All these services, along with others, such as the collective sacrifices of morning and evening <span class="bible-reference">(Numbers 28:4)</span>, took place in the courtyard and in the holy place, the first room of the sanctuary <span class="bible-reference">(Hebrews 9:6)</span>.</p>
+                
+                <p>Thus a correspondence is established between the courtyard and the holy place with the service that is called "continual" (Among these continual rites there was naturally more, such as the burnt offerings of morning and evening, <span class="bible-reference">Exodus 29:38-42</span>). In the next study, we will see what kind of service takes place instead in the most holy place and discover the extraordinariness of its meaning, which refers to something that happens only once in history.</p>
+            </div>
+    
+            <!-- Navigation -->
+            <div class="navigation">
+                <a href="5.11.html" class="nav-button previous-chapter">
+                    ← Previous
+                    <span class="hover-text">5.11 Our Christian Life and Money (Tithe)</span>
+                </a>
+                <a href="6.2.html" class="nav-button next-chapter">
+                    Next →
+                    <span class="hover-text">6.2 God's Sanctuary: The Most Holy Place & The Day of Judgment</span>
+                </a>
+                <a href="/00Intro&Topics.html" class="nav-button toc">
+                    Contents
+                </a>
+                <a href="/Index.html" class="nav-button home-button">
+                    Home
+                </a>
+            </div>
+    
+            <!-- Copyright Footer -->
+            <footer class="page-footer">
+                <div class="footer-content">
+                    <div class="copyright-notice">
+                        <p>© 2025 All Rights Reserved</p>
+                        <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    
+        <!-- No-copy protection scripts -->
+        <script>
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && 
+                    (e.key === 'c' || 
+                     e.key === 'C' || 
+                     e.key === 'u' || 
+                     e.key === 'U' || 
+                     e.key === 'p' || 
+                     e.key === 'P')) {
+                    e.preventDefault();
+                    alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                }
+            });
+    
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+            });
+            
+            // Toggle details content when clicking on summary
+            document.addEventListener('DOMContentLoaded', function() {
+                const details = document.querySelectorAll('.custom-details');
+                
+                details.forEach(detail => {
+                    const summary = detail.querySelector('summary');
+                    
+                    summary.addEventListener('click', function(e) {
+                        e.preventDefault(); // Prevent default browser behavior
+                        
+                        // Toggle the open attribute
+                        if (detail.hasAttribute('open')) {
+                            detail.removeAttribute('open');
+                        } else {
+                            detail.setAttribute('open', 'true');
+                        }
+                    });
+                });
+                
+                // Animate questions on scroll
+                const questions = document.querySelectorAll('.question');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                questions.forEach(question => {
+                    observer.observe(question);
+                });
+            });
+            
+            // Tab functionality
+            function openTab(evt, tabName) {
+                // Declare all variables
+                var i, tabContent, tabLabels;
+    
+                // Get all elements with class="tab-content" and hide them
+                tabContent = document.getElementsByClassName("tab-content");
+                for (i = 0; i < tabContent.length; i++) {
+                    tabContent[i].style.display = "none";
+                    tabContent[i].className = tabContent[i].className.replace(" active", "");
+                }
+    
+                // Get all elements with class="tab-label" and remove the class "active"
+                tabLabels = document.getElementsByClassName("tab-label");
+                for (i = 0; i < tabLabels.length; i++) {
+                    tabLabels[i].className = tabLabels[i].className.replace(" active", "");
+                }
+    
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(tabName).style.display = "block";
+                document.getElementById(tabName).className += " active";
+                evt.currentTarget.className += " active";
+            }
+            
+            // Smooth scroll to anchors
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

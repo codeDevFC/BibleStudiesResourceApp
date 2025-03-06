@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>Further Study: The Bible Speaks to Us | Church Bible Studies</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+
+
+    <style>
+
+       /* Root Variables */
+:root {
+    --primary-color: #2c3e50;
+    --bg-color: #ecf0f1;
+    --accent-color: #3498db;
+    --highlight-color: #f1c40f;
+    --quote-bg: #e8f4ff;
+    --container-width: 90%;
+    --max-width: 800px;
+    --bg-image: url('/IntroStudies/Images/group_1.jpg');
+    --header-image: url('path/to/header.jpg');
+    
+    /* Additional Color Variables */
+    --emphasis-color: #8e44ad;
+    --highlight-term-color: #e74c3c;
+    --btn-secondary-color: #7f8c8d;
+}
+
+   
+
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--primary-color);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+                url('images/scripture-study.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* Layout Components */
+.container {
+    width: var(--container-width);
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem;
+}
+
+/* Header Styles */
+.study-header {
+    text-align: center;
+    padding: 2.5rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('images/bible-study-header.jpg');
+    background-size: cover;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+
+/* Content Section Styles */
+.content-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Typography and Titles */
+.topic-title, .sub-title {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+.sub-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-left: 1rem;
+    border-left: 4px solid var(--accent-color);
+    background: linear-gradient(90deg, rgba(52, 152, 219, 0.1) 0%, rgba(52, 152, 219, 0) 100%);
+    border-bottom: none;
+}
+
+/* Scripture and Quote Styles */
+.scripture-reference, .scripture-cite, .quote {
+    background: var(--quote-bg);
+    color: #2980b9;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-style: italic;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.scripture-reference {
+    display: inline-block;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+}
+
+.scripture-cite:hover,
+.quote:hover {
+    background: #d5e9f7;
+}
+
+/* Highlight and Emphasis Styles */
+.highlight-term, .key-term {
+    color: var(--highlight-term-color);
+    font-weight: 600;
+    position: relative;
+    padding: 0 2px;
+}
+
+.highlight-term::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--highlight-term-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.highlight-term:hover::after {
+    transform: scaleX(1);
+}
+
+/* List Styles */
+.point-list, .numbered {
+    list-style: none;
+    padding-left: 0;
+}
+
+.numbered {
+    counter-reset: item;
+}
+
+.numbered li {
+    counter-increment: item;
+    margin-bottom: 1.2rem;
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.numbered li::before {
+    content: counter(item);
+    background: var(--accent-color);
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Special Sections */
+.emphasis-box, .spirit-section {
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+}
+
+.emphasis-box {
+    background: rgba(241, 196, 15, 0.1);
+    border-left: 4px solid var(--highlight-color);
+    border-radius: 0 5px 5px 0;
+}
+
+.spirit-section {
+    background: linear-gradient(to right, rgba(46, 204, 113, 0.1), transparent);
+}
+
+/* Navigation and Buttons */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+}
+
+.btn-secondary {
+    background: var(--btn-secondary-color);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.next-chapter-btn {
+                    background: #e74c3c;  /* Different color to indicate chapter change */
+                    color: white;
+                    position: relative;
+                    overflow: hidden;
+                }
+        
+                .next-chapter-btn:hover {
+                    background: #c0392b;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                }
+        
+                .next-chapter-btn:hover::after {
+                    content: "Chapter 2.1: God Is Powerful & Loving Creator";
+                    position: absolute;
+                    bottom: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: #333;
+                    color: white;
+                    padding: 0.5rem;
+                    border-radius: 4px;
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    z-index: 1000;
+                }
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .study-header {
+        padding: 1.5rem;
+    }
+
+    .content-section {
+        padding: 1rem;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="study-header">
+            <h1 style="color: green;">Further Study Quests:<h1>The Bible Speaks to Us</h1></h1>
+            <h2 class="topic-title">Deeper Understanding of Scripture</h2>
+        </div>
+
+        <div class="content-section">
+            <h2 class="topic-title">10) The New Testament Writers and Scripture</h2>
+            <div class="highlight-box">
+                <p>When Jesus and the Apostles referred to "Scripture," they meant what we now call the Old Testament.</p>
+                <span class="scripture-reference">John 5:39, 2 Timothy 3:16, 2 Peter 3:16</span>
+            </div>
+            <div class="content-section">
+              <p>At that time, the <span class="highlight-term">New Testament</span> had not yet been written. When they began to write their letters and books, they were not even aware that they were beginning to compose what we now call the <span class="highlight-term">New Testament</span>. So, when they used the term <span class="key-concept">"Scripture,"</span> they were thinking of the <span class="highlight-term">Old Testament</span>. They considered it their Bible—the Bible of <span class="emphasis">Jesus</span>, the <span class="emphasis">Apostles</span>, and the first Christians. They loved its stories, its message, and its prophecies.</p>
+          
+              <p>As Christians, following their example, we should not think that the <span class="highlight-term">Old Testament</span> has no value for us. These writings are also <span class="key-concept">Christian writings</span> because they come from the same God who inspired the <span class="highlight-term">New Testament</span>, and at their center is the same <span class="emphasis">Jesus</span>. Therefore, the skepticism some Christians have toward the <span class="highlight-term">Old Testament</span>, as if it were something that does not concern them, is not justifiable.</p>
+          
+              <p>It is true that, coming from an older time and a world very different from ours, we sometimes find it more difficult to understand. However, this is a challenge that can be overcome through study.</p>
+          
+              <p>The first writing of what would later become the <span class="highlight-term">New Testament</span> seems to be Paul's first letter to the Thessalonians, written in <span class="key-concept">51 AD</span>. The first person to place a <span class="highlight-term">New Testament</span> writing on the same level as the ancient Scriptures was Peter, referring to some of Paul's writings (<span class="scripture-cite">2 Peter 3:15-16</span>).</p>
+          
+              <p>The letters and books of the <span class="highlight-term">New Testament</span> were generally written for a specific group of believers, for one or more churches in a particular region. Other churches had to wait some time before they too had access to a copy. The process of collecting all these writings into a single, universally recognized collection took at least a couple of centuries.</p>
+          </div>
+        </div>
+        <div class="content-section">
+            <h2 class="topic-title">11) The Bible and Tradition</h2>
+            <div class="highlight-box">
+                <h3>Key Points on Tradition:</h3>
+                <ul class="point-list">
+                    <!-- List the points -->
+                </ul>
+            </div>
+            <div class="content-section">
+              <p>The <span class="key-term">Catholic Church</span> places great importance on <span class="key-term">Tradition</span>. We can certainly say that many Catholic beliefs are based on it. But what is it? Where does it come from?</p>
+          
+              <div class="sub-title">The Role of Oral Tradition</div>
+              <p>The Catholic Church teaches that <span class="key-term">Jesus</span> did not write anything and that His message was initially transmitted orally. Catholics say that when Christians began to write, they did not record everything (<span class="quote">John 20:30-31; 21:25</span>). In this way, part of Jesus' teaching would have remained in oral form and would have been transmitted to us through what is called <span class="key-term">"oral Tradition."</span></p>
+          
+              <div class="emphasis-box">
+                  <p>This Tradition, according to Catholics, has been preserved by the Church up to our times. Likewise, the teachings of the apostles would have also been preserved. Additionally, everything that the Church has acquired over the centuries would have been received under the guidance of the Holy Spirit.</p>
+              </div>
+          
+              <div class="sub-title">Evaluating the Teaching</div>
+              <ol class="numbered">
+                <ol class="numbered">
+                  <li>It is true that Jesus did not write anything and that He entrusted His disciples with the task of bearing witness.</li>
+                  <li>It is also true that His disciples did not write everything that Jesus did.</li>
+                  <li>However, it is wrong to think that not all of Jesus' teachings have been transmitted to us. John writes that not all miracles were recorded, but he also states that what he did write is sufficient for believing and obtaining eternal life. If his writings alone were already sufficient, what should we say when we consider that we have three other Gospels and many additional writings on Jesus' teachings? Certainly, we have everything we need, even without any oral Tradition.</li>
+                  <li>It is wrong to base our faith on oral traditions because they can easily be altered.</li>
+                  <li>To ensure that His teaching was faithfully transmitted, Jesus did not entrust its preservation to an indistinct crowd but chose 12 eyewitnesses called Apostles (<span class="quote">Mark 3:14; Acts 1:20-21</span>). Their testimony is preserved in the books that make up the New Testament. Shortly after the death of the Apostles, many stories and teachings began to spread within the Church that had nothing to do with the truth of Jesus and the Apostles themselves. To prevent these ideas from contaminating the pure Christian faith, the Church carefully selected the writings that were circulating, choosing only those that undoubtedly came from the Apostles and their direct disciples. In this way, they adhered to a written rule: <span class="highlight-term">the Canon (= norm) of the New Testament</span>. Following their example, we reject any teaching that contradicts the canonical writings.</li>
+              </ol>
+          
+              <div class="sub-title">Jewish Traditions and Jesus' Teachings</div>
+              <div class="emphasis-box">
+                  <p>The Jews also believed that God had given Moses many laws not included in the written Law, and they thought these additional rules had been orally transmitted from generation to generation until the time of Jesus.</p>
+              </div>
+          
+              <p>In reality, these rules did not come from Moses at all but were the result of a later development of their beliefs. Many times, these teachings contradicted or altered what was found in the Scriptures. Jesus firmly rejected them and taught that the Scriptures should be followed to uphold and preach God's will (<span class="quote">Matthew 15:1-9</span>).</p>
+          
+              <div class="spirit-section">
+                  <div class="sub-title">The Guidance of the Holy Spirit</div>
+                  <p>Regarding the guidance of the <span class="key-term">Holy Spirit</span>, we must note that Jesus did not say that He would teach different things but that He would remind and help us understand what He had already said (<span class="quote">John 14:17</span>). Even in what may be considered new, the Spirit never contradicts what He has already given through the previous prophets and apostles (<span class="quote">1 Corinthians 14:32; Malachi 3:6</span>).</p>
+              </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="topic-title">12) Authority to Interpret Scripture</h2>
+            
+            <div class="content-section">
+              <div class="sub-title">Scripture Interpretation: Contrasting Views</div>
+              
+              <div class="contrast-box">
+                  <div class="contrast-item catholic">
+                      <h4>Catholic Teaching:</h4>
+                      <p>Only the <span class="key-emphasis">Pope and bishops</span> can officially interpret Scripture.</p>
+                  </div>
+                  
+                  <div class="contrast-item biblical">
+                      <h4>Biblical Perspective:</h4>
+                      <p>The Bible is addressed to <span class="key-emphasis">all believers</span>, who are personally responsible for studying it.</p>
+                      <p class="scripture-ref">1 Thessalonians 5:21; Acts 17:10-11</p>
+                  </div>
+              </div>
+          
+              <div class="conclusion-box">
+                  <p>The <span class="key-emphasis">Church</span> is meant to be a <span class="key-term">supportive community</span>, where believers:</p>
+                  <ul>
+                      <li>Study God's Word together</li>
+                      <li>Share insights and understanding</li>
+                      <li>Approach Scripture with humility</li>
+                      <li>Accept personal responsibility for learning</li>
+                  </ul>
+              </div>
+          </div>
+
+        </div>
+
+        <div class="navigation">
+            <a href="/IntroStudies/1.6.html" class="btn btn-secondary">← Back to Main Lesson</a>
+            <a href="/HistOfSalvation/2.1.html" class="btn next-chapter-btn">Begin Chapter 2 →</a>
+            <a href="/Index.html" class="btn btn-primary">Home</a>
+        </div>
+    </div>
+</body>
+</html>

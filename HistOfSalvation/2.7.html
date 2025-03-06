@@ -1,0 +1,791 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+     
+    <link rel="stylesheet" href="/HistOfSalvation/styles2.css">
+    
+    
+    <style>
+/* Alternative Purpose Box Styling */
+.purpose-box {
+    background: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin: 2.5rem 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+}
+
+.purpose-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--divine-color), var(--wisdom-color));
+    border-radius: 15px 15px 0 0;
+}
+
+.purpose-box h2 {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.purpose-box h2::before {
+    content: '✦';
+    color: var(--divine-color);
+    font-size: 1.5rem;
+}
+
+.purpose-text {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.purpose-text p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.purpose-highlight {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.2) 0%, rgba(218, 165, 32, 0) 100%);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.purpose-highlight:hover {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.3) 0%, rgba(218, 165, 32, 0.1) 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .purpose-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .purpose-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .purpose-text {
+        padding-left: 1rem;
+    }
+
+    .purpose-text p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+
+.reactions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.reaction-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.conclusion-points {
+    list-style: none;
+    padding: 0;
+}
+
+.conclusion-points li {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.conclusion-points li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.reflection-prompt {
+    background: linear-gradient(to right, var(--accent-color-light), transparent);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.next-study-note {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+}
+
+
+.summary-section,
+.insights-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.first-coming,
+.second-coming {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.analysis-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.analysis-box blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.biblical-response ol {
+    counter-reset: response-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+.biblical-response ol li {
+    counter-increment: response-counter;
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.biblical-response ol li::before {
+    content: counter(response-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+      /* Page-specific styles */
+      .page-background {
+          background-image: url('../images/creation-bg.jpg');
+      }
+
+      .scripture-reference {
+          display: inline-block;
+          background: var(--divine-color);
+          color: var(--text-primary);
+          padding: 0.2rem 0.5rem;
+          border-radius: 4px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+      }
+
+      .question-section {
+          margin-bottom: 2rem;
+          background: white;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .comparison-table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin: 1.5rem 0;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+          padding: 1rem;
+          border: 1px solid var(--accent-color);
+      }
+
+      .comparison-table th {
+          background: var(--primary-color);
+          color: white;
+      }
+
+      .comparison-table tr:nth-child(even) {
+          background: var(--bg-accent);
+      }
+
+      /* Add hover effects */
+      .scripture-reference:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .question-section:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+      }
+
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+          .comparison-table {
+              font-size: 0.9rem;
+          }
+          
+          .comparison-table th,
+          .comparison-table td {
+              padding: 0.5rem;
+          }
+          
+          .question-section {
+              padding: 1rem;
+          }
+      }
+  </style>
+    
+    
+    <style>
+        /* Additional page-specific styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--spacing-md);
+            border: 1px solid var(--primary-color);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: var(--bg-primary);
+        }
+
+        .scripture-reference {
+            color: var(--prophecy-color);
+            font-weight: 600;
+        }
+
+        .question-number {
+            color: var(--wisdom-color);
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .reflection-box {
+            background: linear-gradient(to right, var(--bg-accent), transparent);
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--wisdom-color);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+/* Navigation Button Styles */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Next Chapter Button - Royal Gold */
+.next-chapter {
+    background: #DAA520;
+    color: white;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
+.next-chapter:hover {
+    background: #B8860B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+}
+
+/* Additional Insight Button - Deep Burgundy */
+.study-button {
+    background: #800020;
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+}
+
+.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+/* Table of Contents Button - Rich Brown */
+.nav-button.toc {
+    background: #8B4513;
+    color: white;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.nav-button.toc:hover {
+    background: #723A0F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Home Button - Deep Forest Green */
+.home-button {
+    background: #2F4F4F;
+    color: white;
+    box-shadow: 0 4px 15px rgba(47, 79, 79, 0.3);
+}
+
+.home-button:hover {
+    background: #1F3333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(47, 79, 79, 0.4);
+}
+
+/* Hover Text for Buttons */
+.nav-button .hover-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 8px;
+}
+
+.nav-button:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Add arrow to hover text */
+.nav-button .hover-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+
+/* Additional Study Button Styling */
+.nav-button.study-button {
+    background: #800020; /* Deep burgundy */
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+.nav-button.study-button::before {
+    content: '📚'; /* Book emoji or can use Font Awesome icon */
+    margin-right: 8px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .navigation {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-button.study-button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-button .hover-text {
+        display: none; /* Hide hover text on mobile */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="chapter-header">
+            <h1>The Return of Jesus</h1>
+            <div class="purpose-box">
+                <h2>Purpose:</h2>
+                <div class="purpose-text">
+                    <p>To explain the meaning, importance, manner, and consequences of Jesus' return. To look confidently toward our future and be protected from false teachings.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="introduction-box">
+            <h2>Introduction</h2>
+            <p>When we say that Jesus came to earth to save humanity, we cannot overlook the fact that suffering and death still exist. Through His first coming and death, Jesus laid the foundation for our forgiveness, transformed us into children of God, and began the work that will lead to our salvation. Salvation is something that already belongs to us spiritually speaking, but the fullness of its realization still lies ahead, both for us and for all creation which "groans and labors" (<span class="scripture-reference">Romans 8:22</span>). This is why He says that for now, "we were saved in hope" (<span class="scripture-reference">Romans 8:24</span>), and hope is something that drives us to wait with "patience" for something still future (<span class="scripture-reference">Romans 8:25</span>). This salvation will be fully realized when Jesus returns again to restore everything to its best reality according to God's plan of love.</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-section">
+            <!-- Question 1 -->
+            <div class="question-section">
+                <h3><span class="question-number">1)</span> Jesus Will Return</h3>
+                <ul class="evidence-list">
+                    <li>a) Announced by angels at Jesus' ascension (<span class="scripture-reference">Acts 1:9-11</span>)</li>
+                    <li>b) The Apostle Paul expected it (<span class="scripture-reference">2 Timothy 4:8</span>)</li>
+                    <li>c) James expected it (<span class="scripture-reference">James 5:7</span>)</li>
+                    <li>d) Early Christians greeted with "Maranatha": The Lord is coming (<span class="scripture-reference">1 Corinthians 16:22</span>)</li>
+                    <li>e) The ancient Christian creed states: "He will come to judge"</li>
+                    <li>f) This return is the "blessed hope" of all true Christians (<span class="scripture-reference">Titus 2:13</span>)</li>
+                </ul>
+            </div>
+
+            <!-- Question 2 -->
+<div class="question-section">
+  <h3><span class="question-number">2)</span> Why Will Jesus Return?</h3>
+  <div class="answer-box">
+      <ul class="purpose-list">
+          <li>
+              <h4>a) To Judge the World</h4>
+              <span class="scripture-reference">Matthew 25:31-33; 2 Timothy 4:1; Jude 1:14,15</span>
+          </li>
+          <li>
+              <h4>b) To Take Us With Him</h4>
+              <span class="scripture-reference">John 14:1-3</span>
+          </li>
+          <li>
+              <h4>c) To Regenerate This World Corrupted by Sin</h4>
+              <span class="scripture-reference">2 Peter 3:13</span>
+          </li>
+          <li>
+              <h4>d) What Does All This Mean for Us?</h4>
+              <div class="reflection-prompt">
+                  [Space for personal reflection]
+              </div>
+          </li>
+      </ul>
+  </div>
+</div>
+
+<!-- Question 3 -->
+<div class="question-section">
+  <h3><span class="question-number">3)</span> How Will He Return?</h3>
+  <div class="answer-box">
+      <ul class="characteristics-list">
+          <li>
+              <h4>a) Unexpectedly, Like a Thief</h4>
+              <span class="scripture-reference">2 Peter 3:9,10; Matthew 24:44</span>
+          </li>
+          <li>
+              <h4>b) Visibly</h4>
+              <span class="scripture-reference">Matthew 24:23-27</span>
+          </li>
+          <li>
+              <h4>c) With Power and Glory</h4>
+              <span class="scripture-reference">Matthew 24:30</span>
+          </li>
+          <li>
+              <h4>d) With the Angels of Heaven</h4>
+              <span class="scripture-reference">Matthew 24:31</span>
+          </li>
+          <li>
+              <h4>e) Everyone Will See Him, Including Sinners</h4>
+              <span class="scripture-reference">Matthew 24:30; Luke 21:26; Revelation 1:7</span>
+          </li>
+      </ul>
+  </div>
+</div>
+
+<!-- Question 4 -->
+<div class="question-section">
+  <h3><span class="question-number">4)</span> What Will Happen on That Day?</h3>
+  <div class="answer-box">
+      <div class="reactions-grid">
+          <div class="reaction-card">
+              <h4>a) People Will React in Two Opposite Ways:</h4>
+              <ul>
+                  <li>
+                      <strong>1. Sinners:</strong> Will be terrified
+                      <span class="scripture-reference">Isaiah 2:17-21; Revelation 6:15-17</span>
+                  </li>
+                  <li>
+                      <strong>2. Faithful:</strong> Will rejoice
+                      <span class="scripture-reference">Isaiah 25:9</span>
+                  </li>
+              </ul>
+          </div>
+          <div class="reaction-card">
+              <h4>b) People Will Receive Two Different Destinies:</h4>
+              <ul>
+                  <li>
+                      <strong>1. Sinners:</strong> Will be destroyed
+                      <span class="scripture-reference">2 Thessalonians 2:8</span>
+                  </li>
+                  <li>
+                      <strong>2. Believers:</strong> Will all go with Jesus to heaven
+                      <span class="scripture-reference">1 Thessalonians 4:16-18</span>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Question 5 -->
+<div class="question-section">
+  <h3><span class="question-number">5)</span> Conclusion</h3>
+  <div class="answer-box">
+      <ul class="conclusion-points">
+          <li>
+              <h4>a) The Last Promise in the Bible</h4>
+              <p>Concerns Jesus' return (<span class="scripture-reference">Revelation 22:20</span>)</p>
+          </li>
+          <li>
+              <h4>b) Can We Respond Like John Did?</h4>
+              <div class="reflection-prompt">
+                  [Space for personal reflection]
+              </div>
+          </li>
+          <li>
+              <h4>c) The Lord's Prayer</h4>
+              <p>Jesus teaches us to pray: "Your kingdom come" (<span class="scripture-reference">Matthew 6:10</span>)</p>
+          </li>
+          <li>
+              <h4>d) Personal Application</h4>
+              <p>If we desire God's Kingdom to come, what consequences should this have in our lives?</p>
+          </li>
+      </ul>
+  </div>
+</div>
+
+<!-- Next Study Note -->
+<div class="next-study-note">
+  <p>In the next study, we will see when Jesus will return.</p>
+</div>
+
+
+<!-- Summary Section -->
+<div class="summary-section">
+  <h2>Summary</h2>
+  <div class="summary-content">
+      <p>As Christians, we believe that Jesus died for our sins, rose again, and ascended to heaven. But He has not abandoned us. Not only did He promise to be with us spiritually always (<span class="scripture-reference">Matthew 28:20</span>), but He promised to return to take us to be with Him eternally (<span class="scripture-reference">John 14:1-4</span>).</p>
+
+      <div class="key-points">
+          <h3>Key Aspects of Christ's Return</h3>
+          <ul>
+              <li>For Paul, this is the "blessed hope" (<span class="scripture-reference">Titus 2:13</span>)</li>
+              <li>Early Christians used it as their greeting "Maranatha" (<span class="scripture-reference">1 Corinthians 16:21</span>)</li>
+              <li>Without this promise, we would have no other hope</li>
+              <li>Only at Jesus' return will we enjoy the fullness of salvation</li>
+              <li>The dead in Christ will rise, and with the living, be transformed and taken with Jesus (<span class="scripture-reference">Matthew 24:31; 1 Corinthians 15:51-55; 1 Thessalonians 4:13-18</span>)</li>
+          </ul>
+      </div>
+
+      <div class="nature-of-return">
+          <h3>Nature of Christ's Return</h3>
+          <div class="comparison-grid">
+              <div class="first-coming">
+                  <h4>First Coming</h4>
+                  <ul>
+                      <li>Came in human humility</li>
+                      <li>Born in Bethlehem's manger</li>
+                      <li>Seen by relatively few people</li>
+                  </ul>
+              </div>
+              <div class="second-coming">
+                  <h4>Second Coming</h4>
+                  <ul>
+                      <li>Returns as King of kings and Lord of lords (<span class="scripture-reference">Revelation 19:16</span>)</li>
+                      <li>Comes with power and great glory (<span class="scripture-reference">Matthew 24:30</span>)</li>
+                      <li>Will be seen by all humanity (<span class="scripture-reference">Matthew 24:23-27</span>)</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      <div class="biblical-emphasis">
+          <p>The promise is repeatedly emphasized in Scripture (<span class="scripture-reference">Acts 1:11; Philippians 3:20; 2 Timothy 4:8; Hebrews 11:8-13; 2 Peter 3:9,10,13; 1 John 2:28</span>). It's unfortunate that many Christians ignore it. This decline in the church's first love for Christ's return has occurred partly due to the predicted weariness (<span class="scripture-reference">Matthew 25:5</span>) and partly due to the teaching that believers meet Jesus at the moment of death.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Additional Insights Section -->
+<div class="insights-section">
+  <h2>Additional Insights</h2>
+  <div class="insight-content">
+      <h3>Understanding the Rapture Question</h3>
+      <p>Some believers teach that an invisible rapture of believers precedes Christ's glorious return. What is the basis for this belief, and why do Adventists not accept this interpretation?</p>
+
+      <div class="analysis-box">
+          <h4>Common Teaching (Example from Ryrie Study Bible on <span class="scripture-reference">1 Thessalonians 4:16,17</span>):</h4>
+          <blockquote>
+              "Then living believers will be 'raptured'... This rapture... of believers described here concerns both those who died and those alive when the Lord comes. His coming is here in the air, not on earth, and will occur just before the tribulation period (see <span class="scripture-reference">Revelation 3:10</span>). This period will conclude with His coming to earth (see <span class="scripture-reference">Matthew 24:29-30; Revelation 19:11-16</span>)."
+          </blockquote>
+      </div>
+
+      <div class="biblical-response">
+          <h4>Biblical Response:</h4>
+          <ol>
+              <li>The Bible never speaks of a secret rapture</li>
+              <li><span class="scripture-reference">1 Thessalonians 4:16,17</span> does not describe anything secret</li>
+              <li>The Bible never speaks of two returns of the Lord</li>
+              <li>All biblical texts about Jesus returning to earth and saints going to heaven refer to one indistinguishable event</li>
+              <li>The Bible always presents the saints being taken to heaven and the wicked being punished as simultaneous aspects of one great event</li>
+          </ol>
+      </div>
+  </div>
+</div>
+      
+
+        <!-- Navigation Buttons -->
+        <div class="navigation">
+            <a href="/HistOfSalvation/2.6.html" class="nav-button previous-chapter">
+                ← Previous Lesson
+                <span class="hover-text">2.6 Who is Jesus?</span>
+            </a>
+            <a href="/HistOfSalvation/2.8.html" class="nav-button next-chapter">
+                Next Lesson →
+                <span class="hover-text">2.8 When Will Jesus Return?</span>
+            </a>
+            <!--
+            <a href="/HistOfSalvation/2.7.1.html" class="nav-button study-button">
+                Additional Study
+                <span class="hover-text">Deeper Study on Christ's Return</span>
+            </a>
+                     -->
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Table of Contents
+                <span class="hover-text">View All Lessons</span>
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Main Page
+                <span class="hover-text">Return to Homepage</span>
+            </a>
+        </div>
+    </div>
+
+   <!--Copy protection script-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Disable right-click
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+          if (
+              // Disable Ctrl+C, Ctrl+X, Ctrl+U
+              (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85)) ||
+              // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+              (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+              // Disable F12
+              e.keyCode === 123
+          ) {
+              e.preventDefault();
+              return false;
+          }
+      });
+
+      // Disable drag and drop
+      document.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable text selection via double click
+      document.addEventListener('mousedown', function(e) {
+          if (e.detail > 1) {
+              e.preventDefault();
+          }
+      });
+  });
+</script>
+</body>
+</html>

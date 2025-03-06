@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> The Christian Church | Doctrine of the Church</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2E4172;    /* Deep Blue */
+            --accent-color: #7E57C2;     /* Royal Purple */
+            --secondary-color: #5C6BC0;   /* Lighter Blue */
+            --bg-primary: #ffffff;
+            --bg-secondary: #F5F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #3F51B5;   /* Indigo */
+            --church-theme-light: #E8EAF6; /* Light Indigo */
+            --church-theme-dark: #283593;  /* Dark Indigo */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--church-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('path-to-your-church-image.jpg') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .series-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .series-header .series-title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Purpose Box Styling */
+        .purpose-box {
+            background: var(--church-theme-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Navigation Buttons */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        
+
+        /* Enhanced Navigation Button Styles */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.nav-button {
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Previous Chapter Button */
+.previous-chapter {
+    background: var(--church-theme-dark);
+    color: white;
+}
+
+.previous-chapter:hover {
+    background: #1a237e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(26, 35, 126, 0.2);
+}
+
+/* Next Chapter Button */
+.next-chapter {
+    background: var(--accent-color);
+    color: white;
+}
+
+.next-chapter:hover {
+    background: #6247aa;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(126, 87, 194, 0.2);
+}
+
+/* Table of Contents Button */
+.toc {
+    background: #4a148c;
+    color: white;
+}
+
+.toc:hover {
+    background: #3a1070;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(74, 20, 140, 0.2);
+}
+
+/* Home Button */
+.home-button {
+    background: #283593;
+    color: white;
+}
+
+.home-button:hover {
+    background: #1a237e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(40, 53, 147, 0.2);
+}
+
+/* Button Icons */
+.nav-button i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Hover Text */
+.nav-button .hover-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 8px;
+    z-index: 100;
+}
+
+.nav-button:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Responsiveness for Navigation */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.75rem;
+        margin: 2rem 0;
+    }
+
+    .nav-button {
+        width: 100%;
+        min-width: unset;
+        padding: 1rem;
+    }
+
+    .nav-button .hover-text {
+        display: none;
+    }
+}
+
+/* Add icons to buttons */
+.previous-chapter::before {
+    content: '←';
+    margin-right: 0.5rem;
+}
+
+.next-chapter::after {
+    content: '→';
+    margin-left: 0.5rem;
+}
+
+.toc::before {
+    content: '☰';
+    margin-right: 0.5rem;
+}
+
+.home-button::before {
+    content: '⌂';
+    margin-right: 0.5rem;
+}
+
+/* Active State */
+.nav-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Focus State for Accessibility */
+.nav-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.3);
+}
+
+
+        .nav-button {
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: rgb(247, 244, 244);
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .previous-chapter {
+            background: var(--church-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+                /* Content Section Styles */
+                .introduction-box {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .scripture-quote {
+            background: var(--church-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-style: italic;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .key-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .point-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .point-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .point-card h3 {
+            color: var(--church-theme-dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        /* Scripture References */
+        .scripture-reference {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Main Content Structure */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            color: var(--church-theme-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        /* Image Styles */
+        .image-container {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            background: rgba(46, 65, 114, 0.9);
+            color: white;
+            padding: 1rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header h1 {
+                font-size: 2rem;
+            }
+
+            .key-points-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-button {
+                width: 100%;
+            }
+        }
+
+
+        .explanation-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .explanation-card {
+        background: var(--church-theme-light);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .note-box {
+        background: linear-gradient(to right, var(--accent-color), transparent);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 1.5rem;
+    }
+
+    .purposes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .purpose-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border-top: 4px solid var(--accent-color);
+    }
+
+    .characteristics-box {
+        background: var(--church-theme-light);
+        padding: 2rem;
+        border-radius: 12px;
+        margin: 1.5rem 0;
+    }
+
+    .modern-application {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .reflection-section {
+        background: linear-gradient(135deg, var(--church-theme-dark), var(--accent-color));
+        color: white;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        margin: 3rem 0;
+        text-align: center;
+    }
+
+    .reflection-question {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Add this to your existing styles */
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 1200px) {
+    .container {
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    .section {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* Header Adjustments */
+    .series-header {
+        padding: 2rem 1rem;
+    }
+
+    .series-header h1 {
+        font-size: 2rem;
+    }
+
+    .series-title {
+        font-size: 1rem;
+    }
+
+    /* Grid Adjustments */
+    .content-grid,
+    .comparisons-grid,
+    .explanation-grid,
+    .purposes-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Card Adjustments */
+    .comparison-card,
+    .explanation-card,
+    .purpose-card {
+        padding: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Typography Adjustments */
+    body {
+        font-size: 16px;
+    }
+
+    h2.section-title {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Navigation Adjustments */
+    .navigation {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .nav-button {
+        width: 100%;
+        padding: 1rem;
+        min-width: unset;
+    }
+
+    /* Content Spacing */
+    .section {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Scripture Box Adjustments */
+    .scripture-box {
+        padding: 1rem;
+    }
+
+    .scripture-reference {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Image Handling */
+    .image-container {
+        margin: 1rem 0;
+    }
+
+    .image-caption {
+        position: relative;
+        padding: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* Further Typography Reduction */
+    body {
+        font-size: 14px;
+    }
+
+    .purpose-box {
+        padding: 1rem;
+    }
+
+    /* List Adjustments */
+    ul, ol {
+        padding-left: 1.25rem;
+    }
+
+    /* Card Modifications */
+    .content-box,
+    .comparison-card,
+    .explanation-card,
+    .purpose-card {
+        margin: 0.75rem 0;
+    }
+
+    /* Reflection Section */
+    .reflection-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .reflection-question {
+        font-size: 1rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .nav-button:hover {
+        transform: none;
+    }
+
+    .point-card:hover {
+        transform: none;
+    }
+
+    /* Custom Touch Feedback */
+    .nav-button:active {
+        background-color: var(--church-theme-dark);
+        transform: scale(0.98);
+    }
+
+    .point-card:active {
+        background-color: var(--church-theme-light);
+    }
+}
+
+/* Improved Scrolling */
+@media (max-width: 768px) {
+    .scripture-box,
+    .explanation-box,
+    .characteristics-box {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    /* Custom Scrollbar */
+    .scripture-box::-webkit-scrollbar,
+    .explanation-box::-webkit-scrollbar,
+    .characteristics-box::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .scripture-box::-webkit-scrollbar-thumb,
+    .explanation-box::-webkit-scrollbar-thumb,
+    .characteristics-box::-webkit-scrollbar-thumb {
+        background: var(--accent-color);
+        border-radius: 4px;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Print Media Queries */
+@media print {
+    .navigation,
+    .image-container,
+    .reflection-section {
+        display: none;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .scripture-reference {
+        border: 1px solid #000;
+        background: none;
+        color: #000;
+    }
+}
+
+/* Loading States */
+@media screen {
+    .image-container.loading {
+        min-height: 200px;
+        background: linear-gradient(90deg, 
+            var(--church-theme-light) 0%, 
+            var(--bg-secondary) 50%, 
+            var(--church-theme-light) 100%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+
+    @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }
+}
+
+/* Orientation Changes */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .series-header {
+        padding: 1rem;
+    }
+
+    .navigation {
+        position: sticky;
+        bottom: 0;
+        background: var(--bg-primary);
+        padding: 0.5rem;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #121212;
+        --bg-secondary: #1e1e1e;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --church-theme-light: #283593;
+        --church-theme-dark: #1a237e;
+    }
+
+    .section,
+    .purpose-card,
+    .comparison-card {
+        background: #1e1e1e;
+    }
+
+    .image-caption {
+        background: rgba(0,0,0,0.8);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <span class="series-title">Doctrine Of The Church</span>
+            <h1>The Christian Church</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="purpose-box">
+            <h2>Purpose:</h2>
+            <p>To emphasize the communal value of Christian faith as a sign of restored creation harmony and as an anticipation of God's Kingdom peace. To help understand that Christ invites us to join a community of faith, service, and hope.</p>
+        </div>
+
+        <div class="introduction-box">
+            <h2>Introduction</h2>
+            <p>No one can live alone. We exist as human beings because we were born from other human beings and grew up with them. From others, we learned to speak, to take care of ourselves, to behave as worthy men and women. Most of what we have comes from others. Try to remove from your life what you haven't personally discovered and done, and you'll see that not much remains.</p>
+        </div>
+
+          
+<div class="main-content">
+  <!-- Section 1: What is the Church? -->
+  <div class="section">
+      <h2 class="section-title">1. What Does "Church" Mean?</h2>
+      <div class="content-grid">
+          <div class="content-box">
+              <h3>Origin of the Word</h3>
+              <p>The word "church" comes from the Greek "ecclesia" (meaning "called out"), referring to a community called together for a specific purpose. In a general sense, even a sports association or political party is an "ecclesia."</p>
+              
+              <div class="church-elements">
+                  <h4>Every Church Has:</h4>
+                  <ul>
+                      <li>Members</li>
+                      <li>Structure</li>
+                      <li>Regulations</li>
+                      <li>Purpose</li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="content-box">
+              <h3>Christian Church Distinctives</h3>
+              <p>The Christian church differs primarily in:</p>
+              <ul>
+                  <li>Who establishes the ecclesia</li>
+                  <li>Its purposes</li>
+                  <li>How these purposes are achieved</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Section 2: Jesus's Intention -->
+  <div class="section">
+      <h2 class="section-title">2. Did Jesus Intend to Create His Own Church?</h2>
+      <div class="scripture-quote">
+          <span class="scripture-reference">Matthew 16:18</span>
+          <p>"And I tell you that you are Peter, and on this rock I will build my church, and the gates of Hades will not overcome it."</p>
+      </div>
+      <div class="analysis-box">
+          <p>Key Points:</p>
+          <ul>
+              <li>Jesus explicitly expressed His intention to build His church</li>
+              <li>He assured that no one could defeat this project</li>
+              <li>It would be founded on a "solid rock"</li>
+          </ul>
+          <p class="note">We will consider Peter's role later. For now, let's focus on the main fact: Jesus wanted to build His own particular church.</p>
+      </div>
+  </div>
+
+  <!-- Section 3: Biblical Comparisons -->
+  <div class="section">
+      <h2 class="section-title">3. What Does the New Testament Compare the Church To?</h2>
+      <div class="comparisons-grid">
+          <div class="comparison-card">
+              <h3>A People and Family</h3>
+              <div class="scripture-quote">
+                  <span class="scripture-reference">Ephesians 2:19</span>
+                  <p>A people including all nations, races, social groups, a family where all are God's children loving one another.</p>
+              </div>
+              <span class="reference-link">See also: <span class="scripture-reference">Colossians 3:11, John 13:35</span></span>
+          </div>
+
+          <div class="comparison-card">
+              <h3>A Living Temple</h3>
+              <div class="scripture-quote">
+                  <span class="scripture-reference">Ephesians 2:20-22</span>
+                  <p>A living temple where:</p>
+                  <ul>
+                      <li>Believers are the stones</li>
+                      <li>Apostles and prophets are the foundation</li>
+                      <li>Jesus is the cornerstone</li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="comparison-card">
+              <h3>A Body</h3>
+              <div class="scripture-quote">
+                  <span class="scripture-reference">1 Corinthians 12:12-27</span>
+                  <p>A body with Christ as the head, where members support each other.</p>
+              </div>
+          </div>
+
+          <div class="comparison-card">
+              <h3>A Faithful Bride</h3>
+              <div class="scripture-quote">
+                  <span class="scripture-reference">2 Corinthians 11:1,2</span>
+                  <p>A faithful bride remaining pure for her bridegroom, Jesus.</p>
+              </div>
+              <span class="reference-link">See also: <span class="scripture-reference">Ephesians 5:25-27</span></span>
+          </div>
+      </div>
+  </div>
+
+  <!-- Section 4: Size of the Christian Church -->
+<div class="section">
+  <h2 class="section-title">4. How Large Should We Expect the Christian Church to Be?</h2>
+  <div class="scripture-box">
+      <span class="scripture-reference">Luke 12:32</span>
+      <p>"Do not be afraid, little flock, for your Father has been pleased to give you the kingdom."</p>
+  </div>
+  
+  <div class="explanation-grid">
+      <div class="explanation-card">
+          <h3>The Gospel Commission</h3>
+          <ul>
+              <li><span class="scripture-reference">Matthew 24:14</span> - Worldwide preaching</li>
+              <li><span class="scripture-reference">Matthew 28:19</span> - Making disciples</li>
+              <li><span class="scripture-reference">Mark 16:15</span> - Reaching all creation</li>
+          </ul>
+      </div>
+
+      <div class="explanation-card">
+          <h3>Reality of Response</h3>
+          <p>Jesus taught that only a few would accept the message <span class="scripture-reference">Matthew 22:14</span></p>
+      </div>
+
+      <div class="explanation-card">
+          <h3>Future Glory</h3>
+          <p>In God's kingdom, the saved will be an innumerable multitude <span class="scripture-reference">Revelation 7:9</span></p>
+      </div>
+
+      <div class="explanation-card">
+          <p>Consider Elijah's example: Though he felt alone, God had preserved 7,000 faithful believers <span class="scripture-reference">1 Kings 19:14,18</span></p>
+      </div>
+  </div>
+</div>
+
+<!-- Section 5: Community of Believers -->
+<div class="section">
+  <h2 class="section-title">5. Is Fellowship with Other Believers Important?</h2>
+  <div class="scripture-box primary">
+      <span class="scripture-reference">Hebrews 10:25</span>
+      <p>"Let us not give up meeting together, as some are in the habit of doing, but let us encourage one another—and all the more as you see the Day approaching."</p>
+  </div>
+
+  <div class="purposes-grid">
+      <div class="purpose-card">
+          <h3>1. Mutual Encouragement</h3>
+          <p>Together we become stronger against Satan and life's difficulties. Like penguins in Antarctica, we survive by staying close to the group, especially in harsh conditions.</p>
+      </div>
+
+      <div class="purpose-card">
+          <h3>2. Living Testimony</h3>
+          <p>Our unity demonstrates our Christian identity <span class="scripture-reference">John 13:35</span>. Church attendance isn't a ritual but a living experience of love for God and His children.</p>
+      </div>
+
+      <div class="purpose-card">
+          <h3>3. Church Growth</h3>
+          <p>Through this fellowship, the Lord adds new believers to the church <span class="scripture-reference">Acts 2:46,47</span></p>
+      </div>
+  </div>
+</div>
+
+<!-- Section 6: End-Time Church -->
+<div class="section">
+  <h2 class="section-title">6. What Does Revelation Teach About the End-Time Church?</h2>
+  <div class="scripture-box highlight">
+      <span class="scripture-reference">Revelation 14:12</span>
+      <p>"Here is the patience of the saints; here are those who keep the commandments of God and the faith of Jesus."</p>
+  </div>
+
+  <div class="characteristics-box">
+      <h3>Key Characteristics:</h3>
+      <ul>
+          <li>Observes God's commandments</li>
+          <li>Maintains faith in Jesus</li>
+          <li>Demonstrates perseverance</li>
+      </ul>
+  </div>
+</div>
+
+<!-- Section 7: Special Appeal -->
+<div class="section">
+  <h2 class="section-title">7. What Special Appeal Does Revelation Make?</h2>
+  <div class="scripture-box">
+      <span class="scripture-reference">Revelation 18:1-4</span>
+      <p>"Come out of her, my people..."</p>
+  </div>
+
+  <div class="explanation-box">
+      <h3>The Babylon Symbol</h3>
+      <p>Historical Context:</p>
+      <ul>
+          <li>Babylon was a religious and political power opposing God's people</li>
+          <li>Israel was held captive in Babylon</li>
+          <li>God sent Cyrus to destroy Babylon and free His people</li>
+      </ul>
+
+      <div class="modern-application">
+          <h4>Modern Significance:</h4>
+          <ul>
+              <li>A "Babylon" still exists, trying to control and oppose the Christian church</li>
+              <li>God calls His people to leave Babylon and join His true people</li>
+              <li>This happens when we leave religious errors and join God's people</li>
+              <li>Complete fulfillment comes at Christ's return when "Babylon" is destroyed</li>
+          </ul>
+      </div>
+
+      <div class="scripture-references">
+          <p>Key References:</p>
+          <span class="scripture-reference">Isaiah 44:28</span>
+          <span class="scripture-reference">Isaiah 45:1</span>
+          <span class="scripture-reference">2 Chronicles 36:22,23</span>
+          <span class="scripture-reference">John 14:1-3</span>
+          <span class="scripture-reference">Philippians 3:20</span>
+          <span class="scripture-reference">Hebrews 13:14</span>
+      </div>
+  </div>
+</div>
+
+<!-- Reflection Section -->
+<div class="reflection-section">
+  <h2>For Reflection</h2>
+  <div class="reflection-question">
+      <p>What is needed for you to become part of this people called by God to trust in Christ and observe His law?</p>
+  </div>
+</div>
+
+
+            <!-- Navigation -->
+            <div class="navigation">
+              <a href="/HistOfSalvation/3.4.html" class="nav-button previous-chapter">
+                  Previous Lesson
+                  <span class="hover-text">3.4 Purgatory</span>
+              </a>
+              <a href="/HistOfSalvation/4.2.html" class="nav-button next-chapter">
+                  Next Lesson
+                  <span class="hover-text">4.2 Becoming Member of the Christian Church: Baptism</span>
+              </a>
+              <a href="/00Intro&Topics.html" class="nav-button toc">
+                  Table of Contents
+                  <span class="hover-text">View All Lessons</span>
+              </a>
+              <a href="/Index.html" class="nav-button home-button">
+                  Home Page
+                  <span class="hover-text">Return to Main Page</span>
+              </a>
+          </div>
+          
+
+    <!-- Protection Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Copy protection
+            document.addEventListener('contextmenu', e => e.preventDefault());
+            document.addEventListener('keydown', e => {
+                if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

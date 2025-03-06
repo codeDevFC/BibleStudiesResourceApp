@@ -1,0 +1,1083 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Prophet for the Remnant | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Question Styling */
+        .question {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .question h3::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Collapsible Content */
+        .collapsible-header {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+        }
+
+        .collapsible-header:hover {
+            background: var(--secondary-color);
+        }
+
+        .collapsible-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            padding: 0 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .collapsible-content.show {
+            max-height: 2000px; /* Adjust as needed */
+            padding: 1.5rem;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* In-Depth Study Section */
+        .in-depth-study {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .in-depth-study h2 {
+            text-align: center;
+            color: var(--holy-theme-dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Custom Details/Summary styling */
+        .custom-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-details summary {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            transition: background-color 0.3s ease;
+            outline: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .custom-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .custom-details summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-details[open] summary::after {
+            content: '−';
+        }
+
+        .custom-details summary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .custom-details .details-content {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Highlight for important points */
+        .highlight {
+            background-color: rgba(0, 188, 212, 0.1);
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        /* Numbered lists with custom styling */
+        ol.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Bulleted lists with custom styling */
+        ul.styled-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+            }
+
+            .nav-button {
+                min-width: 120px;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+        .question:nth-child(6) { animation-delay: 0.6s; }
+        .question:nth-child(7) { animation-delay: 0.7s; }
+        .question:nth-child(8) { animation-delay: 0.8s; }
+        .question:nth-child(9) { animation-delay: 0.9s; }
+        .question:nth-child(10) { animation-delay: 1s; }
+        .question:nth-child(11) { animation-delay: 1.1s; }
+        .question:nth-child(12) { animation-delay: 1.2s; }
+        .question:nth-child(13) { animation-delay: 1.3s; }
+        .question:nth-child(14) { animation-delay: 1.4s; }
+        .question:nth-child(15) { animation-delay: 1.5s; }
+
+        /* Timeline styling */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--bg-secondary);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--bg-secondary);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--bg-secondary);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--bg-secondary) transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--bg-secondary);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .timeline-content h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid var(--bg-secondary);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--bg-secondary) transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+
+        /* Profile card styling */
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .profile-bio {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-dates {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Quote styling */
+        .quote {
+            background-color: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+            font-style: italic;
+            color: var(--text-primary);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            left: 10px;
+            top: -20px;
+            color: rgba(0,0,0,0.1);
+            font-family: Georgia, serif;
+        }
+
+        .quote-content {
+            margin-bottom: 1rem;
+        }
+
+        .quote-author {
+            font-style: normal;
+            text-align: right;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        /* Tab styling */
+        .tabs {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab-button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab-button:hover {
+            background-color: #ddd;
+        }
+        .tab-button.active {
+            background-color: #3a7ca5;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        /* Collapsible toggle styling */
+        .collapsible {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+        .active-toggle, .collapsible:hover {
+            background-color: #ccc;
+        }
+        .collapsible:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .active-toggle:after {
+            content: "\2212";
+        }
+        .toggle-content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f9f9f9;
+            border-radius: 0 0 5px 5px;
+        }
+        .toggle-content p {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>6.8 A Prophet for the Remnant</h1>
+            <p>Understanding the prophetic ministry of Ellen G. White in the Seventh-day Adventist Church</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="question">
+            <h3>Introduction</h3>
+            <p>In the previous study, we saw that the remnant church must be characterized by three elements:</p>
+            
+            <ol class="styled-list">
+                <li>They observe God's commandments.</li>
+                <li>They have faith in Jesus.</li>
+                <li>They have the testimony of Jesus, which is the Spirit of prophecy. In other words, they must have one or more prophets.</li>
+            </ol>
+            
+            <p>Beyond our human shortcomings, we can honestly say that the Seventh-day Adventist Church corresponds to the first two requirements since we are the main Christian body that observes all ten commandments and also the hygienic norms taught through biblical law. We can also say that we possess the third requirement thanks to the prophetic ministry of Ellen G. White. Let's try to understand who she was and why we consider her a prophet.</p>
+        </div>
+
+        <div class="question">
+            <h3>1. Who was Ellen G. White?</h3>
+            
+            <div class="profile-card">
+                <img class="profile-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Ellen_G._White_1899.jpg/640px-Ellen_G._White_1899.jpg" alt="Ellen G. White">
+                <div class="profile-name">Ellen G. White</div>
+                <div class="profile-subtitle">Messenger of the Lord</div>
+                <div class="profile-dates">November 26, 1827 - July 16, 1915</div>
+            </div>
+            
+            <p>Ellen was a simple girl, spiritually very sensitive, born in New England (USA) on November 26, 1827. Her parents, Christians, were Eunice and Robert Harmon. She would take the surname "White" when, in 1846, she married James White, a young Adventist preacher. At that time, she was 18 and he was 24 years old.</p>
+            
+            <p>Nothing suggested that she would become a leader, a prophet, and a writer appreciated worldwide. At the age of 9, she was seriously injured by a stone thrown by a schoolmate. Her nose was broken, and she remained unconscious for three weeks. Everyone thought she would die. After regaining consciousness, she suffered the consequences of that experience for a long time and could only occasionally go to school. Her education developed through her readings, her personal experience, and, we can well say, through the light that God gave her.</p>
+            
+            <p>In 1842, at the age of 14, she accepted Christ and was baptized in the Methodist Church. At that time, Ellen and her parents had already accepted William Miller's message and were joyfully awaiting Jesus' return, believed to be very near, initially for the year 1843 and then for 1844.</p>
+            
+            <p>When their hope was not realized, discouragement also took Ellen's heart, but it did not destroy her faith. With the other Millerites, she prayed to understand the meaning of what had happened and to be able to move forward.</p>
+            
+            <p>"One morning in December 1844, at a time when many Millerites were wavering in their faith and others were rejecting their recent experience, Ellen Harmon joined four other women for family worship at the home of a close friend, Mrs. Haines, in the southern part of Portland. While the group was praying, she received her first vision in which she saw a representation of the Adventists' journey toward the City of God (EW 13-17; 1T 58-61; LS 64-67)." She was only 17 years old at that time. "When she told that vision to the group of Adventists in Portland, they accepted it as a light given by God. Responding to a subsequent vision, though reluctantly, Ellen began to travel with friends and relatives when the opportunity presented itself, to report to scattered groups of Adventists what she had seen in the first vision and in those that followed." (SDAD, White, Ellen Gould Harmon.)</p>
+            
+            <p>From then on, Ellen spent her life traveling, writing, preaching, admonishing, and contributing to build what would become the Seventh-day Adventist Church. If, thanks to God, we have become what we are, in the good we have and do, this is largely due to the ministry of this woman.</p>
+            
+            <p>She died at the age of 87, on July 16, 1915. The weak child whom everyone expected to die soon had carried out her ministry in three continents (America, Europe, and Australia), had written more than 100,000 pages between articles and books, had contributed to the construction of hospitals, schools, publishing houses. She had been a health reformer, a spiritual leader, an organizer, a philanthropist, an affectionate wife, and an attentive mother (she had four sons).</p>
+            
+            <div class="quote">
+                <div class="quote-content">
+                    <p>She had also lived with deep humility: "I do not claim to be infallible, or to have attained perfection of Christian character. My life is not free from mistakes and failures. Had I followed my Savior more closely, I would not have had to weep so much over the distance that exists between me and His image."</p>
+                </div>
+                <div class="quote-author">Ellen G. White</div>
+            </div>
+            
+            <div class="quote">
+                <div class="quote-content">
+                    <p>"I do not consider even the smallest part of what I possess to be mine. I have $20,000 that I have borrowed to invest in the Lord's work. In recent years, comparatively few of my books have been sold in the United States. I need money for current expenses, and I must pay those who work for me. The money that I would otherwise pay for rent, I now pay as interest on the money I have borrowed to secure this house. I am ready to give up my property as soon as the Lord shows me that this is His will and that my task here is finished."</p>
+                </div>
+                <div class="quote-author">Ellen G. White</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>2. How did she define her mission?</h3>
+            
+            <p>Adventists consider Ellen White as a servant of God who honored her Lord and His people by faithfully using the gifts and opportunities she had received. In a very special way, the Adventist Church believes that she received the gift of prophecy (1 Corinthians 12:10; Ephesians 4:11). She never used the title of prophet for herself, not because she did not recognize herself as such or out of false humility, but because she did not want to be confused with other people who, in her time, claimed to be prophets even though they often dishonored God and His Word.</p>
+            
+            <div class="quote">
+                <div class="quote-content">
+                    <p>"Some have misunderstood the fact that I have not claimed to be a prophet, and have asked why. I had no claims to advance, except that I am the Lord's messenger; that He has called me in my youth to receive His word, and to give a clear and decided message in the name of the Lord Jesus. Early in my youth I was asked several times: Are you a prophet? I have always answered: I am the Lord's messenger. I know that many have called me a prophet, but I have not claimed this title. My Savior has declared me to be His messenger. 'Your task,' I was taught, 'is to carry My word. Strange things will arise, and in your youth I set you apart to bring the message to the erring, to bring the word before the unbelievers, and to reprove, with the pen and voice, on the foundation of the Word, what is not right.'"</p>
+                </div>
+                <div class="quote-author">Ellen G. White (1 Selected Messages, pp. 31-32)</div>
+            </div>
+            
+            <div class="quote">
+                <div class="quote-content">
+                    <p>"Why have I not claimed to be a prophet? Because in these last days many who boldly claim to be prophets are a disgrace to the cause of Christ, and because my work includes much more than what the word 'prophet' means."</p>
+                </div>
+                <div class="quote-author">Ellen G. White (1SM 32.4)</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>3. How did she view the Bible?</h3>
+            
+            <p>Even though she considered herself a messenger of God, she never thought she should or could ignore the Bible or take its place. On the contrary, she honored the Bible with all her strength as God's Word and continuously invited everyone to do the same:</p>
+            
+            <div class="quote">
+                <div class="quote-content">
+                    <p>"The Bible, as it is, must be our guide. Nothing is more suitable to open the mind and strengthen the intellect than the study of the Bible. No other book will elevate the soul and give vigor to our faculties like the study of the living oracles."</p>
+                </div>
+                <div class="quote-author">Ellen G. White (1MCP 93.2)</div>
+            </div>
+            
+            <p>Her last public message at a general conference was, referring to the Scriptures, "Brethren, I recommend this book to you."</p>
+        </div>
+
+        <div class="question">
+          <h3>4. Why do Seventh-day Adventists consider her a prophet?</h3>
+          
+          <p>Not all Adventists initially accepted her gift, but gradually the evidence from her ministry and from the Bible convinced them. The following can be the main reasons:</p>
+          
+          <ol class="styled-list">
+              <li><strong>Manifestation of supernatural power.</strong> Many times, while in vision, especially at the beginning of her experience, she stopped breathing while continuing to speak and move.</li>
+              <li><strong>Supernatural knowledge of facts</strong> related to people's experiences and the church that were otherwise unknowable.</li>
+          </ol>
+          
+          <p>Facts of this type drew attention to her ministry, but they cannot by themselves be signs of a divine origin of her message, because Satan can also perform miracles (2 Thessalonians 2:9; 2 Corinthians 11:14). There was therefore a need to compare her ministry with the characteristics that the Bible attributes to a true prophet:</p>
+          
+          <ol class="styled-list">
+              <li>Fulfillment of any prophecies (Jeremiah 28:9; Deuteronomy 18:22).</li>
+              <li>Harmony with previous prophets and with God's law (Isaiah 8:20; 1 Corinthians 14:32).</li>
+              <li>Harmony with Jesus' teaching that we find in the Bible (1 John 4:2).</li>
+              <li>Positive fruits of her ministry (Matthew 7:16,20).</li>
+          </ol>
+          
+          <p>When the church saw how her personal life and teaching corresponded to all these characteristics, her ministry was accepted as a gift from God for His people in these last days.</p>
+      </div>
+
+      <div class="question">
+          <h3>5. What position did she hold in the church?</h3>
+          
+          <p>She did not occupy any official institutional position in the church. She was not the president of the church or a pastor. She was a voice listened to for her moral and spiritual authority, not because she was invested with institutional power. When there were General Conference meetings, she participated as a normal delegate. After the difficult times of the beginnings, she supported herself and her family with the royalties from the sale of her books, earnings that she often invested in favor of the church itself. After her husband's death in 1881, she received a salary equivalent to that of a General Conference officer.</p>
+      </div>
+
+      <div class="question">
+          <h3>6. What other elements are worth mentioning?</h3>
+          
+          <ol class="styled-list">
+              <li>Contrary to the attitude of false prophets of her time and our time, she never sought to become the master of the church but always remained at its service.</li>
+              <li>She never used her influence to enrich herself or her children.</li>
+              <li>Contrary to the attitude of false prophets, she never monopolized the spiritual life of individuals and the church, but encouraged everyone to use their own mind and to have a personal relationship with God and with the Bible.</li>
+          </ol>
+      </div>
+
+      <div class="question">
+          <h3>7. How should we react to her ministry?</h3>
+          
+          <ul class="styled-list">
+              <li><strong>Trust in God.</strong> Many wonder why God spoke only in biblical times but not today. Ellen White's prophetic ministry proves that God is still a living God who has something to say to His children. God is still interested in us and in humanity. He has not changed and takes care of us. As God once delivered Israel and kept it through a prophet (Hosea 12:13), so He has done and will do for His people of the last days.</li>
+              <li><strong>Trust in our church.</strong> There are thousands of Christian churches. Some were created for unworthy reasons. Many were born from the honest desire to honor God and His Word. However, most of them originated from a human initiative. The presence of the prophetic ministry gives the Adventist Church the conviction of not existing only as a consequence of historical social or religious events, but thanks to a divine intervention; that it does not exist only to increase the fragmentation of the Christian world but because God had a special message to address to the world and we are called to proclaim it. In other words, Ellen White contributes to the formation of our identity and our mission. Without the help that God gave us through her, we would have been an abortion of history, we would never have become - beyond our human weaknesses - what we are.</li>
+              <li><strong>Trust in the Lord's messenger.</strong> We are invited to receive her ministry as a blessing: "Believe in the LORD your God, and you shall be established; believe His prophets, and you shall prosper!" (2 Chronicles 20:20)</li>
+              <li><strong>Trust in our life.</strong> Ellen White's prophetic ministry provides guidance for our life in difficult times, and becomes an encouragement to think that God is not far from us.</li>
+          </ul>
+      </div>
+
+      <div class="in-depth-study">
+          <h2>In-Depth Study</h2>
+          
+          <div class="custom-details">
+              <summary>8. Is Ellen White the only prophetess called by God?</summary>
+              <div class="details-content">
+                  <p>No. The Bible tells us about Miriam, the sister of Moses and Aaron (Exodus 15:20); Deborah, the judge and leader of Israel (Judges 4:4); Huldah, at the time of King Josiah (2 Kings 22:14), Anna, the old woman who gave her testimony about the child Jesus when He was brought to the temple (Luke 2:36); the four daughters of Philip, the deacon (Acts 21:8-9). The Bible tells us that "God shows no partiality" (Acts 10:34), that in Christ there is no longer "male nor female" (Galatians 3:28).</p>
+              </div>
+          </div>
+          
+          <div class="custom-details">
+              <summary>9. Was Ellen White the only prophet of the Adventist Movement?</summary>
+              <div class="details-content">
+                  <p>No. At least two other people were called by God to the prophetic ministry, but they did not fully fulfill their mission. This happened before October 22, 1844, within the Millerite Movement.</p>
+                  
+                  <ul class="styled-list">
+                      <li><strong>William Foy</strong>, a mulatto Millerite, had two visions in 1842 regarding the imminent return of Christ, but initially feared to make them public because he feared not being taken seriously, also because of prejudices against men of color. However, he who had been an opponent of the nearness of Jesus' return until that moment, joined the Millerite Movement and gave his testimony before a wide audience. Subsequent difficulties discouraged him from reporting a third vision. Ellen White had met him as a girl and speaks of him with esteem.</li>
+                      <li><strong>Hazen Foss</strong> had received a vision very similar to the one later had by Ellen, but refused to transmit it because it did not correspond to their hope, and because he feared criticism from other believers. A further admonition was addressed to him: if he still refused to transmit the message, it would be given to the "weakest of the weak." Following his further hardening, a voice spoke to him: "You have grieved the Spirit of the Lord." Frightened, he tried to tell the vision to some brothers, but when he began to speak, he no longer remembered anything. It was when, listening from behind the door, he had the opportunity to listen to Ellen's message, that he remembered it again. The next day he confessed his story to Ellen and encouraged her to be faithful to the Lord.</li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="custom-details">
+              <summary>10. Why is there no contradiction between Ellen White's ministry and the principle of "Sola Scriptura"?</summary>
+              <div class="details-content">
+                  <p>Along with all Protestants, the Adventist Church firmly upholds the principle of "Sola Scriptura," the principle that only the Bible constitutes the foundation of Christian faith. The fact that they accept Ellen White's prophetic ministry does not mean that they renounce this principle. In fact:</p>
+                  
+                  <ul class="styled-list">
+                      <li>Scripture itself says that prophecy is one of the gifts of the Spirit (1 Corinthians 12:10; Ephesians 4:11). The apostle Paul, whose writings are part of Scripture, encourages prayer to receive the gift of prophecy (1 Corinthians 14:1). It is evident then that, given that Scripture encourages receiving this gift, it would be contradictory to reject it in the name of Scripture. The problem arises if a presumed prophet contradicts Scripture, but this, we have seen, is not the case with Ellen White.</li>
+                      <li>The Bible tells us that, in the last days, God will ensure the gift of prophecy to the Remnant of His Church (Revelation 12:17; 19:10. See also Joel 2:28. Note: A first realization of this prophecy occurred in the primitive church - Acts 2:17-21 - but the signs of the times it mentions compel us to think also of its realization at the end of time. This conclusion can also be reached from the message of the prophet Joel on the "rain" of the first and second season - Joel 2:23.).</li>
+                      <li>Ellen White has always shown respect for the Bible and exalted it as our rule of faith. Her ministry is accepted because it is in harmony with the biblical criteria for recognizing a true prophet and because it honors biblical teaching. We accept her thanks to the Bible, not the Bible thanks to her.</li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="container">
+            <h1>Ellen White and Prophetic Ministry</h1>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'prophetic-ministry')">Prophetic Ministry</button>
+                <button class="tab-button" onclick="openTab(event, 'ellen-white')">Ellen White</button>
+                <button class="tab-button" onclick="openTab(event, 'first-vision')">First Vision</button>
+                <button class="tab-button" onclick="openTab(event, 'anna-phillips')">Anna Phillips Case</button>
+            </div>
+            
+            <!-- Tab 1: Prophetic Ministry -->
+            <div id="prophetic-ministry" class="tab-content" style="display: block;">
+                <button class="collapsible">11) After the closing of the Bible, should we consider the era of the gift of prophecy closed as well?</button>
+                <div class="toggle-content">
+                    <p>The Bible never says this. In addition to what we have already seen about the gift of prophecy in the church of the last days, we add here other general considerations. The gift of prophecy is one among many others. Just as no one would claim that the gift of healing or the gift of wisdom no longer have a place in the Christian church of the centuries after the closing of the Bible, so no one should say this about the gift of prophecy. The Bible is not God's muzzle. God always remains a living God who has something to offer and to say to His people. God is always free to speak to His people at any time He decides to do so.</p>
+                </div>
+                
+                <button class="collapsible">References to Revelation 22:18-19</button>
+                <div class="toggle-content">
+                    <p>Some cite Revelation 22:18-19 to say that nothing should be added to or taken away from the Bible. But the phrase does not refer to God's revelation in general, as if there could no longer be any prophet. Instead, it explicitly refers to the book of Revelation, defined as "this book." Deuteronomy 4:2; 12:32 use similar expressions, and no one interprets them as meaning that after the closing of the Pentateuch, no other revelation could exist.</p>
+                </div>
+                
+                <button class="collapsible">Joel 2:23 and the rain of the first and second season</button>
+                <div class="toggle-content">
+                    <p>Ellen White has always shown respect for the Bible and has exalted it as our rule of faith. Her ministry is accepted because it is in harmony with the biblical criteria for recognizing a true prophet and because it honors biblical teaching. We accept her thanks to the Bible, not the Bible thanks to her.</p>
+                    <p>The signs of the times mentioned compel us to think also of a fulfillment at the end of time. This conclusion can also be drawn from the message of the prophet Joel about the "rain" of the first and second season - Joel 2:23.</p>
+                </div>
+            </div>
+            
+            <!-- Tab 2: Ellen White -->
+            <div id="ellen-white" class="tab-content">
+                <button class="collapsible">12) Does the fact that Ellen White spoke on behalf of God mean that all her writings must be totally original?</button>
+                <div class="toggle-content">
+                    <p>No. Otherwise, much of the Bible would have no reason to exist. For example, many parts of the historical books of the Bible report materials that existed previously outside the Bible (e.g., Josh 10:13; 2 Sam 1:18; 1 Kings 11:41), the three synoptic gospels (Matthew, Mark, and Luke have similar materials, and many think they drew from previous collections of Jesus' words; Luke himself declares that he did research before writing his gospel (Luke 1:1-3). For this reason, some have accused her of having committed plagiarism (undeclared use of others' materials). The facts are as follows.</p>
+                </div>
+                
+                <button class="collapsible">Use of material from other authors</button>
+                <div class="toggle-content">
+                    <p>1. White herself declared that she used material from others without explicitly citing them. According to our current standards, this would be illegal, but it was not so in her time: many writers used materials from others, and recent studies have shown that the writers used by Ellen White had in turn used materials from others before them.</p>
+                    <p>2. As she declared, she was aware of not being a literary person. For this reason, when she found that someone had expressed what she thought in a better way, she took advantage of it to communicate God's message (Ellen G. White, vol. 3, p. 378).</p>
+                </div>
+                
+                <button class="collapsible">Transparency in the use of others' materials</button>
+                <div class="toggle-content">
+                    <p>3. It is evident that she did not want to deceive anyone because she explicitly declares the fact of borrowing material from others, for example in the 1888 introduction to The Great Controversy. Sometimes she even went so far as to encourage her readers to read the same book from which she borrowed. An example is given by the fact that the book The Life and Epistle of St. Paul, written by Conybear and Howson, and which she used in the writing of Sketches from the Life of Paul, was offered as a gift to readers of our magazines Review and Herald, and Signs of the Times. In the latter magazine, Ellen White herself wrote praising this book (Feb. 1883). There was therefore no intention to deceive the authors or the publisher of the other book, who instead received good publicity and also economic benefits. Nor was there any intention to deceive her own readers since, receiving the other book as a gift, they could compare the two works.</p>
+                </div>
+                
+                <button class="collapsible">Originality and inspiration of writings</button>
+                <div class="toggle-content">
+                    <p>3. It should be added that, even when she used material from others, she made choices to avoid making her own errors contained in the original source. Furthermore, the context in which such materials were used gave them an often entirely new perspective. They expressed a vision and spiritual power that did not exist in the works from which she might have drawn. The substance of Ellen White's writings is therefore certainly original and inspired.</p>
+                </div>
+            </div>
+            
+            <!-- Tab 3: First Vision -->
+            <div id="first-vision" class="tab-content">
+                <button class="collapsible">14) The first vision (narrated in Life Sketches of Ellen G. White)</button>
+                <div class="toggle-content">
+                    <p>It was not long after the passing of the time [of our expectation] in 1844, that my first vision was given to me. I was visiting Mrs. Haines in Portland, a dear sister in Christ, whose heart was knit with mine; five of us, all women, were kneeling quietly at the family altar [that is, for a moment of family worship]. While we were praying, the power of God came upon me as I had never felt before.</p>
+                    <p>I seemed to be surrounded with light, and to be rising higher and higher from the earth. I turned to look for the Advent people in the world, but could not find them, when a voice said to me, "Look again, and look a little higher." At this I raised my eyes, and saw a straight and narrow path, cast up high above the world. On this path the Advent people were traveling to the city, which was at the farther end of the path. Behind them, at the beginning of the path, was a bright light which an angel told me was the "midnight cry." This light shone all along the path and gave light for their feet so that they might not stumble.</p>
+                </div>
+                
+                <button class="collapsible">The journey of the Adventists</button>
+                <div class="toggle-content">
+                    <p>If they kept their eyes fixed on Jesus, who was just before them, leading them to the city, they were safe. But soon some grew weary, and said the city was a great way off, and they expected to have entered it before. Then Jesus would encourage them by raising His glorious right arm, and from His arm came a light which waved over the Advent band, and they shouted, "Alleluia!" Others rashly denied the light behind them and said that it was not God that had led them out so far. The light behind them went out, leaving their feet in perfect darkness, and they stumbled and lost sight of the mark and of Jesus, and fell off the path down into the dark and wicked world below.</p>
+                </div>
+                
+                <button class="collapsible">The announcement of Christ's return</button>
+                <div class="toggle-content">
+                    <p>Soon we heard the voice of God like many waters, which gave us the day and hour of Jesus' coming. The living saints, 144,000 in number, knew and understood the voice, while the wicked thought it was thunder and an earthquake. When God spoke the time, He poured upon us the Holy Ghost, and our faces began to light up and shine with the glory of God, as Moses' did when he came down from Mount Sinai.</p>
+                    <p>The 144,000 were all sealed and perfectly united. On their foreheads was written, "God, New Jerusalem," and a glorious star containing Jesus' new name. At our happy, holy state the wicked were enraged, and would rush violently up to lay hands on us to thrust us into prison, when we would stretch forth the hand in the name of the Lord, and they would fall helpless to the ground. Then it was that the synagogue of Satan knew that God had loved us who could wash one another's feet and salute the brethren with a holy kiss, and they worshiped at our feet.</p>
+                </div>
+                
+                <button class="collapsible">The white cloud and the return of Christ</button>
+                <div class="toggle-content">
+                    <p>Soon our eyes were drawn to the east, for a small black cloud had appeared, about half as large as a man's hand, which we all knew was the sign of the Son of man. We all in solemn silence gazed on the cloud as it drew nearer and became lighter, glorious, and still more glorious, till it was a great white cloud. The bottom appeared like fire; a rainbow was over the cloud, while around it were ten thousand angels, singing a most lovely song; and upon it sat the Son of man. His hair was white and curly and lay on His
+  
+
+
+
+
+          <script>
+            // Tab functionality
+            function openTab(evt, tabName) {
+                var i, tabcontent, tabbuttons;
+                
+                // Hide all tab content
+                tabcontent = document.getElementsByClassName("tab-content");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                
+                // Remove active class from all tab buttons
+                tabbuttons = document.getElementsByClassName("tab-button");
+                for (i = 0; i < tabbuttons.length; i++) {
+                    tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+                }
+                
+                // Show the current tab and add active class to the button
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            
+            // Collapsible toggle functionality
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active-toggle");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>1.4 Jesus is the Son of God | Church Bible Studies</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --bg-color: #ecf0f1;
+            --accent-color: #3498db;
+            --highlight-color: #f1c40f;
+            --quote-bg: #e8f4ff;
+            --container-width: 90%;
+            --max-width: 800px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        .container {
+            width: var(--container-width);
+            max-width: var(--max-width);
+            margin: auto;
+            padding: 1.5rem;
+        }
+
+        .lesson-header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('images/gods-love.jpg');
+            background-size: cover;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        blockquote {
+            background: var(--quote-bg);
+            border-left: 4px solid var(--accent-color);
+            margin: 1rem 0;
+            padding: 1rem;
+            font-style: italic;
+            border-radius: 5px;
+        }
+
+        .highlight {
+            background: var(--highlight-color);
+            padding: 0.3rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .scripture-list {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .scripture-item {
+            background: var(--quote-bg);
+            padding: 1rem;
+            border-radius: 5px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            gap: 1rem;
+            pointer-events: auto;
+        }
+
+        .btn {
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-secondary {
+            background: #7f8c8d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5d6d7e;
+        }
+
+        .next-topic {
+            position: relative;
+        }
+
+        .next-topic:hover::after {
+            content: "Next: The Holy Spirit: God Present in Our Lives";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+
+        /* Add specific styles for roles list */
+        .roles-list {
+            margin: 1rem 0;
+            padding: 0;
+        }
+
+        .roles-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            background: var(--quote-bg);
+            padding: 0.8rem;
+            border-radius: 5px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .roles-list li strong {
+            margin-left: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 1rem;
+            }
+            .lesson-header {
+                padding: 1.5rem;
+            }
+            .navigation {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!--Copy protection script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Disable right-click
+          document.addEventListener('contextmenu', function(e) {
+              e.preventDefault();
+          });
+    
+          // Disable keyboard shortcuts
+          document.addEventListener('keydown', function(e) {
+              if (
+                  // Disable Ctrl+C, Ctrl+X, Ctrl+U
+                  (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85)) ||
+                  // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+                  (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+                  // Disable F12
+                  e.keyCode === 123
+              ) {
+                  e.preventDefault();
+                  return false;
+              }
+          });
+    
+          // Disable drag and drop
+          document.addEventListener('dragstart', function(e) {
+              e.preventDefault();
+          });
+    
+          // Disable text selection via double click
+          document.addEventListener('mousedown', function(e) {
+              if (e.detail > 1) {
+                  e.preventDefault();
+              }
+          });
+      });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="lesson-header">
+            <h1>1.4 Bible Studies: Jesus is the Son of God</h1>
+            <h2>And Our Savior</h2>
+        </div>
+
+        <div class="content-section">
+            <h2>Purpose:</h2>
+            <p>To understand why Jesus Christ stands at the center of our faith & Christian experience. In a future study, we will delve deeper into the divine nature of Jesus.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Introduction</h2>
+            <p>We call ourselves Christians because we recognize Jesus Christ as the foundation of our faith. But who is Jesus?</p>
+            <p>Throughout history, people have had different views of Him: a great man, a philanthropist, a moral teacher, a religious leader, or even a hero of faith. Some believe He is more than a man and call Him the <span class="highlight">Son of God</span>.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>1) What Did Peter Say About Jesus?</h2>
+            <blockquote>
+                <p>📖 <strong>Matthew 16:16</strong> - "Simon Peter answered, 'You are the Christ, the Son of the living God.'"</p>
+            </blockquote>
+            <p>Peter saw Jesus as much more than a prophet; he recognized Him as the <span class="highlight">Son of the living God</span>.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>2) What Does It Mean That Jesus Is the Son of God?</h2>
+            <p>Unlike others who saw Jesus only as a man, Peter acknowledged His divine essence. Jesus was not merely a creature of God; He was <strong>the Son of God</strong>, uniquely connected to the Father in a way that no one else was.</p>
+            <blockquote>📖 <strong>1 Corinthians 8:5-6</strong> - "There is but one God, the Father... and one Lord, Jesus Christ."</blockquote>.</p>
+        </div>
+
+        <div class="content-section">
+            <p class="highlight">🔹 <em>Reflect:</em> <ul>
+            <p>1️⃣ Can we also look beyond the human appearance and see in Jesus His true divine essence?</p>
+            <p>2️⃣ What difference does it make for us to know that Jesus is not just a man but the Son of God?</p>
+            <p>3️⃣ Can we also affirm that there is only one living God? What does this mean for us?</p>
+            </ul></p>
+        </div>
+
+        <div class="content-section">
+            <h2>3) What Does It Mean That Jesus Is the Christ?</h2>
+            <p>The term <strong>Christ</strong> comes from the Greek <em>Christos</em>, which translates the Hebrew <em>Messiah</em>, meaning <strong>the Anointed One</strong>.</p>
+            <p>In Israel, kings, priests, and prophets were anointed with oil as a sign of divine authority. Jesus, however, was the ultimate Anointed One, fulfilling all these roles:</p>
+            <ul class="roles-list">
+                <li>👑 <strong>A King</strong> - Foretold in <strong>Isaiah 9:5-6</strong></li>
+                <li>📖 <strong>A Prophet</strong> - Foretold in <strong>Deuteronomy 18:15-16</strong></li>
+                <li>🕊️ <strong>A Priest</strong> - Foretold in <strong>Zechariah 6:11-14</strong></li>
+
+                <p>Jesus Christ embodied all the ministries of salvation that God had entrusted to His anointed ones throughout history. He was destined to bring <strong>freedom and salvation</strong> to His people. In other words, He would be their <strong>Savior</strong>.</p>
+            </ul>
+        </div>
+
+
+        <div class="content-section">
+        <h2>4) How Did Peter Understand This About Jesus?</h2>
+    <blockquote>📖 <strong>Matthew 16:17</strong> - "Jesus replied, 'Blessed are you, Simon son of Jonah, for this was not revealed to you by flesh and blood, but by my Father in heaven.'"</blockquote>
+    <p>Peter's insight was not merely human reasoning—it was a divine revelation. God opened his heart to recognize Jesus for who He truly was.</p>
+        </div>
+    
+        <div class="content-section">
+    <h2>5) What Did Peter Say About Jesus After His Resurrection?</h2>
+    <blockquote>📖 <strong>1 Peter 1:17-21</strong> - "You were redeemed not with perishable things like silver or gold, but with the precious blood of Christ, a lamb without blemish or defect."</blockquote>
+    <p>Peter affirmed that Jesus' sacrifice was the ultimate price for our salvation, planned before the creation of the world.</p>
+        </div>
+    
+    <h2>Key Biblical Texts</h2>
+    <div class="scripture-item">
+    <ul>
+        <p>📖 <strong>Matthew 16:16</strong> - Peter confesses Jesus as the Christ.</p>
+        <p>📖 <strong>1 Corinthians 8:5-6</strong> - There is one God and one Lord, Jesus Christ.</p>
+        <p>📖 <strong>Isaiah 9:5-6</strong> - Jesus is a King.</p>
+        <p>📖 <strong>Deuteronomy 18:15-16</strong> - Jesus is a Prophet.</p>
+        <p>📖 <strong>Zechariah 6:11-14</strong> - Jesus is a Priest.</p>
+        <p>📖 <strong>Matthew 16:17</strong> - God revealed Jesus' identity to Peter.</p>
+        <li>📖 <strong>1 Peter 1:17-21</strong> - Jesus' sacrifice redeems us.</li>
+    </ul>
+    </div>
+
+        <div class="content-section">
+            <h2>Conclusion</h2>
+            <p>Understanding Jesus as the Son of God and our Savior is central to our faith. His life, death, and resurrection reveal His divine nature and the depth of God's love for us.</p>
+        </div>
+
+        <div class="navigation">
+            <a href="/IntroStudies/1.3.html" class="btn btn-secondary">← Previous Lesson</a>
+            <a href="/IntroStudies/1.5.html" class="btn btn-primary next-topic">Next Lesson →</a>
+            <a href="/Index.html" class="btn btn-secondary">Home</a>
+        </div>
+    </div>
+</body>
+</html>

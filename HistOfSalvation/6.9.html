@@ -1,0 +1,1056 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.9 - Revelation 10: The Adventist Church and the Secret Message | Bible Studies</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <style>
+:root {
+    --primary-color: #006064;    /* Deep Teal */
+    --accent-color: #00ACC1;     /* Lighter Teal */
+    --secondary-color: #B2EBF2;   /* Very Light Teal */
+    --bg-primary: #ffffff;
+    --bg-secondary: #E0F7FA;
+    --text-primary: #2C3E50;
+    --text-secondary: #546E7A;
+    --highlight-color: #00BCD4;   /* Bright Teal */
+    --holy-theme-light: #E0F7FA; /* Very Light Teal */
+    --holy-theme-dark: #006064;  /* Dark Teal */
+    --success: #4CAF50;
+    --warning: #FFA726;
+    --error: #EF5350;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Series Banner */
+.series-banner {
+    background: var(--holy-theme-dark);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Header Styling */
+.series-header {
+    background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.series-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.series-header .content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Question Styling */
+.question {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--accent-color);
+}
+
+.question:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.question h3 {
+    color: var(--holy-theme-dark);
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.question h3::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.scripture-reference {
+    background: var(--holy-theme-dark);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+/* Collapsible Content */
+.collapsible-header {
+    background: var(--bg-secondary);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    margin: 1rem 0;
+    font-weight: 600;
+    color: var(--holy-theme-dark);
+}
+
+.collapsible-header:hover {
+    background: var(--secondary-color);
+}
+
+.collapsible-header .toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.collapsible-header.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: white;
+    border-radius: 0 0 8px 8px;
+    padding: 0 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.collapsible-content.show {
+    max-height: 2000px; /* Adjust as needed */
+    padding: 1.5rem;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.nav-button {
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.previous-chapter {
+background: var(--holy-theme-dark);
+}
+
+.previous-chapter {
+    background: var(--holy-theme-dark);
+}
+
+.next-chapter {
+    background: var(--accent-color);
+}
+
+.toc {
+    background: var(--primary-color);
+}
+
+.home-button {
+    background: var(--holy-theme-dark);
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.nav-button .hover-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 8px;
+    z-index: 100;
+}
+
+.nav-button:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Think About It Box */
+.think-about-it {
+    background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--highlight-color);
+}
+
+.think-about-it h3 {
+    display: flex;
+    align-items: center;
+    color: var(--holy-theme-dark);
+}
+
+.think-about-it h3 i {
+    margin-right: 10px;
+    color: var(--highlight-color);
+}
+
+/* In-Depth Study Section */
+.in-depth-study {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 3rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.in-depth-study h2 {
+    text-align: center;
+    color: var(--holy-theme-dark);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.in-depth-study h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+/* Details/Summary Styling */
+details {
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: white;
+}
+
+summary {
+    padding: 1.2rem;
+    cursor: pointer;
+    background: var(--bg-secondary);
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    position: relative;
+    outline: none;
+}
+
+summary:hover {
+    background: var(--secondary-color);
+}
+
+summary::after {
+    content: '⌄';
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+details[open] summary {
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+details .content {
+    padding: 1.5rem;
+}
+
+/* Bible Reference Styling */
+.bible-reference {
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+/* Footer */
+.page-footer {
+    background: var(--holy-theme-dark);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.copyright-notice {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.copyright-notice a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.copyright-notice a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .series-header {
+        padding: 2rem 1rem;
+    }
+
+    .nav-button {
+        min-width: 120px;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.question:nth-child(1) { animation-delay: 0.1s; }
+.question:nth-child(2) { animation-delay: 0.2s; }
+.question:nth-child(3) { animation-delay: 0.3s; }
+.question:nth-child(4) { animation-delay: 0.4s; }
+.question:nth-child(5) { animation-delay: 0.5s; }
+.question:nth-child(6) { animation-delay: 0.6s; }
+.question:nth-child(7) { animation-delay: 0.7s; }
+.question:nth-child(8) { animation-delay: 0.8s; }
+.question:nth-child(9) { animation-delay: 0.9s; }
+.question:nth-child(10) { animation-delay: 1s; }
+.question:nth-child(11) { animation-delay: 1.1s; }
+.question:nth-child(12) { animation-delay: 1.2s; }
+.question:nth-child(13) { animation-delay: 1.3s; }
+.question:nth-child(14) { animation-delay: 1.4s; }
+.question:nth-child(15) { animation-delay: 1.5s; }
+
+/* Custom Details/Summary styling */
+.custom-details {
+    margin-bottom: 1.5rem;
+}
+
+.custom-details summary {
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--holy-theme-dark);
+    transition: background-color 0.3s ease;
+    outline: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.custom-details summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.custom-details[open] summary::after {
+    content: '−';
+}
+
+.custom-details summary:hover {
+    background-color: var(--secondary-color);
+}
+
+.custom-details .details-content {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    margin-top: -8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-left: 3px solid var(--accent-color);
+}
+
+/* Scripture Box */
+.scripture-box {
+    background: var(--holy-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.scripture-box::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-size: 100px;
+    color: rgba(0,0,0,0.05);
+    font-family: Georgia, serif;
+}
+
+/* Highlight for important points */
+.highlight {
+    background-color: rgba(0, 188, 212, 0.1);
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+
+/* Numbered lists with custom styling */
+ol.styled-list {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ol.styled-list li {
+    counter-increment: item;
+    margin-bottom: 10px;
+    padding-left: 2rem;
+    position: relative;
+}
+
+ol.styled-list li::before {
+    content: counter(item);
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* Bulleted lists with custom styling */
+ul.styled-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.styled-list li {
+    margin-bottom: 10px;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+ul.styled-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+/* Prophecy Diagram */
+.prophecy-diagram {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.prophecy-diagram img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Prophecy table */
+.prophecy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.prophecy-table th {
+    background-color: var(--holy-theme-dark);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+}
+
+.prophecy-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--bg-secondary);
+}
+
+.prophecy-table tr:nth-child(even) {
+    background-color: var(--bg-secondary);
+}
+
+.prophecy-table tr:last-child td {
+    border-bottom: none;
+}
+
+.prophecy-table tr:hover {
+    background-color: var(--secondary-color);
+}
+
+        /* Additional styles for collapsible sections */
+        .collapsible-section {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .collapsible-header {
+            background-color: var(--bg-secondary);
+            color: var(--holy-theme-dark);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .collapsible-header:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .collapsible-header.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible-content {
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .collapsible-content p:first-child {
+            margin-top: 1.5rem;
+        }
+        
+        .collapsible-content p:last-child {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Comparison table styles */
+        .comparison-table {
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background-color: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* In-depth study section */
+        .in-depth-study {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .in-depth-study h2 {
+            color: var(--holy-theme-dark);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>6.9 - Revelation 10: The Adventist Church and the Secret Message</h1>
+            <p>Understanding God's plan for the remnant church in the last days</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                Introduction
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>We already know that Revelation has a special message for God's people in the last days. It is the remnant church that keeps God's commandments, has the presence of the Spirit of prophecy, and faith in Jesus. But God has something more to tell us in this book about the remnant church: chapter 10 describes the beginnings of its history and its mission.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                1. How do we know that Revelation 10 refers to the end times?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>We know this through the context and its own content.</p>
+                
+                <p><strong>a) The context.</strong> This chapter is part of a long series of prophetic scenes (the 7 trumpets) that begin in chapter 8 and conclude in chapter 11:15-19. The message of chapter 10 is found between the sixth and seventh trumpets, with the seventh trumpet representing the moment of the establishment of God's kingdom (v. 15). It is therefore highly probable that the message of chapter 10 refers to something that must happen in the time immediately preceding what is described with the seventh trumpet.</p>
+                
+                <p><strong>b) The content.</strong> Revelation 10:6 clearly says that the time before God's kingdom is established is very short. We must therefore be in the last days.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                2. Verses 1-2 speak of a glorious angel who gives a message while standing with one foot on the sea and one on the land. What does this mean?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>The sea and the land generally represent the entire earth (Exodus 20:4,11; Psalm 69:34). In this perspective, it can represent the universality of the Angel's power and message. However, the prophetic books of Daniel and Revelation use the image of the sea (Rev 12:15,16; 17:5; Dan 7:2,3) as a symbol of the peoples living in the lands around the Mediterranean Sea where most of the history of God's people developed. We have also seen that, by contrast, the earth must represent a land with few people where God's persecuted people could find refuge during the period of persecutions (Rev 12:16). In this perspective, the vision may refer to the fact that the message of the second advent would be preached in both the old and new worlds, as happened between the 18th and 19th centuries.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                3. Verse 2 says that the angel had in his hand a little open book (literally, a scroll). It evidently contains the message that must be proclaimed. What is it about?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Let's compare this text with Daniel 12:4 where Daniel receives this message: "But you, Daniel, shut up the words, and seal the book until the time of the end; many shall run to and fro, and knowledge shall increase." In Daniel 8:26, the angel Gabriel applies this need to "seal up the vision" particularly to the prophetic time of the 2300 evenings and mornings, that is, to the 2300 years that conclude in 1844, with the beginning of the time of the heavenly judgment. Well knowing that Revelation continually refers to the book of Daniel, we can easily understand that this little open scroll that has to do with a particular message for the end time must have to do precisely with the prophetic message of the book of Daniel that was to remain hidden until the time of the end, particularly the prophecy that leads to 1844. The message of the angel of Revelation 10, contained in the little open scroll, refers to the experience of proclaiming the arrival of the time of judgment. It must therefore also have to do with the people who proclaim the arrival of judgment in 1844, the Adventist people, precisely. We will see how all the other elements of this prophecy perfectly agree with this interpretation.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                4. Verses 3-4 speak of an important message (the seven thunders) that John was about to write but that the angel commanded not to write. Why would God give a message relating to the last days but not let His people know it?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Most likely, this message refers to the experience of joy and disappointment that the early Adventists lived through. In His wisdom, God preferred not to tell them in order to leave them free and unconditioned in their historical experience.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                5. If God does not wish them to know in advance the experience they would live through, why does He nevertheless let us know there was a hidden message that concerned us?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Most likely, the reason is that it was not useful for them to know in advance what would happen, but nevertheless, knowing that God knew everything would later give them confidence in the Lord's guidance: He always remained in control of history and would do everything necessary for their good.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                6. Verses 5-7 contain a promise. How can it be connected to the Adventist experience?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>In these verses we find the assurance that at the appointed time the "mystery of God" will certainly be manifested: what God has announced through the prophets will happen. This final fulfillment of the "mystery of God" will take place at the time of the seventh trumpet (Rev 11:15-19), and clearly refers to the time when Jesus will take up the kingdom and come to punish "those who destroy the earth." What could be the reason for giving Adventists the assurance that Jesus will certainly come? Don't they already know that? When do we need to be reassured about something? Isn't it when something has happened that risks weakening our hope? Well, this is precisely what happened to the early Adventists. They believed that 1844 was the time when they would finally see their Savior face to face. Their study of God's word had been very accurate and their faith was well-founded. And yet it seemed that nothing had happened. What was supposed to happen (Dan 8:14) happened in heaven, far from their eyes, and could not bring them any kind of help. Some lost their faith, all were confused and even in doubt. They really needed to be reconfirmed in their faith that Jesus would truly return: they just had to wait for the appointed time to come, when the seventh trumpet would sound.</p>
+                
+                <p>A confirmation of this interpretation comes from the fact that this promise is made by saying: "there should be time no longer" (literally). Some understand this as if the phrase meant that there would be no more "delay." The experience of "delay" occurs when something is expected to happen before it actually will. This was precisely the experience of the early Adventists. If this is the meaning, the text well describes the condition of their experience and state of mind and helps us understand why the Lord addresses these words to them: they would have to wait longer than they expected, but in the end their hope would be fulfilled, much sooner than, after the disarray of disappointment, they might have suspected. The message of trust is maintained even if one thinks that the "time" spoken of is (as the Adventist Commentary says) the prophetic time of the 2300 evenings and mornings, which they had applied to the Lord's soon return while it referred to the time of judgment. In this case, the expression would give the certainty that after 1844 there would be no other prophetic times to wait for and that soon the Lord would return.</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                7. Verses 8-10 tell us about the eaten scroll. What does the sweetness and then the bitterness it gives mean?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>We already know that the open scroll is the book of Daniel, especially the part relating to the 2300 evenings and mornings and the cleansing of the sanctuary. The early Adventists, led by William Miller, correctly understood that the 2300 evenings and mornings led to 1844. However, they erroneously applied the prophecy to the return of Jesus. When the little open book was eaten, that is, when its message was carefully studied and received, it caused great joy (John here becomes the symbol of the believers). But when Jesus did not return as they expected, that prophecy became a cause of great bitterness. Could God explain more clearly the experience these believers would live through?</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                8. Verse 11 gives a command and assigns a mission. What do they mean?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>Who could have imagined that those confused, disappointed, discouraged people still had a mission to fulfill from God? Humanly speaking, anyone might have thought that the Adventist movement would immediately disappear like a miscarriage of history. Everything they hoped for had not come to pass. Their hearts were full of sadness. Their neighbors mocked them. Many abandoned their trust in God and His promises. Others continued to believe and hope. To them God said: Do not be discouraged, your experience has not been useless. Rise up and prophesy again, that is, preach a prophetic message that the world still needs. Now you have understood what the prophecy of Daniel 8:14 means, the judgment has already begun, soon the Lord Jesus whom you have waited for will return. This message is the same given by the first angel of Revelation 14:7 which announces the coming of God's judgment and the fact that people must prepare to meet their Lord. Revelation 11:19 says, in relation to the return of Jesus, that "the ark of His covenant" which contains the Ten Commandments was shown in the Most Holy Place of God's temple. Jesus is also coming to vindicate the righteousness of God's law. Let all the world know it. This is the mission entrusted. Is it our mission?</p>
+            </div>
+        </div>
+
+        <div class="collapsible-section">
+            <div class="collapsible-header">
+                9. How did God renew the faith of these people?
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="collapsible-content">
+                <p>How can we not think, in particular, of the message and help that God gave through the prophetic ministry of Ellen White?</p>
+            </div>
+        </div>
+
+        <div class="in-depth-study">
+            <h2>In-Depth Study</h2>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    10. Who was William Miller?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>Miller (1782-1849) was an American farmer who, through personal study and his honesty, enjoyed the esteem of those who knew him. Born into a Christian family, he had lost his faith because of his deists (deism presupposes the existence of a creator God but affirms his non-participation in human life. There are therefore no miracles or salvation, and the Bible is not the word of God. This life is the only one we have left and we must live it according to the laws of nature and social rules).</p>
+                    
+                    <p>"In the War of 1812 (against England) Miller fought as a lieutenant and captain. At the end of the war, his family moved to Low Hampton, where he hoped to live quietly as a farmer for his remaining years. At various times he served his community as deputy sheriff and justice of the peace. But Miller was not at peace with himself because in his heart he remained a religious man." It was in 1816 that he experienced his conversion to Jesus and began to study the Bible very carefully.</p>
+                    
+                    <p>His studies led him to discover the biblical prophecies about the return of Jesus. He was especially impressed by Daniel 8:14 which announced the cleansing of the sanctuary after a period of 2300 days. His calculations led him to understand that this event was to take place in 1843 and subsequently in 1844. He understood the text as if the temple that was to be cleansed was the church (the spiritual temple - Eph 2:20-21) and thought that this could only happen at the return of Jesus, when all evil would be taken away from his people. It was in 1818 that he reached this conclusion, only twenty-five years before the expected time. What to do with this discovery? Miller was not one who liked to come forward and struggled with God for years before sharing his conviction with others. Only in 1831, after making a pact with God, to be certain that it was His will that he preach about the return of Christ, did he begin his mission, with great humility but meeting with progressive and unexpected success.</p>
+                    
+                    <p>Many preachers from different churches joined him and a large movement was formed. When the expected time passed without anything visible having happened, the Millerite Movement (as others called it) shattered. Miller confessed his obvious error but reaffirmed his trust in God and, thinking there must be some error in his chronological calculations, continued to await the return of the Lord until the end of his life in 1849. A man of deep faith, Miller honored God in all humility and with honesty. He never claimed to be a prophet or anything of the sort. He never thought of founding his own church or becoming a charismatic leader. His only desire was to help people accept Jesus as their Savior and prepare to meet Him when He would come in His glory. He was one of those who welcomed the book of Daniel as if it were honey, and suffered the bitterness of disappointment. Others, building on his spiritual heritage would receive the invitation not to be discouraged and to continue his mission of giving the message of hope to the world (Rev 10). From them would be born the Seventh-day Adventist Church.</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    11. What is the relationship between Miller and the Seventh-day Adventist Church?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>Miller was not a founder or a member of our church, but we honor him as a man of God called to begin a journey that we are called to continue. Most of the Millerites and several preachers who had supported him remained with Miller. They organized themselves as a church under the name of Advent Christian Church and still exist today, reaching about 100,000 people. The Seventh-day Adventist Church, on the other hand, despite starting from a handful of men (about fifty people) and without great preachers, would become, despite the more difficult message it carries forward (observance of the commandments, health reform, etc.) a worldwide movement in rapid growth and appreciated also for the humanitarian and social service it renders to the world. This different history is due, we believe, to the fact that we have accepted the prophetic guidance given to us by God through Ellen G. White, and they have not.</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    12. Was Miller the only one to preach the return of Jesus for 1844?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>No, he was only the best known but there were others, both in Europe and in America. Miller was part, partly unaware, of a spiritual movement formed by believers who studied the Bible and who rediscovered the promise of the return of Jesus in glory seen as imminent. "At that time the majority of Protestants were either indifferent regarding the return of Jesus, or expected Him to come after a period of 1000 (or 365,000) years of a spiritual reign, through the triumph of the church. It was against this latter understanding - called post-millennialism, that the pre-millennialists of the 19th century fought with their insistence on the fact that Christ would return before the millennium, and soon. Among them were Petri in Germany (before 1800), Gaussen in Switzerland, Irving and others in England, Wolff in Asia, and others in other places." (SDA Encyclopedia). Among these also the Chilean Jesuit Manuel Lacunza.</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    13. Why does the angel define the plan of salvation as a "mystery"? (Rev 10:7)
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>"In the usage of the early Christians, the term 'mystery' did not mean something that could not be understood, as it does today, but something that could be understood only by those who were initiated, who had the right to it. Thus Jesus said to his disciples that to them it was 'given' to know the mysteries of the kingdom of heaven," but not to the crowd (see Matt 13:11). Paul speaks of the resurrection as a "mystery" (1 Cor 15:51) and often refers to the plan of salvation itself (see Rom 16:25, 26)." "Paul also speaks of the 'mystery of God' (Col 2:2) and the 'mystery of Christ' (Col 4:3). The mystery of God, that which he reveals to his children, is his project for them, the plan of salvation. Cf. 1 Tim 3:16; 6T 19." (Adventist Commentary)</p>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    14. Who is the angel that appears in Revelation 10?
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="collapsible-content">
+                    <p>In Revelation many angels appear but they are neither described nor called by name. There are only two exceptions: Michael who leads the angelic armies against Satan, and the mighty angel of chapter 10. In both cases we have good reasons to suppose that it is Jesus. Let's look at the characteristics of the angel of Revelation 10:</p>
+                    
+                    <div class="comparison-table">
+                        <table>
+                            <tr>
+                                <th>Revelation 10</th>
+                                <th>Similar Descriptions of Jesus</th>
+                            </tr>
+                            <tr>
+                                <td>A mighty angel (v. 1)</td>
+                                <td>A strong angel (5:2, see v. 5-7)</td>
+                            </tr>
+                            <tr>
+                                <td>Clothed with a cloud (v. 1)</td>
+                                <td>Coming in the clouds (1:7; 14:14-16)</td>
+                            </tr>
+                            <tr>
+                                <td>A rainbow on his head (v. 1)</td>
+                                <td>A rainbow around the throne (4:3)</td>
+                            </tr>
+                            <tr>
+                                <td>His face was like the sun (v. 1)</td>
+                                <td>His face was like the sun (1:16)</td>
+                            </tr>
+                            <tr>
+                                <td>His feet like pillars of fire (v. 1)</td>
+                                <td>His feet like fine brass (1:15)</td>
+                            </tr>
+                            <tr>
+                                <td>Cried with a loud voice, as when a lion roars (v. 3)</td>
+                                <td>The Lion of the tribe of Judah (5:5)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <p>The identification of Jesus with an angel, however mighty, does not mean that He is a creature like the angels. It simply means that Jesus is "the Angel of Yahweh" whom we know from the Old Testament, the glorious manifestation of God. It may be worth noting that Jesus appears in the same glorious form in chapter 1:10-20 where He presents Himself as the one who has to do with the history of His church, and in chapter 10 where He deals with the concluding part of this history. As if to say: "I will personally take care of my church, and I will never forget it. I will follow it to the end."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="6.8.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">6.8 - A Prophet for the Remnant</span>
+            </a>
+            <a href="7.1.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">Various Topics</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- No-copy protection scripts -->
+    <script>
+        // Updated no-copy protection scripts
+        document.addEventListener('keydown', function(e) {
+            // Prevent Ctrl+C (copy)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.keyCode === 67)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+U (view source)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) {
+                e.preventDefault();
+                alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+S (save)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
+                e.preventDefault();
+                alert('Content saving is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+P (print)
+            if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 'P' || e.keyCode === 80)) {
+                e.preventDefault();
+                alert('Content printing is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+            
+            // Prevent Ctrl+Shift+I (inspect element)
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.keyCode === 73)) {
+                e.preventDefault();
+                alert('Inspect element is not permitted. For permissions, contact: felixcobby@gmail.com');
+                return false;
+            }
+        });
+
+        // Prevent right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable text selection
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Additional protection to disable copy
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable cut
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            alert('Content cutting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+
+        // Disable paste
+        document.addEventListener('paste', function(e) {
+            e.preventDefault();
+            alert('Content pasting is not permitted. For permissions, contact: felixcobby@gmail.com');
+            return false;
+        });
+        
+        // Toggle collapsible sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+            
+            collapsibleHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.querySelector('.toggle-icon').textContent = '+';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        this.querySelector('.toggle-icon').textContent = '−';
+                    }
+                });
+            });
+            
+            // Auto-open the first section
+            if (collapsibleHeaders.length > 0) {
+                collapsibleHeaders[0].click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,918 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+    <title>2.3 God Promises a Savior | History of Salvation</title>
+    <link rel="stylesheet" href="/HistOfSalvation/styles2.css">
+    
+    
+    <style>
+
+/* Alternative Purpose Box Styling */
+.purpose-box {
+    background: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin: 2.5rem 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+}
+.purpose-box p {
+  color: #060707;
+}
+
+.purpose-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--divine-color), var(--wisdom-color));
+    border-radius: 15px 15px 0 0;
+}
+
+.purpose-box h2 {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.purpose-box h2::before {
+    content: '✦';
+    color: var(--divine-color);
+    font-size: 1.5rem;
+}
+
+.purpose-text {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.purpose-text p {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.purpose-highlight {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.2) 0%, rgba(218, 165, 32, 0) 100%);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.purpose-highlight:hover {
+    background: linear-gradient(120deg, rgba(218, 165, 32, 0.3) 0%, rgba(218, 165, 32, 0.1) 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .purpose-box {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .purpose-box h2 {
+        font-size: 1.6rem;
+    }
+
+    .purpose-text {
+        padding-left: 1rem;
+    }
+
+    .purpose-text p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+
+
+      /* Page-specific styles */
+      .page-background {
+          background-image: url('../images/creation-bg.jpg');
+      }
+
+      .scripture-reference {
+          display: inline-block;
+          background: var(--divine-color);
+          color: var(--text-primary);
+          padding: 0.2rem 0.5rem;
+          border-radius: 4px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+      }
+
+      .question-section {
+          margin-bottom: 2rem;
+          background: white;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .comparison-table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          margin: 1.5rem 0;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+          padding: 1rem;
+          border: 1px solid var(--accent-color);
+      }
+
+      .comparison-table th {
+          background: var(--primary-color);
+          color: white;
+      }
+
+      .comparison-table tr:nth-child(even) {
+          background: var(--bg-accent);
+      }
+
+      /* Add hover effects */
+      .scripture-reference:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .question-section:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+      }
+
+      /* Mobile optimizations */
+      @media (max-width: 768px) {
+          .comparison-table {
+              font-size: 0.9rem;
+          }
+          
+          .comparison-table th,
+          .comparison-table td {
+              padding: 0.5rem;
+          }
+          
+          .question-section {
+              padding: 1rem;
+          }
+      }
+
+    
+    
+  
+        /* Additional page-specific styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--spacing-md);
+            border: 1px solid var(--primary-color);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: var(--bg-primary);
+        }
+
+        .scripture-reference {
+            color: var(--prophecy-color);
+            font-weight: 600;
+        }
+
+        .question-number {
+            color: var(--wisdom-color);
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .reflection-box {
+            background: linear-gradient(to right, var(--bg-accent), transparent);
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--wisdom-color);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+/* Navigation Button Styles */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Next Chapter Button - Royal Gold */
+.next-chapter {
+    background: #DAA520;
+    color: white;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+}
+
+.next-chapter:hover {
+    background: #B8860B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+}
+
+/* Additional Insight Button - Deep Burgundy */
+.study-button {
+    background: #800020;
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+}
+
+.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+/* Table of Contents Button - Rich Brown */
+.nav-button.toc {
+    background: #8B4513;
+    color: white;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.nav-button.toc:hover {
+    background: #723A0F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+}
+
+/* Home Button - Deep Forest Green */
+.home-button {
+    background: #2F4F4F;
+    color: white;
+    box-shadow: 0 4px 15px rgba(47, 79, 79, 0.3);
+}
+
+.home-button:hover {
+    background: #1F3333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(47, 79, 79, 0.4);
+}
+
+/* Hover Text for Buttons */
+.nav-button .hover-text {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 8px;
+}
+
+.nav-button:hover .hover-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Add arrow to hover text */
+.nav-button .hover-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+
+/* Additional Study Button Styling */
+.nav-button.study-button {
+    background: #800020; /* Deep burgundy */
+    color: white;
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button.study-button:hover {
+    background: #660019;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4);
+}
+
+.nav-button.study-button::before {
+    content: '📚'; /* Book emoji or can use Font Awesome icon */
+    margin-right: 8px;
+}
+
+
+.scripture-quote {
+    background: var(--bg-accent);
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0;
+}
+
+.interpretation-points {
+    margin-top: 1.5rem;
+}
+
+.interpretation-points ol {
+    list-style-type: none;
+    counter-reset: item;
+    padding-left: 0;
+}
+
+.interpretation-points ol > li {
+    counter-increment: item;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.interpretation-points ol > li::before {
+    content: counter(item);
+    background: var(--accent-color);
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.important-note {
+    background: linear-gradient(to right, var(--accent-color-light), transparent);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.translation-comparison-table {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.translation-comparison-table table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.translation-comparison-table th,
+.translation-comparison-table td {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.translation-comparison-table th {
+    background: var(--primary-color);
+    color: white;
+}
+
+.translation-comparison-table tr:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+
+
+.insights-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.example-box {
+    background: white;
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.detailed-analysis,
+.interpretation {
+    margin-top: 1rem;
+    padding-left: 1rem;
+}
+
+.detailed-analysis ul,
+.interpretation ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.detailed-analysis li,
+.interpretation li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.detailed-analysis li::before,
+.interpretation li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.scripture-reference {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .navigation {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-button.study-button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-button .hover-text {
+        display: none; /* Hide hover text on mobile */
+    }
+}
+
+    </style>
+</head>
+
+  <body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="chapter-header">
+            <h1>Additional Insights: Divine Titles and Nature of Jesus</h1>
+            <div class="purpose-box">
+                <h2>In-Depth Study</h2>
+                <p>A detailed examination of Jesus' divine titles, nature, and biblical evidence supporting His deity.</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-section">
+            <!-- Section 9: Divine Titles -->
+            <div class="insight-section">
+                <h3>9. Divine Titles Applied to Jesus</h3>
+                <div class="divine-titles-grid">
+                    <div class="title-card">
+                        <h4>The First and the Last</h4>
+                        <div class="scripture-comparison">
+                            <p>Compare: <span class="scripture-reference">Revelation 1:17; 2:8</span> with <span class="scripture-reference">Isaiah 44:6</span></p>
+                        </div>
+                    </div>
+                    <div class="title-card">
+                        <h4>The Lord</h4>
+                        <p>Compare: <span class="scripture-reference">1 Corinthians 8:6</span> with the Jewish practice of using Adonai (Lord) for Yahweh</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 10: Detailed Analysis of John 1:1-14 -->
+<div class="insight-section" id="john-analysis">
+  <h3>10. In-Depth Analysis of John 1:1-14</h3>
+  
+  <div class="verse-analysis">
+      <div class="verse-block">
+          <h4>"The Word" (verse 1)</h4>
+          <div class="analysis-content">
+              <p>Jesus (v. 14) is called this because, as a word manifests one's inner thoughts, He manifests God's otherwise unknowable reality. Jesus can do this because He is "in the Father's bosom" and coming to us, reveals Him (v. 18).</p>
+              
+              <div class="key-points">
+                  <h5>"In the beginning"</h5>
+                  <ul>
+                      <li>References when God created the universe (<span class="scripture-reference">Genesis 1:1</span>)</li>
+                      <li>Uses imperfect tense ("was") indicating ongoing existence, not a point of beginning</li>
+                      <li>Demonstrates Jesus' pre-existence before creation</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      <div class="theological-note">
+          <h4>Important Theological Distinctions:</h4>
+          <ul>
+              <li>"The Word was with God" - Shows distinction from the Father</li>
+              <li>"The Word was God" - Shows divine nature</li>
+              <li>These statements together prevent both:
+                  <ul>
+                      <li>The error of denying Jesus' distinction from the Father</li>
+                      <li>The error of making Jesus a mere creature</li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<!-- Section 11: Understanding "Firstborn" -->
+<div class="insight-section" id="firstborn">
+  <h3>11. Understanding "Firstborn" in Colossians 1:15</h3>
+  
+  <div class="analysis-grid">
+      <div class="interpretation-card">
+          <h4>Common Misunderstanding</h4>
+          <p>Some interpret this to mean Jesus was the first created being.</p>
+      </div>
+
+      <div class="correct-understanding">
+          <h4>Biblical Analysis</h4>
+          <ol>
+              <li>Context shows Jesus as Creator, not creature</li>
+              <li>Term indicates preeminence, not chronological order</li>
+              <li>"Firstborn" denotes status and authority</li>
+          </ol>
+      </div>
+
+      <div class="biblical-examples">
+          <h4>Biblical Examples of "Firstborn" as Status:</h4>
+          <ul>
+              <li>David called "firstborn" though youngest son (<span class="scripture-reference">Psalm 89:20,27</span>)</li>
+              <li>Ephraim designated as firstborn though second son (<span class="scripture-reference">Jeremiah 31:9</span>)</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<!-- Section 12: Translation Comparison Table -->
+<div class="insight-section" id="translation-comparison">
+  <h3>12. Critical Translation Comparisons</h3>
+  
+  <div class="comparison-table">
+      <table>
+          <thead>
+              <tr>
+                  <th>Scripture</th>
+                  <th>Accurate Translation</th>
+                  <th>Alternative Translation</th>
+                  <th>Commentary</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td><span class="scripture-reference">John 1:1</span></td>
+                  <td>"The Word was God"</td>
+                  <td>"The Word was a god"</td>
+                  <td>Original Greek supports full deity, not lesser divine status</td>
+              </tr>
+              <tr>
+                  <td><span class="scripture-reference">Colossians 2:9</span></td>
+                  <td>"All the fullness of the Deity"</td>
+                  <td>"Divine qualities"</td>
+                  <td>Greek 'theotes' refers to divine essence, not merely attributes</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+
+<!-- Section 13: Analysis of Divine Names -->
+<div class="insight-section" id="divine-names">
+  <h3>13. Why Jehovah's Witnesses Created Their Own Bible Translation</h3>
+  
+  <div class="translation-analysis">
+      <p class="introduction">The Jehovah's Witnesses are today's primary opponents of Jesus' deity. They deny His co-eternal nature with the Father. While honoring Him as a powerful and merciful being, they consider Him only as God's first creature through whom God then created other creatures.</p>
+
+      <div class="comparison-examples">
+          <h4>Key Translation Comparisons:</h4>
+          
+          <div class="comparison-block">
+              <h5>John 1:1</h5>
+              <div class="translation-grid">
+                  <div class="biblical-text">
+                      <h6>Biblical Teaching:</h6>
+                      <p>"In the beginning was the Word, and the Word was with God, and the Word was God."</p>
+                  </div>
+                  <div class="jw-translation">
+                      <h6>JW Translation:</h6>
+                      <p>"In the beginning was the Word, and the Word was with God, and the Word was a god."</p>
+                  </div>
+                  <div class="analysis-note">
+                      <h6>Critical Analysis:</h6>
+                      <ul>
+                          <li>Original Greek manuscripts don't distinguish between upper and lowercase letters</li>
+                          <li>Adding "a" before "god" introduces a polytheistic concept foreign to Scripture</li>
+                          <li>Contradicts biblical monotheism (<span class="scripture-reference">Romans 3:30; 1 Corinthians 8:6; 1 Timothy 2:5</span>)</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+          <div class="comparison-block">
+              <h5>John 8:58</h5>
+              <div class="translation-grid">
+                  <div class="biblical-text">
+                      <h6>Biblical Teaching:</h6>
+                      <p>"Before Abraham was, I AM."</p>
+                  </div>
+                  <div class="jw-translation">
+                      <h6>JW Translation:</h6>
+                      <p>"Before Abraham came into existence, I have been."</p>
+                  </div>
+                  <div class="analysis-note">
+                      <h6>Critical Analysis:</h6>
+                      <ul>
+                          <li>Greek 'ego eimi' is present tense, deliberately echoing Exodus 3:14</li>
+                          <li>Jesus claims the divine name "I AM" (YHWH)</li>
+                          <li>The Jews' reaction (attempting to stone Him) confirms this understanding</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Proverbs 8:22-23 Explanation -->
+<div class="insight-section" id="proverbs-explanation">
+    <h3>Understanding Proverbs 8:22-23</h3>
+    
+    <div class="scripture-quote">
+        <blockquote>
+            "The LORD possessed me at the beginning of His way, before His works of old. I was established from everlasting, from the beginning, before there was ever an earth." (<span class="scripture-reference">Proverbs 8:22-23</span>)
+        </blockquote>
+    </div>
+
+    <div class="analysis-content">
+        <h4>Common Misinterpretation</h4>
+        <p>Some use this text to argue that Jesus was created by God before the creation of the world. This interpretation is incorrect for several reasons:</p>
+
+        <div class="interpretation-points">
+            <ol>
+                <li>
+                    <h5>Context</h5>
+                    <p>These verses and those following refer to wisdom personified (see verse 1), not to Jesus directly. Wisdom is represented as a woman teaching how to live wisely.</p>
+                </li>
+
+                <li>
+                    <h5>Hebrew Term Analysis</h5>
+                    <div class="term-analysis">
+                        <p>The Hebrew verb 'qanah' can mean:</p>
+                        <ul>
+                            <li>To possess</li>
+                            <li>To acquire</li>
+                            <li>To create (in some contexts)</li>
+                        </ul>
+                        <p class="important-note">In this context, "possess" is most appropriate as it would be paradoxical to suggest God created wisdom when He would need wisdom to create anything.</p>
+                    </div>
+                </li>
+
+                <li>
+                    <h5>Eternal Nature</h5>
+                    <p>Verse 23 states wisdom was "established from everlasting" ('olam'), indicating eternal existence rather than a point of creation.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- Translation Considerations -->
+<div class="insight-section" id="translation-considerations">
+    <h3>Critical Translation Considerations</h3>
+
+    <div class="translation-comparison-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Biblical Text</th>
+                    <th>Accurate Translation</th>
+                    <th>Alternative Translation</th>
+                    <th>Critical Analysis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="scripture-reference">Colossians 1:17</span></td>
+                    <td>"He is before all things"</td>
+                    <td>"He is before all [other] things"</td>
+                    <td>Adding "other" implies Jesus is created, contradicting the context of His supremacy</td>
+                </tr>
+                <tr>
+                    <td><span class="scripture-reference">Colossians 2:9</span></td>
+                    <td>"All the fullness of the Deity"</td>
+                    <td>"Divine qualities"</td>
+                    <td>'Theotes' refers to divine essence/nature, not merely attributes</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Trinity Concept -->
+<div class="insight-section" id="trinity-understanding">
+    <h3>Understanding the Trinity Concept</h3>
+
+    <div class="concept-explanation">
+        <div class="key-points">
+            <h4>Biblical Foundation</h4>
+            <ul>
+                <li>The term "Trinity" isn't found in Scripture</li>
+                <li>Developed to express biblical truth about God's nature</li>
+                <li>Represents church's understanding of divine revelation</li>
+            </ul>
+        </div>
+
+        <div class="practical-application">
+            <h4>Practical Understanding</h4>
+            <p>While the term itself is extra-biblical, the concept it represents is thoroughly biblical:</p>
+            <ul>
+                <li>One God existing in three persons</li>
+                <li>Each person fully divine</li>
+                <li>Distinct but not separate</li>
+            </ul>
+        </div>
+
+        <div class="balanced-approach">
+            <h4>Balanced Perspective</h4>
+            <div class="approach-points">
+                <p>While acknowledging the term's legitimacy in Christian theology, we can:</p>
+                <ul>
+                    <li>Prefer biblical language when possible</li>
+                    <li>Recognize its value in systematic theology</li>
+                    <li>Focus on biblical truth rather than terminology</li>
+                    <li>Maintain humility regarding divine mysteries</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Additional Study Tools -->
+<div class="study-resources">
+  <h3>Additional Resources</h3>
+  <div class="resource-grid">
+      <div class="resource-card">
+          <h4>Scripture Cross-References</h4>
+          <ul>
+              <li><span class="scripture-reference">Exodus 3:14</span> - Divine name revelation</li>
+              <li><span class="scripture-reference">John 1:1-18</span> - Word becoming flesh</li>
+              <li><span class="scripture-reference">Colossians 1:15-20</span> - Christ's supremacy</li>
+              <li><span class="scripture-reference">Hebrews 1:1-4</span> - Son's divine nature</li>
+          </ul>
+      </div>
+      
+      <div class="resource-card">
+          <h4>Key Terms Glossary</h4>
+          <dl>
+              <dt>Deity</dt>
+              <dd>Divine nature or status as God</dd>
+              <dt>Incarnation</dt>
+              <dd>God becoming human in Jesus Christ</dd>
+              <dt>Theotes</dt>
+              <dd>Greek term for divine essence/nature</dd>
+          </dl>
+      </div>
+  </div>
+</div>
+
+
+        <!-- Navigation System -->
+        <div class="navigation">
+            <!-- Return to Main Lesson -->
+            <a href="/HistOfSalvation/2.6.html" class="nav-button main-lesson">
+                ← Back to Main Lesson
+                <span class="hover-text">2.6 Who is Jesus?</span>
+            </a>
+
+            <!-- Next Main Lesson -->
+            <a href="/HistOfSalvation/2.7.html" class="nav-button next-chapter">
+                Next Lesson →
+                <span class="hover-text">2.7 The Return of Jesus</span>
+            </a>
+
+           
+
+            <!-- Standard Navigation Buttons -->
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Table of Contents
+                <span class="hover-text">View All Lessons</span>
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Main Page
+                <span class="hover-text">Return to Homepage</span>
+            </a>
+        </div>
+    </div>
+
+  
+
+  
+
+
+
+
+<!--Copy protection script-->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Disable right-click
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable keyboard shortcuts
+      document.addEventListener('keydown', function(e) {
+          if (
+              // Disable Ctrl+C, Ctrl+X, Ctrl+U
+              (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 88 || e.keyCode === 85)) ||
+              // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+              (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) ||
+              // Disable F12
+              e.keyCode === 123
+          ) {
+              e.preventDefault();
+              return false;
+          }
+      });
+
+      // Disable drag and drop
+      document.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+      });
+
+      // Disable text selection via double click
+      document.addEventListener('mousedown', function(e) {
+          if (e.detail > 1) {
+              e.preventDefault();
+          }
+      });
+  });
+</script>
+</body>
+</html>

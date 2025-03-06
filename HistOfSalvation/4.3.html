@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3 The Lord's Supper | History of Salvation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #8B0000;    /* Deep Red */
+            --accent-color: #CD5C5C;     /* Indian Red */
+            --secondary-color: #FFE4E1;   /* Misty Rose */
+            --bg-primary: #ffffff;
+            --bg-secondary: #FFF5F5;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #DC143C;   /* Crimson */
+            --supper-theme-light: #FFE4E1; /* Light Red */
+            --supper-theme-dark: #8B0000;  /* Dark Red */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--supper-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('path-to-lords-supper-image.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Purpose Box */
+        .purpose-box {
+            background: var(--supper-theme-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--supper-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--supper-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Additional Styles for New Sections */
+.introduction-box {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.historical-context {
+    background: var(--supper-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.content-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-box {
+    background: var(--supper-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.scripture-reference {
+    background: var(--supper-theme-dark);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+/* Collapsible Sections Styling */
+.study-topic {
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.topic-toggle {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.topic-toggle:hover {
+    background: var(--supper-theme-light);
+}
+
+.toggle-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--supper-theme-dark);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.topic-toggle.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.topic-content {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.evidence-list {
+    padding-left: 1.5rem;
+}
+
+.evidence-list li {
+    margin-bottom: 1rem;
+}
+
+
+/* Additional Styles for Collapsible Sections */
+.meanings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.meaning-card {
+    background: var(--supper-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.practice-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.practice-list li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.practice-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.requirements-box {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.key-points {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+.key-points ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.key-points li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "→";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+
+
+/* Additional Styles for New Sections */
+.definition-box {
+    background: var(--supper-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.historical-timeline {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.early-church-views {
+    background: linear-gradient(to right, var(--supper-theme-light), transparent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.early-church-views ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.early-church-views li {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    border-left: 2px solid var(--accent-color);
+    padding-left: 1rem;
+}
+
+.context-box {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.historical-note {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--supper-theme-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <span class="series-title">Doctrine Of The church</span>
+            <h1>4.3 The Lord's Supper</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Purpose Section -->
+        <div class="purpose-box">
+            <h2>Purpose:</h2>
+            <p>To understand the meaning of this Christian rite, second only to baptism, as a sign of grace and life received from Christ both individually and collectively.</p>
+        </div>
+
+<!-- Introduction Section -->
+<div class="introduction-box">
+  <h2>Introduction</h2>
+  <p>Every living being needs to eat and drink. We cannot live without an external source of energy. In spiritual life, it's the same: we need external power to become and be children of God. One of the most beautiful and effective ways Jesus used to teach us this lesson is what we call the Holy Supper, or the Lord's Supper.</p>
+  
+  <div class="historical-context">
+      <h3>Historical Background</h3>
+      <p>It happened during the last evening of Jesus' earthly life. A few hours later, Judas would deliver Him to the soldiers to be judged and killed. It was a very solemn moment, and Jesus was celebrating Passover, a feast commemorating the miraculous deliverance through which God had led His people out of Egyptian slavery.</p>
+  </div>
+</div>
+
+<!-- Main Content Sections (1-8) -->
+<div class="main-sections">
+  <!-- Section 1 -->
+  <div class="content-section">
+      <h2>1. What Special Meaning Did Jesus Give to the Bread and Wine?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">Matthew 26:26-28; Mark 14:22-25; Luke 22:15-20</span>
+          <p>During the Passover meal, unleavened bread and wine were used. Jesus gave them special meaning by comparing His body to the bread and His blood to the wine.</p>
+      </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="content-section">
+      <h2>2. How Does Paul Describe Our Dependence on Jesus?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">Galatians 2:20</span>
+          <p>"I have been crucified with Christ and I no longer live, but Christ lives in me." Do you also believe that Jesus is our life and we cannot live without Him?</p>
+      </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="content-section">
+      <h2>3. Why Did Jesus Command to Celebrate the Lord's Supper?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">Luke 22:19; 1 Corinthians 11:24,25</span>
+          <p>As a remembrance of His sacrifice. Why should we never forget what Jesus has done for us?</p>
+      </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="content-section">
+      <h2>4. What Did Jesus Intend to Establish With This Rite?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">Luke 22:20</span>
+          <p>The new covenant of grace in His death, through the sacrifice of His life given in love.</p>
+      </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="content-section">
+      <h2>5. Why Does Jesus Call This a "New" Covenant?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">Jeremiah 31:31-33</span>
+          <p>This new covenant was necessary because only through Christ's sacrifice can we understand that God is love, that His law is a sign of this love, and that it's worth living in faithful obedience to Him, loving Him fully!</p>
+          <div class="note-box">
+              <p>Note: The New Testament explicitly connects the new covenant announced by Jeremiah with that established by Jesus (see <span class="scripture-reference">Hebrews 8:8-12; 10:16</span>).</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="content-section">
+      <h2>6. What Are the Results of the New Covenant?</h2>
+      <div class="results-grid">
+          <div class="result-card">
+              <h3>a. Better Understanding</h3>
+              <p>We better understand God's love</p>
+              <span class="scripture-reference">John 3:16; 1 John 4:8-10</span>
+          </div>
+          <div class="result-card">
+              <h3>b. Obedience</h3>
+              <p>We learn to obey God's commandments</p>
+              <span class="scripture-reference">John 14:15; Jeremiah 31:33</span>
+          </div>
+          <div class="result-card">
+              <h3>c. Forgiveness</h3>
+              <p>Our sins are forgiven</p>
+              <span class="scripture-reference">Jeremiah 31:34; Matthew 26:28</span>
+          </div>
+          <div class="result-card">
+              <h3>d. Unity</h3>
+              <p>We learn to love one another and be one body</p>
+              <span class="scripture-reference">1 Corinthians 10:17</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="content-section">
+      <h2>7. What Importance Should This New Covenant Have for Us Personally?</h2>
+      <div class="reflection-box">
+          <p>This is an opportunity for personal reflection on the meaning and impact of the covenant in our lives.</p>
+      </div>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="content-section">
+      <h2>8. What Other Rite Did Jesus Institute Before the Actual Supper?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">John 13:1-15</span>
+          <p>The washing of feet, the rite of humility and purification.</p>
+      </div>
+  </div>
+</div>
+
+<!-- Additional Insights (Collapsible Sections) -->
+<div class="indepth-studies">
+  <h2>Additional Insights</h2>
+  <p class="studies-intro">Click each topic to explore deeper understanding</p>
+
+  <!-- Collapsible sections will follow... -->
+<!-- Main Content Sections (1-8) -->
+<div class="main-sections">
+    <!-- Section 1 -->
+    <div class="content-section">
+        <h2>1. What Special Meaning Did Jesus Give to the Bread and Wine?</h2>
+        <div class="scripture-box">
+            <span class="scripture-reference">Matthew 26:26-28; Mark 14:22-25; Luke 22:15-20</span>
+            <p>During the Passover meal, unleavened bread and wine were used. Jesus gave them special meaning by comparing His body to the bread and His blood to the wine.</p>
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="content-section">
+        <h2>2. How Does Paul Describe Our Dependence on Jesus?</h2>
+        <div class="scripture-box">
+            <span class="scripture-reference">Galatians 2:20</span>
+            <p>"I have been crucified with Christ and I no longer live, but Christ lives in me." Do you also believe that Jesus is our life and we cannot live without Him?</p>
+        </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="content-section">
+        <h2>3. Why Did Jesus Command to Celebrate the Lord's Supper?</h2>
+        <div class="scripture-box">
+            <span class="scripture-reference">Luke 22:19; 1 Corinthians 11:24,25</span>
+            <p>As a remembrance of His sacrifice. Why should we never forget what Jesus has done for us?</p>
+        </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="content-section">
+        <h2>4. What Did Jesus Intend to Establish With This Rite?</h2>
+        <div class="scripture-box">
+            <span class="scripture-reference">Luke 22:20</span>
+            <p>The new covenant of grace in His death, through the sacrifice of His life given in love.</p>
+        </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="content-section">
+        <h2>5. Why Does Jesus Call This a "New" Covenant?</h2>
+        <div class="scripture-box">
+            <span class="scripture-reference">Jeremiah 31:31-33</span>
+            <p>This new covenant was necessary because only through Christ's sacrifice can we understand that God is love, that His law is a sign of this love, and that it's worth living in faithful obedience to Him, loving Him fully!</p>
+            <div class="note-box">
+                <p>Note: The New Testament explicitly connects the new covenant announced by Jeremiah with that established by Jesus (see <span class="scripture-reference">Hebrews 8:8-12; 10:16</span>).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="content-section">
+        <h2>6. What Are the Results of the New Covenant?</h2>
+        <div class="results-grid">
+            <div class="result-card">
+                <h3>a. Better Understanding</h3>
+                <p>We better understand God's love</p>
+                <span class="scripture-reference">John 3:16; 1 John 4:8-10</span>
+            </div>
+            <div class="result-card">
+                <h3>b. Obedience</h3>
+                <p>We learn to obey God's commandments</p>
+                <span class="scripture-reference">John 14:15; Jeremiah 31:33</span>
+            </div>
+            <div class="result-card">
+                <h3>c. Forgiveness</h3>
+                <p>Our sins are forgiven</p>
+                <span class="scripture-reference">Jeremiah 31:34; Matthew 26:28</span>
+            </div>
+            <div class="result-card">
+                <h3>d. Unity</h3>
+                <p>We learn to love one another and be one body</p>
+                <span class="scripture-reference">1 Corinthians 10:17</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="content-section">
+        <h2>7. What Importance Should This New Covenant Have for Us Personally?</h2>
+        <div class="reflection-box">
+            <p>This is an opportunity for personal reflection on the meaning and impact of the covenant in our lives.</p>
+        </div>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="content-section">
+        <h2>8. What Other Rite Did Jesus Institute Before the Actual Supper?</h2>
+        <div class="scripture-box">
+            <span class="scripture-reference">John 13:1-15</span>
+            <p>The washing of feet, the rite of humility and purification.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Insights (Collapsible Sections) -->
+<div class="indepth-studies">
+    <h2>Additional Insights</h2>
+    <p class="studies-intro">Click each topic to explore deeper understanding</p>
+
+    <!-- Collapsible sections will follow... -->
+
+    <!-- Inside the indepth-studies div, after the intro paragraph -->
+
+<!-- Study Topic 9 -->
+<div class="study-topic">
+  <button class="topic-toggle" onclick="toggleTopic('topic9')">
+      <span class="toggle-icon">+</span>
+      <h3>9. What Type of Wine Should Be Used in the Lord's Supper?</h3>
+  </button>
+  <div class="topic-content" id="topic9">
+      <div class="content-wrapper">
+          <div class="explanation-box">
+              <p>Passover, of which the Lord's Supper is the ideal continuation, coincided with the Feast of Unleavened Bread (<span class="scripture-reference">Exodus 12:1-21; Leviticus 23:5-8</span>).</p>
+              
+              <div class="key-points">
+                  <h4>Important Considerations:</h4>
+                  <ul>
+                      <li>All leaven was to be avoided during this feast</li>
+                      <li>The bread was unleavened because Passover symbolizes Christ, and nothing corrupted could represent His pure sacrifice (<span class="scripture-reference">1 Corinthians 5:8</span>)</li>
+                      <li>Adventists believe this principle applies to both bread and wine</li>
+                      <li>Unfermented grape juice is used as alcohol is discouraged in Scripture</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Study Topic 10 -->
+<div class="study-topic">
+  <button class="topic-toggle" onclick="toggleTopic('topic10')">
+      <span class="toggle-icon">+</span>
+      <h3>10. The Meaning of Foot Washing</h3>
+  </button>
+  <div class="topic-content" id="topic10">
+      <div class="content-wrapper">
+          <div class="scripture-box">
+              <span class="scripture-reference">John 13:1-15</span>
+          </div>
+          <div class="meanings-grid">
+              <div class="meaning-card">
+                  <h4>1. Humility</h4>
+                  <p>In ancient times, washing someone's feet meant being their servant. By washing each other's feet, we declare ourselves servants to one another in love.</p>
+              </div>
+              <div class="meaning-card">
+                  <h4>2. Confession</h4>
+                  <p>Accepting foot washing acknowledges our need for cleansing and forgiveness.</p>
+              </div>
+              <div class="meaning-card">
+                  <h4>3. Baptism Renewal</h4>
+                  <p>When Peter asked to be fully washed, Jesus replied that one who is bathed needs only foot washing, symbolizing our ongoing need for grace after baptism.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Study Topic 11 -->
+<div class="study-topic">
+  <button class="topic-toggle" onclick="toggleTopic('topic11')">
+      <span class="toggle-icon">+</span>
+      <h3>11. How and When Do Adventists Celebrate the Lord's Supper?</h3>
+  </button>
+  <div class="topic-content" id="topic11">
+      <div class="content-wrapper">
+          <div class="practice-details">
+              <ul class="practice-list">
+                  <li>Use unleavened bread and unfermented grape juice</li>
+                  <li>Include foot washing service (men with men, women with women)</li>
+                  <li>Typically celebrated quarterly</li>
+                  <li>Each congregation free to establish convenient times</li>
+              </ul>
+              <div class="note-box">
+                  <p>While some churches celebrate daily or weekly, and others annually during Passover, we believe no single biblical norm exists. Jerusalem Christians appeared to celebrate daily (<span class="scripture-reference">Acts 2:46</span>), but this was likely specific to their situation rather than a divine command.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Study Topic 12 -->
+<div class="study-topic">
+  <button class="topic-toggle" onclick="toggleTopic('topic12')">
+      <span class="toggle-icon">+</span>
+      <h3>12. Who Can Participate in the Lord's Supper?</h3>
+  </button>
+  <div class="topic-content" id="topic12">
+      <div class="content-wrapper">
+          <div class="participation-guidelines">
+              <p>Paul teaches that each person should examine their spiritual condition, not to abstain if problems exist, but to resolve issues and participate honestly.</p>
+              <div class="requirements-box">
+                  <h4>Prerequisites:</h4>
+                  <ul>
+                      <li>Acceptance of Jesus as Savior</li>
+                      <li>Baptism by immersion</li>
+                      <li>Members of other Christian churches welcome if they share our understanding of the rite</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Study Topic 13 -->
+<div class="study-topic">
+  <button class="topic-toggle" onclick="toggleTopic('topic13')">
+      <span class="toggle-icon">+</span>
+      <h3>13. Can Modern Jews Teach Us About the Wine to Use in the Lord's Supper?</h3>
+  </button>
+  <div class="topic-content" id="topic13">
+      <div class="content-wrapper">
+          <div class="explanation-box">
+              <p>No. They can only tell us which tradition they follow but not what God's will is. Our faith is founded on the Bible, and they have no special means to understand it better than we can.</p>
+              
+              <div class="historical-note">
+                  <h4>Historical Insight:</h4>
+                  <p>No one can have mathematical certainty about what type of wine was used during Passover, but we know for certain that the Essenes were accustomed to drinking only sweet, unfermented wine. Since their purpose was to preserve the ancient priestly rites uncontaminated, their practice might have some value regarding our question.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Study Topic 14 -->
+<div class="study-topic">
+  <button class="topic-toggle" onclick="toggleTopic('topic14')">
+      <span class="toggle-icon">+</span>
+      <h3>14. What Does Jesus Mean in John 6 About His Body Being True Food?</h3>
+  </button>
+  <div class="topic-content" id="topic14">
+      <div class="content-wrapper">
+          <div class="context-box">
+              <p>They had received material bread (<span class="scripture-reference">John 6:26</span>; see vv. 1-14) and wanted more (<span class="scripture-reference">John 6:30,31</span>). They desired a Messiah who would satisfy their physical needs. Instead, Jesus teaches them that for eternal life, they needed to seek better food: the gift of His life.</p>
+              
+              <div class="key-points">
+                  <h4>Understanding the Teaching:</h4>
+                  <ul>
+                      <li>Jesus affirms His body is true food and His blood true drink</li>
+                      <li>As stated in verse 63, these words must be understood spiritually</li>
+                      <li>He is food for spiritual life, not for material benefits</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Study Topic 15 -->
+<div class="study-topic">
+  <button class="topic-toggle" onclick="toggleTopic('topic15')">
+      <span class="toggle-icon">+</span>
+      <h3>15. What is Transubstantiation and When Was it Established?</h3>
+  </button>
+  <div class="topic-content" id="topic15">
+      <div class="content-wrapper">
+          <div class="definition-box">
+              <h4>Definition:</h4>
+              <p>The word comes from Latin and means "to go beyond (trans) the substance." Catholic theologians use it to indicate their belief that when the priest pronounces the formula "this is my body... my blood," the true nature of the bread and wine changes, going beyond appearance, to become Jesus' flesh and blood. Only the external appearance of bread and wine would remain.</p>
+          </div>
+
+          <div class="historical-timeline">
+              <h4>Historical Development:</h4>
+              <ul>
+                  <li>Established as Catholic dogma in 1215 at the Fourth Lateran Council</li>
+                  <li>Before this date, not all Christians believed in transubstantiation</li>
+              </ul>
+          </div>
+
+          <div class="early-church-views">
+              <h4>Early Church Perspectives:</h4>
+              <ul>
+                  <li>St. Augustine (c. 400): "Understand spiritually what I told you. You will not eat this body that you see, and you will not drink the blood that those who crucify me will shed."</li>
+                  <li>St. John Chrysostom (344-407): "Before consecration we call it bread, but then... it loses the name of bread and becomes worthy to be called the Lord's Body, although the nature of bread continues in it."</li>
+                  <li>Theodoret, Bishop of Cyrus (393-458): "The mystical symbols [bread and wine] do not abandon their nature after consecration but maintain their substance and form in everything as before."</li>
+                  <li>Pope Gelasius I: "The sacrament of Christ's body and blood is truly a divine thing; but the bread and wine maintain their substance in the nature of bread and wine."</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+</div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="/HistOfSalvation/4.2.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text"> 4.2 Becoming a Member: Baptism</span>
+            </a>
+            <a href="/HistOfSalvation/4.4.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">4.4 Confession</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+    </div>
+
+
+    <script>
+      function toggleTopic(topicId) {
+          const content = document.getElementById(topicId);
+          const toggle = content.previousElementSibling;
+          const allContents = document.querySelectorAll('.topic-content');
+          const allToggles = document.querySelectorAll('.topic-toggle');
+      
+          // Close all other topics
+          allContents.forEach(item => {
+              if (item.id !== topicId) {
+                  item.classList.remove('active');
+                  item.style.display = 'none';
+              }
+          });
+      
+          allToggles.forEach(item => {
+              if (item !== toggle) {
+                  item.classList.remove('active');
+              }
+          });
+      
+          // Toggle current topic
+          toggle.classList.toggle('active');
+          if (content.style.display === 'none' || !content.style.display) {
+              content.style.display = 'block';
+              content.classList.add('active');
+          } else {
+              content.style.display = 'none';
+              content.classList.remove('active');
+          }
+      }
+      </script>
+
+</body>
+</html>

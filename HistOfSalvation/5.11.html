@@ -1,0 +1,971 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Christian Life and Money (Tithe) | Doctrine of Sanctification and Obedience</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+            --gold: #FFD700;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Question Styling */
+        .question {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .question h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .question h3::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Collapsible Content */
+        .collapsible-header {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            margin: 1rem 0;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+        }
+
+        .collapsible-header:hover {
+            background: var(--secondary-color);
+        }
+
+        .collapsible-header .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            padding: 0 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .collapsible-content.show {
+            max-height: 2000px; /* Adjust as needed */
+            padding: 1.5rem;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* In-Depth Study Section */
+        .in-depth-study {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .in-depth-study h2 {
+            text-align: center;
+            color: var(--holy-theme-dark);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .in-depth-study h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        /* Details/Summary Styling */
+        details {
+            margin: 1rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: white;
+        }
+
+        summary {
+            padding: 1.2rem;
+            cursor: pointer;
+            background: var(--bg-secondary);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            position: relative;
+            outline: none;
+        }
+
+        summary:hover {
+            background: var(--secondary-color);
+        }
+
+        summary::after {
+            content: '⌄';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        details .content {
+            padding: 1.5rem;
+        }
+
+        /* Bible Reference Styling */
+        .bible-reference {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+            }
+
+            .nav-button {
+                min-width: 120px;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question {
+            animation: fadeIn 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .question:nth-child(1) { animation-delay: 0.1s; }
+        .question:nth-child(2) { animation-delay: 0.2s; }
+        .question:nth-child(3) { animation-delay: 0.3s; }
+        .question:nth-child(4) { animation-delay: 0.4s; }
+        .question:nth-child(5) { animation-delay: 0.5s; }
+        .question:nth-child(6) { animation-delay: 0.6s; }
+        .question:nth-child(7) { animation-delay: 0.7s; }
+        .question:nth-child(8) { animation-delay: 0.8s; }
+        .question:nth-child(9) { animation-delay: 0.9s; }
+        .question:nth-child(10) { animation-delay: 1s; }
+        .question:nth-child(11) { animation-delay: 1.1s; }
+        .question:nth-child(12) { animation-delay: 1.2s; }
+
+        /* Custom Details/Summary styling */
+        .custom-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .custom-details summary {
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            transition: background-color 0.3s ease;
+            outline: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .custom-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .custom-details summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-details[open] summary::after {
+            content: '−';
+        }
+
+        .custom-details summary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .custom-details .details-content {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Highlight for important points */
+        .highlight {
+            background-color: rgba(0, 188, 212, 0.1);
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+
+        /* Numbered lists with custom styling */
+        ol.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* Bulleted lists with custom styling */
+        ul.styled-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Practical Aspects Box */
+        .practical-box {
+            background: linear-gradient(to right, #f9f9f9, #ffffff);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--success);
+        }
+
+        .practical-box h3 {
+            color: var(--success);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .practical-box h3 i {
+            margin-right: 10px;
+        }
+
+        /* Tithe Graphic */
+        .tithe-graphic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .tithe-box {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tithe-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .tithe-box.highlight {
+            border: 2px solid var(--gold);
+        }
+
+        .tithe-box .icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .tithe-box .highlight-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .tithe-box h4 {
+            margin: 0 0 0.5rem;
+            color: var(--holy-theme-dark);
+        }
+
+        .tithe-box p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Bible Verses Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 4px;
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2rem;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 3px solid var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item h4 {
+            margin: 0 0 0.5rem;
+            color: var(--holy-theme-dark);
+        }
+
+        .timeline-item p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <h1>5.11 Our Christian Life and Money (Tithe)</h1>
+            <p>How should we honor God with our resources?</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="question">
+            <p>God is our Father and we desire to honor Him in all aspects of our lives. As Christians, we joyfully acknowledge God's grace and His blessings. Let's not forget that everything we have comes from God, as we sometimes risk doing:</p>
+            
+            <div class="scripture-box">
+                <p>"Be careful not to forget the LORD your God by failing to keep his commands, his ordinances, and his statutes that I am giving you today. When you eat and are satisfied, and build beautiful houses to live in, and your herds and flocks grow large, and your silver and gold multiply, and everything else you have increases, be careful that your heart doesn't become proud and you forget the LORD your God who brought you out of the land of Egypt, out of the place of slavery. He led you through the great and terrible wilderness with its poisonous snakes and scorpions, a thirsty land where there was no water. He brought water out of the flint rock for you. He fed you in the wilderness with manna, which your ancestors had not known, in order to humble and test you, so that in the end he might cause you to prosper. You may say to yourself, 'My power and my own ability have gained this wealth for me,' but remember that the LORD your God gives you the power to gain wealth, in order to confirm his covenant he swore to your ancestors, as it is today."</p>
+                <p class="bible-reference">- Deuteronomy 8:11-18</p>
+            </div>
+            
+            <p>One way to acknowledge God's grace in our lives is to be faithful to Him in returning the tithe. Let's see what this is about.</p>
+        </div>
+
+        <div class="question">
+            <h3>1. What did God command Israel?</h3>
+            <span class="scripture-reference">Leviticus 27:30-32</span>
+            <p>The tithe of every gain belongs to the Lord.</p>
+            <p>"Every tenth of the land's produce, grain from the soil or fruit from the trees, belongs to the LORD; it is holy to the LORD... Every tenth animal from the herd or flock, which passes under the shepherd's rod, will be holy to the LORD."</p>
+        </div>
+
+        <div class="question">
+            <h3>2. For what purpose was the tithe used?</h3>
+            <span class="scripture-reference">Numbers 18:21-29</span>
+            <p>To support the spiritual ministry of the tribe of Levi. Levi was the tribe dedicated to God and His service.</p>
+            <p>"I have given every tenth in Israel to the Levites as an inheritance in return for the work they do, the work of the tent of meeting."</p>
+        </div>
+
+        <div class="question">
+            <h3>3. What preliminary conditions did the Levites have to fulfill?</h3>
+            <span class="scripture-reference">Numbers 18:20</span>
+            <p>They had no other possessions among the tribes of Israel.</p>
+            <p>We apply this principle to the fact that ministers of the gospel who live thanks to the tithe should not engage in other regularly remunerated activities. As Paul would say, if they live by the gospel, they must devote themselves entirely to the gospel.</p>
+        </div>
+
+        <div class="question">
+            <h3>4. How does God consider the non-restitution of the tithe?</h3>
+            <span class="scripture-reference">Malachi 3:7-10</span>
+            <p>As theft from God.</p>
+            <p>"Will a man rob God? Yet you are robbing me! You ask: 'How do we rob you?' In tithes and offerings... Bring the full tenth into the storehouse so that there may be food in my house. Test me in this way," says the LORD of Armies. "See if I will not open the floodgates of heaven and pour out a blessing for you without measure."</p>
+        </div>
+
+        <div class="question">
+            <h3>5. Should the Christian ministry be supported by believers?</h3>
+            <span class="scripture-reference">1 Corinthians 9:14</span>
+            <p>Ministers should receive their living from the gospel.</p>
+            <p>"In the same way, the Lord has commanded that those who preach the gospel should earn their living by the gospel."</p>
+        </div>
+
+        <div class="question">
+            <h3>6. What did Jesus teach about the tithe?</h3>
+            <span class="scripture-reference">Matthew 23:23</span>
+            <p>It should not be abandoned.</p>
+            <p>"Woe to you, scribes and Pharisees, hypocrites! You pay a tenth of mint, dill, and cumin, and yet you have neglected the more important matters of the law—justice, mercy, and faithfulness. These things should have been done without neglecting the others."</p>
+            <p>(See also Matthew 5:17-20)</p>
+        </div>
+
+        <div class="question">
+            <h3>7. When do we find the tithe for the first time in the Bible?</h3>
+            <span class="scripture-reference">Genesis 14:17-20</span>
+            <p>Abraham gives it to Melchizedek as priest of the Most High God.</p>
+            <p>"Then Melchizedek, king of Salem, brought out bread and wine; he was a priest to God Most High... And Abram gave him a tenth of everything."</p>
+        </div>
+
+        <div class="question">
+            <h3>8. What did Jacob promise to God?</h3>
+            <span class="scripture-reference">Genesis 28:22</span>
+            <p>He would give Him the tithe of every blessing he would receive.</p>
+            <p>"This stone that I have set up as a marker will be God's house, and I will give to you a tenth of all that you give me."</p>
+        </div>
+
+        <div class="question">
+            <h3>9. Why should we return the tithe to the Lord?</h3>
+            <ol class="styled-list">
+                <li>Because God has commanded it.</li>
+                <li>Because it expresses our faithfulness to God as Lord of the world and of life <span class="bible-reference">(Psalm 50:12)</span> of which we are only stewards.</li>
+                <li>Because it expresses our desire to support the Church of which we are part.</li>
+                <li>Compared to the ancient Hebrews, we Christians have one more reason to be faithful in this area as well: to give us eternal life, God did not spare His Son Jesus Christ.</li>
+            </ol>
+        </div>
+
+        <div class="question">
+            <h3>10. Can the use of the tithe be decided by the believer personally?</h3>
+            <span class="scripture-reference">Malachi 3:10</span>
+            <p>No, it must be brought to the house of God.</p>
+            <p>"Bring the full tenth into the storehouse so that there may be food in my house."</p>
+        </div>
+
+        <div class="tithe-graphic">
+            <div class="tithe-box">
+                <div class="icon"><i class="fas fa-seedling"></i></div>
+                <h4>Acknowledges</h4>
+                <p>God as the source of all blessings</p>
+            </div>
+            <div class="tithe-box highlight">
+                <div class="highlight-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h4>Tithe</h4>
+                <p>10% belongs to God</p>
+            </div>
+            <div class="tithe-box">
+                <div class="icon"><i class="fas fa-church"></i></div>
+                <h4>Supports</h4>
+                <p>Gospel ministry worldwide</p>
+            </div>
+            <div class="tithe-box">
+                <div class="icon"><i class="fas fa-pray"></i></div>
+                <h4>Builds</h4>
+                <p>Faith and spiritual growth</p>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>All aspects of our lives are a gift from God, and we are therefore invited to honor Him also in relation to our wealth. The restitution of the tithe and the gift of offerings is something that God asks of us to recognize His sovereignty and His love, and to be His collaborators for the benefit of mankind.</p>
+        </div>
+
+        <div class="practical-box">
+            <h3><i class="fas fa-tools"></i> Practical Aspects</h3>
+            <ul class="styled-list">
+                <li>God is the owner of tithes and offerings. Even if they are used to support ministers, this does not mean that it is the church that pays the ministers. It is God who sustains His ministers because the tithes are His. The church is only the instrument used by God to achieve this purpose.</li>
+                
+                <li>For practical reasons, and to avoid discrimination between ministers, the tithe is not given directly to the local pastor. Through the treasury of the local church, it is passed to the Union treasury, which administers it fairly for all pastors and evangelistic activities.</li>
+                
+                <li>All church members should be faithful in returning the tithe but, to avoid misunderstandings and not to discourage a member in difficulty, the Church continues to love a non-compliant brother and recognize him as a brother in Christ and a member of the church. The only limit set is that a member who is in such a situation should not assume official positions within the community.</li>
+                
+                <li>When we ask to be baptized, we should begin to exercise our faithfulness in this area. If at the moment of first love we are not faithful to the Lord, what can happen afterward?</li>
+                
+                <li>The restitution of the tithe does not exhaust the scope of our faithfulness to God. The tithe is testimony that everything we have comes from God and we must therefore always administer it for good.</li>
+            </ul>
+        </div>
+
+        <div class="in-depth-study">
+            <h2>Biblical Texts</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Hebrews 7:8</h4>
+                    <p>Christ, like Melchizedek, and with even more right than the Levitical priests, receives the tithe.</p>
+                </div>
+                
+                <div class="timeline-item">
+                  <h4>Luke 10:7, Matthew 10:10, cf. 1 Timothy 5:18</h4>
+                  <p>"The worker is worthy of his wages."</p>
+              </div>
+              
+              <div class="timeline-item">
+                  <h4>Genesis 14:18-20, cf. Hebrews 7:1-10</h4>
+                  <p>Abraham gave a tenth to Melchizedek, priest of the Most High God.</p>
+              </div>
+              
+              <div class="timeline-item">
+                  <h4>Genesis 28:19-22</h4>
+                  <p>Jacob adopts the tithe after choosing the God of his fathers as his God.</p>
+              </div>
+          </div>
+          
+          <h3>In the Time of Moses, the Tithe was Confirmed:</h3>
+          
+          <details class="custom-details">
+              <summary>The Tithe Belongs to the Lord</summary>
+              <div class="details-content">
+                  <p>In Leviticus 27:30, it is not said that the faithful must give the tithe to the Lord. Much more is said: the tithe "belongs" to the Lord. It is His, not man's. In this sense, the tithe can only be returned.</p>
+                  
+                  <p>If the Israelite needed the products of the tithe for any reason (for example, grain for sowing), he could exchange it for money by adding a fifth of its value <span class="bible-reference">(Leviticus 27:31)</span>.</p>
+              </div>
+          </details>
+          
+          <details class="custom-details">
+              <summary>Transportation and Delivery</summary>
+              <div class="details-content">
+                  <p>The tithes had to be brought to Jerusalem <span class="bible-reference">(Deuteronomy 12:5-6, 17-18)</span>. If the offerer lived very far away and transport was problematic, he could exchange it for money without additions <span class="bible-reference">(Deuteronomy 14:22-27)</span>.</p>
+              </div>
+          </details>
+          
+          <details class="custom-details">
+              <summary>Distribution System</summary>
+              <div class="details-content">
+                  <p>The tithes are given to the Levites "in exchange for the service they perform" <span class="bible-reference">(Numbers 18:21-24)</span>. In turn, the Levites returned "the tithe of the tithe" <span class="bible-reference">(Numbers 18:26)</span> to the priests <span class="bible-reference">(Numbers 18:28-29, cf. Nehemiah 10:39)</span>.</p>
+                  
+                  <p>The Israelites, moreover, returned a second tithe, used for a thanksgiving feast to God, to which the Levites, strangers, orphans, and widows were invited <span class="bible-reference">(Deuteronomy 14:22-29 and 26:12)</span>.</p>
+              </div>
+          </details>
+          
+          <h3>In the Rest of the Old Testament:</h3>
+          
+          <p>The tithe will be mentioned in periods of apostasy followed by reform:</p>
+          
+          <ul class="styled-list">
+              <li>In the time of Hezekiah, with the various reforms, the tithe was also restored <span class="bible-reference">(2 Chronicles 31:3-6,12)</span>.</li>
+              
+              <li>After the exile, Nehemiah reintroduces the institution of the tithe <span class="bible-reference">(Nehemiah 10:29,37-38, 12:44-47, 13:10-12)</span>.</li>
+              
+              <li>Malachi denounces the unfaithfulness of the people and God's indignation at being "robbed" of tithes <span class="bible-reference">(Malachi 3:7-12)</span>.</li>
+          </ul>
+          
+          <h3>In the New Testament:</h3>
+          
+          <p>In the New Testament, we find a particular situation: on the one hand, the first Christians were still tied to the temple and the synagogue; on the other, with the developments of the church, the destruction of the temple, and the break with the Jewish world, they gradually developed an autonomous administrative system.</p>
+          
+          <p>Jesus confirmed the principle of the tithe, considering it among the things that "must be done," without neglecting the others <span class="bible-reference">(Matthew 23:23)</span>. Paul declares the equivalence between the Levites of the Old Testament and the Christians who preach the gospel full-time <span class="bible-reference">(1 Corinthians 9:1-14)</span>. Even if sometimes he renounced this right <span class="bible-reference">(2 Corinthians 11:7)</span>, for Paul the principle remains <span class="bible-reference">(2 Thessalonians 3:9)</span>.</p>
+      </div>
+
+      <div class="think-about-it">
+          <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+          <p>Tithing is not just about money—it's about trust. When we return to God what is already His, we demonstrate our faith that He will provide for all our needs. How has being faithful in this area strengthened your relationship with God?</p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="navigation">
+          <a href="5.10.html" class="nav-button previous-chapter">
+              ← Previous
+              <span class="hover-text">5.10 Hygienic Laws: Alcoholic Beverages</span>
+          </a>
+          <a href="6.1.html" class="nav-button next-chapter">
+              Next →
+              <span class="hover-text">Prophetic Teachings</span>
+          </a>
+          <a href="/00Intro&Topics.html" class="nav-button toc">
+              Contents
+          </a>
+          <a href="/Index.html" class="nav-button home-button">
+              Home
+          </a>
+      </div>
+
+      <!-- Copyright Footer -->
+      <footer class="page-footer">
+          <div class="footer-content">
+              <div class="copyright-notice">
+                  <p>© 2025 All Rights Reserved</p>
+                  <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+              </div>
+          </div>
+      </footer>
+  </div>
+
+  <!-- No-copy protection scripts -->
+  <script>
+      document.addEventListener('keydown', function(e) {
+          if (e.ctrlKey && 
+              (e.key === 'c' || 
+               e.key === 'C' || 
+               e.key === 'u' || 
+               e.key === 'U' || 
+               e.key === 'p' || 
+               e.key === 'P')) {
+              e.preventDefault();
+              alert('Content copying is not permitted. For permissions, contact: felixcobby@gmail.com');
+          }
+      });
+
+      document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          alert('Right-click is disabled. For permissions, contact: felixcobby@gmail.com');
+      });
+      
+      // Toggle details content when clicking on summary
+      document.addEventListener('DOMContentLoaded', function() {
+          const details = document.querySelectorAll('.custom-details');
+          
+          details.forEach(detail => {
+              const summary = detail.querySelector('summary');
+              
+              summary.addEventListener('click', function(e) {
+                  e.preventDefault(); // Prevent default browser behavior
+                  
+                  // Toggle the open attribute
+                  if (detail.hasAttribute('open')) {
+                      detail.removeAttribute('open');
+                  } else {
+                      detail.setAttribute('open', 'true');
+                  }
+              });
+          });
+          
+          // Animate questions on scroll
+          const questions = document.querySelectorAll('.question');
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.style.opacity = '1';
+                      entry.target.style.transform = 'translateY(0)';
+                  }
+              });
+          }, { threshold: 0.1 });
+          
+          questions.forEach(question => {
+              observer.observe(question);
+          });
+      });
+      
+      // Smooth scroll to anchors
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          });
+      });
+  </script>
+</body>
+</html>
+

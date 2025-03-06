@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2 Holy Living | Doctrine of Sanctification and Obedience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Series Banner */
+        .series-banner {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('path-to-holy-living-image.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Purpose Box */
+        .purpose-box {
+            background: var(--holy-theme-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Additional Styles */
+.content-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-box {
+    background: var(--holy-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.scripture-reference {
+    background: var(--holy-theme-dark);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.scripture-insights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.insight-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reflection-prompt {
+    background: linear-gradient(to right, var(--holy-theme-light), transparent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reflection-prompt i {
+    font-size: 1.5rem;
+    color: var(--holy-theme-dark);
+}
+
+.scripture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.principle-box {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.reference-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reference-list li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.reference-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Additional Styles for Content Sections */
+.content-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-box {
+    background: var(--holy-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.scripture-box.highlight {
+    background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+}
+
+.reference-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reflection-prompt {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reflection-prompt i {
+    color: var(--holy-theme-dark);
+    font-size: 1.5rem;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.principle-card {
+    background: var(--holy-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.general-principle {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 8px;
+    grid-column: 1 / -1;
+    text-align: center;
+    font-weight: 500;
+}
+
+.reference-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reference-list li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.reference-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+}
+
+/* Interactive Studies Styles */
+.interactive-studies {
+    margin: 3rem 0;
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.studies-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.study-topic {
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.topic-toggle {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.topic-toggle:hover {
+    background: var(--holy-theme-light);
+}
+
+.toggle-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--holy-theme-dark);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.topic-toggle.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.topic-content {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.concept-grid,
+.application-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.concept-card,
+.application-card {
+    background: var(--holy-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.check-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.principles-explanation {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.principle-section {
+    background: var(--holy-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.application-points {
+    list-style: none;
+    padding-left: 0;
+}
+
+.application-points li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.application-points li::before {
+    content: "→";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .concept-grid,
+    .application-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topic-toggle {
+        padding: 1rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="series-banner">
+        Doctrine of Sanctification and Obedience
+    </div>
+
+    <div class="series-header">
+        <div class="content">
+            <h1>5.2 Holy Living</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Purpose Section -->
+        <div class="purpose-box">
+            <h2>Introduction</h2>
+            <p>Jesus has saved us, and thanks to Him, we have gained a new dignity, new objectives, and are learning to live a new life in a new way.</p>
+        </div>
+
+
+        <!-- Add after the purpose-box and before navigation -->
+
+<!-- Main Content Sections -->
+<div class="main-sections">
+  <!-- Section 1 -->
+  <div class="content-section">
+      <h2>1. How Can We Express Our New Life in Christ?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">1 Peter 1:15</span>
+          <p>"But just as he who called you is holy, so be holy in all you do."</p>
+      </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="content-section">
+      <h2>2. What Does It Mean to Be Holy?</h2>
+      <div class="explanation-box">
+          <p>Holiness is God's main characteristic as a being different and higher than everything that exists in our current world. He is righteous, loving, selfless, truthful, pure...</p>
+          
+          <div class="scripture-insights">
+              <div class="insight-card">
+                  <span class="scripture-reference">1 Peter 1:17</span>
+                  <p>If God is our Father, we should resemble Him, living our life in such a way that God can be honored in everything we do.</p>
+              </div>
+              
+              <div class="insight-card">
+                  <span class="scripture-reference">Ephesians 1:3-6</span>
+                  <p>Uses the verb "sanctify" as synonymous with being "blameless before him" to the praise of Jesus.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="content-section">
+      <h2>3. How Does Paul Express This Same Concept?</h2>
+      <div class="scripture-box highlight">
+          <span class="scripture-reference">Galatians 2:20</span>
+          <p>"I have been crucified with Christ and I no longer live, but Christ lives in me. The life I now live in the body, I live by faith in the Son of God, who loved me and gave himself for me."</p>
+      </div>
+      <div class="reflection-prompt">
+          <i class="fas fa-lightbulb"></i>
+          <p>How can we apply this principle to our lives?</p>
+      </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="content-section">
+      <h2>4. How Does John Express This?</h2>
+      <div class="scripture-box">
+          <span class="scripture-reference">1 John 2:15-17</span>
+          <div class="scripture-content">
+              <p>"Do not love the world or anything in the world. If anyone loves the world, love for the Father is not in them. For everything in the world—the lust of the flesh, the lust of the eyes, and the pride of life—comes not from the Father but from the world. The world and its desires pass away, but whoever does the will of God lives forever."</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="content-section">
+      <h2>5. How Can These Principles Be Applied to Our Dress? Is This Only for Women?</h2>
+      <div class="scripture-grid">
+          <div class="scripture-card">
+              <span class="scripture-reference">1 Peter 3:3,4</span>
+              <p>"Your beauty should not come from outward adornment, such as elaborate hairstyles and the wearing of gold jewelry or fine clothes. Rather, it should be that of your inner self, the unfading beauty of a gentle and quiet spirit, which is of great worth in God's sight."</p>
+          </div>
+          
+          <div class="scripture-card">
+              <span class="scripture-reference">1 Timothy 2:9,10</span>
+              <p>"I also want the women to dress modestly, with decency and propriety, adorning themselves, not with elaborate hairstyles or gold or pearls or expensive clothes, but with good deeds, appropriate for women who profess to worship God."</p>
+          </div>
+      </div>
+
+      <div class="principle-box">
+          <h3>General Principle</h3>
+          <div class="scripture-box">
+              <span class="scripture-reference">1 Corinthians 10:31</span>
+              <p>"So whether you eat or drink or whatever you do, do it all for the glory of God."</p>
+          </div>
+      </div>
+
+      <div class="additional-references">
+          <h4>Additional Scripture References:</h4>
+          <ul class="reference-list">
+              <li><span class="scripture-reference">2 Peter 3:10-12</span> - End of this world and holy living</li>
+              <li><span class="scripture-reference">Isaiah 3:16-24</span> - Jewelry and pride</li>
+              <li><span class="scripture-reference">Ezekiel 16:8</span> - Love covers nakedness</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+
+<div class="interactive-studies">
+  <h2>Deeper Understanding & Application</h2>
+  <p class="studies-intro">Click each section to explore further</p>
+
+  <!-- Study Topic 1: Understanding Holiness -->
+  <div class="study-topic">
+      <button class="topic-toggle" onclick="toggleTopic('holiness-concept')">
+          <span class="toggle-icon">+</span>
+          <h3>Understanding Biblical Holiness</h3>
+      </button>
+      <div class="topic-content" id="holiness-concept">
+          <div class="concept-grid">
+              <div class="concept-card">
+                  <h4>Biblical Definition</h4>
+                  <ul class="concept-list">
+                      <li>Set apart for God's purpose</li>
+                      <li>Different from worldly standards</li>
+                      <li>Reflecting God's character</li>
+                  </ul>
+              </div>
+
+              <div class="concept-card">
+                  <h4>Common Misconceptions</h4>
+                  <ul class="misconception-list">
+                      <li>Holiness is not isolation from the world</li>
+                      <li>Not about following rules blindly</li>
+                      <li>Not achieved by human effort alone</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Study Topic 2: Practical Holiness -->
+  <div class="study-topic">
+      <button class="topic-toggle" onclick="toggleTopic('practical-holiness')">
+          <span class="toggle-icon">+</span>
+          <h3>Practical Applications of Holy Living</h3>
+      </button>
+      <div class="topic-content" id="practical-holiness">
+          <div class="application-grid">
+              <div class="application-card">
+                  <h4>Personal Life</h4>
+                  <div class="checklist">
+                      <label class="check-item">
+                          <input type="checkbox">
+                          <span>Review entertainment choices</span>
+                      </label>
+                      <label class="check-item">
+                          <input type="checkbox">
+                          <span>Evaluate use of time</span>
+                      </label>
+                      <label class="check-item">
+                          <input type="checkbox">
+                          <span>Examine speech patterns</span>
+                      </label>
+                  </div>
+              </div>
+
+              <div class="application-card">
+                  <h4>Relationships</h4>
+                  <div class="checklist">
+                      <label class="check-item">
+                          <input type="checkbox">
+                          <span>Practice forgiveness</span>
+                      </label>
+                      <label class="check-item">
+                          <input type="checkbox">
+                          <span>Show Christ-like love</span>
+                      </label>
+                      <label class="check-item">
+                          <input type="checkbox">
+                          <span>Maintain pure thoughts</span>
+                      </label>
+                  </div>
+              </div>
+
+              <div class="application-card">
+                  <h4>Professional Life</h4>
+                  <div class="checklist">
+                      <label class="check-item">
+                          <input type="checkbox">
+                          <span>Practice integrity</span>
+                      </label>
+                      <label class="check-item">
+                          <input type="checkbox">
+                          <span>Show Christian ethics</span>
+                      </label>
+                      <label class="check-item">
+                          <input type="checkbox">
+                          <span>Witness through work</span>
+                      </label>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Study Topic 3: Modesty Principles -->
+  <div class="study-topic">
+      <button class="topic-toggle" onclick="toggleTopic('modesty-principles')">
+          <span class="toggle-icon">+</span>
+          <h3>Understanding Biblical Modesty</h3>
+      </button>
+      <div class="topic-content" id="modesty-principles">
+          <div class="principles-explanation">
+              <div class="principle-section">
+                  <h4>Heart Attitude</h4>
+                  <p>Modesty begins with a heart dedicated to honoring God</p>
+                  <div class="scripture-note">
+                      <span class="scripture-reference">1 Peter 3:3-4</span>
+                  </div>
+              </div>
+
+              <div class="principle-section">
+                  <h4>Cultural Context</h4>
+                  <p>Understanding biblical principles in modern context</p>
+                  <ul class="application-points">
+                      <li>Balance between cultural relevance and biblical standards</li>
+                      <li>Focus on heart attitude over specific rules</li>
+                      <li>Consideration for others' spiritual well-being</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="/HistOfSalvation/5.1.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">5.1 Prayer</span>
+            </a>
+            <a href="/HistOfSalvation/5.3.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">5.3 Law and Grace</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+    </div>
+
+
+<script>
+  function toggleTopic(topicId) {
+      const content = document.getElementById(topicId);
+      const button = content.previousElementSibling;
+      const allContents = document.querySelectorAll('.topic-content');
+      const allButtons = document.querySelectorAll('.topic-toggle');
+  
+      // Close all other sections
+      allContents.forEach(item => {
+          if (item.id !== topicId) {
+              item.classList.remove('active');
+              item.style.display = 'none';
+          }
+      });
+  
+      allButtons.forEach(item => {
+          if (item !== button) {
+              item.classList.remove('active');
+          }
+      });
+  
+      // Toggle current section
+      button.classList.toggle('active');
+      if (content.style.display === 'none' || !content.style.display) {
+          content.style.display = 'block';
+          content.classList.add('active');
+      } else {
+          content.style.display = 'none';
+          content.classList.remove('active');
+      }
+  }
+  </script>
+</body>
+</html>

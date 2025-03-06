@@ -1,0 +1,883 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.5 Peter & The Foundation of The Christian Church | History of Salvation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2E7D32;    /* Deep Green */
+            --accent-color: #43A047;     /* Green */
+            --secondary-color: #C8E6C9;   /* Light Green */
+            --bg-primary: #ffffff;
+            --bg-secondary: #F1F8E9;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #66BB6A;   /* Bright Green */
+            --foundation-theme-light: #E8F5E9; /* Very Light Green */
+            --foundation-theme-dark: #2E7D32;  /* Dark Green */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--foundation-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('path-to-church-foundation-image.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Purpose Box */
+        .purpose-box {
+            background: var(--foundation-theme-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--foundation-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--foundation-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        /* Additional Styles for Content Sections */
+.introduction-box {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.content-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.scripture-box {
+    background: var(--foundation-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.scripture-reference {
+    background: var(--foundation-theme-dark);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.explanation-box {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.context-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.point-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--accent-color);
+}
+
+.point-card h3 {
+    color: var(--foundation-theme-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .context-points {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+    .point-card {
+        padding: 1rem;
+    }
+
+    /* Additional Styles for New Sections */
+.historical-evidence {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.evidence-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.evidence-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.evidence-list li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.evidence-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.source-note {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--secondary-color);
+}
+
+.papal-example {
+    background: var(--foundation-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.key-points-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.key-point {
+    background: var(--foundation-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.additional-references,
+.compare-references {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--secondary-color);
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.analysis-box {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.point-block {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.scripture-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.fact-card {
+    background: var(--foundation-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.requirements-box {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.requirements-list {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.requirements-list li {
+    margin: 0.75rem 0;
+    padding-left: 0.5rem;
+}
+
+.important-note {
+    background: var(--foundation-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.conclusion-box {
+    background: linear-gradient(to right, var(--foundation-theme-light), transparent);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Additional Styles for In-Depth Studies */
+.indepth-studies {
+    margin: 3rem 0;
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.studies-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.study-topic {
+    margin-bottom: 1rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.topic-toggle {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+.topic-toggle:hover {
+    background: var(--foundation-theme-light);
+}
+
+.toggle-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--foundation-theme-dark);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.topic-toggle.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.topic-content {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.language-analysis,
+.historical-context {
+    background: var(--foundation-theme-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.theological-response ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.theological-response li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.theological-response li::before {
+    content: "→";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.evidence-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.development-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.development-list li {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.development-list li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.conclusion-note {
+    background: linear-gradient(to right, var(--foundation-theme-light), transparent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.topic-content.active {
+    animation: slideDown 0.3s ease-out;
+}
+
+}
+    </style>
+</head>
+<body>
+    <div class="series-header">
+        <div class="content">
+            <span class="series-title">DOctrine Of The Church</span>
+            <h1>4.5 Peter & The Foundation of The Christian Church</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Purpose Section -->
+        <div class="purpose-box">
+            <h2>Purpose:</h2>
+            <p>To free Christian faith from the idea that the church can be founded on a human being and to reaffirm Christ's exclusive position as the foundation of the church.</p>
+        </div>
+
+        <!-- Introduction Section -->
+<div class="introduction-box">
+    <h2>Introduction</h2>
+    <p>We have so much in common with Catholic believers, but there are also many differences that we cannot honestly ignore. One of the most important concerns authority within the church. The Catholic Church teaches that Jesus gave the church a visible head in Peter and his successors (the bishops of Rome) as the "rock" upon which all Christianity should stand. Instead, we believe that the foundation stone of the church is not a man but Jesus Himself, and that we find reliable guidance in God's Word. Let's see what the Bible says.</p>
+</div>
+
+<!-- Main Content Sections -->
+<div class="main-sections">
+    <!-- Section 1 -->
+    <div class="content-section">
+        <h2>1. Did Jesus Found a Church?</h2>
+        <div class="scripture-box">
+            <span class="scripture-reference">Matthew 16:18</span>
+            <p>Certainly! "I will build my church."</p>
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="content-section">
+        <h2>2. When Jesus Says to Peter, "You are Peter (petros), and on this rock (petra) I will build my church," Who is the "Rock" on Which the Church Will Be Built?</h2>
+        <div class="explanation-box">
+            <p>The text is complex, and here we offer a traditional explanation. To understand what Jesus meant, we must consider both immediate and general context:</p>
+            
+            <div class="context-points">
+                <div class="point-card">
+                    <h3>A. The Temple Analogy</h3>
+                    <p>Jesus is comparing the Christian Church to a solid temple built on rock.</p>
+                </div>
+
+                <div class="point-card">
+                    <h3>B. Living Stones</h3>
+                    <p>The apostle Paul, using a similar image, says this temple is made of living stones, people who accept Jesus as their savior (<span class="scripture-reference">Ephesians 2:18-22</span>). He also says Jesus is the cornerstone from which this temple is built. The apostle Peter offers the same teaching (<span class="scripture-reference">1 Peter 2:2-8</span>).</p>
+                </div>
+
+                <div class="point-card">
+                    <h3>C. Becoming a Stone</h3>
+                    <p>Following this image, used by both Christ and the apostles, a person becomes a stone in the church when accepting Jesus as Savior who comes from God. Peter had just confessed this (<span class="scripture-reference">Matthew 16:16</span>), and it's this testimony of faith that allows Jesus to define Peter as a "petros," a stone in His church.</p>
+                </div>
+
+                <div class="point-card">
+                    <h3>D. Word Choice Significance</h3>
+                    <p>This doesn't mean Peter is the Rock on which the church is founded. If Jesus had wanted to say this, He would have said: "You are petros and on this petros I will build my church." Instead, He says: "You are petros (meaning 'stone, rock') and on this petra (meaning 'solid rock') I will build my church."</p>
+                </div>
+
+                <div class="point-card">
+                    <h3>E. Conclusion</h3>
+                    <p>The rock on which the Christian church stands is not a man but Christ Himself, whom we must recognize and confess, following Peter's example, as Messiah, the Savior, Son of the living God.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Continue Main Sections -->
+<div class="main-sections">
+    <!-- Section 3 -->
+    <div class="content-section">
+        <h2>3. Is This Interpretation Something Modern Invented to Contradict Papal Authority?</h2>
+        <div class="historical-evidence">
+            <p>No, it's based on God's Word and existed in the Catholic Church itself for more than a thousand years.</p>
+            
+            <div class="evidence-box">
+                <h3>Historical Record</h3>
+                <p>Archbishop Peter Richard Kenrick, in a pamphlet prepared for the Vatican Council, lists 5 interpretations given by the early Church Fathers:</p>
+                <ul class="evidence-list">
+                    <li>17 fathers say the rock is Peter</li>
+                    <li>8 say it is formed by all the apostles</li>
+                    <li>44 say it is Peter's faith, not his person</li>
+                    <li>16 say it is Jesus Himself whom Peter had confessed</li>
+                    <li>Others say it is formed by all believers who believe Christ is God's Son</li>
+                </ul>
+                <p class="source-note">From "An Inside View of the Vatican Council, 1872, pp. 107-109"</p>
+            </div>
+
+            <div class="papal-example">
+                <h3>Even a Pope's Understanding</h3>
+                <p>Even Pope Gregory VII (1073-85) knew that the Rock was Jesus and not Peter, as seen in a famous inscription sent with a crown to Rudolf of Swabia: "Petra dedit Petro, Petrus diadema Rudolpho." Meaning: "The Rock (Jesus) gave it to Peter, and Peter (in the person of the Pope) now gives the crown to Rudolf."</p>
+                <p class="source-note">From Philip Schaff, History of the Christian Church, 1902, Vol. 3, p. 303</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="content-section">
+        <h2>4. In Matthew 16:19, Jesus Gives Peter the Keys of the Kingdom of Heaven - Is This Authority Given Only to Peter?</h2>
+        <div class="keys-explanation">
+            <div class="scripture-box">
+                <span class="scripture-reference">Matthew 16:19</span>
+                <p>"I will give you the keys of the kingdom of heaven; whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven."</p>
+            </div>
+
+            <div class="key-points-grid">
+                <div class="key-point">
+                    <h3>A. The Keys' Meaning</h3>
+                    <p>Jesus Himself teaches that what opens heaven's door is knowledge of the gospel (<span class="scripture-reference">Luke 11:52</span>). Thus, the keys given to Peter are the authority and privilege to preach Jesus' gospel.</p>
+                    <div class="additional-references">
+                        <span class="scripture-reference">John 6:68</span>
+                        <span class="scripture-reference">1 Peter 1:23</span>
+                        <span class="scripture-reference">Romans 10:13-17</span>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <h3>B. Shared Mission</h3>
+                    <p>The mission to preach the gospel was entrusted to Peter not because he was special but because he had accepted Jesus. By accepting Jesus, we become both church members and His witnesses.</p>
+                    <div class="compare-references">
+                        Compare <span class="scripture-reference">Ephesians 2:20-22</span> with <span class="scripture-reference">2 Corinthians 3:3</span>;
+                        <span class="scripture-reference">1 Peter 2:5</span> with verse 9
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <h3>C. Church Discipline</h3>
+                    <p>Sometimes, based on gospel knowledge, the church is called to judge a person's fitness for heaven's kingdom. In this case, binding or loosing equates to what we call "church discipline." Such discipline isn't entrusted to a single person but to the entire Christian community.</p>
+                    <span class="scripture-reference">Matthew 18:15-18</span>
+                </div>
+
+                <div class="key-point">
+                    <h3>D. Ultimate Authority</h3>
+                    <p>While the church can be an instrument to open kingdom doors, only Jesus truly holds the keys (<span class="scripture-reference">Revelation 3:7</span>), and the church can only humbly seek to interpret His will.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Section 5 -->
+<div class="content-section">
+    <h2>5. In John 20:19-23, the Risen Christ Gave the Disciples the Privilege to Forgive or Retain Sins. Doesn't This Give Bishops and Priests Special Authority?</h2>
+    
+    <div class="analysis-box">
+        <div class="point-block">
+            <h3>A. Collective Authority</h3>
+            <p>We don't believe so. As with the Matthew text already considered, we note here that Jesus doesn't attribute any privilege to one or a few people, but to all who believe in Him. In this John text, Jesus isn't addressing only Peter or the apostles, but all disciples gathered in the room, including the two who had met Jesus on the road to Emmaus (<span class="scripture-reference">Luke 24:33</span>).</p>
+        </div>
+
+        <div class="point-block">
+            <h3>B. Gospel Connection</h3>
+            <p>Once again, as with previous texts, what Jesus says about forgiving sins is correlated to gospel preaching (<span class="scripture-reference">John 18:21</span>). Thus, Jesus gave all disciples not arbitrary power to decide who should or shouldn't be forgiven, but the privilege and responsibility to share with others the knowledge of the gospel that alone can save from sin's condemnation.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Section 6 -->
+<div class="content-section">
+    <h2>6. Can We Find Proof of This Fact?</h2>
+    <div class="evidence-box">
+        <p>Yes! Neither Peter nor any other apostle ever claimed to forgive anyone by their own authority. Instead, they invited people to repent and go to God for forgiveness.</p>
+        <div class="scripture-grid">
+            <span class="scripture-reference">Acts 8:20-22</span>
+            <span class="scripture-reference">Acts 2:38</span>
+            <span class="scripture-reference">Acts 5:31</span>
+            <span class="scripture-reference">Acts 10:43</span>
+            <span class="scripture-reference">Acts 13:38</span>
+            <span class="scripture-reference">Acts 26:15-18</span>
+        </div>
+    </div>
+</div>
+
+<!-- Section 7 -->
+<div class="content-section">
+    <h2>7. Should We Then Say That Peter Has No Authority in the Christian Church?</h2>
+    <div class="explanation-box">
+        <p>No, we don't say this. But his authority is different from what Catholics attribute to him. Consider these facts:</p>
+        
+        <div class="facts-grid">
+            <div class="fact-card">
+                <h3>Apostolic Witness</h3>
+                <p>Peter was chosen to represent Jesus by giving testimony of His life and teaching (<span class="scripture-reference">Luke 6:13; Acts 1:21,22</span>): he has the apostolic authority of being an authorized witness of Jesus. However, he shares this authority with other apostles.</p>
+            </div>
+
+            <div class="fact-card">
+                <h3>Shared Foundation</h3>
+                <p>This teaching is confirmed by Paul when he says the Church is built on the foundation of apostles and prophets, "with Christ Jesus himself as the chief cornerstone" (<span class="scripture-reference">Ephesians 2:20</span>).</p>
+            </div>
+
+            <div class="fact-card">
+                <h3>Equal Standing</h3>
+                <p>While Peter is called a pillar of the church, he shares this title with James and John (<span class="scripture-reference">Galatians 2:9</span>), and <span class="scripture-reference">Revelation 3:12</span> says this of all who overcome their spiritual warfare for Christ.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section 8 -->
+<div class="content-section">
+    <h2>8. If the Pope and Bishops Are the Apostles' Successors, Doesn't This Mean We Must Submit to Them?</h2>
+    <div class="requirements-box">
+        <h3>Apostolic Requirements:</h3>
+        <p>What made apostles special was their particular relationship with Jesus. As we know from their own history and the procedure adopted in <span class="scripture-reference">Acts 1:21-26</span> to seek Judas's replacement, they had to:</p>
+        
+        <ol class="requirements-list">
+            <li>Be eyewitnesses of Jesus' ministry</li>
+            <li>Be chosen directly by Him</li>
+        </ol>
+
+        <div class="important-note">
+            <p>Neither the pope nor bishops present these characteristics and cannot be considered apostolic successors. The Bible doesn't provide for any papal function, and as for bishops, also called "elders" (<span class="scripture-reference">Acts 20:17, 28; 1 Timothy 4:14</span>), theirs is a ministry different from the apostolic one.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Section 9 -->
+<div class="content-section">
+    <h2>9. How Then Can We Build Ourselves on the Foundation of Apostles and Prophets?</h2>
+    <div class="conclusion-box">
+        <p>The apostles' main purpose was to testify to Jesus' teaching. As such, their ministry doesn't end with their death. Their teaching was written down and is still available to us today. The Bible is the word of prophets (Old Testament) and apostles (New Testament). By listening to the Bible, we honor the ministry the Lord entrusted to these people and become part of Jesus' true church.</p>
+    </div>
+</div>
+
+
+<!-- In-Depth Studies Section -->
+<div class="indepth-studies">
+    <h2>Additional Insights</h2>
+    <p class="studies-intro">Click each topic to explore deeper understanding</p>
+
+    <!-- Study Topic 1 -->
+    <div class="study-topic">
+        <button class="topic-toggle" onclick="toggleTopic('topic1')">
+            <span class="toggle-icon">+</span>
+            <h3>1. Regarding the Difference Between Petros and Petra in Matthew 16:18</h3>
+        </button>
+        <div class="topic-content" id="topic1">
+            <div class="content-wrapper">
+                <div class="language-analysis">
+                    <p>The difference between petros and petra exists only in the Greek text used by Matthew to tell the story, while Jesus' original language was Aramaic, in which there is no difference between the two words.</p>
+                    
+                    <div class="theological-response">
+                        <h4>Our Response:</h4>
+                        <p>If Matthew, an apostle of Jesus perfectly capable of understanding any Aramaic used by the Lord, chose to distinguish the two words, this means he:</p>
+                        <ul>
+                            <li>Recognized the possibility of misunderstanding the Master's words</li>
+                            <li>Guided by the Holy Spirit, avoided such possibility</li>
+                            <li>Gave us the exact meaning of Jesus' teaching</li>
+                        </ul>
+                        <p class="important-note">Matthew is the only available reality, and on its basis alone can and must we develop our understanding of Christ's teaching and the Christian church itself.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Study Topic 2 -->
+    <div class="study-topic">
+        <button class="topic-toggle" onclick="toggleTopic('topic2')">
+            <span class="toggle-icon">+</span>
+            <h3>2. Historical Situation of the Early Church: Collegiality vs. Monarchical Episcopate</h3>
+        </button>
+        <div class="topic-content" id="topic2">
+            <div class="content-wrapper">
+                <div class="historical-context">
+                    <p>The entire discourse on Peter's primacy, on which the concept of papal authority rests, presupposes that Peter was the first pope and that as such he governed over the whole church in his function as bishop of Rome. However, this view conflicts with biblical and historical data.</p>
+
+                    <div class="evidence-grid">
+                        <div class="evidence-card">
+                            <h4>A. Early Church Leadership</h4>
+                            <p>Each Christian community was initially guided by a college of elders or bishops</p>
+                            <div class="scripture-references">
+                                <span class="scripture-reference">Acts 15:6</span>
+                                <span class="scripture-reference">Acts 20:17,28</span>
+                                <span class="scripture-reference">1 Timothy 4:14</span>
+                                <span class="scripture-reference">Titus 1:5</span>
+                                <span class="scripture-reference">James 5:14</span>
+                            </div>
+                            <p class="note">Only later, from the second century, did a leader emerge among these elders, with others becoming assistants.</p>
+                        </div>
+
+                        <div class="evidence-card">
+                            <h4>B. Historical Development</h4>
+                            <ul class="development-list">
+                                <li>After the apostles' death, for several centuries, each community was independent</li>
+                                <li>Gradually, bishops of larger churches extended influence over smaller surrounding communities</li>
+                                <li>Over time, Rome's church and its bishop emerged, eventually becoming the Papacy</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="conclusion-note">
+                        <p>Interpreting Peter's figure and role in light of these later historical developments is entirely improper.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function toggleTopic(topicId) {
+        const content = document.getElementById(topicId);
+        const toggle = content.previousElementSibling;
+        const allContents = document.querySelectorAll('.topic-content');
+        const allToggles = document.querySelectorAll('.topic-toggle');
+    
+        // Close all other topics
+        allContents.forEach(item => {
+            if (item.id !== topicId) {
+                item.classList.remove('active');
+                item.style.display = 'none';
+            }
+        });
+    
+        allToggles.forEach(item => {
+            if (item !== toggle) {
+                item.classList.remove('active');
+            }
+        });
+    
+        // Toggle current topic
+        toggle.classList.toggle('active');
+        if (content.style.display === 'none' || !content.style.display) {
+            content.style.display = 'block';
+            content.classList.add('active');
+        } else {
+            content.style.display = 'none';
+            content.classList.remove('active');
+        }
+    }
+    </script>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="/HistOfSalvation/4.4.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">4.4 Confession</span>
+            </a>
+            <a href="/HistOfSalvation/5.1.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">5.1 Doctrine of Sanctification and Obedience</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="/Index.html" class="nav-button home-button">
+                Home
+            </a>
+        </div>
+    </div>
+</body>
+</html>

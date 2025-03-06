@@ -1,0 +1,1245 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel 8: The Time of Judgment | Bible Studies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #006064;    /* Deep Teal */
+            --accent-color: #00ACC1;     /* Lighter Teal */
+            --secondary-color: #B2EBF2;   /* Very Light Teal */
+            --bg-primary: #ffffff;
+            --bg-secondary: #E0F7FA;
+            --text-primary: #2C3E50;
+            --text-secondary: #546E7A;
+            --highlight-color: #00BCD4;   /* Bright Teal */
+            --holy-theme-light: #E0F7FA; /* Very Light Teal */
+            --holy-theme-dark: #006064;  /* Dark Teal */
+            --success: #4CAF50;
+            --warning: #FFA726;
+            --error: #EF5350;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Styling */
+        .series-header {
+            background: linear-gradient(135deg, var(--holy-theme-dark), var(--accent-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .series-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .series-header .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Collapsible Section Styling */
+        details.collapsible {
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: white;
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        details.collapsible:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        details.collapsible summary {
+            background: var(--bg-secondary);
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--holy-theme-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            position: relative;
+            list-style: none;
+        }
+
+        details.collapsible summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.collapsible summary::after {
+            content: '\f078'; /* Font Awesome chevron down */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+
+        details.collapsible[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details.collapsible summary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        details.collapsible .content {
+            padding: 1.5rem;
+        }
+
+        /* Scripture Reference */
+        .scripture-reference {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Scripture Box */
+        .scripture-box {
+            background: var(--holy-theme-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scripture-box::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-size: 100px;
+            color: rgba(0,0,0,0.05);
+            font-family: Georgia, serif;
+        }
+
+        /* Think About It Box */
+        .think-about-it {
+            background: linear-gradient(to right, var(--holy-theme-light), var(--bg-secondary));
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--highlight-color);
+        }
+
+        .think-about-it h3 {
+            display: flex;
+            align-items: center;
+            color: var(--holy-theme-dark);
+        }
+
+        .think-about-it h3 i {
+            margin-right: 10px;
+            color: var(--highlight-color);
+        }
+
+        /* Lists */
+        ol.styled-list, ul.styled-list {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ol.styled-list li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        ol.styled-list li::before {
+            content: counter(item);
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        ul.styled-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Tables */
+        .comparison-table, .prophecy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th, .prophecy-table th {
+            background-color: var(--holy-theme-dark);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .comparison-table td, .prophecy-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--bg-secondary);
+            vertical-align: top;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even), .prophecy-table tr:nth-child(even) {
+            background-color: var(--bg-secondary);
+        }
+
+        .comparison-table tr:last-child td, .prophecy-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover, .prophecy-table tr:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 20px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--bg-secondary);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--bg-secondary);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--bg-secondary);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--bg-secondary) transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--bg-secondary);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .timeline-content h3 {
+            color: var(--holy-theme-dark);
+            margin-top: 0;
+        }
+
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .nav-button {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            min-width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .previous-chapter {
+            background: var(--holy-theme-dark);
+        }
+
+        .next-chapter {
+            background: var(--accent-color);
+        }
+
+        .toc {
+            background: var(--primary-color);
+        }
+
+        .home-button {
+            background: var(--holy-theme-dark);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .nav-button .hover-text {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            margin-bottom: 8px;
+            z-index: 100;
+        }
+
+        .nav-button:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--holy-theme-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .copyright-notice {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .copyright-notice a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .copyright-notice a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            background: var(--holy-theme-dark);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 999;
+            padding: 5rem 2rem 2rem;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-menu-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            transition: background 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .toc-toggle {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin: 1rem 0;
+            cursor: pointer;
+            font-weight: 600;
+            display: none;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .toc-mobile {
+            display: none;
+            margin-top: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .toc-mobile ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-mobile li {
+            margin-bottom: 0.8rem;
+        }
+
+        .toc-mobile a {
+            color: var(--holy-theme-dark);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .toc-mobile a:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Reading time indicator */
+        .reading-time {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 1024px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .series-header {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .timeline::after {
+                left: 40px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 25px;
+            }
+            
+            .left::before, .right::before {
+                left: 70px;
+                border: medium solid var(--bg-secondary);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--bg-secondary) transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 31px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .series-header {
+                padding: 2rem 1rem;
+                border-radius: 0 0 15px 15px;
+                margin-bottom: 2rem;
+            }
+            
+            .series-header h1 {
+                font-size: 1.5rem;
+            }
+
+            details.collapsible summary {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+
+            details.collapsible .content {
+                padding: 1rem;
+            }
+
+            .nav-button {
+                min-width: 100%;
+                padding: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .toc-toggle {
+                display: block;
+            }
+            
+            .comparison-table, .prophecy-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .comparison-table th, .comparison-table td,
+            .prophecy-table th, .prophecy-table td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .timeline {
+                margin: 2rem auto;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                padding-left: 70px;
+                padding-right: 15px;
+            }
+            
+            .timeline-content {
+                padding: 15px;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-content p {
+                font-size: 0.9rem;
+            }
+            
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .series-header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .series-header p {
+                font-size: 0.9rem;
+            }
+            
+            details.collapsible summary {
+                font-size: 0.9rem;
+            }
+            
+            .scripture-box {
+                padding: 1rem;
+            }
+            
+            .think-about-it {
+                padding: 1rem;
+            }
+            
+            .think-about-it h3 {
+                font-size: 1rem;
+            }
+            
+            .timeline-container::after {
+                width: 15px;
+                height: 15px;
+                right: -8px;
+                top: 15px;
+            }
+            
+            .timeline-container {
+                padding-left: 60px;
+            }
+            
+            .left::after, .right::after {
+                left: 22px;
+            }
+            
+            .timeline::after {
+                left: 30px;
+            }
+            
+            .left::before, .right::before {
+                left: 60px;
+            }
+            
+            .copyright-notice {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="mobileMenu" class="mobile-menu">
+        <button id="mobileMenuClose" class="mobile-menu-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-links">
+            <a href="/Index.html">Home</a>
+            <a href="/00Intro&Topics.html">Table of Contents</a>
+            <a href="6.4.html">Previous: Daniel 7</a>
+            <a href="6.6.html">Next: Daniel 9</a>
+            <a href="6.5.1.html">Further Study Elements</a>
+        </div>
+        <button id="tocToggle" class="toc-toggle">Show Chapter Navigation</button>
+        <div id="tocMobile" class="toc-mobile">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#q1">1. Purpose of the Vision</a></li>
+                <li><a href="#q2">2. Gabriel's Help</a></li>
+                <li><a href="#q3">3. The First Kingdom</a></li>
+                <li><a href="#q4">4. Greece</a></li>
+                <li><a href="#q5">5. The Great Horn</a></li>
+                <li><a href="#q6">6. Imperial and Papal Rome</a></li>
+                <li><a href="#timeline">Prophetic Timeline</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="series-header">
+        <div class="content">
+            <h1>6.5 Daniel 8: The Time of Judgment</h1>
+            <p>Understanding the prophetic timeline that reveals when the heavenly judgment begins</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="reading-time">
+            <i class="fas fa-book-reader"></i> 15 min read
+        </div>
+
+        <details class="collapsible" open id="intro">
+            <summary>Introduction</summary>
+            <div class="content">
+                <p>In Daniel 7, we had many more details than in Daniel 2. Now, we not only know that there will be a kingdom of God that will take the place of human ones, but we also know that the history of the Christian church will have some terrible aspects. Violence and unfaithfulness will enter God's people, and this situation will last until God's kingdom is established. But before it comes, there will be a judgment in heaven, before God and the angels. In this Judgment, the Son of Man (Jesus) has a very special role because it is He who, at the end of the judgment, receives the kingdom and shares it with God's people. The only question that remains is: can we know when this judgment will come? Daniel 8 will begin to give us the answer.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q1">
+            <summary>1. What is the purpose of the vision of Daniel 8?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 8:17</span>
+                
+                <p>It concerns once again the time of the end, and we should pay special attention to understand it. This is the first time we receive an invitation to pay attention and understand, as if to tell us that the prophecy must have a very special importance for God's people and that, at the same time, it is not easy to understand.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q2">
+            <summary>2. Who comes to help Daniel understand?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 8:15-16</span>
+                
+                <p>In Daniel 7, someone also helps the prophet understand (Daniel 7:16), but the name is not revealed, and everything takes place within the vision itself. Here, instead, a messenger is (it almost seems physically) sent, and we are told his name: Gabriel. This is the only time this happens in the entire Bible (not even in Revelation is the angel who guides Daniel in his prophetic vision mentioned by name). We will understand in the next study why this peculiarity takes on special importance.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q3">
+            <summary>3. In Daniel 8, kingdoms are also represented by animals. What is the first one and what does it represent?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 8:3-4,20</span>
+                
+                <p>The first kingdom to be mentioned, this time directly by name, is that of Medo-Persia, represented by a ram with two unequal horns (symbol of power), the higher of which, unlike what we would expect in nature, comes up second.</p>
+                
+                <p>It can easily be seen how in all three prophetic lines analyzed so far, Medo-Persia is always represented in a dual way: The chest with the two arms (although the fact is not emphasized) in Daniel 2, the bear that stands on one of its two sides in chapter 7, and here the ram with the two unequal horns. The first shorter horn represents the Medes, the second longer one the Persians. Together they form a political entity, and that is why in Daniel 2 and 7, Medo-Persia must always be considered as a single kingdom.</p>
+                
+                <p>The ram extends its conquests towards the West (Asia – present-day Turkey -, Babylon, Greece), North (Armenia, Bactriana, etc.) and South (Palestine, Egypt, Ethiopia). These three directions confirm the interpretation of the three ribs in the bear's mouth in Daniel 7, which we gave in the previous study. We also note that Babylon is no longer mentioned: everything that had to be said about it has already been said.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q4">
+            <summary>4. We already know that after Medo-Persia comes Greece. How is it represented?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 8:5-8,21-22</span>
+                
+                <p>Greece is represented by a goat that runs so fast it seems to fly. As in Daniel 7, speed is emphasized to represent the rapidity of Alexander's conquests. Medo-Persia was described as coming from the East, Greece comes from the West and clashes furiously with Medo-Persia, defeating it.</p>
+                
+                <p>The first large horn represents the first king of the empire, Alexander the Great, who died unexpectedly at the age of 33 in 323 BC. In the absence of heirs able to take his place (a son was still to be born and his brother was mentally ill), his place ended up, after some time of attempts to preserve at least a formal unity, being taken by some generals who divided the empire into four parts.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q5">
+            <summary>5. In Daniel 2 and 7, after Greece we find Rome, which in Daniel 7 is symbolized by a ferocious monster with 10 horns among which an eleventh blasphemous, arrogant, and persecuting horn arises. We have seen how this horn receives a great deal of attention. Surprisingly, in Daniel 8 we do not find a third beast with its horns, but a single large horn. Why?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 8:9-12,23-26</span>
+                
+                <p>This horn inevitably reminds us of the eleventh horn of Daniel 7 and represents papal Rome. In Daniel 7, the horn initially appears small (v. 8) but then becomes greater than the other horns (v. 20). However, the horn of Daniel 8 is described as extremely large (v. 9), and this already raises the suspicion that its reality must go beyond the consistency of the previous horn. Analyzing the information we are given, the writer comes to the conviction that it must represent the entirety of the fourth beast of Daniel 7, that is, both imperial Rome and papal Rome, but with a special emphasis on the role of the latter. Most likely, the reason for representing the whole beast as if it were a single immense horn is in the desire to consider the whole history of Rome, not so much from the political point of view but from the religious one characteristic of the action of the papal horn.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q6">
+            <summary>6. What elements help us understand that this great horn represents both imperial Rome and papal Rome?</summary>
+            <div class="content">
+                <p>We can see this not only by examining what Daniel tells us but also by making a comparison with Daniel 7:</p>
+                
+                <ol class="styled-list">
+                    <li>The horn automatically reminds us of the horn of Daniel 7 that refers to the papal power.</li>
+                    <li>In v. 9, the horn becomes great towards the South, East, and towards the "glorious land," an evident synonym for the land of Israel. This corresponds precisely to the three directions in which the Roman Empire expanded at the moment it entered the scene of biblical prophecy, taking the place of what remained of the Greek-Macedonian empire: Greece and Asia Minor (East), Egypt with the rest of North Africa (South), Syria-Palestine (Glorious Land). In relation to this, the horn represents the Roman Empire.</li>
+                    <li>V. 10: "the host of heaven" can be God's people whom Rome persecutes. Imperial Rome persecuted both the people of Israel and the church; papal Rome persecuted dissenting Christians.</li>
+                    <li>V. 11. The Roman Empire destroyed God's temple in Jerusalem and the services of the high priest (the prince) of the old covenant. But it also killed Jesus, the high priestly prince of the new covenant, our King of kings (Revelation 19:16). Papal Rome, for its part, with its host of priests and human mediators, with all its popes who claim to represent Christ, has spiritually destroyed the people's awareness of having in Christ the only high priest, the only mediator, the only true king. By drawing attention to the human priestly service performed in earthly sanctuaries, it has also diverted the church's attention from Christ's service in the heavenly sanctuary, nullifying it: in a spiritual sense, it can well be said that it has destroyed, annulled it, at least as far as the church's awareness is concerned.</li>
+                    <li>V. 12. The "continual," that is, the daily sacrificial system aimed at procuring grace and forgiveness for God's people (see studies on the sanctuary), was taken away by the action of the horn. By destroying the temple in Jerusalem, imperial Rome also destroyed the continual service of the old covenant, but this was no longer important from God's point of view. With its work, however, the papacy has destroyed the continual that concerns us, that is, Christ's service that we have mentioned. The "continual" offered in earthly churches by Catholic priests obscures the "continual" offered by Jesus in the heavenly sanctuary.</li>
+                    <li>V. 12. All this happened because of the "rebellion," perhaps the rebellion of Israel that did not receive Jesus, rebelling against God, and perhaps also the rebellion that, because of this, they then carried out against Rome, provoking their own catastrophe. But there is also the rebellion of the Christian church that gradually abandoned biblical doctrine, thus opening the way to general apostasy regarding Jesus' priestly ministry.</li>
+                    <li>V. 23. The horn is described as a king "of fierce countenance." This reminds us of the fourth beast of Daniel 7, Rome, described as "dreadful, terrible" (v. 7), but does not exclude the nature of the "little" horn with its arrogance and violence.</li>
+                    <li>V. 24. The fact that the horn prospers and defeats the saints with a power not its own can remind us of the papacy that persecutes the saints through the "secular arm," but also the fact that, as Revelation 13:2 will say, it is the dragon, Satan, who gives strength to the kingdoms of this world that persecute God's people (with particular emphasis on Rome).</li>
+                    <li>V. 25. The horn is described as "understanding dark sentences" (KJV) or "skilled in intrigue" (NIV). This reminds us of the little horn that has "eyes of a man."</li>
+                    <li>V. 25 speaks of the pride of this great horn, which reminds us of the arrogant claims of the little horn in Daniel 7:8,25.</li>
+                    <li>V. 25. The horn is "broken without human hand" (literally, "without hand"). This reminds us of what was said about the stone of Daniel 2 that is cast on the kingdoms of this world, destroying them, but also of the fourth beast and its eleventh horn that are destroyed directly by God, after the judgment and the return of Jesus (Daniel 7:11-12).</li>
+                </ol>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q7">
+            <summary>7. What conclusion can we draw from all these data?</summary>
+            <div class="content">
+                <p>This great horn represents the entirety of Rome's action, both imperial and papal, but with a particular emphasis on the latter. It covers the time from the end of the independence of the Hellenistic kingdoms to the end of time when Jesus will return. It includes the persecutory works against God's people of the old and new covenant, against their sanctuary and their head, particularly against Jesus, whose sacrifice and priesthood in the heavenly sanctuary have been long obscured by priesthood and earthly masses in human sanctuaries.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q8">
+            <summary>8. How does God react to this situation?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 8:13-14</span>
+                
+                <div class="scripture-box">
+                    <p>"Then I heard a holy one speaking, and another holy one said to that certain one who was speaking, 'How long will the vision be, concerning the daily sacrifices and the transgression of desolation, the giving of both the sanctuary and the host to be trampled underfoot?' And he said to me, 'For two thousand three hundred days; then the sanctuary shall be cleansed.'" (Daniel 8:13-14, NKJV)</p>
+                </div>
+                
+                <p>After 2,300 evenings and mornings, that is, 2,300 symbolic days or literal years, "the sanctuary will be cleansed." After 2,300 years, God will put an end to the offenses against His sanctuary and His high priest, and will cleanse it. This reminds us of the Day of Atonement that led to the cleansing of the earthly sanctuary, a symbol of the final judgment that will separate the good from the evil and reaffirm God's justice and majesty.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q9">
+            <summary>9. What elements do we have to understand that this "cleansing" of the sanctuary corresponds to the Day of Atonement and to judgment?</summary>
+            <div class="content">
+                <ol class="styled-list">
+                    <li><strong>Parallelism with previous prophecies.</strong> We have already seen that the three great prophetic series of chapters 2, 7, and 8 are parallel with the addition of ever new details. If we compare the final parts of each of these prophecies, we obtain the following parallelism from which emerges the fact that the cleansing of the sanctuary in Daniel 8 corresponds to the judgment of Daniel 7.</li>
+                </ol>
+                
+                <div class="comparison-table">
+                    <table>
+                        <tr>
+                            <th>Daniel 2</th>
+                            <th>Daniel 7</th>
+                            <th>Daniel 8</th>
+                        </tr>
+                        <tr>
+                            <td>Stone cut without hands</td>
+                            <td>Judgment scene</td>
+                            <td>Cleansing of the sanctuary</td>
+                        </tr>
+                        <tr>
+                            <td>Stone becomes a mountain</td>
+                            <td>Saints receive the kingdom</td>
+                            <td>Sanctuary restored to its rightful state</td>
+                        </tr>
+                        <tr>
+                            <td>Destruction of all earthly kingdoms</td>
+                            <td>Beast and little horn destroyed</td>
+                            <td>Little horn broken without human hand</td>
+                        </tr>
+                        <tr>
+                            <td>God's kingdom fills the earth</td>
+                            <td>Saints possess the kingdom forever</td>
+                            <td>Truth triumphs</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <ol class="styled-list" start="2">
+                    <li><strong>The context.</strong> The entire context requires a final solution to the problem of rebellion, sin, and offenses brought to God, His law, and His salvation. It is therefore evident, by the very nature of the prophecy, that the cleansing of the sanctuary must correspond to the definitive solution that we are forced to call "judgment," as happens in Daniel 7.</li>
+                    <li><strong>The animals.</strong> It is not by chance that Medo-Persia and Greece are represented by a ram and a goat. Why not reuse the same symbols used in chapter 7? What new understanding of prophetic history do the new symbols used add? It is impossible to think that the aim is to highlight their peacefulness, their having been tamed, in contrast to the wild nature of the animals used in chapter 7: in fact, even in chapter 8, the behavior of the animals used is anything but peaceful. The only plausible reason for the use of new symbols is that the ram and the goat, unlike the bear and the leopard, were both sacrificial animals (Leviticus 4:23; 5:15) that automatically recalled, to any Hebrew reader, the image of the sanctuary around which the entire chapter is built. It is as if God were saying: "I want you to understand that this revelation is mainly about my sanctuary and its services." When we consider what type of sanctuary service might correspond to the "cleansing of the sanctuary" mentioned in Daniel 8, the only one that might come to mind is the Day of Atonement because only this has to do with the idea of purification and judgment as required by the context of the prophecy.</li>
+                </ol>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q10">
+            <summary>10. Can we know when the 2,300 years end and thus when the antitypical (real) Day of Atonement begins?</summary>
+            <div class="content">
+                <p>Yes, but we must ask for help from chapter 9. Why? Because chapter 8 tells us after how much time the cleansing of the sanctuary will take place but does not indicate the starting point of this period of time. Chapter 9 will provide us with the missing data.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q11">
+            <summary>11. How are chapters 8 and 9 related?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 8:26; 9:22-23</span>
+                
+                <p>In chapter 8, the angel Gabriel is sent to explain the vision that Daniel has had (v. 16). He explains every detail: the ram, the goat, the first horn, the four horns, and the great horn. The only part he does not explain is the one concerning the 2,300 days. He only says that the vision is true and that it must remain sealed (secret, hidden) because it refers to a distant time (8:27). However, no explanation is given, although his words presuppose that there must be a way to understand it; otherwise, how could it be possible to understand it in the future? However, the promise that the sanctuary would one day be cleansed does not leave Daniel indifferent, and he strives to understand, with the risk of misunderstanding the data received.</p>
+                
+                <p>In chapter 9, we see the prophet dealing with another temporal datum, that provided by Jeremiah (25:11-12; 29:10), according to which Israel was to be freed from Babylonian deportation after 70 years. This time has just ended, and Daniel prays that God may fulfill His promise. He prays, in particular, for Jerusalem (9:16,18) and for the temple (9:17), which, at that time, were both in ruins. For the temple, Daniel uses the word "desolate" (shamem), the same word used in 8:13 to describe the situation of the sanctuary because of the blasphemous violence of the horn. In other words, most likely Daniel had understood that the promise to cleanse the sanctuary at the end of the 2,300 days had to correspond to the promise made through Jeremiah to restore the state of Israel at the end of the 70 years of Babylonian oppression, and he applied both to the restoration of the city and temple of his time.</p>
+                
+                <p>To avoid misunderstandings, Gabriel is sent again to help Daniel understand the "vision" (9:23). Which one, since there is none in chapter 9? The only vision he could explain was the one explicitly referred to in chapter 9 itself, in v. 21, when it says that Gabriel was the same angel that Daniel had seen "before in the vision" of chapter 8, the one about the 2,300 days. However, Gabriel, explaining this vision, does not talk about the ram, the goat, the horn, things he had already explained in chapter 8. Instead, he addresses a temporal issue, which inevitably must have to do with the only temporal element of chapter 8, that is, the period of 2,300 days, the only element he had not yet explained. He does not do it directly, because, let us not forget, this part of the prophecy had to remain "sealed" until the end of time. However, he does it by giving, in a veiled but clear enough language for a serious researcher to understand. Let's try to consider his message: thanks to it, Daniel is informed of the time of the coming of the Messiah (9:24-27) and can understand that the cleansing of the sanctuary that was talked about had nothing to do with the temple of Jerusalem of his time, but with a reality still far in the future.</p>
+            </div>
+        </details>
+
+        <details class="collapsible" id="q12">
+            <summary>12. How can the information contained in Daniel 9 help us understand the 2,300 days?</summary>
+            <div class="content">
+                <span class="scripture-reference">Daniel 9:24</span>
+                
+                <p>We will study this new revelation in the next study. For what concerns us here, let's consider only the initial statement of the revelation in Daniel 9:24: "Seventy weeks are determined for your people and for your holy city, to finish the transgression, to make an end of sins, to make reconciliation for iniquity, to bring in everlasting righteousness, to seal up vision and prophecy, and to anoint the Most Holy."</p>
+                
+                <ol class="styled-list">
+                    <li>"Seventy weeks" correspond to 490 symbolic days or literal years.</li>
+                    <li>"are determined for your people." The Hebrew verb translated "determined" (hatak) literally means "divided," "cut off," that is, set apart from a longer period. From which one if not from that of the 2,300 days-years, the period of time that Gabriel had come to explain?</li>
+                </ol>
+                
+                <p>In short, Gabriel says that not all the 2,300 days-years have to do with Daniel's people, with Israel, their capital, and their sanctuary. For this, 490 years are reserved. The rest has to do with another history and another people.</p>
+                
+                <p>As we will see in the next study, the 490 years begin in 457 BC, and since they are the first part of the 2,300 years of Daniel 8:14, these must also begin in the same year.</p>
+                
+                <p>The ultimate answer to our search is therefore that the antitypical Day of Atonement, the pre-advent judgment, begins in 1844 AD. We obtain this date by subtracting 457 years of the period before Christ from the total of 2,300 years: we are left with the years after Christ, 1844 indeed.</p>
+                
+                <div class="think-about-it">
+                    <h3><i class="fas fa-lightbulb"></i> Think About It</h3>
+                    <p>Note: When doing the subtraction, you actually arrive at 1843, but this result would be true if the time period included whole years. The prophecy instead begins in the middle of the year 457 BC. Consequently, to count 2,300 whole years, after reaching the last day of 1843, one must continue into the following year for the same number of days that passed from the beginning of 457 until the initial point of the prophetic period. This takes us into 1844.</p>
+                </div>
+                
+                <div class="timeline" id="timeline">
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3>457 BC</h3>
+                            <p>Starting point of the 2,300 days (years) prophecy</p>
+                            <p>Decree to restore and rebuild Jerusalem</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h3>408 BC</h3>
+                            <p>Jerusalem fully restored (49 years)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3>27 AD</h3>
+                            <p>Baptism of Jesus - Beginning of ministry</p>
+                            <p>(69 weeks = 483 years from 457 BC)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h3>31 AD</h3>
+                            <p>Crucifixion of Jesus</p>
+                            <p>Middle of the 70th week</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3>34 AD</h3>
+                            <p>End of the 70 weeks (490 years)</p>
+                            <p>Gospel goes to the Gentiles</p>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h3>1844 AD</h3>
+                            <p>End of 2,300 days prophecy</p>
+                            <p>Beginning of the cleansing of the sanctuary</p>
+                            <p>Start of the pre-advent judgment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <details class="collapsible" id="conclusion">
+            <summary>Conclusion</summary>
+            <div class="content">
+                <p>The extraordinary news that Daniel 9 gives us is that we are already in the time of judgment, the final phase of human history. When this judgment concludes, Jesus will come to bring freedom and salvation to His people. Are we ready for this?</p>
+            </div>
+        </details>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="6.4.html" class="nav-button previous-chapter">
+                ← Previous
+                <span class="hover-text">6.4 Daniel 7: The Rise of a Special Power and Judgment</span>
+            </a>
+            <a href="6.6.html" class="nav-button next-chapter">
+                Next →
+                <span class="hover-text">6.6- The Messiah and the Time of Judgement</span>
+            </a>
+            <a href="/00Intro&Topics.html" class="nav-button toc">
+                Contents
+            </a>
+            <a href="6.5.1.html" class="nav-button home-button">
+                Further Study Elements
+            </a>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="copyright-notice">
+                    <p>© 2025 All Rights Reserved</p>
+                    <p>For permissions or inquiries, contact: <a href="mailto:felixcobby@gmail.com">felixcobby@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const tocToggle = document.getElementById('tocToggle');
+            const tocMobile = document.getElementById('tocMobile');
+            const backToTop = document.getElementById('backToTop');
+            
+            // Mobile menu toggle
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Table of contents toggle
+            tocToggle.addEventListener('click', function() {
+                if (tocMobile.style.display === 'block') {
+                    tocMobile.style.display = 'none';
+                    tocToggle.textContent = 'Show Chapter Navigation';
+                } else {
+                    tocMobile.style.display = 'block';
+                    tocToggle.textContent = 'Hide Chapter Navigation';
+                }
+            });
+            
+            // Back to top button
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animate collapsible sections on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('details.collapsible').forEach((item, index) => {
+                observer.observe(item);
+                // Add animation styles with staggered delay
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.transitionDelay = `${0.1 * index}s`;
+            });
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            // Close mobile menu if open
+                            mobileMenu.classList.remove('active');
+                            document.body.style.overflow = '';
+                            
+                            // Scroll to the target
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Make tables responsive on small screens
+            const tables = document.querySelectorAll('table');
+            tables.forEach(table => {
+                const wrapper = document.createElement('div');
+                wrapper.style.overflowX = 'auto';
+                wrapper.style.width = '100%';
+                table.parentNode.insertBefore(wrapper, table);
+                wrapper.appendChild(table);
+            });
+            
+            // Add swipe functionality for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            document.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                const swipeThreshold = 100;
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left - go to next chapter
+                    window.location.href = '6.6.html';
+                }
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right - go to previous chapter
+                    window.location.href = '6.4.html';
+                }
+            }
+            
+            // Save reading position
+            window.addEventListener('beforeunload', function() {
+                localStorage.setItem('daniel8-scroll-position', window.scrollY);
+            });
+            
+            // Restore reading position
+            const savedPosition = localStorage.getItem('daniel8-scroll-position');
+            if (savedPosition) {
+                window.scrollTo(0, parseInt(savedPosition));
+            }
+        });
+    </script>
+</body>
+</html>
